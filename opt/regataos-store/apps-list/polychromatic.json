@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Polychromatic",
+		"nickname": "polychromatic",
+		"executable": "polychromatic",
+		"package": "polychromatic",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://4.bp.blogspot.com/-SgxUZnsEpu8/XGB9HcSWGyI/AAAAAAAAWdU/p_wGbuFePKsD35AKucJy6Y3OKdkszutXQCLcBGAs/s1600/razer-backg1.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

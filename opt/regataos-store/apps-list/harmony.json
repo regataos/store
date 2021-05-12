@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Harmony",
+		"nickname": "harmony",
+		"executable": "harmony",
+		"package": "harmony",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://2.bp.blogspot.com/-UuVIYiCoiyw/WWPd0sxYBaI/AAAAAAAASLk/CfBNm0Ij3Ywu26feEBE65FiwjRyl9QIyQCLcBGAs/s1600/harmony-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

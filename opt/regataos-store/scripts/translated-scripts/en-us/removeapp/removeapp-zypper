@@ -1,0 +1,224 @@
+#! /bin/sh
+
+# Settings and variables
+#App name and more information
+app_name="$name"
+app_nickname="$nickname"
+repo_name="$repository_name"
+command_uninstall="sudo zypper --non-interactive remove $package $extra_packages"
+architecture="$architecture"
+check_uninstall="rpm -q $package"
+
+#Variables for notifications
+success_notify_title="$app_name successfully uninstalled!"
+success_notify_text=""
+error_notify_title="Error uninstalling $app_name!"
+error_notify_text="There was an error uninstalling $app_name."
+
+#General information
+Uninstall_queue="Pending uninstalls: occupied installer..."
+Uninstall_queue_packagekitd="Pending uninstalls: updating the system..."
+app_name_process="Remove $app_name"
+app_remove_status="Removing $app_name..."
+success_removal="Concluded!"
+removal_error="Error!"
+removal_error_status="Removal error!"
+progressbar_dir="/tmp/progressbar-store"
+installed_apps="/opt/regataos-store/installed-apps/installed-apps.txt"
+
+# Notify
+#Settings for notify
+function settings_notify() {
+	# Determine DBUS_SESSION_BUS_ADDRESS
+    USER_DBUS_PROCESS_NAME="gconfd-2"
+    # Get user
+    user=$(users | awk '{print $1}')
+    # Notify-send executable
+    NOTIFY_SEND_BIN="notify-send $notify_options"
+    #Get pid of user dbus process
+    DBUS_PID=`ps ax | grep $USER_DBUS_PROCESS_NAME | grep -v grep | awk '{ print $1 }'`
+    #Get DBUS_SESSION_BUS_ADDRESS variable
+    DBUS_SESSION=`grep -z DBUS_SESSION_BUS_ADDRESS /proc/$DBUS_PID/environ | sed -e s/DBUS_SESSION_BUS_ADDRESS=//`
+    #Send notify
+    DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION su -c "$NOTIFY_SEND_BIN \"$title\" \"$message\"" $user
+}
+#Successful uninstall
+function success_uninstall() {
+    # All settings
+    notify_options="-i emblem-ok-symbolic -u normal -a 'Regata OS Store'"
+    title=$success_notify_title
+    message=$success_notify_text
+    settings_notify
+}
+#Remove failed
+function uninstall_failed() {
+    # All settings
+    notify_options="-i emblem-important-symbolic -u normal -a 'Regata OS Store'"
+    title=$error_notify_title
+    message=$error_notify_text
+    settings_notify
+}
+
+# Remove app
+function remove_app() {
+    # Start uninstall
+    rm -f $progressbar_dir/download-percentage
+    rm -f $progressbar_dir/download-size
+    rm -f $progressbar_dir/download-speed
+    rm -f $progressbar_dir/file-size
+    rm -f $progressbar_dir/eta
+    rm -f $progressbar_dir/progress
+
+    echo "" > $progressbar_dir/progress
+    echo "uninstall" > $progressbar_dir/installing
+    echo "uninstall" > $progressbar_dir/uninstalling
+    echo "uninstall" > $progressbar_dir/uninstalling-$app_nickname
+    echo $app_name_process > $progressbar_dir/app-name
+    echo $app_remove_status > $progressbar_dir/status
+    echo "uninstall" > $progressbar_dir/progress-movement
+    echo "show progress bar" > $progressbar_dir/progressbar
+
+    $command_uninstall
+
+    if [ ! -z $repo_name ];then
+        sudo rm -f "/etc/zypp/repos.d/$repo_name.repo"
+    fi
+}
+
+# Verify that the installation is already in place.
+if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
+
+    # Search for processes
+    if test -e "$progressbar_dir/installing" ; then
+	    # Put the process in the installation queue
+	    kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
+	    if [[ $kmsg != *"$app_nickname"* ]]; then
+			chmod 777 /tmp/progressbar-store/*
+		    echo "$app_nickname=remove process-$app_name_process" >> $progressbar_dir/queued-process
+	    fi
+
+	    #I'm in the process queue, see you later
+	    exit 0
+    fi
+
+    # Make sure the installer is busy
+    ps -C packagekitd > /dev/null
+    if [ $? = 0 ]
+    then
+        echo "packagekitd is here"
+        ps -C rpm > /dev/null
+        if [ $? = 0 ]
+        then
+		    echo "Installation in queue, rpm is here"
+
+	        # Put the process in the installation queue
+	        kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
+	        if [[ $kmsg != *"$app_nickname"* ]]; then
+		        chmod 777 /tmp/progressbar-store/*
+		        echo "$app_nickname=remove process-$Uninstall_queue_packagekitd" >> $progressbar_dir/queued-process
+                echo "" > $progressbar_dir/progress
+                echo "installing" > $progressbar_dir/progress-movement
+                echo $Uninstall_queue > $progressbar_dir/status
+                echo "show progress bar" > $progressbar_dir/progressbar
+	        fi
+
+	        #I'm in the process queue, see you later
+            chmod 777 /tmp/progressbar-store/*
+	        exit 0
+
+        else
+		    echo "rpm is not here"
+		    echo "closing packagekitd"
+		    killall packagekitd
+        fi
+    fi
+
+    ps -C zypper > /dev/null
+    if [ $? = 0 ]
+    then
+		echo "Installation in queue, zypper is here"
+
+	    # Put the process in the installation queue
+	    kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
+	    if [[ $kmsg != *"$app_nickname"* ]]; then
+		    chmod 777 /tmp/progressbar-store/*
+		    echo "$app_nickname=remove process-$Uninstall_queue" >> $progressbar_dir/queued-process
+            echo "" > $progressbar_dir/progress
+            echo "installing" > $progressbar_dir/progress-movement
+            echo $Uninstall_queue > $progressbar_dir/status
+            echo "show progress bar" > $progressbar_dir/progressbar
+	    fi
+
+	    #I'm in the process queue, see you later
+        chmod 777 /tmp/progressbar-store/*
+	    exit 0
+    fi
+
+    ps -C yast2 > /dev/null
+    if [ $? = 0 ]
+    then
+		echo "Installation in queue, yast2 is here"
+
+	    # Put the process in the installation queue
+	    kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
+	    if [[ $kmsg != *"$app_nickname"* ]]; then
+		    chmod 777 /tmp/progressbar-store/*
+		    echo "$app_nickname=remove process-$Uninstall_queue" >> $progressbar_dir/queued-process
+            echo "" > $progressbar_dir/progress
+            echo "installing" > $progressbar_dir/progress-movement
+            echo $Uninstall_queue > $progressbar_dir/status
+            echo "show progress bar" > $progressbar_dir/progressbar
+	    fi
+
+	    #I'm in the process queue, see you later
+        chmod 777 /tmp/progressbar-store/*
+	    exit 0
+    fi
+
+    # Install app
+    remove_app
+
+    # Confirm installation
+    if [[ $($check_uninstall) == *"$architecture"* ]]; then
+		chmod 777 /tmp/progressbar-store/*
+	    rm -f $progressbar_dir/progress-movement
+	    rm -f $progressbar_dir/progress-full
+	    echo $removal_error > $progressbar_dir/progress
+	    echo $removal_error_status > $progressbar_dir/status
+	    uninstall_failed
+		chmod 777 /tmp/progressbar-store/*
+	    sleep 3
+        # Clear cache
+	    rm -f $progressbar_dir/installing
+        rm -f $progressbar_dir/uninstalling-$app_nickname
+
+	    # If there are no more processes, clear the progress bar cache
+	    if test ! -e "$progressbar_dir/queued-1" ; then
+			chmod 777 /tmp/progressbar-store/*
+		    rm -f $progressbar_dir/progressbar
+		    rm -f $progressbar_dir/*
+	    fi
+    else
+		chmod 777 /tmp/progressbar-store/*
+	    rm -f $progressbar_dir/progress-movement
+	    echo "completed" > $progressbar_dir/progress-full
+	    echo "" > $progressbar_dir/status
+	    echo $success_removal > $progressbar_dir/progress
+        sed -i "s/$app_nickname//" $installed_apps
+		chmod 777 /tmp/progressbar-store/*
+	    sleep 1
+        #Clear cache
+	    success_uninstall
+	    rm -f $progressbar_dir/progress-full
+	    rm -f $progressbar_dir/installing
+        rm -f $progressbar_dir/uninstalling-$app_nickname
+	    rm -f $progressbar_dir/progress
+
+	    #If there are no more processes, clear the progress bar cache
+	    if test ! -e "$progressbar_dir/queued-1" ; then
+			chmod 777 /tmp/progressbar-store/*
+		    rm -f $progressbar_dir/progressbar
+		    rm -f $progressbar_dir/*
+	    fi
+    fi
+fi

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "FreeCAD",
+		"nickname": "freecad",
+		"executable": "snap run freecad",
+		"package": "freecad",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://4.bp.blogspot.com/-WY0zYuG4Ap0/WWTvBsVcIHI/AAAAAAAASR8/qOuCz3E_X5kttxPlFqCVlhQ74a_YlZ6qwCLcBGAs/s1600/freecad-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

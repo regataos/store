@@ -1,0 +1,354 @@
+#! /bin/sh
+
+# Settings and variables
+#App name and more information
+app_name="$name"
+app_nickname="$nickname"
+command_install="sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses"
+extra_package="$extra_packages"
+architecture="$architecture"
+file_download="$package"
+repo_name="$repository_name"
+repo_link="$repository_url"
+check_installation="rpm -q $package"
+
+#Variables for notifications
+success_notify_title="$app_name instalado com sucesso!"
+success_notify_text=""
+error_notify_title="Erro na instalação do $app_name!"
+error_notify_text="Ocorreu algum erro na instalação do $app_name."
+
+#General information
+installation_start="Iniciando instalação..."
+installation_queue="Download pendente: instalador ocupado..."
+installation_queue_packagekitd="Download pendente: atualizando o sistema..."
+app_name_process="Instalar o $app_name"
+app_download_status="Baixando o $app_name..."
+app_install_status="Instalando o $app_name..."
+success_installation="Concluído!"
+installation_error="Erro!"
+installation_error_status="Erro na instalação!"
+progressbar_dir="/tmp/progressbar-store"
+installed_apps="/opt/regataos-store/installed-apps/installed-apps.txt"
+
+# Notify
+#Settings for notify
+function settings_notify() {
+	# Determine DBUS_SESSION_BUS_ADDRESS
+    USER_DBUS_PROCESS_NAME="gconfd-2"
+    # Get user
+    user=$(users | awk '{print $1}')
+    # Notify-send executable
+    NOTIFY_SEND_BIN="notify-send $notify_options"
+    #Get pid of user dbus process
+    DBUS_PID=`ps ax | grep $USER_DBUS_PROCESS_NAME | grep -v grep | awk '{ print $1 }'`
+    #Get DBUS_SESSION_BUS_ADDRESS variable
+    DBUS_SESSION=`grep -z DBUS_SESSION_BUS_ADDRESS /proc/$DBUS_PID/environ | sed -e s/DBUS_SESSION_BUS_ADDRESS=//`
+    #Send notify
+    DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION su -c "$NOTIFY_SEND_BIN \"$title\" \"$message\"" $user
+}
+
+#Successful installation
+function success_installation() {
+    # All settings
+    notify_options="-i emblem-ok-symbolic -u normal -a 'Regata OS Store'"
+    title=$success_notify_title
+    message=$success_notify_text
+    settings_notify
+}
+
+#Installation failed
+function installation_failed() {
+    # All settings
+    notify_options="-i emblem-important-symbolic -u normal -a 'Regata OS Store'"
+    title=$error_notify_title
+    message=$error_notify_text
+    settings_notify
+}
+
+# Download and Install app
+function Install_app() {
+    # Add repo for app
+    if [ ! -z $repo_name ];then
+    if test ! -e "/etc/zypp/repos.d/$repo_name.repo" ; then
+
+    # Check repository format
+    if [[ $repo_link == *"stable/x86_64"* ]]; then
+        repo_format="format_1"
+
+    elif [[ $repo_link == *"binary-x86_64"* ]]; then
+        repo_format="format_1"
+
+    elif [[ $repo_link == *"archive/rpm/x86_64"* ]]; then
+        repo_format="format_1"
+
+    else
+        repo_format="format_2"
+    fi
+
+    if [[ $(echo $repo_format) == *"format_1"* ]]; then
+cat > "/etc/zypp/repos.d/$repo_name.repo" << REPOCONTENT
+[$repo_name]
+name=$repo_name
+baseurl=$repo_link
+enabled=1
+autorefresh=0
+gpgcheck=0
+keeppackages=0
+type=rpm-md
+REPOCONTENT
+
+    elif [[ $(echo $repo_format) == *"format_2"* ]]; then
+cat > "/etc/zypp/repos.d/$repo_name.repo" << REPOCONTENT
+[$repo_name]
+name=$repo_name
+baseurl=$(echo $repo_link | sed 's/x86_64//' | sed 's/noarch//')
+enabled=1
+autorefresh=0
+gpgcheck=0
+keeppackages=0
+type=rpm-md
+REPOCONTENT
+
+	else
+cat > "/etc/zypp/repos.d/$repo_name.repo" << REPOCONTENT
+[$repo_name]
+name=$repo_name
+baseurl=$(echo $repo_link | sed 's/x86_64//' | sed 's/noarch//')
+enabled=1
+autorefresh=0
+gpgcheck=0
+keeppackages=0
+type=rpm-md
+REPOCONTENT
+	fi
+
+    fi
+    fi
+
+	# Starting installation
+    echo $app_name > $progressbar_dir/app-name
+    echo $installation_start > $progressbar_dir/status
+    echo "" > $progressbar_dir/progress
+    echo "installing" > $progressbar_dir/installing
+    echo "installing" > $progressbar_dir/installing-$app_nickname
+    echo "show progress bar" > $progressbar_dir/progressbar
+    echo "installing" > $progressbar_dir/progress-movement
+
+    # Update app repo
+    if [ -z $repo_name ];then
+        if [[ $(echo $repo_format) == *"format_1"* ]]; then
+            sudo zypper --non-interactive refresh $repo_link
+
+        elif [[ $(echo $repo_format) == *"format_2"* ]]; then
+            sudo zypper --non-interactive refresh $(echo $repo_link | sed "s/x86_64//" | sed "s/noarch//")
+
+        else
+            sudo zypper --non-interactive refresh $(echo $repo_link | sed "s/x86_64//" | sed "s/noarch//")
+        fi
+
+    else
+        sudo zypper --non-interactive refresh $repo_name
+    fi
+
+    # Download
+    #Link download
+    if [ -z $download_link ];then
+        version=$(zypper info $file_download | grep Ver | awk '{print $3}')
+        app_download_file_name="$file_download-$version.$architecture.rpm"
+        app_download_link="$repo_link/$app_download_file_name"
+
+	elif [[ $download_link == *"undefined"* ]]; then
+        version=$(zypper info $file_download | grep Ver | awk '{print $3}')
+        app_download_file_name="$file_download-$version.$architecture.rpm"
+        app_download_link="$repo_link/$app_download_file_name"
+
+    else
+        version=$(zypper info $file_download | grep Ver | awk '{print $3}' | sed "s/-0//")
+        app_download_file_name="$file_download-$version.$architecture.rpm"
+        app_download_link=$(echo $download_link | sed "s/\[version\]/$version/")
+    fi
+
+    #Prepare the progress bar and downloading
+    rm -f $progressbar_dir/progress-movement
+    echo "installing" > $progressbar_dir/installing
+    echo "installing" > $progressbar_dir/installing-$app_nickname
+    echo $app_name > $progressbar_dir/app-name
+    echo "0%" > $progressbar_dir/progress
+    echo $app_download_status > $progressbar_dir/status
+    chmod 777 /tmp/progressbar-store/*
+    sleep 1
+    echo "show progress bar" > $progressbar_dir/progressbar
+    chmod 777 /tmp/progressbar-store/*
+
+    echo "$progressbar_dir/$app_download_file_name" > $progressbar_dir/file-download-size
+    chmod 777 /tmp/progressbar-store/*
+    echo "wget --no-check-certificate -O $progressbar_dir/$app_download_file_name $app_download_link" > $progressbar_dir/get-pid
+    wget --no-check-certificate -O $progressbar_dir/$app_download_file_name $app_download_link 2>&1 | (pv -n > $progressbar_dir/download-percentage)
+    echo 100% > $progressbar_dir/progress
+    chmod 777 /tmp/progressbar-store/*
+    sleep 1
+    #Clear cache
+    rm -f $progressbar_dir/download-percentage
+    rm -f $progressbar_dir/download-size
+    rm -f $progressbar_dir/download-speed
+    rm -f $progressbar_dir/file-size
+    rm -f $progressbar_dir/eta
+    #Remove cancel script
+    rm -f $progressbar_dir/script-cancel
+
+    # Install app
+    #Prepare the progress bar and install
+    chmod 777 /tmp/progressbar-store/*
+    echo $app_install_status > $progressbar_dir/status
+    echo "" > $progressbar_dir/progress
+    echo "installing" > $progressbar_dir/progress-movement
+
+    #Install with rpm
+    cd $progressbar_dir/
+    $command_install $app_download_file_name
+    $command_install $extra_package
+}
+
+# Check if the application is already being installed
+if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
+
+    # If the installation queue is free, start installing this application
+    if test -e "$progressbar_dir/installing" ; then
+	    # Put the process in the installation queue
+	    kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
+	    if [[ $kmsg != *"$app_nickname"* ]]; then
+			chmod 777 /tmp/progressbar-store/*
+		    echo "$app_nickname=install process-$app_name_process" >> $progressbar_dir/queued-process
+	    fi
+
+	    #I'm in the process queue, see you later
+	    exit 0
+    fi
+
+    # Make sure the installer is busy
+    ps -C packagekitd > /dev/null
+    if [ $? = 0 ]
+    then
+        echo "packagekitd is here"
+        ps -C rpm > /dev/null
+        if [ $? = 0 ]
+        then
+		    echo "Installation in queue, rpm is here"
+
+	        # Put the process in the installation queue
+	        kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
+	        if [[ $kmsg != *"$app_nickname"* ]]; then
+		        chmod 777 /tmp/progressbar-store/*
+		        echo "$app_nickname=install process-$installation_queue_packagekitd" >> $progressbar_dir/queued-process
+                echo "" > $progressbar_dir/progress
+                echo "installing" > $progressbar_dir/progress-movement
+                echo $installation_queue > $progressbar_dir/status
+                echo "show progress bar" > $progressbar_dir/progressbar
+	        fi
+
+	        #I'm in the process queue, see you later
+            chmod 777 /tmp/progressbar-store/*
+	        exit 0
+
+        else
+		    echo "rpm is not here"
+		    echo "closing packagekitd"
+		    killall packagekitd
+        fi
+    fi
+
+    ps -C zypper > /dev/null
+    if [ $? = 0 ]
+    then
+		echo "Installation in queue, zypper is here"
+
+	    # Put the process in the installation queue
+	    kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
+	    if [[ $kmsg != *"$app_nickname"* ]]; then
+		    chmod 777 /tmp/progressbar-store/*
+		    echo "$app_nickname=install process-$installation_queue" >> $progressbar_dir/queued-process
+            echo "" > $progressbar_dir/progress
+            echo "installing" > $progressbar_dir/progress-movement
+            echo $installation_queue > $progressbar_dir/status
+            echo "show progress bar" > $progressbar_dir/progressbar
+	    fi
+
+	    #I'm in the process queue, see you later
+        chmod 777 /tmp/progressbar-store/*
+	    exit 0
+    fi
+
+    ps -C yast2 > /dev/null
+    if [ $? = 0 ]
+    then
+		echo "Installation in queue, yast2 is here"
+
+	    # Put the process in the installation queue
+	    kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
+	    if [[ $kmsg != *"$app_nickname"* ]]; then
+		    chmod 777 /tmp/progressbar-store/*
+		    echo "$app_nickname=install process-$installation_queue" >> $progressbar_dir/queued-process
+            echo "" > $progressbar_dir/progress
+            echo "installing" > $progressbar_dir/progress-movement
+            echo $installation_queue > $progressbar_dir/status
+            echo "show progress bar" > $progressbar_dir/progressbar
+	    fi
+
+	    #I'm in the process queue, see you later
+        chmod 777 /tmp/progressbar-store/*
+	    exit 0
+    fi
+
+    # Install app
+    Install_app
+
+    # Confirm installation
+    if [[ $($check_installation) == *"$architecture"* ]]; then
+		chmod 777 /tmp/progressbar-store/*
+	    rm -f $progressbar_dir/progress-movement
+	    echo "completed" > $progressbar_dir/progress-full
+	    echo "" > $progressbar_dir/status
+	    echo $success_installation > $progressbar_dir/progress
+        echo "$app_nickname" >> $installed_apps
+		chmod 777 /tmp/progressbar-store/*
+	    sleep 1
+        #Clear cache
+	    rm -f $progressbar_dir/progress-full
+	    rm -f $progressbar_dir/installing
+	    rm -f $progressbar_dir/installing-$app_nickname
+	    success_installation
+
+	    #If there are no more processes, clear the progress bar cache
+	    if test ! -e "$progressbar_dir/queued-1" ; then
+			chmod 777 /tmp/progressbar-store/*
+		    rm -f $progressbar_dir/progressbar
+		    rm -f $progressbar_dir/*
+	    fi
+
+        # Start prime config
+        /bin/sh /opt/regataos-prime/scripts/apps-hybrid-graphics
+    else
+		chmod 777 /tmp/progressbar-store/*
+	    rm -f $progressbar_dir/progress-movement
+	    rm -f $progressbar_dir/progress-full
+	    echo $installation_error > $progressbar_dir/progress
+	    echo $installation_error_status > $progressbar_dir/status
+		if [ ! -z $repo_name ];then
+			sudo rm -f "/etc/zypp/repos.d/$repo_name.repo"
+		fi
+	    installation_failed
+		chmod 777 /tmp/progressbar-store/*
+	    sleep 3
+        #Clear cache
+	    rm -f $progressbar_dir/installing
+	    rm -f $progressbar_dir/installing-$app_nickname
+
+	    # If there are no more processes, clear the progress bar cache
+	    if test ! -e "$progressbar_dir/queued-1" ; then
+			chmod 777 /tmp/progressbar-store/*
+		    rm -f $progressbar_dir/progressbar
+		    rm -f $progressbar_dir/*
+	    fi
+    fi
+fi

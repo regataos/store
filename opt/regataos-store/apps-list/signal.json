@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Signal Desktop",
+		"nickname": "signal",
+		"executable": "snap run signal-desktop",
+		"package": "signal-desktop",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-of1A9bVZDdc/X_4jkR7BezI/AAAAAAAAZRc/2UP7y4FpQrwCWdzZIDrzyNoqiQBH4ZIRwCLcBGAsYHQ/s0/signal-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Beekeeper Studio",
+		"nickname": "beekeeper-studio",
+		"executable": "snap run beekeeper-studio",
+		"package": "beekeeper-studio",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-hzUmiZK63ms/Xw0JsswuGRI/AAAAAAAAYrM/y_HJtsf9eugBWGQZnikCWv8tQFOmSAn_gCLcBGAsYHQ/s1600/beekeeper-studio-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

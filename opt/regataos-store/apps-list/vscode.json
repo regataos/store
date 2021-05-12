@@ -1,0 +1,17 @@
+[
+	{
+		"name": "VS Code",
+		"nickname": "vscode",
+		"executable": "/usr/share/code/code --no-sandbox --unity-launch",
+		"package": "code",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "vscode",
+		"repository_cache": "/var/cache/zypp/solv/vscode",
+		"repository_url": "http://packages.microsoft.com/yumrepos/vscode",
+		"icon_backg": "https://3.bp.blogspot.com/-1tFERLiZBsU/XujYx6BqGPI/AAAAAAAAYgA/zzrnf-f2ZuEzD4ngik1AE-Vb63H-DNTcQCLcBGAsYHQ/s1600/vs-code-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]

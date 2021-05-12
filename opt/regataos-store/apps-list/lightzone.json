@@ -1,0 +1,17 @@
+[
+	{
+		"name": "LightZone",
+		"nickname": "lightzone",
+		"executable": "lightzone",
+		"package": "lightzone",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://2.bp.blogspot.com/-inOXPltEX_U/WWLSOcRyWCI/AAAAAAAASJs/BBngYtjBOxUFIzKamPKYWaKLcEMVChHIwCLcBGAs/s1600/LightZone-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

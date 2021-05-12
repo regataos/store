@@ -1,0 +1,17 @@
+[
+	{
+		"name": "MySQL Workbench",
+		"nickname": "mysql-workbench",
+		"executable": "mysql-workbench",
+		"package": "mysql-workbench",
+		"extra_packages": "psqlODBC",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/server-database",
+		"repository_url": "http://download.opensuse.org/repositories/server:database/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://3.bp.blogspot.com/-LY-uErFYhOU/WWTkCw_TpcI/AAAAAAAASRA/cFsI4DfCINo5yahh8sIIz5fJ6pE5jSOwQCLcBGAs/s1600/my-workb-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

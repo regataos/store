@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Deezer",
+		"nickname": "deezer",
+		"executable": "deezer",
+		"package": "deezer",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://1.bp.blogspot.com/-lVm1Y3fAOqI/X68_EE__DNI/AAAAAAAAY_0/0KuvFwGXzHozhsGlECHZCUt5Ypfy8ZUNgCLcBGAsYHQ/s0/deezer-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

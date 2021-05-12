@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Flokk Contacts",
+		"nickname": "flokk-contacts",
+		"executable": "snap run flokk-contacts",
+		"package": "flokk-contacts",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-l0GWjtfVYVM/Xw0H27hxBVI/AAAAAAAAYrA/RkYbAhIJi8Esk2-10kzZ_lee2r31FSN7ACLcBGAsYHQ/s1600/flokk.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

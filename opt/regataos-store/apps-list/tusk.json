@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Tusk",
+		"nickname": "tusk",
+		"executable": "snap run tusk",
+		"package": "tusk",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://2.bp.blogspot.com/-O5JVyRXkRt0/XGCGOyOa8mI/AAAAAAAAWew/DaL0g1ybeaQj3Na45KGX6hhE6ymRzdZdQCLcBGAs/s1600/tusk-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

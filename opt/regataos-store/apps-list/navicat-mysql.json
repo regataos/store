@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Navicat for MySQL",
+		"nickname": "navicat-mysql",
+		"executable": "navicat",
+		"package": "navicat-mysql-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://2.bp.blogspot.com/-60mn6DEG0Nc/Xks0XKj2FBI/AAAAAAAAYOA/iRCGomvvuU86340ZzlFpf_cM_yJc3wkRgCLcBGAsYHQ/s1600/navicate-mysql-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

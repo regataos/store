@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Shutter",
+		"nickname": "shutter",
+		"executable": "shutter",
+		"package": "shutter",
+		"extra_packages": "shutter-lang",
+		"architecture": "noarch",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/leap_15.2",
+		"repository_url": "http://download.opensuse.org/distribution/leap/15.2/repo/oss/noarch",
+		"icon_backg": "https://1.bp.blogspot.com/-iAzKP3PgDI8/X7E0frm3UcI/AAAAAAAAZBI/uD0RUMGsKD4I4gR-GCYYMS3cfjfGlx_GACLcBGAsYHQ/s0/shutter-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

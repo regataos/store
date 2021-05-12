@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Spotify",
+		"nickname": "spotify",
+		"executable": "snap run spotify",
+		"package": "spotify",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://3.bp.blogspot.com/-eYCvJEtvYTQ/WWPTNfZP6aI/AAAAAAAASK8/xks1wUHcBD0gFX7RW2lMqQ7WlbKcXC_UwCLcBGAs/s1600/spotify-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

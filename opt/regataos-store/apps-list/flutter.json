@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Flutter",
+		"nickname": "flutter",
+		"executable": "",
+		"package": "flutter --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-_mQWH1var78/Xw0F4FSn5zI/AAAAAAAAYq0/DypmEZ5xLP03l0dcISQVrj3Jmo4J4gLCgCLcBGAsYHQ/s1600/flutter-backg.png",
+		"price": "free",
+		"dgpu": "none"
+    }
+]

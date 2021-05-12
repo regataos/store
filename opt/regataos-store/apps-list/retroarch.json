@@ -1,0 +1,17 @@
+[
+	{
+		"name": "RetroArch",
+		"nickname": "retroarch",
+		"executable": "snap run retroarch",
+		"package": "retroarch",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-TLqMuMmF7mY/Wkf4ZXXbt_I/AAAAAAAATkg/Q2CVwwQ3MJ0BdV56ztvzKfSfUhQU2LYnwCLcBGAs/s1600/retroarch.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

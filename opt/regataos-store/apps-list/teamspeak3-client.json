@@ -1,0 +1,17 @@
+[
+	{
+		"name": "TeamSpeak Client",
+		"nickname": "teamspeak3-client",
+		"executable": "ts3client",
+		"package": "teamspeak3-client",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://2.bp.blogspot.com/-Pooc6jRj708/WWQLvOEsZiI/AAAAAAAASOE/A8UZTqbBzpYj3cGlfnDoZstXb8NSmmT4gCLcBGAs/s1600/teamviewer-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

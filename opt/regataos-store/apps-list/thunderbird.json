@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Thunderbird",
+		"nickname": "thunderbird",
+		"executable": "thunderbird",
+		"package": "MozillaThunderbird",
+		"extra_packages": "MozillaThunderbird-translations-common",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/mozilla",
+		"repository_url": "http://download.opensuse.org/repositories/mozilla/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://1.bp.blogspot.com/-ijRUttIPBSg/YBLaFxtoaDI/AAAAAAAAZgs/lSPTRLZGXl42YjKqjNAt0iwuQlFoCTvagCLcBGAsYHQ/s0/thunderbird-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

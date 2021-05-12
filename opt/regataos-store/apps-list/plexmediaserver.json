@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Plex Media Server",
+		"nickname": "plexmediaserver",
+		"executable": "env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/plexmediaserver_pms-web.desktop /snap/bin/plexmediaserver.pms-web",
+		"package": "plexmediaserver",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://2.bp.blogspot.com/-Hj7Ci_e_ZxM/Xw0NfvmTYOI/AAAAAAAAYrk/IUuJIRw26uQHNadKeilxi2TJ5FqIaKUEgCLcBGAsYHQ/s1600/plex-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

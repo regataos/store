@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Lutris",
+		"nickname": "lutris",
+		"executable": "lutris",
+		"package": "lutris",
+		"extra_packages": "",
+		"architecture": "noarch",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/games-tools",
+		"repository_url": "http://download.opensuse.org/repositories/games:/tools/openSUSE_Leap_15.2/noarch",
+		"icon_backg": "https://3.bp.blogspot.com/-jv_JIyC8KUQ/XGCExstm5yI/AAAAAAAAWeg/piJ99a6p0jMTGUiItCRbAJPpurPXrVzZACLcBGAs/s1600/lutris-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

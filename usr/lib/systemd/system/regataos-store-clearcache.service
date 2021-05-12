@@ -1,0 +1,9 @@
+[Unit]
+Description=Clear cache for Regata OS Store
+Before=display-manager.service
+
+[Service]
+ExecStart=/bin/sh /opt/regataos-store/scripts/clear-cache
+
+[Install]
+WantedBy=graphical.target

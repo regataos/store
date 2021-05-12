@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Slack",
+		"nickname": "slack",
+		"executable": "snap run slack",
+		"package": "slack --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://3.bp.blogspot.com/-mLb-2wt8dBo/XGDkfyfH1GI/AAAAAAAAWgI/MLxnazBQUsYQuZa5l4wbIntFZHOSOsucwCLcBGAs/s1600/slack-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

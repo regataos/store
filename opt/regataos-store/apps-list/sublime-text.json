@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Sublime Text",
+		"nickname": "sublime-text",
+		"executable": "snap run sublime-text",
+		"package": "sublime-text --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://3.bp.blogspot.com/-Zr2oMZoEpAI/Xkq6aDUQTGI/AAAAAAAAYNI/ndssccROl2wtvLWLlnzXhs0ITG5JeTHhQCLcBGAsYHQ/s1600/sublimetext-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

@@ -1,0 +1,214 @@
+#!/bin/bash
+
+# Take the file name
+FILE1=$1
+
+# Take name package
+kmsg1=$(rpm -qip $FILE1 | grep Name)
+
+name=$(echo $kmsg1 | cut -d: -f2- )
+echo $name
+
+# Take name package
+kmsg2=$(rpm -qip $FILE1 | grep Version)
+
+version=$(echo $kmsg2 | cut -d: -f2- )
+echo $version
+
+# Take description package
+kmsg3=$(pkcon get-details $FILE1 | grep description)
+
+description=$(echo $kmsg3 | cut -d: -f2- )
+echo $description
+
+# Verify that the package is installed
+kmsg5=$(rpm -q $name)
+echo $kmsg5
+
+if [[ $kmsg5 == *"x86"* ]]; then
+
+kmsg4=$(grep -r LANG /home/*/.config/plasma-localerc)
+
+	if [[ $kmsg4 == *"pt"* ]]; then
+
+		zenity --question --icon-name="application-x-rpm" --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --text "<span font='10.1'>Nome: $name\nVersão: $version\nDescrição: $description</span>\n\n<span foreground='red' font='11'>Este pacote já está instalado. Deseja realmente desinstalá-lo?</span>" --title "Package Manager" --ok-label "OK" --cancel-label "Cancelar" --width 430
+		if [ $? -eq "0" ]
+		then
+			kdesu --noignorebutton -c "zypper --non-interactive remove $name" | zenity --icon-name="application-x-rpm" --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --progress --width 350 --pulsate --text "<span font='10.1'>Desinstalando pacote. Isso pode levar um tempo.</span>" --title "Package Manager" --auto-close --auto-kill --no-cancel
+
+			# Checking if app was successfully removed
+			kmsg5=$(rpm -q $name)
+			echo $kmsg
+
+			if [[ $kmsg5 == *"x86"* ]]; then
+				echo "Creating app-remove-error.txt"
+				echo Error > /tmp/apps-scripts/app-remove-error.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			else
+				echo "Creating app-remove-success.txt"
+				echo Successfully > /tmp/apps-scripts/app-remove-success.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			fi
+
+		else
+			echo "Process canceled"
+		fi
+
+	elif [[ $kmsg4 == *"en"* ]]; then
+
+		zenity --question --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --text "<span font='10.1'>Name: $name\nVersion: $version\nDescription: $description</span>\n\n<span foreground='red' font='11'>This package is already installed. Do you really want to uninstall it?</span>" --title "Package Manager" --ok-label "OK" --cancel-label "Cancel" --width 430
+		if [ $? -eq "0" ]
+		then
+			kdesu --noignorebutton -c "zypper --non-interactive remove $name" | zenity --icon-name="application-x-rpm" --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --progress --width 350 --pulsate --text "<span font='10.1'>Uninstalling package. This may take a while.</span>" --title "Package Manager" --auto-close --auto-kill --no-cancel
+
+			# Checking if app was successfully removed
+			kmsg5=$(rpm -q $name)
+			echo $kmsg
+
+			if [[ $kmsg5 == *"x86"* ]]; then
+				echo "Creating app-remove-error.txt"
+				echo Error > /tmp/apps-scripts/app-remove-error.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			else
+				echo "Creating app-remove-success.txt"
+				echo Successfully > /tmp/apps-scripts/app-remove-success.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			fi
+
+		else
+			echo "Process canceled"
+		fi
+
+	else
+
+		zenity --question --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --text "<span font='10.1'>Name: $name\nVersion: $version\nDescription: $description</span>\n\n<span foreground='red' font='11'>This package is already installed. Do you really want to uninstall it?</span>" --title "Package Manager" --ok-label "OK" --cancel-label "Cancel" --width 430
+		if [ $? -eq "0" ]
+		then
+			kdesu --noignorebutton -c "zypper --non-interactive remove $name" | zenity --icon-name="application-x-rpm" --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --progress --width 350 --pulsate --text "<span font='10.1'>Uninstalling package. This may take a while.</span>" --title "Package Manager" --auto-close --auto-kill --no-cancel
+
+			# Checking if app was successfully removed
+			kmsg5=$(rpm -q $name)
+			echo $kmsg
+
+			if [[ $kmsg5 == *"x86"* ]]; then
+				echo "Creating app-remove-error.txt"
+				echo Error > /tmp/apps-scripts/app-remove-error.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			else
+				echo "Creating app-remove-success.txt"
+				echo Successfully > /tmp/apps-scripts/app-remove-success.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			fi
+
+		else
+			echo "Process canceled"
+		fi
+
+	fi
+
+else
+
+	kmsg4=$(grep -r LANG /home/*/.config/plasma-localerc)
+
+	if [[ $kmsg4 == *"pt"* ]]; then
+
+		zenity --question --icon-name="application-x-rpm" --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --text "<span font='10.1'>Nome: $name\nVersão: $version\nDescrição: $description</span>" --title "Package Manager" --ok-label "OK" --cancel-label "Cancelar" --width 350
+		if [ $? -eq "0" ]
+		then
+			kdesu --noignorebutton -c "zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses $FILE1" | zenity --icon-name="application-x-rpm" --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --progress --width 350 --pulsate --text "<span font='10.1'>Instalando pacote. Isso pode levar um tempo.</span>" --title "Package Manager" --auto-close --auto-kill --no-cancel
+
+			# Checking if app was successfully installed
+			kmsg5=$(rpm -q $name)
+			echo $kmsg5
+
+			if [[ $kmsg5 == *"x86"* ]]; then
+				echo "Creating app-success.txt"
+				echo Installed > /tmp/apps-scripts/app-success.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			else
+				echo "Creating app-error.txt"
+				echo NotInstalled > /tmp/apps-scripts/app-error.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			fi
+
+		else
+			echo "Process canceled"
+		fi
+
+	elif [[ $kmsg4 == *"en"* ]]; then
+
+		zenity --question --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --text "<span font='10.1'>Name: $name\nVersion: $version\nDescription: $description</span>" --title "Package Manager" --ok-label "OK" --cancel-label "Cancel" --width 350
+		if [ $? -eq "0" ]
+		then
+			kdesu --noignorebutton -c "zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses $FILE1" | zenity --icon-name="application-x-rpm" --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --progress --width 350 --pulsate --text "<span font='10.1'>Installing package. This may take a while.</span>" --title "Package Manager" --auto-close --auto-kill --no-cancel
+
+			# Checking if app was successfully installed
+			kmsg5=$(rpm -q $name)
+			echo $kmsg5
+
+			if [[ $kmsg5 == *"x86"* ]]; then
+				echo "Creating app-success.txt"
+				echo Installed > /tmp/apps-scripts/app-success.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			else
+				echo "Creating app-error.txt"
+				echo NotInstalled > /tmp/apps-scripts/app-error.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			fi
+
+		else
+			echo "Process canceled"
+		fi
+
+	else
+
+		zenity --question --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --text "<span font='10.1'>Name: $name\nVersion: $version\nDescription: $description</span>" --title "Package Manager" --ok-label "OK" --cancel-label "Cancel" --width 350
+		if [ $? -eq "0" ]
+		then
+			kdesu --noignorebutton -c "zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses $FILE1" | zenity --icon-name="application-x-rpm" --window-icon="/usr/share/icons/breeze/mimetypes/32/application-x-rpm.svg" --progress --width 350 --pulsate --text "<span font='10.1'>Installing package. This may take a while.</span>" --title "Package Manager" --auto-close --auto-kill --no-cancel
+
+			# Checking if app was successfully installed
+			kmsg5=$(rpm -q $name)
+			echo $kmsg5
+
+			if [[ $kmsg5 == *"x86"* ]]; then
+				echo "Creating app-success.txt"
+				echo Installed > /tmp/apps-scripts/app-success.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			else
+				echo "Creating app-error.txt"
+				echo NotInstalled > /tmp/apps-scripts/app-error.txt
+
+				/opt/regataos-store/update-notify/regataos-store-notify-start.sh start
+
+			fi
+
+		else
+			echo "Process canceled"
+		fi
+
+	fi
+
+fi

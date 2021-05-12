@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Amarok",
+		"nickname": "amarok",
+		"executable": "amarok",
+		"package": "amarok",
+		"extra_packages": "amarok-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/leap_15.2",
+		"repository_url": "http://download.opensuse.org/distribution/leap/15.2/repo/oss/x86_64",
+		"icon_backg": "https://2.bp.blogspot.com/-ovHmCD4Gn5s/WWPb0H0CihI/AAAAAAAASLY/kFHi_wv9TTgW_8QisSabzphxxN-WAs4iwCLcBGAs/s1600/amarok-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

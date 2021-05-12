@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Blender",
+		"nickname": "blender",
+		"executable": "snap run blender",
+		"package": "blender --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://3.bp.blogspot.com/-zTfx52AKutk/WWTr0lyKYuI/AAAAAAAASRk/8alC8jFqOAU-D6YyhyOw3TsPiOYp_v1VACLcBGAs/s1600/blender-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

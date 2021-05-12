@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Telegram",
+		"nickname": "telegram",
+		"executable": "snap run telegram-desktop",
+		"package": "telegram-desktop",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-uSgc_X337kU/WWP5Lv47ShI/AAAAAAAASNc/JNC8K3SLJBIsXQNHfLt9O71LCDo5EgtlgCLcBGAs/s1600/telegram-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "MuseScore",
+		"nickname": "musescore",
+		"executable": "musescore",
+		"package": "musescore",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
+		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://3.bp.blogspot.com/-PApq_Yz0nHA/XGB_NUw1yvI/AAAAAAAAWdw/rK8_hrpo4R4dVm_KQmBC_5qDhcYQ67FogCLcBGAs/s1600/musescore-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

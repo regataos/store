@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/roboto-style.css">
+    <link rel="stylesheet" type="text/css" href="css/search.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/progressbar.css">
+    <link rel="stylesheet" type="text/css" href="css/networkoff.css">
+	<script type="text/javascript" src="js/jquery.min-3.2.1.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="js/fas-icons.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/translations/language/index-lang.js"></script>
+	<script type="text/javascript" src="js/check-network.js"></script>
+    <script type="text/javascript" src="js/app-functions/app-functions.js"></script>
+
+    <!-- Get the height of the site and move to the iframe
+    <script type="text/javascript">
+        window.addEventListener("message", function(e) {
+            var this_frame = document.getElementById("iframeregata");
+            if (this_frame.contentWindow === e.source) {
+
+            var text = e.data.height
+            alert(text);
+            }
+        })
+    </script> -->
+
+	<!-- Display content when everything is ready -->
+	<script type="text/javascript">
+		$(function(){
+			$("#loadscreen").fadeOut("slow");
+		});
+
+		$(function(){
+			$(".blocks").fadeIn("slow");
+		});
+	</script>
+
+    <title>Regata OS Store</title>
+</head>
+<body>
+<div id='loadscreen'></div>
+
+    <div class="progress-bar-full">
+        <iframe src="progress-bar/progress-bar-full.html" frameborder="0" class="iframe_pbf" id="iframepbf"></iframe>
+    </div>
+
+    <div class="topbar" onclick='voltar(); setTimeout(function(){ installed(); }, 500);' title='Voltar'>
+        <div class='top-bar-arrow'>
+            <span class='svg svg-arrow-left'>
+            <svg enable-background='new 0 0 14 26' height='20px' id='svg4-Layer_1' version='1.1' viewBox='0 0 14 26' width='14px' x='0px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' y='0px'> <path d='M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z'/> </svg>
+            <span class='alt sr-only'/>
+            </span>
+        </div>
+    </div>
+
+	<div class="sidebar">
+        <div id='search'>
+            <form id="form">
+                <div><input id='field' name='q' onblur='if (this.value == "") {this.value = "Pesquisar";}' onfocus='if (this.value == "Pesquisar") {this.value = "";}' type='text' value='Pesquisar'/>
+                <input class='submit' name='submit' type='submit' value='Pesquisar'/></div>
+            </form>
+        </div>
+        <script type="text/javascript" src="js/search.js"></script>
+
+		<ul>
+            <li class="li-sidebar home" onclick="go_home();">
+                <a class="link-items" onclick="go_home();">
+                    <!-- <i class="fas fa-home" style="display: none;"></i> -->
+                    <img class="icones-menu" title="Descobrir" style="margin-left: 3px;" src="images/img-sidebar/home.png"/>
+                    <p style="margin-left: 17px;"></p>
+                </a>
+            </li>
+            <li class="li-sidebar create" onclick="go_create();">
+                <a class="link-items" onclick="go_create();">
+                    <!-- <i class="fas fa-paint-brush" style="margin-left: 1px;" style="display: none;"></i> -->
+                    <img class="icones-menu" title="Criar" style="margin-left: 3px;" src="images/img-sidebar/create.png"/>
+                    <p style="margin-left: 18px;"></p>
+                </a>
+            </li>
+            <li class="li-sidebar work" onclick="go_work();">
+                <a class="link-items" onclick="go_work();">
+                    <!-- <i class="fas fa-briefcase" style="margin-left: 1px;" style="display: none;"></i> -->
+                    <img class="icones-menu" title="Trabalhar" style="margin-left: 2px;" src="images/img-sidebar/work.png"/>
+                    <p  style="margin-left: 17px;"></p>
+              </a>
+            </li>
+            <li class="li-sidebar game" onclick="go_game();">
+                <a class="link-items" onclick="go_game();">
+                    <!-- <i class="fas fas-margin fa-gamepad" style="margin-left: -2px;" style="display: none;"></i> -->
+                    <img class="icones-menu" title="Jogar" style="width: 30px;" src="images/img-sidebar/gamepad.png"/>
+                    <p style="margin-left: 15px;"></p>
+                </a>
+            </li>
+            <li class="li-sidebar develop" onclick="go_develop();">
+                <a class="link-items" onclick="go_develop();">
+                    <!-- <i class="fas fas-margin fa-laptop-code" style="margin-left: -2px;" style="display: none;"></i> -->
+                    <img class="icones-menu" title="Desenvolver" style="width: 32px;" src="images/img-sidebar/develop.png"/>
+                    <p style="margin-left: 14px;"></p>
+              </a>
+            </li>
+            <li class="li-sidebar utilities" onclick="go_utilities();">
+                <a class="link-items" onclick="go_utilities();">
+                    <!-- <i class="fas fa-tools" style="margin-left: 1px;" style="display: none;"></i> -->
+                    <img class="icones-menu" title="Utilidades" style="margin-left: 4px;" src="images/img-sidebar/tools.png"/>
+                    <p style="margin-left: 19px;"></p>
+              </a>
+            </li>
+            <li class="li-sidebar category" onclick="go_category();" style="display: none;">
+                <a class="link-items" onclick="go_category();">
+                    <i class="fas fa-list" title="Categorias" style="display: none;"></i>
+                    <img class="icones-menu" style="margin-left: 4px;" src="images/img-sidebar/category.png"/>
+                    <p style="margin-left: 19px;"></p>
+              </a>
+            </li>
+            <li class="li-sidebar installed" onclick="go_installed(); setTimeout(function(){ installed(); }, 500);">
+                <a class="link-items" onclick="go_installed(); setTimeout(function(){ installed(); }, 500);">
+                    <!-- <i class="fas fa-check" style="margin-left: 1px;"></i> -->
+                    <img class="icones-menu" title="Instalados" style="margin-left: 4px;" src="images/img-sidebar/installed.png"/>
+                    <p style="margin-left: 18px;"></p>
+              </a>
+            </li>
+            <li class="li-sidebar-b" onclick="fullprogressbar();" style="width: 55px;">
+                <a class="link-items" onclick="fullprogressbar();">
+                    <!-- <i class="fas fa-download" style="color: #0085e4; margin-left: 1px;"></i> -->
+                    <img class="icones-menu" title="Instalação em andamento..." onclick="fullprogressbar();" style="margin-left: 1px;" src="images/img-sidebar/download.png"/>
+                    <p style="margin-left: 18px;"></p>
+              </a>
+            </li>
+            <li class="li-sidebar-uninstalling" onclick="fullprogressbar();" style="width: 55px;">
+                <a class="link-items" onclick="fullprogressbar();">
+                    <!-- <i class="fas fa-download" style="color: #0085e4; margin-left: 1px;"></i> -->
+                    <img class="icones-menu" title="Desinstalação em andamento..." onclick="fullprogressbar();" style="margin-left: 1px;" src="images/img-sidebar/uninstall.png"/>
+                    <p style="margin-left: 18px;"></p>
+              </a>
+            </li>
+        </ul>
+
+        <div class="progress-bar">
+            <iframe src="progress-bar/progress-bar.html" frameborder="0" class="iframe_pb" id="iframepb"></iframe>
+        </div>
+
+	</div>
+
+	<div class="page">
+		<div class="content" id="principle">
+
+            <div class="actions">
+			<div class="action-buttons">
+				<div class="button install" id="installapp">Instalar</div>
+				<div class="button installing">Instalando...</div>
+				<div class="button remove" id="removeapp">Remover</div>
+				<div class="button removing">Removendo...</div>
+                <div class="button open" id="openapp">Abrir</div>
+
+				<div class="button steam">Disponível no Steam</div>
+            </div>
+            </div>
+
+			<iframe src="" allowfullscreen frameborder="0" name="iframeregata" id="iframeregata" class="iframe-pages"></iframe>
+            <script type="text/javascript">
+                homestore();
+            </script>
+	        <script type="text/javascript" src="js/app-functions/app-status.js"></script>
+	        <script type="text/javascript" src="js/app-functions/app-version.js"></script>
+	        <script type="text/javascript" src="js/app-functions/steam-games-functions-buttons.js"></script>
+	        <script type="text/javascript" src="js/app-functions/app-functions-buttons.js"></script>
+			<script type="text/javascript" src="js/app-functions/app-installed.js"></script>
+                    <!-- Third party games -->
+            <script type="text/javascript" src="js/app-functions/games/games-thirdparty.js"></script>
+                    <!-- Game Access -->
+            <script type="text/javascript" src="js/app-functions/game-access/game-access.js"></script>
+        </div>
+	</div>
+
+<div class="networkoff">
+    <div class="networkoff-img" style="background-image:url(images/dino.png);"></div>
+    <div class="networkoff-title">Não foi possível conectar-se à Internet</div>
+    <div class="networkoff-desc">Verifique os cabos de rede, modem e roteador ou<br/> conecte à rede Wi-Fi novamente.</div>
+</div>
+
+</body>
+</html>

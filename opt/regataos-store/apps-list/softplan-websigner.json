@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Softplan Web Signer",
+		"nickname": "softplan-websigner",
+		"executable": "xdg-open https://websigner.softplan.com.br/",
+		"package": "softplan-websigner-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://1.bp.blogspot.com/-wlbswjLawGQ/YJK4AV4vjtI/AAAAAAAAZwg/89r_48wakL4W6ZjJ7EubdhSovy2fuK8bQCLcBGAsYHQ/s0/softplan-websigner-backg.png",
+		"price": "free",
+		"dgpu": "none"
+    }
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "OpenJDK",
+		"nickname": "openjdk",
+		"executable": "",
+		"package": "java-11-openjdk-headless",
+		"extra_packages": "timezone-java java-11-openjdk",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/leap_15.2_updates",
+		"repository_url": "http://download.opensuse.org/update/leap/15.2/oss/x86_64",
+		"icon_backg": "https://1.bp.blogspot.com/-MdyKD0iZT20/X7EqittlMHI/AAAAAAAAZAk/_7KgcAYwLqA4lgz9RBhKaKTUg_KS2h02wCLcBGAsYHQ/s0/openjdk-backg.png",
+		"price": "free",
+		"dgpu": "none"
+    }
+]

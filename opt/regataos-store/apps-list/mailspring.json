@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Mailspring",
+		"nickname": "mailspring",
+		"executable": "snap run mailspring",
+		"package": "mailspring",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://4.bp.blogspot.com/-J6M76zxDYYU/XpdnC2RzQTI/AAAAAAAAYYQ/MAx95vZruzYcizYiVnu2hT7CCLZmtm0hgCLcBGAsYHQ/s1600/mailspring-backg%2B%25281%2529.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

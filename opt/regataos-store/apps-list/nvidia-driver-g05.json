@@ -1,0 +1,17 @@
+[
+	{
+		"name": "NVIDIA Driver",
+		"nickname": "nvidia-driver-g05",
+		"executable": "nvidia-settings",
+		"package": "x11-video-nvidiaG05",
+		"extra_packages": "nvidia-driver-extra nvidia-computeG05 nvidia-gfxG05-kmp-default nvidia-glG05 x11-video-nvidiaG05",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.nvidia.com/opensuse/tumbleweed/x86_64",
+		"icon_backg": "https://4.bp.blogspot.com/-bw4t7QImr7A/WWUC1qEmLnI/AAAAAAAASS8/HBwDQKgpzj8aj3cjscCC_3SoikRg83mEACLcBGAs/s1600/nvidia-backg.png",
+		"price": "free",
+		"dgpu": "none"
+    }
+]

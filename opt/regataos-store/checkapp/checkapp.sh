@@ -1,0 +1,81 @@
+#!/bin/bash
+
+cd /
+
+while :
+do
+
+# This script checks which apps from the Regata OS app store are installed.
+# If any app is installed, it will be added to the file "installed-apps.txt".
+
+# Check if the process should be started
+if test -e "/tmp/apps-scripts/checkapp.txt" ; then
+	rm -f "/tmp/apps-scripts/checkapp.txt"
+
+	# Create the directory "regataos-store"
+	if test ! -e "$HOME/.config/regataos-store" ; then
+		mkdir -p "$HOME/.config/regataos-store"
+	fi
+
+	# Create empty file "installed-apps.txt"
+	if test ! -e "/opt/regataos-store/installed-apps/installed-apps.txt" ; then
+		echo "" > "/opt/regataos-store/installed-apps/installed-apps.txt"
+	fi
+
+	# Check which applications are installed
+	function check_installed_apps_rpm() {
+    	if [[ $(rpm -q $app_package_name) == *"x86"* ]]; then
+        	app_on_list=$(grep -r $app_name "/opt/regataos-store/installed-apps/installed-apps.txt")
+        	if [[ $app_on_list != *"$app_name"* ]]; then
+            	echo $app_name >> "/opt/regataos-store/installed-apps/installed-apps.txt"
+        	fi
+
+		elif [[ $(rpm -q $app_package_name) == *"i586"* ]]; then
+        	app_on_list=$(grep -r $app_name "/opt/regataos-store/installed-apps/installed-apps.txt")
+        	if [[ $app_on_list != *"$app_name"* ]]; then
+            	echo $app_name >> "/opt/regataos-store/installed-apps/installed-apps.txt"
+        	fi
+
+		elif [[ $(rpm -q $app_package_name) == *"noarch"* ]]; then
+        	app_on_list=$(grep -r $app_name "/opt/regataos-store/installed-apps/installed-apps.txt")
+        	if [[ $app_on_list != *"$app_name"* ]]; then
+            	echo $app_name >> "/opt/regataos-store/installed-apps/installed-apps.txt"
+        	fi
+
+    	else
+        	sed -i "s/$app_name//" "/opt/regataos-store/installed-apps/installed-apps.txt"
+    	fi
+	}
+
+	function check_installed_apps_snap() {
+    	if [[ $(snap list $app_package_name) == *"$app_package_name"* ]]; then
+        	app_on_list=$(grep -r $app_name "/opt/regataos-store/installed-apps/installed-apps.txt")
+        	if [[ $app_on_list != *"$app_name"* ]]; then
+            	echo $app_name >> "/opt/regataos-store/installed-apps/installed-apps.txt"
+        	fi
+
+    	else
+        	sed -i "s/$app_name//" "/opt/regataos-store/installed-apps/installed-apps.txt"
+    	fi
+	}
+
+	for i in /opt/regataos-store/apps-list/*.json; do
+		app_name="$(grep -R '"nickname":' $i | awk '{print $2}' | sed 's/"\|,//g')"
+		app_package_name="$(grep -R '"package":' $i | awk '{print $2}' | sed 's/"\|,//g')"
+		package_manager="$(grep -R '"package_manager":' $i | awk '{print $2}' | sed 's/"\|,//g')"
+
+		if [[ $(echo $package_manager) == *"zypper"* ]]; then
+			check_installed_apps_rpm
+		else
+			check_installed_apps_snap
+		fi
+	done
+
+	# Clear empty lines in file "installed-apps.txt"
+	sed '/^$/d' "/opt/regataos-store/installed-apps/installed-apps.txt" > "/opt/regataos-store/installed-apps/installed-apps-new.txt"
+	mv -f "/opt/regataos-store/installed-apps/installed-apps-new.txt" "/opt/regataos-store/installed-apps/installed-apps.txt"
+
+fi
+
+   sleep 3
+done

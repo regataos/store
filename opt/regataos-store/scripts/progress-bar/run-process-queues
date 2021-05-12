@@ -1,0 +1,88 @@
+#!/bin/bash
+
+cd /
+
+while :
+do
+
+function start_installation() {
+
+	progressbar_dir="/tmp/progressbar-store"
+
+	# Make sure there are no critical installation errors
+	if test ! -e "$progressbar_dir/installing" ; then
+	# Check process queue and sort by sequence
+	if test -e "$progressbar_dir/queued-process" ; then
+		check_process=$(cat $progressbar_dir/queued-process | head -1 | tail -1 | cut -d"=" -f 2-)
+
+		if [[ $check_process == *"install"* ]]; then
+			run_process=$(cat $progressbar_dir/queued-process | head -1 | tail -1 | cut -d"=" -f -1)
+
+			sed -i 1d "$progressbar_dir/queued-process"
+
+			export name=$(grep -r '"name":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export nickname=$(grep -r '"nickname":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export package=$(grep -r '"package":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export package_manager=$(grep -r '"package_manager":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export extra_packages=$(grep -r '"extra_packages":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export architecture=$(grep -r '"architecture":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export repository_name=$(grep -r '"repository_name":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export repository_url=$(grep -r '"repository_url":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export download_link=$(grep -r '"download_link":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+
+			sudo -E /opt/regataos-store/installapp/installapp-$package_manager start
+
+		elif [[ $check_process == *"remove"* ]]; then
+			# Clear cache
+			rm -f $progressbar_dir/download-percentage
+			rm -f $progressbar_dir/download-size
+			rm -f $progressbar_dir/download-speed
+			rm -f $progressbar_dir/file-size
+			rm -f $progressbar_dir/eta
+
+			run_process=$(cat $progressbar_dir/queued-process | head -1 | tail -1 | cut -d"=" -f -1)
+
+			sed -i 1d "$progressbar_dir/queued-process"
+
+			export name=$(grep -r '"name":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export nickname=$(grep -r '"nickname":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export package=$(grep -r '"package":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export package_manager=$(grep -r '"package_manager":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export extra_packages=$(grep -r '"extra_packages":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export architecture=$(grep -r '"architecture":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export repository_name=$(grep -r '"repository_name":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export repository_url=$(grep -r '"repository_url":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+			export download_link=$(grep -r '"download_link":' "/opt/regataos-store/apps-list/$run_process.json" | awk '{ print $2 }' | sed 's/"\|,//g');
+
+			sudo -E /opt/regataos-store/removeapp/removeapp-$package_manager start
+
+		else
+			echo "Nothing to do."
+		fi
+	fi
+	fi
+}
+
+ps -C zypper > /dev/null
+if [ $? != 0 ]
+then
+	ps -C yast2 > /dev/null
+	if [ $? != 0 ]
+	then
+		ps -C rpm > /dev/null
+		if [ $? != 0 ]
+		then
+			ps -C packagekitd > /dev/null
+			if [ $? = 0 ]
+			then
+				killall packagekitd
+				start_installation
+			else
+				start_installation
+			fi
+		fi
+	fi
+fi
+
+   sleep 2
+done

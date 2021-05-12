@@ -1,0 +1,17 @@
+[
+	{
+		"name": "KODI",
+		"nickname": "kodi",
+		"executable": "kodi",
+		"package": "kodi",
+		"extra_packages": "kodi.binary-addons",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/packman",
+		"repository_url": "http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.2/Multimedia/x86_64",
+		"icon_backg": "https://3.bp.blogspot.com/-R668qK-Da9E/Xv4OQbw02iI/AAAAAAAAYks/1dRkKqmOOIIjovLkkXIzDKJdDYUW73UvQCLcBGAsYHQ/s1600/kodi-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "GIMP",
+		"nickname": "gimp",
+		"executable": "snap run gimp",
+		"package": "gimp",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://3.bp.blogspot.com/-I0daUYx6T7g/WWLZMCEUfyI/AAAAAAAASKU/IBZUbjMLa5MZ2TXRBidG1gd3g2SCQWE0QCLcBGAs/s1600/gimp-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

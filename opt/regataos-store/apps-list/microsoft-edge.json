@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Microsoft Edge",
+		"nickname": "microsoft-edge",
+		"executable": "microsoft-edge-beta",
+		"package": "microsoft-edge-beta",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "microsoft-edge",
+		"repository_cache": "/var/cache/zypp/solv/microsoft-edge",
+		"repository_url": "https://packages.microsoft.com/yumrepos/edge",
+		"icon_backg": "https://1.bp.blogspot.com/-26MVmxNeguQ/X69H81447yI/AAAAAAAAZAY/6npJIi0eygQVvrZUm_PKR6FhMpAZFM70gCLcBGAsYHQ/s0/microsoft-edge-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

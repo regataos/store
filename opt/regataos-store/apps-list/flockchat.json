@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Flock",
+		"nickname": "flockchat",
+		"executable": "snap run flock-chat",
+		"package": "flock-chat",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://4.bp.blogspot.com/-OKadwNeHEv4/XkqsKQcTG8I/AAAAAAAAYMY/DtpIi07hMvIkIojnc0cMtnoujaD00AfIgCLcBGAsYHQ/s1600/flock-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

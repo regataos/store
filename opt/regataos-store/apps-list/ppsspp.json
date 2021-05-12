@@ -1,0 +1,17 @@
+[
+	{
+		"name": "PPSSPP",
+		"nickname": "ppsspp",
+		"executable": "ppsspp",
+		"package": "ppsspp-qt",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/emulator",
+		"repository_url": "http://download.opensuse.org/repositories/Emulators/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://2.bp.blogspot.com/-Ym8gftgYZ7k/WWKnzo0WHOI/AAAAAAAASGs/d3-QrUlmUE81YvFc-GlwVOCnRjlhcqlnACLcBGAs/s1600/ppsspp-emulator-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

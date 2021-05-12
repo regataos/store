@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Rocket.Chat Desktop",
+		"nickname": "rocketchat-desktop",
+		"executable": "snap run rocketchat-desktop",
+		"package": "rocketchat-desktop",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://4.bp.blogspot.com/-VdidCXnxF20/XkqmuiVQZ1I/AAAAAAAAYMA/ZD1VBxPdKewAc2j8QmflQWohTweFIRaPwCLcBGAsYHQ/s1600/rocketchat-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

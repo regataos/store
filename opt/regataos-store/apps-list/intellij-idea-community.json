@@ -1,0 +1,17 @@
+[
+	{
+		"name": "IDEA Community",
+		"nickname": "intellij-idea-community",
+		"executable": "snap run intellij-idea-community",
+		"package": "intellij-idea-community --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://2.bp.blogspot.com/-ZzZtM5R2bAY/Xw0Rs3k4zeI/AAAAAAAAYr8/Fu3ZG9U0ZzQmWvuOLLzhx6_VKlMBUCu4ACLcBGAsYHQ/s1600/idea-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

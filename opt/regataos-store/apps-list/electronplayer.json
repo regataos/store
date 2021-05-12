@@ -1,0 +1,17 @@
+[
+	{
+		"name": "ElectronPlayer",
+		"nickname": "electronplayer",
+		"executable": "snap run electronplayer-portuguese",
+		"package": "electronplayer-portuguese",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-XKfxCEDPjNU/YF6AnhKbktI/AAAAAAAAZpw/gEavJQmX4M45G0H1V_cjHzCzHnJUceIXwCLcBGAsYHQ/s0/electronplayer-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

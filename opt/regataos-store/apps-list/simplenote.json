@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Simplenote",
+		"nickname": "simplenote",
+		"executable": "snap run simplenote",
+		"package": "simplenote",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-Su7nhZUaSJo/XGCGKxCdzuI/AAAAAAAAWes/51ROmM2TeRUdRmFlBH1x7yegRnFY40ISQCLcBGAs/s1600/simplenote-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

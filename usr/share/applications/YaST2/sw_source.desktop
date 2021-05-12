@@ -1,0 +1,27 @@
+[Desktop Entry]
+X-SuSE-translate=true
+X-SuSE-DocTeamID=ycc_sw_source
+Type=Application
+Categories=System;PackageManager;X-SuSE-ControlCenter-System;
+
+X-KDE-ModuleType=Library
+X-KDE-HasReadOnlyMode=true
+X-SuSE-YaST-Call=repositories
+
+X-SuSE-YaST-Group=Software
+X-SuSE-YaST-Argument=
+X-SuSE-YaST-RootOnly=true
+X-SuSE-YaST-AutoInst=
+X-SuSE-YaST-Geometry=
+X-SuSE-YaST-SortKey=
+X-SuSE-YaST-AutoInstResource=
+
+Icon=yast-sw_source
+Exec=xdg-su -c "/sbin/yast2 repositories"
+
+Name=Software Repositories
+Name[pt_BR]=Repositórios de softwares
+GenericName=Choose the repositories for installation of software packages (CD, network, etc.), add the community repositories
+GenericName[pt_BR]=Escolha os repositórios para a instalação de novos softwares
+StartupNotify=true
+

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Gravit Designer",
+		"nickname": "gravit-designer",
+		"executable": "snap run gravit-designer",
+		"package": "gravit-designer",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://3.bp.blogspot.com/-yThAVYHX46U/WXVQrzJP5UI/AAAAAAAASZA/RwZN6OWIJeU6Wtqz278VS7RFcL_0Qy0gwCLcBGAs/s1600/gravit-designer.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

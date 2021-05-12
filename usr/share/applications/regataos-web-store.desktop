@@ -1,0 +1,25 @@
+[Desktop Entry]
+Categories=Network;WebBrowser;
+Comment[pt_BR]=Loja de aplicativos
+Comment[en_US]=App store
+Comment=App store
+Exec=regataos-store
+GenericName[pt_BR]=Loja de aplicativos
+GenericName[en_US]=App store
+GenericName=App store
+Icon=regataos-store-icon
+MimeType=
+Name[pt_BR]=Regata OS Store
+Name[en_US]=Regata OS Store
+Name=Regata OS Store
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-Protocols=skype
+StartupWMClass=Regata OS Store
+X-KDE-SubstituteUID=false
+X-KDE-Username=

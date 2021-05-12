@@ -1,0 +1,17 @@
+[
+	{
+		"name": "DB4S",
+		"nickname": "db4s",
+		"executable": "snap run sqlitebrowser",
+		"package": "sqlitebrowser --beta",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://3.bp.blogspot.com/-_t0P3RLMclI/XkrMIuGBKiI/AAAAAAAAYN0/xIPolAoMYlkRP-hR8ggFAlJhrjjWPYupgCLcBGAsYHQ/s1600/db4s-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

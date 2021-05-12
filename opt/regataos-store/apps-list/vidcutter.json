@@ -1,0 +1,17 @@
+[
+	{
+		"name": "VidCutter",
+		"nickname": "vidcutter",
+		"executable": "snap run vidcutter",
+		"package": "vidcutter",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://2.bp.blogspot.com/-eKydr1Kb-CA/Xw0LOFTQGYI/AAAAAAAAYrY/v-gZUKkA2qUn_EwP11vP8IthwN48eO4GQCLcBGAsYHQ/s1600/vidcutter-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Ora",
+		"nickname": "orapm",
+		"executable": "snap run ora",
+		"package": "ora",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://4.bp.blogspot.com/-sZkBLsF_RvY/Xkqqsh1jnOI/AAAAAAAAYMM/T0TfXYQ7lNM32bYtvGgdYXvuN-PQfpCkwCLcBGAsYHQ/s1600/orapm-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

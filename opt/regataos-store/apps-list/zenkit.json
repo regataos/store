@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Zenkit",
+		"nickname": "zenkit",
+		"executable": "snap run zenkit",
+		"package": "zenkit",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://3.bp.blogspot.com/-FxYGpYq3--4/XkqlFkGbIPI/AAAAAAAAYL0/92DGj5708CwZ_cYb3Ih3ZNbGRmf9AiW0wCLcBGAsYHQ/s1600/zenkit-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]

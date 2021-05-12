@@ -1,0 +1,17 @@
+[
+	{
+		"name": "SMPlayer",
+		"nickname": "smplayer",
+		"executable": "smplayer",
+		"package": "smplayer",
+		"extra_packages": "smplayer-lang smplayer-skins smplayer-theme-leo smplayer-themes",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
+		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://2.bp.blogspot.com/-Tysof2Z6Esw/WWPZVSA3kfI/AAAAAAAASLQ/RJs7AmpuhfkcB7qzMt3SkGJQWfqg4fYuACLcBGAs/s1600/smplayer-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

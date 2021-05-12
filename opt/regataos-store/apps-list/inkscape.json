@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Inkscape",
+		"nickname": "inkscape",
+		"executable": "inkscape",
+		"package": "inkscape",
+		"extra_packages": "inkscape-lang inkscape-extensions-extra inkscape-extensions-fig paths2openscad",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/graphics",
+		"repository_url": "http://download.opensuse.org/repositories/graphics/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://2.bp.blogspot.com/-gHLBvk1CnSk/WWLXqph829I/AAAAAAAASKM/bV-4KeycFcA5WBw4DdzOO0wy60jS5JQWACLcBGAs/s1600/inkscape-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

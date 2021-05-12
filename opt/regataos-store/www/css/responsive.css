@@ -1,0 +1,81 @@
+@media screen and (max-width: 1920px) {
+    .li-sidebar-b {
+        position: absolute;
+    }
+    .li-sidebar-uninstalling {
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 1327px) {
+    .progress-bar {
+        position: initial;
+    }
+
+    .progress-bar-full {
+        margin-left: 250px;
+        animation-name: example2;
+    }
+
+    @keyframes example2 {
+        from {opacity: 0.5; margin-left: 245px;}
+        to {opacity: 1; margin-left: 250px;}
+    }
+
+    .li-sidebar-b {
+        position: absolute;
+    }
+    .li-sidebar-uninstalling {
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 1175px) {
+    .topbar {
+        margin-left: 65px;
+    }
+
+    .sidebar {
+        width: 55px;
+    }
+
+    .progress-bar-full {
+        margin-left: 75px !important;
+        animation-name: example2;
+    }
+
+    @keyframes example2 {
+        from {opacity: 0.5; margin-left: 70px;}
+        to {opacity: 1; margin-left: 75px;}
+    }
+
+    #search input#field {
+        width: 2px;
+    }
+
+    #search input#field:focus {
+        width: 165px;
+        background-color: #444;
+        margin-left: 170px;
+        box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    }
+
+    .link-items {
+        padding-left: 15px;
+    }
+
+    .link-items p {
+        display: none;
+    }
+
+    .progress-bar {
+        position: absolute;
+    }
+
+    .li-sidebar-b {
+        position: fixed;
+    }
+    .li-sidebar-uninstalling {
+        position: fixed;
+    }
+}

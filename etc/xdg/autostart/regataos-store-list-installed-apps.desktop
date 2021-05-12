@@ -1,0 +1,12 @@
+[Desktop Entry]
+Exec=/opt/regataos-store/checkapp/checkapp.sh
+OnlyShowIn=KDE;
+Type=Service
+MimeType=
+Terminal=false
+X-KDE-autostart-after=root
+X-KDE-StartupNotify=false
+X-KDE-autostart-condition=AutoStart:true
+Icon=system-run
+GenericName=regataos-store-list-installed-apps
+Name=regataos-store-list-installed-apps

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "PyCharm CE",
+		"nickname": "pycharmce",
+		"executable": "snap run pycharm-community",
+		"package": "pycharm-community --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://2.bp.blogspot.com/-ti22_HRw8Qo/WWTlf1x2bbI/AAAAAAAASRE/LFeQrKHOUwUTyGXj4Gre7I336SLGgVoxQCLcBGAs/s1600/pycharm-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Warsaw",
+		"nickname": "warsaw",
+		"executable": "xdg-open https://diagnostico.gasantifraud.com/",
+		"package": "warsaw",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://1.bp.blogspot.com/-bCzyhOiT5RU/X7E-qQ1N7fI/AAAAAAAAZBg/N2NukRmgzAIdZQYFQvf7cA7S5Nf23xAWgCLcBGAsYHQ/s0/warsaw-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Show installation status of snap apps
+#Clear cache
+chmod 777 /tmp/progressbar-store/*
+rm -f "/tmp/progressbar-store/snap-download-percentage"
+rm -f "/tmp/progressbar-store/download-percentage"
+rm -f "/tmp/progressbar-store/download-size"
+rm -f "/tmp/progressbar-store/download-speed"
+rm -f "/tmp/progressbar-store/file-size"
+rm -f "/tmp/progressbar-store/speed"
+rm -f "/tmp/progressbar-store/eta"
+echo "" > /tmp/progressbar-store/progress
+echo "installing" > /tmp/progressbar-store/progress-movement
+
+#Check the default language
+lang=$(grep -r LANG /tmp/regataos-configs/config/plasma-localerc)
+
+#Take the name of the application
+app_name=$(cat /tmp/progressbar-store/app-name)
+
+if [[ $lang == *"pt_BR"* ]]; then
+	echo "Instalando o $app_name..." > /tmp/progressbar-store/status
+
+elif [[ $lang == *"pt_PT"* ]]; then
+	echo "Instalando o $app_name..." > /tmp/progressbar-store/status
+
+elif [[ $lang == *"en_US"* ]]; then
+	echo "Installing $app_name..." > /tmp/progressbar-store/status
+
+else
+	echo "Installing $app_name..." > /tmp/progressbar-store/status
+
+fi

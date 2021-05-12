@@ -1,0 +1,109 @@
+#!/bin/bash
+
+# Create the application settings directory
+if test -e "/tmp/regataos-store/config" ; then
+	chmod 777 "/tmp/regataos-store/config"
+else
+	mkdir -p "/tmp/regataos-store/config"
+	chmod 777 "/tmp/regataos-store/config"
+fi
+
+if test ! -e "/opt/regataos-store/installed-apps/installed-apps.txt" ; then
+	echo "" > "/opt/regataos-store/installed-apps/installed-apps.txt"
+fi
+
+if test -e "$HOME/.local/share/Steam/steamapps" ; then
+	if test ! -e "/tmp/regataos-store/config/steamapps" ; then
+		ln -sf "$HOME/.local/share/Steam/steamapps" "/tmp/regataos-store/config/"
+	fi
+fi
+
+# Create progress bar directory
+if test -e "/tmp/progressbar-store/" ; then
+	chmod 777 "/tmp/progressbar-store/"
+else
+	mkdir -p "/tmp/progressbar-store/"
+	chmod 777 "/tmp/progressbar-store/"
+fi
+
+# Check language
+if test ! -e "/tmp/regataos-configs/config/plasma-localerc" ; then
+	if test ! -e "$HOME/.config/plasma-localerc" ; then
+		if test -e "/etc/xdg/plasma-localerc" ; then
+			cp -f "/etc/xdg/plasma-localerc" "$HOME/.config/plasma-localerc"
+		fi
+	fi
+
+	mkdir -p "/tmp/regataos-configs/config"
+	chmod 777 "/tmp/regataos-configs/config"
+	if test -e "$HOME/.config/plasma-localerc" ; then
+		ln -sf "$HOME/.config/plasma-localerc" "/tmp/regataos-configs/config/"
+	fi
+fi
+
+if test ! -e "/tmp/regataos-configs/config/user-dirs.locale" ; then
+	if test -e "$HOME/.config/user-dirs.locale" ; then
+		mkdir -p "/tmp/regataos-configs/config"
+		chmod 777 "/tmp/regataos-configs/config"
+		ln -sf "$HOME/.config/user-dirs.locale" "/tmp/regataos-configs/config/"
+	fi
+fi
+
+# Clear cache
+ps -C wget > /dev/null
+if [ $? = 1 ]
+then
+	chmod 777 /tmp/progressbar-store/*
+	rm -rf /tmp/progressbar-store/*
+fi
+
+rm -f "/tmp/regataos-store/go-installed"
+
+# Check installed apps
+echo "installed" > "/tmp/apps-scripts/checkapp.txt"
+
+# Create cache directory with Snap apps versions
+echo "update" > "/tmp/apps-scripts/update-snap-version-cache.txt"
+echo "" >> "/tmp/progressbar-store/queued-process"
+
+# Check if the store needs a password to open
+if test -e "/usr/share/regataos/enterprise-iso.txt" ; then
+	permission_store="superuser"
+fi
+
+if [[ $(groups | grep guest-session) == *"guest-session"* ]]; then
+	permission_store="superuser"
+fi
+
+if [[ $(echo $permission_store) == *"superuser"* ]]; then
+	rm -f "/tmp/apps-scripts/store-superuser.txt"
+	xdg-su -c "regataos_store"
+
+	if test -e "/tmp/apps-scripts/store-superuser.txt" ; then
+		if [[ $(ls -l /tmp/apps-scripts/store-superuser.txt) == *"root"* ]]; then
+			if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
+				magma --disable-gpu /opt/regataos-store
+			else
+				magma /opt/regataos-store
+			fi
+		else
+			exit 0
+		fi
+
+	elif test ! -e "/tmp/apps-scripts/store-superuser.txt" ; then
+		exit 0
+
+	else
+		exit 0
+	fi
+
+else
+	if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
+		magma --disable-gpu /opt/regataos-store
+	else
+		magma /opt/regataos-store
+	fi
+fi
+
+# Clear cache
+rm -f "/tmp/apps-scripts/store-superuser.txt"

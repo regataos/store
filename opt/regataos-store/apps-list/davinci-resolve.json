@@ -1,0 +1,17 @@
+[
+	{
+		"name": "DaVinci Resolve",
+		"nickname": "davinci-resolve",
+		"executable": "/opt/resolve/bin/resolve",
+		"package": "davinci-resolve",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://1.bp.blogspot.com/-dMcgqQCmUUc/Wu0O5Vx88wI/AAAAAAAAUdI/yHTDz9p_TGQpgCvSKQe1ovOLtBzlJrU0QCLcBGAs/s1600/davinci-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+	}
+]

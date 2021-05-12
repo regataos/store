@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Synfig Studio",
+		"nickname": "synfig-studio",
+		"executable": "synfig-studio",
+		"package": "synfig-studio",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://4.bp.blogspot.com/-PWydvGkqZUo/Xuji-VKbjRI/AAAAAAAAYgw/LCLl-Y_1sg84BPP3FDZ-G604XQgXzhirgCLcBGAsYHQ/s1600/synfig-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+	}
+]

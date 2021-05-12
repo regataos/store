@@ -1,0 +1,17 @@
+[
+	{
+		"name": "qBittorrent",
+		"nickname": "qbittorrent",
+		"executable": "qbittorrent",
+		"package": "qbittorrent",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/leap_15.2",
+		"repository_url": "http://download.opensuse.org/update/leap/15.2/oss/x86_64",
+		"icon_backg": "https://1.bp.blogspot.com/-dHRBA4_kncw/Wu0c95VN71I/AAAAAAAAUd8/U23PFIPm_gEg2ncpsMRd33-KbLQedbn-ACLcBGAs/s1600/bpittorrent-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

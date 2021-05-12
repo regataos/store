@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Rambox",
+		"nickname": "rambox",
+		"executable": "snap run rambox",
+		"package": "rambox",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://4.bp.blogspot.com/-ECpn7sEBlUk/WWP3QKmPS2I/AAAAAAAASNY/3IFHIUFdO4s4U0V2qvi2hVwIBcfIbuuGQCLcBGAs/s1600/rambox-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "K3b",
+		"nickname": "k3b",
+		"executable": "k3b",
+		"package": "k3b",
+		"extra_packages": "k3b-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/leap_15.2",
+		"repository_url": "http://download.opensuse.org/distribution/leap/15.2/repo/oss/x86_64",
+		"icon_backg": "https://2.bp.blogspot.com/-9wgQ8PEWP6k/WWPsyqutNeI/AAAAAAAASMw/7J65b7VBQZY0lOlP9FOVwROEriukl-JAgCLcBGAs/s1600/k3b-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

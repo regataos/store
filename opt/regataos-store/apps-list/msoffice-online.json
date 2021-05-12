@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Office Online",
+		"nickname": "msoffice-online",
+		"executable": "msoffice-online",
+		"package": "msoffice-online",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://4.bp.blogspot.com/-t0z0-0RJy2s/XHNFfNtF-zI/AAAAAAAAWns/4EGWhiVpO00MVMxh10BsLm4jvFayTvczgCLcBGAs/s1600/office-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

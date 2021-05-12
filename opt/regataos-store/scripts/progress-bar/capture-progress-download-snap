@@ -1,0 +1,91 @@
+#!/bin/bash
+
+cd /
+
+while :
+do
+
+# Clear progress-bar
+if test -e "/tmp/progressbar-store/progress-movement" ; then
+	chmod 777 /tmp/progressbar-store/*
+	rm -f "/tmp/progressbar-store/snap-download-percentage"
+	rm -f "/tmp/progressbar-store/download-percentage"
+	rm -f "/tmp/progressbar-store/download-size"
+	rm -f "/tmp/progressbar-store/download-speed"
+	rm -f "/tmp/progressbar-store/file-size"
+	rm -f "/tmp/progressbar-store/speed"
+	rm -f "/tmp/progressbar-store/eta"
+fi
+
+# Capture progress for JavaScript (SNAP)
+if test -e /tmp/progressbar-store/snap-download-percentage ; then
+
+	# Fix file
+	if test ! -e "/tmp/progressbar-store/progress-movement" ; then
+		fix_file=$(cat "/tmp/progressbar-store/snap-download-percentage" | tr -d "[7m" | tr -d "[0m")
+		echo -e $fix_file | fold -w 10 -s | sed '/^$/d' > "/tmp/regataos-store/snap-download-percentage"
+		sed -i 's/Download/\n\nDownload/' "/tmp/regataos-store/snap-download-percentage"
+		sed -i 's/Fetch/\nFetch/' "/tmp/regataos-store/snap-download-percentage"
+		chmod 777 "/tmp/regataos-store/snap-download-percentage"
+	fi
+
+	percentage=$(tail -3 /tmp/regataos-store/snap-download-percentage | awk '{print $1}' | head -1 | tail -1)
+	if [[ $percentage == *"%"* ]]; then
+
+		# Progress bar and percentage
+		installing=$(cat /tmp/regataos-store/snap-download-percentage)
+		progress=$(tail -3 /tmp/regataos-store/snap-download-percentage | awk '{print $1}' | head -1 | tail -1)
+		progress2=$(tail -7 /tmp/regataos-store/snap-download-percentage | awk '{print $1}' | head -1 | tail -1)
+
+		if [[ $installing == *"Fetch"* ]]; then
+			#If there are no more processes, clear the progress bar cache
+			sudo /opt/regataos-store/scripts/progress-bar/send-installing start
+			chmod 777 /tmp/progressbar-store/*
+    		echo "" > /tmp/progressbar-store/progress
+    		echo "installing" > /tmp/progressbar-store/progress-movement
+		elif [[ $progress2 == *"Fetch"* ]]; then
+			#If there are no more processes, clear the progress bar cache
+			sudo /opt/regataos-store/scripts/progress-bar/send-installing start
+			chmod 777 /tmp/progressbar-store/*
+    		echo "" > /tmp/progressbar-store/progress
+    		echo "installing" > /tmp/progressbar-store/progress-movement
+		elif [[ $installing == *"99%"* ]]; then
+			#If there are no more processes, clear the progress bar cache
+			sudo /opt/regataos-store/scripts/progress-bar/send-installing start
+			chmod 777 /tmp/progressbar-store/*
+    		echo "" > /tmp/progressbar-store/progress
+    		echo "installing" > /tmp/progressbar-store/progress-movement
+		elif [[ $installing == *"98%"* ]]; then
+			chmod 777 /tmp/progressbar-store/*
+			rm -f "/tmp/progressbar-store/snap-download-percentage"
+			echo "100%" > /tmp/progressbar-store/progress
+			echo "100% /" > /tmp/progressbar-store/file-size
+		elif [[ $installing == *"1%"* ]]; then
+			chmod 777 /tmp/progressbar-store/*
+			test_progress1=$(echo $progress | cut -d"%" -f -1)
+			test_progress2=$(cat /tmp/progressbar-store/progress | cut -d"%" -f -1)
+
+			if [ $test_progress1 -ge $test_progress2 ]; then
+				echo $progress > /tmp/progressbar-store/progress
+				echo "$progress /" > /tmp/progressbar-store/file-size
+			fi
+		else
+			echo "0%" > /tmp/progressbar-store/progress
+			echo "0% /" > /tmp/progressbar-store/file-size
+		fi
+
+		# Internet connection speed and estimated time of conclusion
+		if [[ $installing == *"Fetch"* ]]; then
+			rm -f "/tmp/progressbar-store/speed"
+			rm -f "/tmp/progressbar-store/eta"
+		else
+			speed=$(tail -2 /tmp/regataos-store/snap-download-percentage | awk '{print $1}' | head -1 | tail -1 | sed 's,MB/s, MB/s,' | sed 's,KB/s, KB/s,' | sed 's,GB/s, GB/s,')
+			echo $speed > /tmp/progressbar-store/speed
+			eta=$(tail -1 /tmp/regataos-store/snap-download-percentage | awk '{print $1}' | head -1 | tail -1 | sed 's/h/h /' | sed 's/m/m /' | sed 's/s/s /' | sed 's/m s/ ms/')
+			echo $eta > /tmp/progressbar-store/eta
+		fi
+	fi
+fi
+
+   sleep 1
+done

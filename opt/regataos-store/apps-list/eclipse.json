@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Eclipse",
+		"nickname": "eclipse",
+		"executable": "eclipse",
+		"package": "eclipse",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://4.bp.blogspot.com/-MvCwfzRFzDk/WWThIhZIszI/AAAAAAAASQ0/474APB0AoTooeupqf2ENGCpJFBmN0MxoACLcBGAs/s1600/eclipse-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

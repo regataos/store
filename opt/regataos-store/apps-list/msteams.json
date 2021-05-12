@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Microsoft Teams",
+		"nickname": "msteams",
+		"executable": "teams",
+		"package": "teams",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "teams",
+		"repository_cache": "/var/cache/zypp/solv/teams",
+		"repository_url": "http://packages.microsoft.com/yumrepos/ms-teams",
+		"icon_backg": "https://2.bp.blogspot.com/-qmYUCusT72c/XoDGOPGYGII/AAAAAAAAYVU/sqEAToGrBxQBlsgam7cnGUD8h9f252rbwCLcBGAsYHQ/s1600/msteams-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

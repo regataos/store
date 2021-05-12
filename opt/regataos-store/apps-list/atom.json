@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Atom",
+		"nickname": "atom",
+		"executable": "snap run atom",
+		"package": "atom --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://4.bp.blogspot.com/-meTpgp_cfJM/WWTbnKN9XrI/AAAAAAAASQU/YcPP-8HPd04sT-PMerlYHmyO9C5E5RFQQCLcBGAs/s1600/atom-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Rider",
+		"nickname": "rider",
+		"executable": "snap run rider",
+		"package": "rider --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://2.bp.blogspot.com/-OiXktp_gXFE/XkrIzxnvP1I/AAAAAAAAYNo/t4XTOXnGIrM-GbIvRlJTV5j0z9MfdUmbQCLcBGAsYHQ/s1600/rider-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

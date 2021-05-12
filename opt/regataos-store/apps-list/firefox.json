@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Firefox",
+		"nickname": "firefox",
+		"executable": "firefox",
+		"package": "MozillaFirefox",
+		"extra_packages": "MozillaFirefox-branding-upstream MozillaFirefox-translations-common",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/mozilla",
+		"repository_url": "http://download.opensuse.org/repositories/mozilla/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://1.bp.blogspot.com/-EewAw0Z9V_0/Whg6e3TatBI/AAAAAAAATYk/GgiZ_4mDoiEyLqI4qgnv6b5LTCWYnJp5ACLcBGAs/s1600/Firefox-Quantum.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

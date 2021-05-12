@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Android Studio",
+		"nickname": "android-studio",
+		"executable": "snap run android-studio",
+		"package": "android-studio --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://3.bp.blogspot.com/-C5CCzJs1DBs/WWTe0tXFGNI/AAAAAAAASQs/NJHIBVna04Ueyuk9b8-UvIX2nkKsNFVpwCLcBGAs/s1600/android-studio-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+	}
+]

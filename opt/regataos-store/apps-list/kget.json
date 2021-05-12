@@ -1,0 +1,17 @@
+[
+	{
+		"name": "KGet",
+		"nickname": "kget",
+		"executable": "kget",
+		"package": "kget",
+		"extra_packages": "kget-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/leap_15.2",
+		"repository_url": "http://download.opensuse.org/distribution/leap/15.2/repo/oss/x86_64",
+		"icon_backg": "https://4.bp.blogspot.com/-u9YtId_NbRs/WWQzVw6r7lI/AAAAAAAASPg/8J0NIZVQFZ8iGBiPoH72e7-wJcuYVAKqQCLcBGAs/s1600/kget-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

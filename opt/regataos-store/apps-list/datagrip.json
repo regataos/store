@@ -1,0 +1,17 @@
+[
+	{
+		"name": "DataGrip",
+		"nickname": "datagrip",
+		"executable": "snap run datagrip",
+		"package": "datagrip --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://3.bp.blogspot.com/-J8NLBdBaeHU/Xkq-NG-4KyI/AAAAAAAAYNU/RoF8qkeHIH0eZBOocW1EcpibH6SF-B4zwCLcBGAsYHQ/s1600/datagrip-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

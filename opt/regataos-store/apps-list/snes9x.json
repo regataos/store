@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Snes9x",
+		"nickname": "snes9x",
+		"executable": "snes9x-gtk",
+		"package": "snes9x",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/emulator",
+		"repository_url": "http://download.opensuse.org/repositories/Emulators/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://4.bp.blogspot.com/-EqHmn-uoXGs/WWKdIn7946I/AAAAAAAASGE/SujTpQtwIL4pyeOAsxPNw-J-j-S_icVwACLcBGAs/s1600/snes-emulator-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Evernote",
+		"nickname": "evernote-client",
+		"executable": "evernote-client",
+		"package": "evernote-client-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://1.bp.blogspot.com/-zlFsylFjNxs/YGKSSCyLghI/AAAAAAAAZp4/9RPML8DMH4cYANp6sGKQ5G-Bm2F7_TtlQCLcBGAsYHQ/s0/evernote-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

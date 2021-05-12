@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Steam",
+		"nickname": "steam",
+		"executable": "steam",
+		"package": "steam",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"icon_backg": "https://1.bp.blogspot.com/-OIWE_ZsecJU/Xpc9ctUXPBI/AAAAAAAAYXk/RrJyCKtVxmYWvx0wD5QXZdFV0BxJSAACQCLcBGAsYHQ/s1600/steam-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

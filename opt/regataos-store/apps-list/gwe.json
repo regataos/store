@@ -1,0 +1,17 @@
+[
+	{
+		"name": "GreenWithEnvy",
+		"nickname": "gwe",
+		"executable": "env GTK_THEME=Breeze-Dark gwe",
+		"package": "gwe",
+		"extra_packages": "",
+		"architecture": "noarch",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/regataos_20",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/noarch",
+		"icon_backg": "https://4.bp.blogspot.com/-aVGl6y38mnQ/XujbJqglYpI/AAAAAAAAYgM/hNzJB6koOYQ0ZhyJ-XV6mpHNgpfqtXVEQCLcBGAsYHQ/s1600/gwe-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

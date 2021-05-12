@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Brave",
+		"nickname": "brave",
+		"executable": "snap run brave",
+		"package": "brave",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-NTsoUCK0dwg/XSAEnzkYN5I/AAAAAAAAXQ4/eh07r2VxnCIEIKnIvIm8XV8YlzvJP5AFQCLcBGAs/s1600/brave-backg%2B%25281%2529.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

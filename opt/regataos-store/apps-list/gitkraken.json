@@ -1,0 +1,17 @@
+[
+	{
+		"name": "GitKraken",
+		"nickname": "gitkraken",
+		"executable": "snap run gitkraken",
+		"package": "gitkraken",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-yexqUU7l_os/Xkqi77SOcAI/AAAAAAAAYLg/UJh3ShJhPFcZndcHd0zi0n_Uy7NXRlu_QCLcBGAsYHQ/s1600/gitkraken-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

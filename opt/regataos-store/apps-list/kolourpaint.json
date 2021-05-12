@@ -1,0 +1,17 @@
+[
+	{
+		"name": "KolourPaint",
+		"nickname": "kolourpaint",
+		"executable": "kolourpaint",
+		"package": "kolourpaint",
+		"extra_packages": "kolourpaint-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/leap_15.1",
+		"repository_url": "http://download.opensuse.org/distribution/leap/15.2/repo/oss/x86_64",
+		"icon_backg": "https://3.bp.blogspot.com/-u8mPsbFtilQ/WWLVC6bJnNI/AAAAAAAASKA/LuRcYbOYtDM8XbUstA35vGVtPNwBV88HgCLcBGAs/s1600/KolourPaint-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Mupen64Plus",
+		"nickname": "m64py",
+		"executable": "m64py",
+		"package": "m64py",
+		"extra_packages": "",
+		"architecture": "noarch",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/emulator",
+		"repository_url": "http://download.opensuse.org/repositories/Emulators/openSUSE_Leap_15.2/noarch",
+		"icon_backg": "https://2.bp.blogspot.com/-EFqIuDjawEo/WWKpOot05CI/AAAAAAAASG0/uQTWXzhzHs4GmdimszA9ZU9HtOxCj_qtQCLcBGAs/s1600/mupen64plus-emulator-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

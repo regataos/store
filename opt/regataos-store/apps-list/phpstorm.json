@@ -1,0 +1,17 @@
+[
+	{
+		"name": "PhpStorm",
+		"nickname": "phpstorm",
+		"executable": "snap run phpstorm",
+		"package": "phpstorm --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-DIAYo2C45zE/Xkq5Ud9WMiI/AAAAAAAAYM8/6PNNW33QY4Y3XXQiHjbwtZwe_3hlrsEXQCLcBGAsYHQ/s1600/phpstorm-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
