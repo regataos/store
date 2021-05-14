@@ -137,6 +137,20 @@ REPOCONTENT
 
     # Update app repo
     if [ -z $repo_name ];then
+        # Check repository format
+        if [[ $repo_link == *"stable/x86_64"* ]]; then
+            repo_format="format_1"
+
+        elif [[ $repo_link == *"binary-x86_64"* ]]; then
+            repo_format="format_1"
+
+        elif [[ $repo_link == *"archive/rpm/x86_64"* ]]; then
+            repo_format="format_1"
+
+        else
+            repo_format="format_2"
+        fi
+
         if [[ $(echo $repo_format) == *"format_1"* ]]; then
             sudo zypper --non-interactive refresh $repo_link
 
