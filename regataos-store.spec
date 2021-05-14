@@ -9,7 +9,7 @@ Version: 5.1
 Version: 5.3
 %endif
 Release: 0
-Url: https://regataos.com.br/
+Url: https://github.com/regataos/store
 Summary: Application store of Regata OS
 Group: System/GUI/KDE
 BuildRequires: xz
