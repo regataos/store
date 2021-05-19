@@ -4,7 +4,7 @@
 		"nickname": "insync",
 		"executable": "insync start",
 		"package": "insync",
-		"extra_packages": "insync-dolphin",
+		"extra_packages": "insync-dolphin insync-updater",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "insync",
