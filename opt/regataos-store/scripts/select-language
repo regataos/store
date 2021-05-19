@@ -5,6 +5,14 @@ cd /
 while :
 do
 
+# Create the settings directory
+if test -e "/tmp/regataos-configs/config" ; then
+	chmod 777 "/tmp/regataos-configs/config"
+else
+	mkdir -p "/tmp/regataos-configs/config"
+	chmod 777 "/tmp/regataos-configs/config"
+fi
+
 # Select language
 function lang_clear_cache() {
 	# Clear cache
