@@ -15,7 +15,9 @@ if test -e /tmp/progressbar-store/download-percentage ; then
 		progress=$(tail -2 /tmp/progressbar-store/download-percentage | awk '{print $7}' | head -1 | tail -1)
 
 		if [[ $progress == *"salvo"* ]]; then
-			echo "100%"
+			echo "100%" > /tmp/progressbar-store/progress
+		elif [[ $progress == *"saved"* ]]; then
+			echo "100%" > /tmp/progressbar-store/progress
 		else
 			echo $progress > /tmp/progressbar-store/progress
 		fi

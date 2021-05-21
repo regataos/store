@@ -65,7 +65,6 @@ if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
 		capture_iframe.document.getElementById("remove-"+appname).style.backgroundColor = "#e3e3e3";
 		capture_iframe.document.getElementById("remove-"+appname).style.border = "2px solid #bf2d32";
 		capture_iframe.document.getElementById("remove-"+appname).style.color = "#bf2d32";
-		capture_iframe.document.getElementById("remove-"+appname).style.width = "160px";
 		capture_iframe.document.getElementById("remove-"+appname).style.pointerEvents = "none";
 		capture_iframe.document.getElementById("remove-"+appname).innerHTML=text_uninstalling;
 
@@ -87,7 +86,6 @@ if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
 			capture_iframe.document.getElementById("remove-"+appname).style.backgroundColor = "#e3e3e3";
 			capture_iframe.document.getElementById("remove-"+appname).style.border = "2px solid #bf2d32";
 			capture_iframe.document.getElementById("remove-"+appname).style.color = "#bf2d32";
-			capture_iframe.document.getElementById("remove-"+appname).style.width = "160px";
 			capture_iframe.document.getElementById("remove-"+appname).style.pointerEvents = "none";
 			capture_iframe.document.getElementById("remove-"+appname).innerHTML=text_in_queue;
 
@@ -98,7 +96,6 @@ if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
 			capture_iframe.document.getElementById("remove-"+appname).style.backgroundColor = "";
 			capture_iframe.document.getElementById("remove-"+appname).style.border = "2px solid #bf2d32";
 			capture_iframe.document.getElementById("remove-"+appname).style.color = "#ffffff";
-			capture_iframe.document.getElementById("remove-"+appname).style.width = "150px";
 			capture_iframe.document.getElementById("remove-"+appname).style.pointerEvents = "auto";
 			capture_iframe.document.getElementById("remove-"+appname).innerHTML=text_uninstall;
 

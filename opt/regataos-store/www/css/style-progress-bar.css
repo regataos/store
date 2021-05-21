@@ -48,7 +48,7 @@ min-height: 115px;
 line-height: 1.4em;
 background-color: #202225;
 margin-top: 0px;
-padding-top: 25px;
+padding-top: 20px;
 padding-left: 11px;
 padding-right: 12px;
 padding-bottom: 25px;
@@ -219,7 +219,7 @@ font-size: 14px;
 color: #b5bdc7;
 line-height: 1.4em;
 float: left;
-max-width: 160px;
+max-width: 200px;
 }
 
 .down-speed {
@@ -245,7 +245,7 @@ text-align: right;
 font-size: 18px;
 color: #b5bdc7;
 text-align: right;
-width: 88px;
+width: 90px;
 margin-left: 117px;
 }
 

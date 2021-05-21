@@ -25,6 +25,6 @@ $(document).ready(function() {
 		$(".game-button").text("Install");
 		$(".install-button").text("Install");
 		$(".open-button").text("Open");
-		$(".remove-button").text("Remove");
+		$(".remove-button").text("Uninstall");
 	}
 });
