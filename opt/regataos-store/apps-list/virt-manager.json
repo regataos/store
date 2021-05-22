@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Virtual Machine Manager",
+		"nickname": "virt-manager",
+		"executable": "/usr/bin/virt-manager",
+		"package": "virt-manager",
+		"extra_packages": "virt-manager-extra",
+		"architecture": "noarch",
+		"package_manager": "zypper",
+		"repository_name": "virt-manager",
+		"repository_cache": "/var/cache/zypp/solv/virt-manager",
+		"repository_url": "http://download.opensuse.org/repositories/home:/frispete:/15.2:/kvm/openSUSE_Leap_15.2/noarch",
+		"icon_backg": "https://1.bp.blogspot.com/-NYRLgq0zmBg/YKlJunDk6vI/AAAAAAAAZ24/VRk-15vgj_khQNv_wO7bqcS2pf9kRz-WQCLcBGAsYHQ/s0/virt-manager-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
