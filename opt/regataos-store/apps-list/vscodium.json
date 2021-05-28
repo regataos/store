@@ -1,0 +1,17 @@
+[
+	{
+		"name": "VSCodium",
+		"nickname": "vscodium",
+		"executable": "/usr/share/codium/codium --no-sandbox --unity-launch",
+		"package": "codium",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "vscodium",
+		"repository_cache": "/var/cache/zypp/solv/vscodium",
+		"repository_url": "https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms",
+		"icon_backg": "https://1.bp.blogspot.com/-FmT7spXQHTQ/YLBMqBNsPMI/AAAAAAAAZ3o/_aUFvl6zem0Klrlvhh-Sz9F_fkm-zjADgCLcBGAsYHQ/s0/vscodium-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
