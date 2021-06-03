@@ -340,7 +340,19 @@ function go_installed() {
 	fs.writeFileSync("/tmp/regataos-store/go-installed", "go installed");
 }
 
+// For Enterprise
+function for_enterprise() {
+fs.access('/usr/share/regataos/enterprise-iso.txt', (err) => {
+if (!err) {
+	$("li.game").css("display", "none")
+} else {
+	$("li.game").css("display", "block")
+}
+});
+}
+
 setInterval(function() {
+	for_enterprise();
 	show_progressbar();
 	downspeed();
 	homeurl();

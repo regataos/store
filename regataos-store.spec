@@ -6,7 +6,7 @@ Name: regataos-store
 %if 0%{?sle_version} == 150100 && 0%{?is_opensuse}
 Version: 5.1
 %else
-Version: 5.3
+Version: 5.4
 %endif
 Release: 0
 Url: https://github.com/regataos/store
@@ -24,14 +24,10 @@ License: MIT
 Source1: regataos-store-%{version}.tar.xz
 Requires: regataos-repo >= 5.0
 Requires: xz
-Requires: kdesudo
 Requires: xdpyinfo
 Requires: magma >= 5.52.2-lp152.6.1
 Requires: zypper
 Requires: snapd
-Requires: flatpak
-Requires: libflatpak0
-Requires: typelib-1_0-Flatpak-1_0
 Requires: xdg-desktop-portal
 Requires: lsof
 Requires: zenity
