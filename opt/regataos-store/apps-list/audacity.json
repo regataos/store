@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
-		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/openSUSE_Leap_15.2/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/[basedOn]/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-jZT9u-2aEeo/WWPvAonFNwI/AAAAAAAASM4/drO39880TY4Co88bll-6q92SXXjJGQhMQCLcBGAs/s1600/audacity-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

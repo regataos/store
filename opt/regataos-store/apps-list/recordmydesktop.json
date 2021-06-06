@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
-		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/openSUSE_Leap_15.2/noarch",
+		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/[basedOn]/noarch",
 		"icon_backg": "https://4.bp.blogspot.com/-LmDZcg1fmS4/WWPo-xm14cI/AAAAAAAASMk/K5bqtTX5TbQlrEqiPZIR_aIc027KPyL6ACLcBGAs/s1600/recordmydesktop-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

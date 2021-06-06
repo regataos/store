@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/regataos_20",
-		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://1.bp.blogspot.com/-En2khwERtKg/YJKzSwobATI/AAAAAAAAZwY/xHiluvtsrGwRWed4VGk6xC_UJylk57FIACLcBGAsYHQ/s0/safesign-identity-client-backg.png",
 		"price": "free",
 		"dgpu": "none"

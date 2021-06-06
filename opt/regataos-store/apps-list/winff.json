@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/packman",
-		"repository_url": "http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.2/Multimedia/x86_64",
+		"repository_url": "http://ftp.gwdg.de/pub/linux/misc/packman/suse/[basedOn]/Multimedia/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-q8rZAl3X1Vc/XHNHh_9jFPI/AAAAAAAAWoA/dYAI_83CYUwZEuF626VcCGjowLNwnJ3MgCLcBGAs/s1600/winff-backg2.png",
 		"price": "free",
 		"dgpu": "deactivate"

@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/packman",
-		"repository_url": "http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.2/Extra/x86_64",
+		"repository_url": "http://ftp.gwdg.de/pub/linux/misc/packman/suse/[basedOn]/Extra/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-7fWKxroNQJk/WWQbLL5c4lI/AAAAAAAASOg/q0uxGexjh6U151ybBsvlj8PiASDBpvMwACLcBGAs/s1600/discord-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

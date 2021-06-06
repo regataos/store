@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
-		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/openSUSE_Leap_15.2/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/[basedOn]/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-mFcb5W5s9mw/WWPc56_zSRI/AAAAAAAASLg/I9VoK_vYySEtalru1THAn2ptuhm7SOFHACLcBGAs/s1600/audacious-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

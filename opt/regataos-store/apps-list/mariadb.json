@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/server-database",
-		"repository_url": "http://download.opensuse.org/repositories/server:database/openSUSE_Leap_15.2/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/server:database/[basedOn]/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-YGqeRettHuA/XkqyiP4bzMI/AAAAAAAAYMk/sSURO-zwN4kQJqShzL_PqmGM9z4Dmy0fQCLcBGAsYHQ/s1600/mariadb-backg.png",
 		"price": "free",
 		"dgpu": "none"

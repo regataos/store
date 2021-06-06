@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/regataos_20",
-		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://1.bp.blogspot.com/-EIkC1DA1usw/WWTi0hmCm9I/AAAAAAAASQ8/olN3_H2-jEMlaWLs5dnD1uvpqcxtAS3UQCLcBGAs/s1600/monodeveloper-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

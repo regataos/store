@@ -3,11 +3,7 @@
 %define service_name3 capture-progress-download-snap
 
 Name: regataos-store
-%if 0%{?sle_version} == 150100 && 0%{?is_opensuse}
-Version: 5.1
-%else
-Version: 5.4
-%endif
+Version: 21.0
 Release: 0
 Url: https://github.com/regataos/store
 Summary: Application store of Regata OS
@@ -16,7 +12,7 @@ BuildRequires: xz
 BuildRequires: desktop-file-utils
 BuildRequires: update-desktop-files
 BuildRequires: hicolor-icon-theme
-BuildRequires:	-post-build-checks
+BuildRequires: -post-build-checks
 %{?systemd_requires}
 BuildRequires: systemd
 BuildRequires: grep

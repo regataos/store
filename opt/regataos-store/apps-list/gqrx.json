@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "gqrx",
 		"repository_cache": "/var/cache/zypp/solv/gqrx",
-		"repository_url": "http://download.opensuse.org/repositories/home:/kolbma:/sdr/openSUSE_Leap_15.2/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/home:/kolbma:/sdr/[basedOn]/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-yTURWv6ItEA/Xujm5Arz7vI/AAAAAAAAYhI/8uCHAkl4tiEkMh84XUN_UlcnAGarmxmswCLcBGAsYHQ/s1600/gqrx-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

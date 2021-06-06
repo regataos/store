@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/regataos_20",
-		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://1.bp.blogspot.com/-YXwtX_5D1xo/X7E2B-HouuI/AAAAAAAAZBU/KCWk2sjb4VkS9vgr755FZT8QQXQouIJmwCLcBGAsYHQ/s0/trello-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

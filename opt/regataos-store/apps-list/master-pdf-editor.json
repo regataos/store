@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/regataos_20",
-		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://2.bp.blogspot.com/-Pr4TjM0HwrU/Wu0XCLN6GxI/AAAAAAAAUdk/bkexRpADy5MrvsP67OuyiwiUCAb1rbmEACLcBGAs/s1600/marter-pdf-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

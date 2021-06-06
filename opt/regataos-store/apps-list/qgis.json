@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "qgis",
 		"repository_cache": "/var/cache/zypp/solv/qgis",
-		"repository_url": "http://download.opensuse.org/repositories/Application:/Geo/openSUSE_Leap_15.2/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/Application:/Geo/[basedOn]/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-f3Crl6RoMBY/X7Ew6IIjb3I/AAAAAAAAZA8/i1GdfYXCpwYWeYWwve1v-aVVvZoHm7kMgCLcBGAsYHQ/s0/qgis-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

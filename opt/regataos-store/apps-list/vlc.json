@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/packman",
-		"repository_url": "http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_15.2/Essentials/x86_64",
+		"repository_url": "http://ftp.gwdg.de/pub/linux/misc/packman/suse/[basedOn]/Essentials/x86_64",
 		"icon_backg": "https://3.bp.blogspot.com/-NAZbQkh385U/WWPWZRGF22I/AAAAAAAASLI/qTAI53nq3mgZ_VieiVzKJB3A8JfAKV69QCLcBGAs/s1600/vlc-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

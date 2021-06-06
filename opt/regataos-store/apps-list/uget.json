@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/gnome_apps",
-		"repository_url": "http://download.opensuse.org/repositories/GNOME:/Apps/openSUSE_Leap_15.2/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/GNOME:/Apps/[basedOn]/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-cTHyTJ_Wedo/XGCDQBbQy7I/AAAAAAAAWeQ/nwod9Q-R_fo8fDaMowstsKALC5kRJc_hgCLcBGAs/s1600/uget-backg.png",
 		"price": "free",
 		"dgpu": "none"

@@ -18,10 +18,59 @@ const fs = require('fs');
 		var apps = JSON.parse(data);
 
 		for (var i = 0; i < apps.length; i++) {
+		var package = apps[i].package
+		var repository_cache = apps[i].repository_cache
 
+		if ((repository_cache.indexOf("mainRepositoryName") > -1) == "1") {
+			var main_repository_name = "grep -r mainRepositoryName= /usr/share/regataos/regatas-base-version.txt | cut -d'=' -f 2-";
+			exec(main_repository_name, (error, stdout, stderr) => {
+			if (stdout) {
+				var repository_name = stdout
+				var repository_name = repository_name.replace(/(\r\n|\n|\r)/gm, "");
+				var text_content = capture_iframe.document.getElementById("version-" + appname).textContent;
+				if ((text_content.indexOf("recent") > -1) == "1") {
+					var command_line = "grep -r " + package + " /var/cache/zypp/solv/" + repository_name + " | awk '{print $2}' | cut -d'-' -f -1 | cut -d'g' -f -1 | sed s'/file//g' | sed '/^$/d' | tail -1";
+					exec(command_line, (error, stdout, stderr) => {
+					if (stdout) {
+						var AppVersion = stdout
+						if ((stdout.indexOf("nickname") > -1) == "0") {
+							capture_iframe.document.getElementById("version-" + appname).innerHTML=AppVersion;
+						}
+					}
+					});
+				}
+			}
+			});
+
+		} else if ((repository_cache.indexOf("basedOnVersion") > -1) == "1") {
+			var repository_cache = repository_cache.replace(/(\[|\])/gm, "");
+			var based_on_version = 'export basedOnVersion=$(grep -r basedOnVersion= /usr/share/regataos/regatas-base-version.txt | cut -d"=" -f 2-); \
+			echo ' + repository_cache + ' | sed "s,basedOnVersion,$basedOnVersion,"';
+			exec(based_on_version, (error, stdout, stderr) => {
+
+			if (stdout) {
+				var repository_name = stdout
+				var repository_name = repository_name.replace(/(\r\n|\n|\r)/gm, "");
+
+				var text_content = capture_iframe.document.getElementById("version-" + appname).textContent;
+				if ((text_content.indexOf("recent") > -1) == "1") {
+					var command_line = "grep -r " + package + " " + repository_name + " | awk '{print $2}' | cut -d'-' -f -1 | cut -d'g' -f -1 | sed s'/file//g' | sed '/^$/d' | tail -1";
+					exec(command_line, (error, stdout, stderr) => {
+					if (stdout) {
+						var AppVersion = stdout
+						if ((stdout.indexOf("nickname") > -1) == "0") {
+							capture_iframe.document.getElementById("version-" + appname).innerHTML=AppVersion;
+						}
+					}
+					});
+				}
+			}
+			});
+
+		} else {
 			var text_content = capture_iframe.document.getElementById("version-" + appname).textContent;
 			if ((text_content.indexOf("recent") > -1) == "1") {
-				var command_line = "grep -r '" + apps[i].package + "' " + apps[i].repository_cache + " | awk '{print $2}' | cut -d'-' -f -1 | cut -d'g' -f -1 | sed s'/file//g' | sed '/^$/d' | tail -1";
+				var command_line = "grep -r '" + package + "' " + repository_cache + " | awk '{print $2}' | cut -d'-' -f -1 | cut -d'g' -f -1 | sed s'/file//g' | sed '/^$/d' | tail -1";
 				exec(command_line, (error, stdout, stderr) => {
 				if (stdout) {
 					if ((stdout.indexOf("nickname") > -1) == "0") {
@@ -30,6 +79,7 @@ const fs = require('fs');
 				}
 				});
 			}
+		}
 		}
 	}
 }

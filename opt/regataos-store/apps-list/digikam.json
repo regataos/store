@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/leap_15.1",
-		"repository_url": "http://download.opensuse.org/distribution/leap/15.2/repo/oss/x86_64",
+		"repository_url": "http://download.opensuse.org/distribution/leap/[basedOnVersion]/repo/oss/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-7GnvmkBW-WI/WWK3UoD7hsI/AAAAAAAASH8/RBw0M54ZTJgIFLW_N-oyDlalBlZMvJfwACLcBGAs/s1600/digikam-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

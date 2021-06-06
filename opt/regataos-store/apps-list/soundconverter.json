@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
-		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/openSUSE_Leap_15.2/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/[basedOn]/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-6xpGjDpiX_E/Wc71GLpLTxI/AAAAAAAAS2s/k9WO9BDuxV8NLGFa2CyZbyYizBnxgeTWwCLcBGAs/s1600/SoundConverter2.png",
 		"price": "free",
 		"dgpu": "deactivate"

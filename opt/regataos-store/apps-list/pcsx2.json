@@ -8,8 +8,8 @@
 		"architecture": "i586",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/regataos_20",
-		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/i586",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/[basedOn]/i586",
 		"icon_backg": "https://4.bp.blogspot.com/-IbErSVjFbQY/WWKjGq1DlJI/AAAAAAAASGU/pLDj35K8CR4Gz1oi7uMHuHKgpo5Gi8-PgCLcBGAs/s1600/pcsx2-emulator-backg.png",
 		"price": "free",
 		"dgpu": "activate"

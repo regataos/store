@@ -9,8 +9,24 @@ extra_package="$extra_packages"
 architecture="$architecture"
 file_download="$package"
 repo_name="$repository_name"
-repo_link="$repository_url"
 check_installation="rpm -q $package"
+
+# Capture repository url
+repoUrl="$repository_url"
+if [[ $repoUrl == *"[mainRepositoryUrl]"* ]]; then
+    repo_link="$(grep -r mainRepositoryUrl= /usr/share/regataos/regatas-base-version.txt | cut -d'=' -f 2-)"
+
+elif [[ $repoUrl == *"[basedOnVersion]"* ]]; then
+    basedOnVersion="$(grep -r basedOnVersion= /usr/share/regataos/regatas-base-version.txt | cut -d'=' -f 2-)"
+    repo_link=$(echo $repoUrl | sed "s,\[basedOnVersion\],$basedOnVersion,")
+
+elif [[ $repoUrl == *"[basedOn]"* ]]; then
+    basedOn="$(grep -r basedOn= /usr/share/regataos/regatas-base-version.txt | cut -d'=' -f 2-)"
+    repo_link=$(echo $repoUrl | sed "s,\[basedOn\],$basedOn,")
+
+else
+    repo_link="$repoUrl"
+fi
 
 #Variables for notifications
 success_notify_title="$app_name instalado com sucesso!"
