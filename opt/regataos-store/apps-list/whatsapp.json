@@ -1,0 +1,17 @@
+[
+	{
+		"name": "WhatsApp Web",
+		"nickname": "whatsapp",
+		"executable": "/usr/bin/whatsapp-web-client",
+		"package": "whatsapp-web-client",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://1.bp.blogspot.com/-rXjHTyj5CyQ/YL_2NPOpZTI/AAAAAAAAZ6I/SrQpahxel_AUDBMeQazQUg1o1CmZo__vgCLcBGAsYHQ/s0/whatsapp-backg.png",
+		"price": "free",
+		"dgpu": "none"
+    }
+]

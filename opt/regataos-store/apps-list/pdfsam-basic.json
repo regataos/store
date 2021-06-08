@@ -1,0 +1,17 @@
+[
+	{
+		"name": "PDFsam Basic",
+		"nickname": "pdfsam-basic",
+		"executable": "/usr/bin/pdfsam",
+		"package": "pdfsam-basic-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://1.bp.blogspot.com/-O8vqHboDNAQ/YL_0-Ovo5MI/AAAAAAAAZ6A/mrRNOCrd5UsMr0TiIK2WBK-3nfQi4t2NwCLcBGAsYHQ/s0/pdfsam-backg.png",
+		"price": "free",
+		"dgpu": "none"
+    }
+]

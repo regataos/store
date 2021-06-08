@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Zoom",
+		"nickname": "zoom",
+		"executable": "/usr/bin/zoom",
+		"package": "zoom-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://1.bp.blogspot.com/-crsm6FfknIk/YL_8FQM0SKI/AAAAAAAAZ6Q/zFiup2QOtksZT10mhRMcTKhaCdG5XzZ9wCLcBGAsYHQ/s0/zoom-backg.png",
+		"price": "free",
+		"dgpu": "none"
+    }
+]

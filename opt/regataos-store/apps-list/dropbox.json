@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Dropbox",
+		"nickname": "dropbox",
+		"executable": "/usr/bin/dropbox",
+		"package": "dropbox-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://1.bp.blogspot.com/-CRTesNA6mfY/YL_yxRc6uvI/AAAAAAAAZ54/5QhHdqITPWw_gtgSXBlrkko9TmPToy7vQCLcBGAsYHQ/s0/dropbox-backg.png",
+		"price": "free",
+		"dgpu": "none"
+    }
+]
