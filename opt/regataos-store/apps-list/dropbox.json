@@ -2,7 +2,7 @@
 	{
 		"name": "Dropbox",
 		"nickname": "dropbox",
-		"executable": "/usr/bin/dropbox",
+		"executable": "dropbox start -i",
 		"package": "dropbox-updater",
 		"extra_packages": "",
 		"architecture": "x86_64",
