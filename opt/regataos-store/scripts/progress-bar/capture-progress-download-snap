@@ -5,6 +5,11 @@ cd /
 while :
 do
 
+# Check if the OS Store Regatta is running
+ps -C "magma /opt/regataos-store" > /dev/null
+if [ $? = 0 ]
+then
+
 # Clear progress-bar
 if test -e "/tmp/progressbar-store/progress-movement" ; then
 	chmod 777 /tmp/progressbar-store/*
@@ -85,6 +90,11 @@ if test -e /tmp/progressbar-store/snap-download-percentage ; then
 			echo $eta > /tmp/progressbar-store/eta
 		fi
 	fi
+fi
+
+else
+	echo "Nothing to do..."
+	break
 fi
 
    sleep 1

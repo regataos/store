@@ -8,6 +8,10 @@ else
 	chmod 777 "/tmp/regataos-store/config"
 fi
 
+if test ! -e "$HOME/.config/regataos-store" ; then
+	mkdir -p "$HOME/.config/regataos-store/"
+fi
+
 if test ! -e "/opt/regataos-store/installed-apps/installed-apps.txt" ; then
 	echo "" > "/opt/regataos-store/installed-apps/installed-apps.txt"
 fi
@@ -61,9 +65,6 @@ rm -f "/tmp/regataos-store/go-installed"
 
 # Check installed apps
 echo "installed" > "/tmp/apps-scripts/checkapp.txt"
-
-# Create cache directory with Snap apps versions
-echo "update" > "/tmp/apps-scripts/update-snap-version-cache.txt"
 echo "" >> "/tmp/progressbar-store/queued-process"
 
 # Check if the store needs a password to open
@@ -82,9 +83,9 @@ if [[ $(echo $permission_store) == *"superuser"* ]]; then
 	if test -e "/tmp/apps-scripts/store-superuser.txt" ; then
 		if [[ $(ls -l /tmp/apps-scripts/store-superuser.txt) == *"root"* ]]; then
 			if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
-				magma --disable-gpu /opt/regataos-store
+				magma --disable-gpu /opt/regataos-store & sleep 1; /opt/regataos-store/scripts/progress-bar/capture-progress-download & /opt/regataos-store/scripts/progress-bar/create-process-queues & /opt/regataos-store/scripts/checkapp & /opt/regataos-store/scripts/progress-bar/run-process-queues & /opt/regataos-store/scripts/snap-version-cache & sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap
 			else
-				magma /opt/regataos-store
+				magma /opt/regataos-store & sleep 1; /opt/regataos-store/scripts/progress-bar/capture-progress-download & /opt/regataos-store/scripts/progress-bar/create-process-queues & /opt/regataos-store/scripts/checkapp & /opt/regataos-store/scripts/progress-bar/run-process-queues & /opt/regataos-store/scripts/snap-version-cache & sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap
 			fi
 		else
 			exit 0
@@ -99,9 +100,9 @@ if [[ $(echo $permission_store) == *"superuser"* ]]; then
 
 else
 	if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
-		magma --disable-gpu /opt/regataos-store
+		magma --disable-gpu /opt/regataos-store & sleep 1; /opt/regataos-store/scripts/progress-bar/capture-progress-download & /opt/regataos-store/scripts/progress-bar/create-process-queues & /opt/regataos-store/scripts/checkapp & /opt/regataos-store/scripts/progress-bar/run-process-queues & /opt/regataos-store/scripts/snap-version-cache & sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap
 	else
-		magma /opt/regataos-store
+		magma /opt/regataos-store & sleep 1; /opt/regataos-store/scripts/progress-bar/capture-progress-download & /opt/regataos-store/scripts/progress-bar/create-process-queues & /opt/regataos-store/scripts/checkapp & /opt/regataos-store/scripts/progress-bar/run-process-queues & /opt/regataos-store/scripts/snap-version-cache & sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap
 	fi
 fi
 

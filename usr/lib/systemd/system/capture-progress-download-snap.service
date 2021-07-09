@@ -1,9 +1,0 @@
-[Unit]
-Description=Capture progress (Snap)
-Before=display-manager.service
-
-[Service]
-ExecStart=/bin/sh /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap
-
-[Install]
-WantedBy=graphical.target

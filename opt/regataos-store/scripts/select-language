@@ -1,10 +1,5 @@
 #!/bin/bash
 
-cd /
-
-while :
-do
-
 # Create the settings directory
 if test -e "/tmp/regataos-configs/config" ; then
 	chmod 777 "/tmp/regataos-configs/config"
@@ -60,7 +55,6 @@ if test -e "/home/$user/.config/plasma-localerc" ; then
 		lang_en_US
 	fi
 
-	break
 else
 	if test -e "/home/$user/.config/user-dirs.locale" ; then
 		lang=$(cat "/home/$user/.config/user-dirs.locale")
@@ -81,10 +75,8 @@ else
 			lang_clear_cache
 			lang_en_US
 		fi
-
-		break
 	fi
 fi
 
-   sleep 1
-done
+# We're finished!
+exit 0

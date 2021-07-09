@@ -1,0 +1,55 @@
+#!/bin/sh
+
+cd /
+
+while :
+do
+
+# This script checks the version of Snap apps and saves the information
+# in the cache for the Regata OS app store.
+
+# Check if the OS Store Regatta is running and
+# update the cache with versions of the Snap apps
+ps -C "magma /opt/regataos-store" > /dev/null
+if [ $? = 0 ]
+then
+	# Create empty file "snap-version-cache.txt"
+	if test ! -e "/opt/regataos-store/installed-apps/snap-version-cache.txt" ; then
+		echo "" > "/opt/regataos-store/installed-apps/snap-version-cache.txt"
+	fi
+
+	# Check the version of Snap apps
+	for i in /opt/regataos-store/apps-list/*.json; do
+		app_name="$(grep -R '"nickname":' $i | awk '{print $2}' | sed 's/"\|,//g')"
+		app_package_name="$(grep -R '"package":' $i | awk '{print $2}' | sed 's/"\|,//g')"
+		package_manager="$(grep -R '"package_manager":' $i | awk '{print $2}' | sed 's/"\|,//g')"
+
+		if [[ $(echo $package_manager) == *"snap"* ]]; then
+        	app_on_list=$(grep -r $app_name "/opt/regataos-store/installed-apps/snap-version-cache.txt")
+        	if [[ $app_on_list != *"$app_name"* ]]; then
+            	snap_version=$(snap info "$app_package_name" | grep stable: | awk '{print $2}' | head -1 | tail -1)
+            	echo "$app_name $snap_version" >> "/opt/regataos-store/installed-apps/snap-version-cache.txt"
+
+			else
+				snap_version=$(snap info "$app_package_name" | grep stable: | awk '{print $2}' | head -1 | tail -1)
+				snap_version_existing=$(grep -r $app_name "/opt/regataos-store/installed-apps/snap-version-cache.txt" | awk '{print $2}')
+
+				if [[ $(echo "$snap_version") != *"$snap_version_existing"* ]]; then
+					sed -i "/$app_name/d" "/opt/regataos-store/installed-apps/snap-version-cache.txt"
+            		echo "$app_name $snap_version" >> "/opt/regataos-store/installed-apps/snap-version-cache.txt"
+				fi
+        	fi
+		fi
+	done
+
+	# Get rid of the blank lines in the file 
+	sed -i '/^$/d' "/opt/regataos-store/installed-apps/snap-version-cache.txt"
+	break
+
+else
+	echo "Nothing to do..."
+	break
+fi
+
+   sleep 1
+done

@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/opt/regataos-store/scripts/progress-bar/run-process-queues
+Exec=sudo /opt/regataos-store/scripts/select-language
 OnlyShowIn=KDE;
 Type=Service
 MimeType=
@@ -8,5 +8,5 @@ X-KDE-autostart-after=root
 X-KDE-StartupNotify=false
 X-KDE-autostart-condition=AutoStart:true
 Icon=system-run
-GenericName=regataosstore-run-process-queues
-Name=regataosstore-run-process-queues
+GenericName=regataos-store-select-language
+Name=regataos-store-select-language

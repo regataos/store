@@ -5,6 +5,11 @@ cd /
 while :
 do
 
+# Check if the OS Store Regatta is running
+ps -C "magma /opt/regataos-store" > /dev/null
+if [ $? = 0 ]
+then
+
 function start_installation() {
 
 	progressbar_dir="/tmp/progressbar-store"
@@ -82,6 +87,11 @@ then
 			fi
 		fi
 	fi
+fi
+
+else
+	echo "Nothing to do..."
+	break
 fi
 
    sleep 2

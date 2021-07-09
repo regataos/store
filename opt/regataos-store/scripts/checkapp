@@ -5,6 +5,11 @@ cd /
 while :
 do
 
+# Check if the OS Store Regatta is running
+ps -C "magma /opt/regataos-store" > /dev/null
+if [ $? = 0 ]
+then
+
 # This script checks which apps from the Regata OS app store are installed.
 # If any app is installed, it will be added to the file "installed-apps.txt".
 
@@ -75,6 +80,11 @@ if test -e "/tmp/apps-scripts/checkapp.txt" ; then
 	sed '/^$/d' "/opt/regataos-store/installed-apps/installed-apps.txt" > "/opt/regataos-store/installed-apps/installed-apps-new.txt"
 	mv -f "/opt/regataos-store/installed-apps/installed-apps-new.txt" "/opt/regataos-store/installed-apps/installed-apps.txt"
 
+fi
+
+else
+	echo "Nothing to do..."
+	break
 fi
 
    sleep 3

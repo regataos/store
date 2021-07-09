@@ -99,10 +99,10 @@ const fs = require('fs');
 		var text_content = capture_iframe.document.getElementById("version-" + appname).textContent;
 
 		// Read the list of Snap app versions
-		var snap_version_cache = fs.readFileSync("/tmp/regataos-store/config/snap-version-cache.txt", "utf8");
+		var snap_version_cache = fs.readFileSync("/opt/regataos-store/installed-apps/snap-version-cache.txt", "utf8");
 		if ((snap_version_cache.indexOf(appname) > -1) == "1") {
 			if ((text_content.indexOf("recent") > -1) == "1") {
-				var command_line = "grep -R '" + appname + "' /tmp/regataos-store/config/snap-version-cache.txt | awk '{print $2}'";
+				var command_line = "grep -R '" + appname + "' /opt/regataos-store/installed-apps/snap-version-cache.txt | awk '{print $2}'";
 				exec(command_line, (error, stdout, stderr) => {
 				if (stdout) {
 					if ((stdout.indexOf("nickname") > -1) == "0") {

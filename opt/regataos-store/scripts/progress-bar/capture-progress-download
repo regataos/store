@@ -5,6 +5,11 @@ cd /
 while :
 do
 
+# Check if the OS Store Regatta is running
+ps -C "magma /opt/regataos-store" > /dev/null
+if [ $? = 0 ]
+then
+
 # Capture progress for JavaScript (RPM)
 if test -e /tmp/progressbar-store/download-percentage ; then
 
@@ -49,6 +54,11 @@ if test -e /tmp/progressbar-store/download-percentage ; then
 		echo $pid > /tmp/progressbar-store/wget-pid
 
 	fi
+fi
+
+else
+	echo "Nothing to do..."
+	break
 fi
 
    sleep 1
