@@ -1,7 +1,3 @@
-%define service_name regataos-store-selectlanguage
-%define service_name2 regataos-store-clearcache
-%define service_name3 capture-progress-download-snap
-
 Name: regataos-store
 Version: 21.2
 Release: 0
@@ -53,22 +49,6 @@ fi
 # Extract store files at the root of the system
 tar xf /opt/regataos-base/regataos-store-%{version}.tar.xz -C /
 
-# Enable and start systemd service
-%service_add_post %{service_name}.service
-systemctl enable  %{service_name}.service || true
-systemctl start   %{service_name}.service || true
-systemctl restart %{service_name}.service || true
-
-%service_add_post %{service_name2}.service
-systemctl enable  %{service_name2}.service || true
-systemctl start   %{service_name2}.service || true
-systemctl restart %{service_name2}.service || true
-
-%service_add_post %{service_name3}.service
-systemctl enable  %{service_name3}.service || true
-systemctl start   %{service_name3}.service || true
-systemctl restart %{service_name3}.service || true
-
 # Fix installed apps
 if test -e "/tmp/regataos-store/config" ; then
 	chmod 777 "/tmp/regataos-store/config"
@@ -106,6 +86,30 @@ fi
 
 # Add guest user group
 getent group guest-session >/dev/null || groupadd -r guest-session
+
+# Some changes needed for the new version of Regata OS Store
+if test -e "/etc/xdg/autostart/regataos-store-capture-progress-download.desktop"; then
+  rm -f "/etc/xdg/autostart/regataos-store-capture-progress-download.desktop"
+  rm -f "/etc/xdg/autostart/regataos-store-create-process-queues.desktop"
+  rm -f "/etc/xdg/autostart/regataos-store-list-installed-apps.desktop"
+  rm -f "/etc/xdg/autostart/regataos-store-run-process-queues.desktop"
+  rm -f "/etc/xdg/autostart/regataos-store-snap-version-cache.desktop"
+  rm -f "/etc/xdg/autostart/regataos-store-x.desktop"
+
+  systemctl stop regataos-store-selectlanguage.service || true
+  systemctl disable regataos-store-selectlanguage.service || true
+  systemctl stop regataos-store-clearcache.service || true
+  systemctl disable regataos-store-clearcache.service || true
+  systemctl stop capture-progress-download-snap.service || true
+  systemctl disable capture-progress-download-snap.service || true
+
+  killall capture-progress-download-snap
+  killall capture-progress-download
+  killall snap-version-cache.sh
+  killall create-process-queues
+  killall run-process-queues
+  killall checkapp
+fi
 
 update-desktop-database
 
