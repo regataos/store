@@ -2,7 +2,7 @@
 	{
 		"name": "Popcorn Time",
 		"nickname": "popcorn-time",
-		"executable": "popcorn-time",
+		"executable": "/opt/popcorn-time/Popcorn-Time",
 		"package": "popcorn-time",
 		"extra_packages": "",
 		"architecture": "x86_64",
