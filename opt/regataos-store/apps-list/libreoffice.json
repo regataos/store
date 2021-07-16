@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "LibreOffice",
 		"repository_cache": "/var/cache/zypp/solv/LibreOffice",
-		"repository_url": "http://download.opensuse.org/repositories/LibreOffice:/7.0/[basedOn]/x86_64",
+		"repository_url": "https://download.opensuse.org/repositories/LibreOffice:/7.1/openSUSE_Leap_15.2/x86_64",
 		"icon_backg": "https://3.bp.blogspot.com/-4iozYggvJoQ/WWTnnsL-nHI/AAAAAAAASRM/YFXID01Av_wtd23-RkXcCdYvWcA-wl3IQCLcBGAs/s1600/libreoffice-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"
