@@ -1,4 +1,5 @@
 #!/bin/bash
 
+mkdir -p /tmp/apps-scripts/
 cd /tmp/apps-scripts/
 echo "open store" > store-superuser.txt
