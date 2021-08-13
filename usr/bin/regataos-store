@@ -64,6 +64,7 @@ fi
 rm -f "/tmp/regataos-store/go-installed"
 
 # Check installed apps
+mkdir -p /tmp/apps-scripts/
 echo "installed" > "/tmp/apps-scripts/checkapp.txt"
 echo "" >> "/tmp/progressbar-store/queued-process"
 
