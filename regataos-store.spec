@@ -17,7 +17,7 @@ Source1: regataos-store-%{version}.tar.xz
 Requires: regataos-repo >= 5.0
 Requires: xz
 Requires: xdpyinfo
-Requires: magma >= 5.52.2-lp152.6.1
+Requires: magma >= 5.54.1
 Requires: zypper
 Requires: snapd
 Requires: xdg-desktop-portal
@@ -61,11 +61,11 @@ if test ! -e "/tmp/regataos-store/config/installed-apps.txt" ; then
 	mkdir -p "/tmp/regataos-store/config"
 	chmod 777 "/tmp/regataos-store/config"
 
-    user=$(users | awk '{print $1}')
-    mkdir -p "/home/$user/.config/regataos-store"
-    chmod 777 "/home/$user/.config/regataos-store"
-    echo "" >> "/home/$user/.config/regataos-store/installed-apps.txt"
-    chmod 777 /home/$user/.config/regataos-store/*
+  user=$(users | awk '{print $1}')
+  mkdir -p "/home/$user/.config/regataos-store"
+  chmod 777 "/home/$user/.config/regataos-store"
+  echo "" >> "/home/$user/.config/regataos-store/installed-apps.txt"
+  chmod 777 /home/$user/.config/regataos-store/*
 
 	ln -sf "/home/$user/.config/regataos-store/installed-apps.txt" "/tmp/regataos-store/config/"
 	chmod 777 /tmp/regataos-store/config/*
@@ -111,7 +111,12 @@ if test -e "/etc/xdg/autostart/regataos-store-capture-progress-download.desktop"
   killall checkapp
 fi
 
+# Setting the Regata OS Store language
+sudo /opt/regataos-store/scripts/select-language
 update-desktop-database
+
+# We're finished!
+exit 0
 
 %clean
 
