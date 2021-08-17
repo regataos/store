@@ -1,5 +1,5 @@
 Name: regataos-store
-Version: 21.2
+Version: 21.3
 Release: 0
 Url: https://github.com/regataos/store
 Summary: Application store of Regata OS

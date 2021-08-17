@@ -3,7 +3,7 @@
 		"name": "DaVinci Resolve",
 		"nickname": "davinci-resolve",
 		"executable": "/opt/resolve/bin/resolve",
-		"package": "davinci-resolve",
+		"package": "davinci-resolve-updater",
 		"extra_packages": "",
 		"architecture": "x86_64",
 		"package_manager": "zypper",

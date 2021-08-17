@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Iriun Webcam",
+		"nickname": "iriunwebcam",
+		"executable": "/usr/local/bin/iriunwebcam",
+		"package": "iriunwebcam-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEjAZkFSi2GXMVldIJ2rkncj25jx7yWzZrKDgaC6KriqQHVPgEWroA33FQVHriC1E2I9j_cagNn5-Su8jHxUvLyMKbs5t3zM_sN4PngULzqQHDR9hmzoLyei6rFlreS40ICEYLMuFwmzpkp-AhfTC29f_Nfh2tZzZSLPji2tqFM_llthYAOBQy_zJ_TTvw",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]
