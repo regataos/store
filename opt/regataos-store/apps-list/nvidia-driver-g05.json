@@ -8,7 +8,7 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
+		"repository_cache": "/var/cache/zypp/solv/nvidia",
 		"repository_url": "http://download.nvidia.com/opensuse/tumbleweed/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-bw4t7QImr7A/WWUC1qEmLnI/AAAAAAAASS8/HBwDQKgpzj8aj3cjscCC_3SoikRg83mEACLcBGAs/s1600/nvidia-backg.png",
 		"price": "free",
