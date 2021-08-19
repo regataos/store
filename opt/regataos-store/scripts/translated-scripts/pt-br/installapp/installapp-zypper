@@ -367,10 +367,12 @@ if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
 		if [ ! -z $repo_name ];then
 			sudo rm -f "/etc/zypp/repos.d/$repo_name.repo"
 		fi
+
 	    installation_failed
 		chmod 777 /tmp/progressbar-store/*
 	    sleep 3
         #Clear cache
+	    rm -f $progressbar_dir/progress-full
 	    rm -f $progressbar_dir/installing
 	    rm -f $progressbar_dir/installing-$app_nickname
 

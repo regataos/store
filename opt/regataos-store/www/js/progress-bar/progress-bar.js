@@ -125,17 +125,8 @@ if (!err) {
 		var percentage = percentage
 		$(".progress").css("width", percentage)
 		$(".percentage").text(percentage);
-
-		if (percentage.length <= 1) {
-			$(".status").css("max-width", "200px")
-		} else {
-			$(".status").css("max-width", "160px")
-		}
 	});
-	return;
-
-} else {
-	$(".status").css("max-width", "200px")
+return;
 }
 });
 }
