@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/regataos_20",
-		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.2/x86_64",
+		"repository_cache": "/var/cache/zypp/solv/regataos_tumbleweed",
+		"repository_url": "https://download.opensuse.org/repositories/home:/regataos/openSUSE_Tumbleweed/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-6ZJ-2mQNAFc/XujdVIMGARI/AAAAAAAAYgY/YRO7xV5QUNI5JohXxYlGC5Bpi1iSp1JzwCLcBGAsYHQ/s1600/corectrl-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"
