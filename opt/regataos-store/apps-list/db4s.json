@@ -3,7 +3,7 @@
 		"name": "DB4S",
 		"nickname": "db4s",
 		"executable": "snap run sqlitebrowser",
-		"package": "sqlitebrowser --beta",
+		"package": "sqlitebrowser",
 		"extra_packages": "",
 		"architecture": "",
 		"package_manager": "snap",
