@@ -98,6 +98,9 @@ function Install_app() {
     elif [[ $repo_link == *"archive/rpm/x86_64"* ]]; then
         repo_format="format_1"
 
+    elif [[ $repo_link == *".com/x86_64"* ]]; then
+        repo_format="format_1"
+
     else
         repo_format="format_2"
     fi
