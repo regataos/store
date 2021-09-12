@@ -1,15 +1,15 @@
 [
 	{
-		"name": "AntiMicro",
-		"nickname": "antimicro",
-		"executable": "antimicro",
-		"package": "antimicro",
+		"name": "AntiMicroX",
+		"nickname": "antimicrox",
+		"executable": "antimicrox",
+		"package": "antimicrox",
 		"extra_packages": "",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/hardware",
-		"repository_url": "http://download.opensuse.org/repositories/hardware/[basedOn]/x86_64",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://2.bp.blogspot.com/-SIA9aebNFRo/WWKwHMS4y8I/AAAAAAAASHU/gxiaftwKcOs2_fRq2qs2JW6u8RnZq6_ogCLcBGAs/s1600/antimicro-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"
