@@ -6,7 +6,7 @@ app_name="$name"
 app_nickname="$nickname"
 command_install="$package"
 appname=$(echo $package | sed 's/ --classic\| --beta//')
-package_size=$(snap info $appname | grep stable | awk '{print $5}' | sed 's/MB/ MB/' | sed 's/KB/ KB/' | sed 's/GB/ GB/')
+package_size=$(snap info $appname | grep stable | awk '{print $5}' | sed '/^$/d' | head -1 | tail -1 | sed 's/MB/ MB/' | sed 's/KB/ KB/' | sed 's/GB/ GB/')
 
 #Variables for notifications
 success_notify_title="$app_name instalado com sucesso!"
