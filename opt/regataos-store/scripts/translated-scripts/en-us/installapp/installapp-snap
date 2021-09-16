@@ -64,6 +64,23 @@ function installation_failed() {
 
 # Download and Install app
 function Install_app() {
+	# Starting installation
+    echo $app_name > $progressbar_dir/app-name
+    echo $installation_start > $progressbar_dir/status
+    echo "" > $progressbar_dir/progress
+    echo "installing" > $progressbar_dir/installing
+    echo "installing" > $progressbar_dir/installing-$app_nickname
+    echo "show progress bar" > $progressbar_dir/progressbar
+    echo "installing" > $progressbar_dir/progress-movement
+
+	# Fix snap
+	if test ! -e /usr/share/regataos/create-iso.txt ; then
+		systemctl enable --now snapd.socket || true
+		systemctl start snapd.socket || true
+		sudo snap install core
+		sudo snap refresh core
+	fi
+
     # Download and install
     #Prepare the progress bar and downloading
     rm -f $progressbar_dir/progress-movement
