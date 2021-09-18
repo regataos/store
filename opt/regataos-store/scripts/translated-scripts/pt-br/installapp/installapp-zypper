@@ -184,6 +184,15 @@ REPOCONTENT
         sudo zypper --non-interactive refresh $repo_name
     fi
 
+    # Check if there is a need to install or remove any packages before installing the app
+    if [ ! -z $package_prerm ]; then
+		sudo zypper --non-interactive remove $package_prerm
+    fi
+
+    if [ ! -z $package_preinst ]; then
+		sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses $package_preinst
+    fi
+
     # Download
     #Link download
     if [ -z $download_link ];then

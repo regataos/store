@@ -4,6 +4,8 @@
 		"nickname": "libreoffice",
 		"executable": "libreoffice",
 		"package": "libreoffice",
+		"package_prerm": "libreoffice-branding-openSUSE",
+		"package_preinst": "libreoffice-branding-upstream",
 		"extra_packages": "libreoffice-qt5 libreoffice-branding-upstream libreoffice-calc libreoffice-draw libreoffice-gnome libreoffice-icon-themes libreoffice-impress libreoffice-l10n-pt_BR libreoffice-l10n-pt_PT libreoffice-l10n-es libreoffice-l10n-fr libreoffice-math libreoffice-writer libreoffice-base libreoffice-base-drivers-postgresql",
 		"architecture": "x86_64",
 		"package_manager": "zypper",

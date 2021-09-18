@@ -13,6 +13,8 @@ for (var i = 0; i < apps.length; i++) {
 		window.name = apps[i].name;
 		window.nickname = apps[i].nickname;
 		window.package = apps[i].package;
+		window.package_prerm = apps[i].package_prerm;
+		window.package_preinst = apps[i].package_preinst;
 		window.extra_packages = apps[i].extra_packages;
 		window.executable = apps[i].executable;
 		window.architecture = apps[i].architecture;
@@ -85,6 +87,8 @@ if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
 			var command_line = 'export name="' + name + '"; \
 			export nickname="' + nickname + '"; \
 			export package="' + package + '"; \
+			export package_prerm="' + package_prerm + '"; \
+			export package_preinst="' + package_preinst + '"; \
 			export extra_packages="' + extra_packages + '"; \
 			export architecture="' + architecture + '"; \
 			export repository_name="' + repository_name + '"; \
