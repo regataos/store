@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/leap_15.1",
-		"repository_url": "http://download.opensuse.org/distribution/leap/[basedOnVersion]/repo/oss/x86_64",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://1.bp.blogspot.com/-K5X9398nrSk/YBLcM4FhVDI/AAAAAAAAZg4/fw3oTOUQ_24D8ZE9MS4GT7sQLA1JRGMTgCLcBGAsYHQ/s0/krita-backg.png",
 		"price": "free",
 		"dgpu": "activate"
