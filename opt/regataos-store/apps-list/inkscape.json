@@ -2,7 +2,7 @@
 	{
 		"name": "Inkscape",
 		"nickname": "inkscape",
-		"executable": "inkscape",
+		"executable": "regataos_inkscape",
 		"package": "inkscape",
 		"extra_packages": "inkscape-lang inkscape-extensions-extra inkscape-extensions-fig paths2openscad",
 		"architecture": "x86_64",
