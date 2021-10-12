@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Notepadqq",
+		"nickname": "notepadqq",
+		"executable": "notepadqq",
+		"package": "",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEgGQfJKimW3pU9fKNxsWaUiL1sdldYxX7nUYwFkNEpgeQMf2Svt2RLQC88u-GgdgjD9ZSz9-3wFHCHs0ltIPTB9shHLTX5JTvMZCfxz1sbrWAlDYpjyIphc1jYu4vA5fN4MyZw9Su1CcdHCc5NadtKcNY4_lkRNF1igykzMjlihm5wvGYaqQkIMUxeDUA",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
