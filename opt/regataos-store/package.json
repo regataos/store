@@ -8,8 +8,8 @@
   "window": {
     "toolbar": false,
     "position": "center",
-    "width": 1920,
-    "height": 1080,
+    "width": 1366,
+    "height": 800,
     "icon": "www/images/icon.png"
   }
 }
