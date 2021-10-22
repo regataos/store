@@ -3,7 +3,7 @@
 		"name": "Notepadqq",
 		"nickname": "notepadqq",
 		"executable": "notepadqq",
-		"package": "",
+		"package": "notepadqq",
 		"extra_packages": "",
 		"architecture": "x86_64",
 		"package_manager": "zypper",

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "RPCS3",
+		"nickname": "rpcs3",
+		"executable": "rpcs3",
+		"package": "rpcs3",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEjp3o5Ja-ruz5FJnRUOuPl8S3v9HwKI7S_MyQSQ1fyACivUqreb9N71raaNJXFC57eAQWKkgy6uPH4zqS_kzNFjR2Ayr0Acw5T3zK3K-LzUJr64gUe2gmlyeSzEGUhmfmf6MAO2Mc0EcT-8n8dXolSNgSVapRviu8VVs5G-r6T2-m5BG9yM1GG54p5-7g",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]
