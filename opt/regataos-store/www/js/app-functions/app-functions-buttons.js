@@ -64,7 +64,7 @@ if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
 			});
 
 			capture_iframe.document.getElementById("install-"+appname).style.backgroundColor = "";
-			capture_iframe.document.getElementById("install-"+appname).style.border = "2px solid #058a58";
+			capture_iframe.document.getElementById("install-"+appname).style.borderRadius = "5px";
 			capture_iframe.document.getElementById("install-"+appname).style.color = "#ffffff";
 			capture_iframe.document.getElementById("install-"+appname).style.pointerEvents = "auto";
 			capture_iframe.document.getElementById("install-"+appname).innerHTML=text_install;
@@ -103,7 +103,7 @@ if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
 			});
 
 			capture_iframe.document.getElementById("remove-"+appname).style.backgroundColor = "";
-			capture_iframe.document.getElementById("remove-"+appname).style.border = "2px solid #bf2d32";
+			capture_iframe.document.getElementById("remove-"+appname).style.borderRadius = "5px";
 			capture_iframe.document.getElementById("remove-"+appname).style.color = "#ffffff";
 			capture_iframe.document.getElementById("remove-"+appname).style.pointerEvents = "auto";
 			capture_iframe.document.getElementById("remove-"+appname).innerHTML=text_uninstall;
