@@ -22,7 +22,7 @@ const fs = require('fs');
 		var repository_cache = apps[i].repository_cache
 
 		if ((repository_cache.indexOf("mainRepositoryName") > -1) == "1") {
-			var main_repository_name = "grep -r mainRepositoryName= /usr/share/regataos/regatas-base-version.txt | cut -d'=' -f 2-";
+			var main_repository_name = "grep -r mainRepositoryName= /usr/share/regataos/regataos-base-version.txt | cut -d'=' -f 2-";
 			exec(main_repository_name, (error, stdout, stderr) => {
 			if (stdout) {
 				var repository_name = stdout
@@ -44,7 +44,7 @@ const fs = require('fs');
 
 		} else if ((repository_cache.indexOf("basedOnVersion") > -1) == "1") {
 			var repository_cache = repository_cache.replace(/(\[|\])/gm, "");
-			var based_on_version = 'export basedOnVersion=$(grep -r basedOnVersion= /usr/share/regataos/regatas-base-version.txt | cut -d"=" -f 2-); \
+			var based_on_version = 'export basedOnVersion=$(grep -r basedOnVersion= /usr/share/regataos/regataos-base-version.txt | cut -d"=" -f 2-); \
 			echo ' + repository_cache + ' | sed "s,basedOnVersion,$basedOnVersion,"';
 			exec(based_on_version, (error, stdout, stderr) => {
 
