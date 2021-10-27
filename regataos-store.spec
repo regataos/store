@@ -14,6 +14,7 @@ BuildRequires: systemd
 BuildRequires: grep
 License: MIT
 Source1: regataos-store-%{version}.tar.xz
+Source2: regataos-store.desktop.txt
 Requires: regataos-repo >= 5.0
 Requires: xz
 Requires: xdpyinfo
@@ -40,12 +41,10 @@ Application store of Regata OS.
 mkdir -p %{buildroot}/opt/regataos-base/
 cp -f %{SOURCE1} %{buildroot}/opt/regataos-base/regataos-store-%{version}.tar.xz
 
-%post
-# Remove old files
-if test -e /opt/regataos-store ; then
-  rm -rf "/opt/regataos-store"
-fi
+mkdir -p %{buildroot}/opt/regataos-store/
+cp -f %{SOURCE2} %{buildroot}/opt/regataos-store/%{name}.desktop
 
+%post
 # Extract store files at the root of the system
 tar xf /opt/regataos-base/regataos-store-%{version}.tar.xz -C /
 
@@ -77,39 +76,27 @@ chmod 777 /opt/regataos-store/installed-apps/
 
 # Hide YaST .desktop files
 if [[ $(grep -r "NoDisplay=true" "/usr/share/applications/org.opensuse.yast.Packager.desktop") != *"NoDisplay=true"* ]]; then
-  echo "NoDisplay=true" >> /usr/share/applications/YaST2/org.opensuse.yast.CheckMedia.desktop
-  echo "NoDisplay=true" >> /usr/share/applications/YaST2/org.opensuse.yast.SWSingle.desktop
-  echo "NoDisplay=true" >> /usr/share/applications/YaST2/org.opensuse.yast.SWSource.desktop
-  echo "NoDisplay=true" >> /usr/share/applications/YaST2/org.opensuse.yast.OnlineUpdate.desktop
   echo "NoDisplay=true" >> /usr/share/applications/org.opensuse.yast.Packager.desktop
+fi
+
+if [[ $(grep -r "NoDisplay=true" "/usr/share/applications/YaST2/org.opensuse.yast.CheckMedia.desktop") != *"NoDisplay=true"* ]]; then
+  echo "NoDisplay=true" >> /usr/share/applications/YaST2/org.opensuse.yast.CheckMedia.desktop
+fi
+
+if [[ $(grep -r "NoDisplay=true" "/usr/share/applications/YaST2/org.opensuse.yast.SWSingle.desktop") != *"NoDisplay=true"* ]]; then
+  echo "NoDisplay=true" >> /usr/share/applications/YaST2/org.opensuse.yast.SWSingle.desktop
+fi
+
+if [[ $(grep -r "NoDisplay=true" "/usr/share/applications/YaST2/org.opensuse.yast.SWSource.desktop") != *"NoDisplay=true"* ]]; then
+  echo "NoDisplay=true" >> /usr/share/applications/YaST2/org.opensuse.yast.SWSource.desktop
+fi
+
+if [[ $(grep -r "NoDisplay=true" "/usr/share/applications/YaST2/org.opensuse.yast.OnlineUpdate.desktop") != *"NoDisplay=true"* ]]; then
+  echo "NoDisplay=true" >> /usr/share/applications/YaST2/org.opensuse.yast.OnlineUpdate.desktop
 fi
 
 # Add guest user group
 getent group guest-session >/dev/null || groupadd -r guest-session
-
-# Some changes needed for the new version of Regata OS Store
-if test -e "/etc/xdg/autostart/regataos-store-capture-progress-download.desktop"; then
-  rm -f "/etc/xdg/autostart/regataos-store-capture-progress-download.desktop"
-  rm -f "/etc/xdg/autostart/regataos-store-create-process-queues.desktop"
-  rm -f "/etc/xdg/autostart/regataos-store-list-installed-apps.desktop"
-  rm -f "/etc/xdg/autostart/regataos-store-run-process-queues.desktop"
-  rm -f "/etc/xdg/autostart/regataos-store-snap-version-cache.desktop"
-  rm -f "/etc/xdg/autostart/regataos-store-x.desktop"
-
-  systemctl stop regataos-store-selectlanguage.service || true
-  systemctl disable regataos-store-selectlanguage.service || true
-  systemctl stop regataos-store-clearcache.service || true
-  systemctl disable regataos-store-clearcache.service || true
-  systemctl stop capture-progress-download-snap.service || true
-  systemctl disable capture-progress-download-snap.service || true
-
-  killall capture-progress-download-snap
-  killall capture-progress-download
-  killall snap-version-cache.sh
-  killall create-process-queues
-  killall run-process-queues
-  killall checkapp
-fi
 
 # Setting the Regata OS Store language
 sudo /opt/regataos-store/scripts/select-language
@@ -124,5 +111,6 @@ exit 0
 %defattr(-,root,root)
 /opt/regataos-base
 /opt/regataos-base/regataos-store-%{version}.tar.xz
+/opt/regataos-store/%{name}.desktop
 
 %changelog
