@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Shodo",
+		"nickname": "shodo",
+		"executable": "java -jar /opt/shodo/shodo.jar",
+		"package": "shodo-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEj89YMOQVWlmvZ95T4un8buM0man0kGqJvPzTjYiIk4vMCLWIujOZHNl8RU-JX1SEqxPEQGuv87YULJuwVDWVVN0GKI33Sta1eaRZhMojoYEOcyBDUnO2B7QbJ7odWeqxauM96ev_5L5ekUTbaq_df7yDP2fxzJ-2cKNqQ88p8wV9c2wAFZ64_pC9kA8Q",
+		"price": "free",
+		"dgpu": "none"
+    }
+]

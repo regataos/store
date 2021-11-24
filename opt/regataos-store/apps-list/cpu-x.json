@@ -1,0 +1,17 @@
+[
+	{
+		"name": "CPU-X",
+		"nickname": "cpu-x",
+		"executable": "cpu-x",
+		"package": "cpu-x",
+		"extra_packages": "cpu-x-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEhEEU7PG1-N6NcsjdOtai0VBaAtw00mQp3xDyCkWEdhpmSCnEFmmXw-GfQnxkytClFpgA8j24Uyakt74IM4KU4dy6Y_FnDeYe2Y88pYNKnyGe1IBrRPw4E55ukSLLhbROMSHTwLBpCt7dVLKCVet3ZOtde-y-GwEa0_-T3IniOqbvI8eDm4lg_rqY4Kzg",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]
