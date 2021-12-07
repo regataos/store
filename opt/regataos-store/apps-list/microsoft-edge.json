@@ -2,8 +2,8 @@
 	{
 		"name": "Microsoft Edge",
 		"nickname": "microsoft-edge",
-		"executable": "microsoft-edge-beta",
-		"package": "microsoft-edge-beta",
+		"executable": "microsoft-edge-stable",
+		"package": "microsoft-edge-stable",
 		"extra_packages": "",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
