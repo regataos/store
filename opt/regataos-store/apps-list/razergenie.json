@@ -4,7 +4,7 @@
 		"nickname": "razergenie",
 		"executable": "razergenie",
 		"package": "razergenie",
-		"extra_packages": "openrazer-meta",
+		"extra_packages": "python3-openrazer",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",

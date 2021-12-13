@@ -4,7 +4,7 @@
 		"nickname": "polychromatic",
 		"executable": "polychromatic",
 		"package": "polychromatic",
-		"extra_packages": "",
+		"extra_packages": "python3-openrazer",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
