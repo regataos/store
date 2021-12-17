@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/openSUSE_Leap_15.3/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-kiNcISyvbL4/Wc72oKNVGRI/AAAAAAAAS24/ivIoFy0A-f47ceJrnfbdJBzsU3TD9ttDQCLcBGAs/s1600/psensor.png",
 		"price": "free",
 		"dgpu": "none"
