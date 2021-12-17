@@ -358,8 +358,6 @@ if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
 		    rm -f $progressbar_dir/*
 	    fi
 
-        # Start prime config
-        /bin/sh /opt/regataos-prime/scripts/apps-hybrid-graphics
     else
 		chmod 777 /tmp/progressbar-store/*
 	    rm -f $progressbar_dir/progress-movement
