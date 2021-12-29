@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Heroic",
+		"nickname": "heroic",
+		"executable": "heroic",
+		"package": "heroic",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEiTO17GxoLnUcQhmIHonZisiWX6MiHIOaCg7gLDuo0s6YJ4N76HcqbTe4d_MTX2egZ6vX-XCzYLUGnPSVWR87rUj2TIPDdzCeNZu-BHlpIZ9mmz3oR01JzBPbphbUVRfrS1BIZpUsVvBLyEi67y6qT7FJXAqPvs2XqntUqOn-Xo_zT2a25R84VCoDBTTg",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]
