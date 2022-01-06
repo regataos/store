@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Facilitador Linux",
+		"nickname": "facilitador-linux",
+		"executable": "/opt/projetus/facilitador/updater.sh",
+		"package": "facilitador-linux",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEhL2_EqRK-uJVddIOibT4OWlhk3M8PaPz9antCnthWfYgLR3ll7AVUefagFuATkBfQbMtTqNrrBTZIvEARXmxHHMglKxFdHXcJu98THXm4_CYEX-Xf0bziKNJmpRJ8GyTtL0eauwJA3hWuMY9C9zh0TuiwBX_6po02EDSZ5GQHakT5DLjfmotTNVcwXuQ",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

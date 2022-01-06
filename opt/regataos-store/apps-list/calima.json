@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Calima",
+		"nickname": "calima",
+		"executable": "calima-app",
+		"package": "calima-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEhq-kENJbPorGI8Rd97K90YP3bQdv-34AswgrZ0EvdGfHHKxogZFoaC2LfawR-op2lV97zQWE4xA929xQdfMEBtHDhzzVy1a1ubgQ9Ny2hPnnQ2wpzf45tBxImJ7y-iZDCm6DxlT0JyXyTI-9p8zdhVBMd295c7vxIllqsVSZEQx0bVemCTlGKnM3Qpew",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
