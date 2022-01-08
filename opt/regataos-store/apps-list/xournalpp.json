@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Xournal++",
+		"nickname": "xournalpp",
+		"executable": "xournalpp",
+		"package": "xournalpp",
+		"extra_packages": "xournalpp-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEiG7nG81iqPte67-RiLz1lzy-vZTzcj0-W74lgYGHpTW5uTzkZ2u5ETvGCOHgFGVcek-3Mxe4bHuBRFR4PNpPsOrQySf2zXTnhF3rXq8MLkvSF4ppuxpU0QKAnGPS0KT7lWMYGojP5YJ2jVrYU1ZLOjxViNbDrpEVn8MdrW6j6O9jY3mGS5zci1z8vwjQ",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

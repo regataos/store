@@ -1,0 +1,17 @@
+[
+	{
+		"name": "DBeaver",
+		"nickname": "dbeaver-ce",
+		"executable": "snap run dbeaver-ce",
+		"package": "dbeaver-ce",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEiWhFY_iee22RJ8Rps7xtIWFuqwvejd9lo4vF5o4-mZox_vRsmtL7MUMz2c3obJYNtUHvC2vZZglsIdP1BJA_8-hti0DO7g3ma8TELswIXDrNQD2-Sd6ZLxtoMVYP8Cw4BNitKpYbfg97jBWeNQSUbIpl3wLWFg4z5iPI2hobGGi9hjC8zNwYvQVELUXw",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
