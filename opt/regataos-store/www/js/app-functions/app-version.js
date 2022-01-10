@@ -44,8 +44,7 @@ const fs = require('fs');
 
 		} else if ((repository_cache.indexOf("basedOnVersion") > -1) == "1") {
 			var repository_cache = repository_cache.replace(/(\[|\])/gm, "");
-			var based_on_version = 'export basedOnVersion=$(grep -r basedOnVersion= /usr/share/regataos/regataos-base-version.txt | cut -d"=" -f 2-); \
-			echo ' + repository_cache + ' | sed "s,basedOnVersion,$basedOnVersion,"';
+			var based_on_version = 'export basedOnVersion=$(grep -r "basedOnVersion=" "/usr/share/regataos/regataos-base-version.txt" | cut -d"=" -f 2-); echo ' + repository_cache + ' | sed "s,basedOnVersion,$basedOnVersion,"';
 			exec(based_on_version, (error, stdout, stderr) => {
 
 			if (stdout) {
