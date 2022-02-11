@@ -1,0 +1,17 @@
+[
+	{
+		"name": "ProtonUp-Qt",
+		"nickname": "protonup-qt",
+		"executable": "protonup-qt",
+		"package": "protonup-qt",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEiPn8D813vDvSEOAzEmCND1vt-jgsn46q4i36bnuq-gqAnDdfwuqyFv96zxAgaNErV1hSl9Y0q1XJuUOm1mbWs_5JnHhJFD21PkI4yGYHDocjEySKttH2CfVqIhMNO5HOtMxe473UybZ9yGPUAeZvBl32C-njCQjDsoFweVzJN0kMtv3PCPCEodKn_pag",
+		"price": "free",
+		"dgpu": "none"
+    }
+]

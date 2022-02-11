@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Webapp Manager",
+		"nickname": "wpmanager",
+		"executable": "webapp-manager",
+		"package": "webapp-manager",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEhShDlVdmuPezrFGgjBKl0JNAA5VqF5_S5OxAOITnsJ2Oigovg6BCcfoqsgmbfeOUIWsVlMzEjkkJ6V91ad1rGWSKtkRdIQwJ8A1yRRaA9ySUZhA_m3cL5wIi7XMXGscvfmRB2IqReQnNCIuOTxOlDB-1NdzEUzd8y79kPggg3vsZPAFEMQlgie4HVZyg",
+		"price": "free",
+		"dgpu": "none"
+    }
+]

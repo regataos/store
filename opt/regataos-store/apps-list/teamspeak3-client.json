@@ -1,17 +1,17 @@
 [
 	{
-		"name": "TeamSpeak Client",
+		"name": "TeamSpeak 3",
 		"nickname": "teamspeak3-client",
-		"executable": "ts3client",
-		"package": "teamspeak3-client",
+		"executable": "teamspeak3",
+		"package": "teamspeak3-updater",
 		"extra_packages": "",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "[mainRepositoryName]",
 		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://2.bp.blogspot.com/-Pooc6jRj708/WWQLvOEsZiI/AAAAAAAASOE/A8UZTqbBzpYj3cGlfnDoZstXb8NSmmT4gCLcBGAs/s1600/teamviewer-backg.png",
+		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEjvBg8tg38W250by8RJTB3Tunen15TL8DomVoOHFNeGZyz2aNyaJlwgRPuuAwt9_PuaPHN07oMsjwbaMkP18pzIZCmKtorwhpnfTpuMZdbxkrMBCqcWQmtM75auDzKy4lj4-7DLK--EA-LdX0uqDSH50LJmVt568kHvuVZ7GqahIYW-NEU60r1KSHZ-aw",
 		"price": "free",
-		"dgpu": "deactivate"
+		"dgpu": "none"
     }
 ]
