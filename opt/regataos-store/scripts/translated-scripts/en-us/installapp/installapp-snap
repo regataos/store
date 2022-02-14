@@ -63,12 +63,11 @@ function Install_app() {
     echo "show progress bar" > $progressbar_dir/progressbar
     echo "installing" > $progressbar_dir/progress-movement
 
-	# Fix snap
+	# Install snapd
 	if test ! -e /usr/share/regataos/create-iso.txt ; then
-		systemctl enable --now snapd.socket || true
-		systemctl start snapd.socket || true
-		sudo snap install core
-		sudo snap refresh core
+		if [[ $(rpm -q regataos-snapd) == *"x86_64"* ]]; then
+			sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses regataos-snapd
+		fi
 	fi
 
     # Download and install
