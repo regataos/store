@@ -1,10 +1,10 @@
 [
 	{
 		"name": "NVIDIA Driver",
-		"nickname": "nvidia-driver-g05",
+		"nickname": "nvidia-driver-g06",
 		"executable": "nvidia-settings",
-		"package": "x11-video-nvidiaG05",
-		"extra_packages": "nvidia-driver-extra-g05 nvidia-computeG05 nvidia-gfxG05-kmp-default nvidia-glG05 x11-video-nvidiaG05",
+		"package": "x11-video-nvidiaG06",
+		"extra_packages": "nvidia-driver-extra nvidia-computeG06 nvidia-gfxG06-kmp-default nvidia-glG06 x11-video-nvidiaG06",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
