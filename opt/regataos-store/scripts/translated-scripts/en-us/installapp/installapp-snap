@@ -65,7 +65,7 @@ function Install_app() {
 
 	# Install snapd
 	if test ! -e /usr/share/regataos/create-iso.txt ; then
-		if [[ $(rpm -q regataos-snapd) == *"x86_64"* ]]; then
+		if [[ $(rpm -q regataos-snapd) != *"x86_64"* ]]; then
 			sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses regataos-snapd
 		fi
 	fi
