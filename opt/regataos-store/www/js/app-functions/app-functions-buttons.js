@@ -55,7 +55,7 @@ if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
 			export extra_packages="' + extra_packages + '"; \
 			export architecture="' + architecture + '"; \
 			export repository_name="' + repository_name + '";  \
-			sudo -E /opt/regataos-store/removeapp/removeapp-' + package_manager + '; /opt/regataos-prime/scripts/apps-hybrid-graphics start';
+			sudo -E /opt/regataos-store/removeapp/removeapp-' + package_manager + '; sudo /opt/regataos-prime/scripts/apps-hybrid-graphics';
 			exec(command_line, (error, stdout, stderr) => {
 				fs.writeFile('/var/log/regataos-logs/remove-app.log', stdout, (err) => {
 				if (err) throw err;
@@ -94,7 +94,7 @@ if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
 			export repository_name="' + repository_name + '"; \
 			export repository_url="' + repository_url + '"; \
 			export download_link="' + download_link + '"; \
-			sudo -E /opt/regataos-store/installapp/installapp-' + package_manager + '; /opt/regataos-prime/scripts/apps-hybrid-graphics start';
+			sudo -E /opt/regataos-store/installapp/installapp-' + package_manager + '; sudo /opt/regataos-prime/scripts/apps-hybrid-graphics';
 			exec(command_line, (error, stdout, stderr) => {
 				fs.writeFile('/var/log/regataos-logs/install-app.log', stdout, (err) => {
 				if (err) throw err;
