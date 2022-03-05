@@ -26,5 +26,14 @@ $(document).ready(function() {
 		$(".install-button").text("Install");
 		$(".open-button").text("Open");
 		$(".remove-button").text("Uninstall");
-	}
+
+	} else if (url.indexOf("newstore") > -1) {
+		$(".descricao-app2").text("GRATUITO");
+		$(".app-version").text("| Versão:");
+
+		$(".game-button").text("Instalar");
+		$(".install-button").text("Instalar");
+		$(".open-button").text("Abrir");
+		$(".remove-button").text("Desinstalar");
+    }
 });
