@@ -8,7 +8,7 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/leap_15.1",
+		"repository_cache": "/var/cache/zypp/solv/leap_[basedOnVersion]",
 		"repository_url": "http://download.opensuse.org/distribution/leap/[basedOnVersion]/repo/oss/x86_64",
 		"icon_backg": "https://3.bp.blogspot.com/-t3VF1HP3ryU/WWK4h9kZ6lI/AAAAAAAASII/-NC30Pf3j3cUd48so8vqCSDsj7rNXkT6ACLcBGAs/s1600/kamerka-backg.png",
 		"price": "free",

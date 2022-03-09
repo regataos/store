@@ -3,7 +3,7 @@
 		"name": "GitKraken",
 		"nickname": "gitkraken",
 		"executable": "snap run gitkraken",
-		"package": "gitkraken",
+		"package": "gitkraken --classic",
 		"extra_packages": "",
 		"architecture": "",
 		"package_manager": "snap",

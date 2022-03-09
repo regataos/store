@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
-		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/openSUSE_Leap_15.3/x86_64",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOn]/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-TUqQrOp23rM/WWPlottjbSI/AAAAAAAASMU/YvcOSiwTR_ce9172Uqj45HC1qhgd_pVgACLcBGAs/s1600/kdenlive-backg.png",
 		"price": "free",
 		"dgpu": "activate"

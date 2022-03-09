@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
-		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/[basedOn]/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/[basedOnVersion]/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-dgXrsd0Tz4c/WWK8ouXpV3I/AAAAAAAASIg/SaqAdffers4QUrHQLHt4bb_E9IP6_Ud-QCLcBGAs/s1600/webcamoid-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

@@ -8,7 +8,7 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/leap_15.1",
+		"repository_cache": "/var/cache/zypp/solv/leap_[basedOnVersion]",
 		"repository_url": "http://download.opensuse.org/distribution/leap/[basedOnVersion]/repo/oss/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-WzPO0qEAAFA/WWTddVF5UqI/AAAAAAAASQk/J0MWBVB2Oz0IJFHLCi1uEud9hek5ai5QACLcBGAs/s1600/bluefish-backg.png",
 		"price": "free",

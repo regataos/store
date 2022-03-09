@@ -8,8 +8,8 @@
 		"architecture": "noarch",
 		"package_manager": "zypper",
 		"repository_name": "virt-manager",
-		"repository_cache": "/var/cache/zypp/solv/virt-manager",
-		"repository_url": "http://download.opensuse.org/repositories/home:/frispete:/15.2:/kvm/openSUSE_Leap_15.2/noarch",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://1.bp.blogspot.com/-NYRLgq0zmBg/YKlJunDk6vI/AAAAAAAAZ24/VRk-15vgj_khQNv_wO7bqcS2pf9kRz-WQCLcBGAsYHQ/s0/virt-manager-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"
