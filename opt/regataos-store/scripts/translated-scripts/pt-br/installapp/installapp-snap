@@ -72,18 +72,15 @@ function Install_app() {
 
     # Download and install
     #Prepare the progress bar and downloading
-    rm -f $progressbar_dir/progress-movement
-    echo "installing" > $progressbar_dir/installing
-    echo "installing" > $progressbar_dir/installing-$app_nickname
     echo $app_name > $progressbar_dir/app-name
-    echo "0%" > $progressbar_dir/progress
     echo $app_download_status > $progressbar_dir/status
-    sleep 1
-    echo "show progress bar" > $progressbar_dir/progressbar
+    echo "installing" > /tmp/progressbar-store/installing-$app_nickname
     chmod 777 /tmp/progressbar-store/*
 
     #Install with snap
     echo $package_size > $progressbar_dir/download-size
+    echo "$app_install_status" > $progressbar_dir/app-install-status
+    echo "$appname" > $progressbar_dir/snap-app-name
     rm -f $progressbar_dir/download-percentage
     script -q -c "snap install $command_install" | (pv -n > $progressbar_dir/snap-download-percentage) 2>&1
 
@@ -192,7 +189,7 @@ if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
 	    echo $success_installation > $progressbar_dir/progress
         echo "$app_nickname" >> $installed_apps
 		chmod 777 /tmp/progressbar-store/*
-	    sleep 1
+
         #Clear cache
 	    rm -f $progressbar_dir/progress-full
 	    rm -f $progressbar_dir/installing
