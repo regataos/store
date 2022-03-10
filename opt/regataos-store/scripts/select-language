@@ -1,6 +1,13 @@
 #!/bin/bash
 
 # Create the settings directory
+if test -e "/tmp/regataos-store" ; then
+	chmod 777 "/tmp/regataos-store"
+else
+	mkdir -p "/tmp/regataos-store"
+	chmod 777 "/tmp/regataos-store"
+fi
+
 if test -e "/tmp/regataos-configs/config" ; then
 	chmod 777 "/tmp/regataos-configs/config"
 else

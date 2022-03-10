@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Flutter Gallery",
-		"nickname": "flutter-gallery",
+		"nickname": "flgallery",
 		"executable": "snap run flutter-gallery",
 		"package": "flutter-gallery",
 		"extra_packages": "",
