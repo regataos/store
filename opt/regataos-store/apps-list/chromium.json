@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/leap_[basedOnVersion]_updates",
-		"repository_url": "http://download.opensuse.org/update/leap/[basedOnVersion]/oss/x86_64",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://1.bp.blogspot.com/-o7wtD1mbW_c/X7siZZxjMRI/AAAAAAAAZII/rBwh1delhMMNxkpo-Jzu8wvSUvlAvy1RQCLcBGAsYHQ/s0/chromium-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"
