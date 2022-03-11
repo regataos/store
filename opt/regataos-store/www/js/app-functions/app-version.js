@@ -7,7 +7,7 @@ const fs = require('fs');
 	var capture_iframe = document.getElementById("iframeregata").contentWindow;
 	var capture_iframe_url = document.getElementById("iframeregata").contentWindow.location.href
 	var appname = capture_iframe_url.split("app-")[1];
-		// appname = appname.replace(".html", "");
+	// appname = appname.replace(".html", "");
 
 	// Show app version
 	if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
@@ -91,14 +91,15 @@ const fs = require('fs');
 	var capture_iframe = document.getElementById("iframeregata").contentWindow;
 	var capture_iframe_url = document.getElementById("iframeregata").contentWindow.location.href
 	var appname = capture_iframe_url.split("app-")[1];
-		// appname = appname.replace(".html", "");
+	// appname = appname.replace(".html", "");
 
 	// Show app version
 	if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
+		// Read the list of Snap or Flatpak app version
 		var text_content = capture_iframe.document.getElementById("version-" + appname).textContent;
-
-		// Read the list of Snap app versions
 		var snap_version_cache = fs.readFileSync("/opt/regataos-store/installed-apps/snap-version-cache.txt", "utf8");
+		var flatpak_version_cache = fs.readFileSync("/opt/regataos-store/installed-apps/flatpak-version-cache.txt", "utf8");
+
 		if ((snap_version_cache.indexOf(appname) > -1) == "1") {
 			if ((text_content.indexOf("recent") > -1) == "1") {
 				var command_line = "grep -R '" + appname + "' /opt/regataos-store/installed-apps/snap-version-cache.txt | awk '{print $2}'";
@@ -110,6 +111,19 @@ const fs = require('fs');
 				}
 				});
 			}
+
+		} else if ((flatpak_version_cache.indexOf(appname) > -1) == "1") {
+			if ((text_content.indexOf("recent") > -1) == "1") {
+				var command_line = "grep -R '" + appname + "' /opt/regataos-store/installed-apps/flatpak-version-cache.txt | awk '{print $2}'";
+				exec(command_line, (error, stdout, stderr) => {
+				if (stdout) {
+					if ((stdout.indexOf("nickname") > -1) == "0") {
+						capture_iframe.document.getElementById("version-" + appname).innerHTML=stdout;
+					}
+				}
+				});
+			}
+
 		} else {
 			version_rpm();
 		}

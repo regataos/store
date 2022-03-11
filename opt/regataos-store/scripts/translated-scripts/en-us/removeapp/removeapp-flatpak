@@ -1,11 +1,11 @@
-#! /bin/sh
+#!/bin/sh
 
 # Settings and variables
 #App name and more information
 app_name="$name"
 app_nickname="$nickname"
-appname=$(echo $package | sed 's/ --classic\| --beta//')
-command_uninstall="sudo snap remove $appname"
+package_id="$package"
+command_uninstall="sudo flatpak --assumeyes remove $package_id"
 
 #Variables for notifications
 success_notify_title="$app_name successfully uninstalled!"
@@ -165,7 +165,7 @@ if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
     remove_app
 
     # Confirm installation
-    if [[ $(snap list) == *"$appname"* ]]; then
+    if [[ $(flatpak list) == *"$package_id"* ]]; then
 		chmod 777 /tmp/progressbar-store/*
 	    rm -f $progressbar_dir/progress-movement
 	    rm -f $progressbar_dir/progress-full

@@ -197,6 +197,7 @@ if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
 	    echo "" > $progressbar_dir/status
 	    echo $success_removal > $progressbar_dir/progress
         sed -i "s/$app_nickname//" $installed_apps
+        sed -i '/^$/d' $installed_apps
 		chmod 777 /tmp/progressbar-store/*
 	    sleep 1
         #Clear cache

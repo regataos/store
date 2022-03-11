@@ -84,9 +84,25 @@ if [[ $(echo $permission_store) == *"superuser"* ]]; then
 	if test -e "/tmp/apps-scripts/store-superuser.txt" ; then
 		if [[ $(ls -l /tmp/apps-scripts/store-superuser.txt) == *"root"* ]]; then
 			if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
-				magma --disable-gpu /opt/regataos-store & sleep 1; /opt/regataos-store/scripts/progress-bar/capture-progress-download & /opt/regataos-store/scripts/progress-bar/create-process-queues & /opt/regataos-store/scripts/checkapp & /opt/regataos-store/scripts/progress-bar/run-process-queues & /opt/regataos-store/scripts/snap-version-cache & sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap
+				magma --disable-gpu /opt/regataos-store & sleep 1; \
+				/opt/regataos-store/scripts/progress-bar/capture-progress-download & \
+				/opt/regataos-store/scripts/progress-bar/create-process-queues & \
+				/opt/regataos-store/scripts/checkapp & \
+				/opt/regataos-store/scripts/progress-bar/run-process-queues & \
+				/opt/regataos-store/scripts/snap-version-cache & \
+				/opt/regataos-store/scripts/flatpak-version-cache & \
+				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap & \
+				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 			else
-				magma /opt/regataos-store & sleep 1; /opt/regataos-store/scripts/progress-bar/capture-progress-download & /opt/regataos-store/scripts/progress-bar/create-process-queues & /opt/regataos-store/scripts/checkapp & /opt/regataos-store/scripts/progress-bar/run-process-queues & /opt/regataos-store/scripts/snap-version-cache & sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap
+				magma /opt/regataos-store & sleep 1; \
+				/opt/regataos-store/scripts/progress-bar/capture-progress-download & \
+				/opt/regataos-store/scripts/progress-bar/create-process-queues & \
+				/opt/regataos-store/scripts/checkapp & \
+				/opt/regataos-store/scripts/progress-bar/run-process-queues & \
+				/opt/regataos-store/scripts/snap-version-cache & \
+				/opt/regataos-store/scripts/flatpak-version-cache & \
+				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap & \
+				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 			fi
 		else
 			exit 0
@@ -101,9 +117,25 @@ if [[ $(echo $permission_store) == *"superuser"* ]]; then
 
 else
 	if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
-		magma --disable-gpu /opt/regataos-store & sleep 1; /opt/regataos-store/scripts/progress-bar/capture-progress-download & /opt/regataos-store/scripts/progress-bar/create-process-queues & /opt/regataos-store/scripts/checkapp & /opt/regataos-store/scripts/progress-bar/run-process-queues & /opt/regataos-store/scripts/snap-version-cache & sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap
+		magma --disable-gpu /opt/regataos-store & sleep 1; \
+		/opt/regataos-store/scripts/progress-bar/capture-progress-download & \
+		/opt/regataos-store/scripts/progress-bar/create-process-queues & \
+		/opt/regataos-store/scripts/checkapp & \
+		/opt/regataos-store/scripts/progress-bar/run-process-queues & \
+		/opt/regataos-store/scripts/snap-version-cache & \
+		/opt/regataos-store/scripts/flatpak-version-cache & \
+		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap & \
+		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 	else
-		magma /opt/regataos-store & sleep 1; /opt/regataos-store/scripts/progress-bar/capture-progress-download & /opt/regataos-store/scripts/progress-bar/create-process-queues & /opt/regataos-store/scripts/checkapp & /opt/regataos-store/scripts/progress-bar/run-process-queues & /opt/regataos-store/scripts/snap-version-cache & sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap
+		magma /opt/regataos-store & sleep 1; \
+		/opt/regataos-store/scripts/progress-bar/capture-progress-download & \
+		/opt/regataos-store/scripts/progress-bar/create-process-queues & \
+		/opt/regataos-store/scripts/checkapp & \
+		/opt/regataos-store/scripts/progress-bar/run-process-queues & \
+		/opt/regataos-store/scripts/snap-version-cache & \
+		/opt/regataos-store/scripts/flatpak-version-cache & \
+		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap & \
+		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 	fi
 fi
 

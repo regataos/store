@@ -1,26 +1,26 @@
-#! /bin/sh
+#!/bin/sh
 
 # Settings and variables
 #App name and more information
 app_name="$name"
 app_nickname="$nickname"
-appname=$(echo $package | sed 's/ --classic\| --beta//')
-command_uninstall="sudo snap remove $appname"
+package_id="$package"
+command_uninstall="sudo flatpak --assumeyes remove $package_id"
 
 #Variables for notifications
-success_notify_title="$app_name successfully uninstalled!"
+success_notify_title="$app_name desinstalado com sucesso!"
 success_notify_text=""
-error_notify_title="Error uninstalling $app_name!"
-error_notify_text="There was an error uninstalling $app_name."
+error_notify_title="Erro na desinstalação do $app_name!"
+error_notify_text="Ocorreu algum erro na desinstalação do $app_name."
 
 #General information
-Uninstall_queue="Pending uninstalls: occupied installer..."
-Uninstall_queue_packagekitd="Pending uninstalls: updating the system..."
-app_name_process="Remove $app_name"
-app_remove_status="Removing $app_name..."
-success_removal="Concluded!"
-removal_error="Error!"
-removal_error_status="Removal error!"
+Uninstall_queue="Desinstalação pendente: instalador ocupado..."
+Uninstall_queue_packagekitd="Desinstalação pendente: atualizando o sistema..."
+app_name_process="Desinstalar $app_name"
+app_remove_status="Desinstalando $app_name..."
+success_removal="Concluído!"
+removal_error="Erro!"
+removal_error_status="Erro na desinstalação!"
 progressbar_dir="/tmp/progressbar-store"
 installed_apps="/opt/regataos-store/installed-apps/installed-apps.txt"
 
@@ -165,7 +165,7 @@ if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
     remove_app
 
     # Confirm installation
-    if [[ $(snap list) == *"$appname"* ]]; then
+    if [[ $(flatpak list) == *"$package_id"* ]]; then
 		chmod 777 /tmp/progressbar-store/*
 	    rm -f $progressbar_dir/progress-movement
 	    rm -f $progressbar_dir/progress-full

@@ -1,0 +1,118 @@
+#!/bin/bash
+
+cd /
+
+while :
+do
+
+# Check if the OS Store Regatta is running
+ps -C "magma /opt/regataos-store" > /dev/null
+if [ $? = 0 ]
+then
+
+# Clear progress-bar
+if test -e "/tmp/progressbar-store/progress-movement"; then
+	chmod 777 /tmp/progressbar-store/*
+	rm -f "/tmp/progressbar-store/download-percentage"
+	rm -f "/tmp/progressbar-store/download-size"
+	rm -f "/tmp/progressbar-store/download-speed"
+	rm -f "/tmp/progressbar-store/file-size"
+	rm -f "/tmp/progressbar-store/speed"
+	rm -f "/tmp/progressbar-store/eta"
+fi
+
+# Capture progress for JavaScript (flatpak)
+if test -e "/tmp/progressbar-store/flatpak-download-percentage"; then
+	# Prepare the progress bar and downloading
+	rm -f /tmp/progressbar-store/progress-movement
+	echo "installing" > /tmp/progressbar-store/installing
+	echo "show progress bar" > /tmp/progressbar-store/progressbar
+
+	progress1=$(tail -2 /tmp/progressbar-store/flatpak-download-percentage | awk '{print $3}' | head -1 | tail -1)
+	progress2=$(tail -2 /tmp/progressbar-store/flatpak-download-percentage | awk '{print $4}' | head -1 | tail -1)
+
+	if [[ $progress1 == *"%"* ]]; then
+		echo $progress1
+		progress=$(echo $progress1)
+
+		speed=$(tail -2 /tmp/progressbar-store/flatpak-download-percentage | awk '{print $4}' | head -1 | tail -1)
+		eta=$(tail -1 /tmp/progressbar-store/flatpak-download-percentage | awk '{print $5}' | head -1 | tail -1)
+	else
+		echo $progress2
+		progress=$(echo $progress2)
+
+		speed=$(tail -2 /tmp/progressbar-store/flatpak-download-percentage | awk '{print $5}' | head -1 | tail -1)
+		eta=$(tail -1 /tmp/progressbar-store/flatpak-download-percentage | awk '{print $6}' | head -1 | tail -1)
+		step=$(tail -2 /tmp/progressbar-store/flatpak-download-percentage | awk '{print $2}' | head -1 | tail -1 | sed 's/…//')
+	fi
+
+	if [[ $progress == *"%"* ]]; then
+		app_id=$(cat /tmp/progressbar-store/flatpak-app-name)
+		app_installation_step=$(cat /tmp/progressbar-store/flatpak-download-percentage | grep "$app_id" | tail -1 | head -1 | awk '{print $1}' | sed 's/\.//')
+		current_stage_installation=$(cat /tmp/progressbar-store/flatpak-download-percentage | grep "Installing" | tail -1 | head -1 | awk '{print $2}' | cut -d"/" -f -1)
+
+		check_numbers=$(expr $(echo ${current_stage_installation//[^0-9]/} | wc -c) - 1)
+		if [ $check_numbers -eq 0 ]; then
+			echo "$(cat /tmp/progressbar-store/flatpak-install-status)" > "/tmp/progressbar-store/status"
+
+			# Progress bar and percentage
+			if [[ $progress == *"100%"* ]]; then
+				#If there are no more processes, clear the progress bar cache
+				sudo /opt/regataos-store/scripts/progress-bar/send-installing start
+				chmod 777 /tmp/progressbar-store/*
+				echo "" > /tmp/progressbar-store/progress
+				echo "installing" > /tmp/progressbar-store/progress-movement
+				rm -f "/tmp/progressbar-store/speed"
+				rm -f "/tmp/progressbar-store/eta"
+
+			else
+				chmod 777 /tmp/progressbar-store/*
+				echo $progress > /tmp/progressbar-store/progress
+				echo "$progress /" > /tmp/progressbar-store/file-size
+				echo "$speed " > /tmp/progressbar-store/speed
+				echo "$(echo $eta)m " > /tmp/progressbar-store/eta
+			fi
+
+		else
+			if [ $(echo $app_installation_step) -ne $(echo $current_stage_installation) ]; then
+				echo "($step) $(cat /tmp/progressbar-store/download-runtime)" > "/tmp/progressbar-store/status"
+
+				# Progress bar and percentage
+				chmod 777 /tmp/progressbar-store/*
+				echo $progress > /tmp/progressbar-store/progress
+				echo "$progress /" > /tmp/progressbar-store/file-size
+				echo "$speed " > /tmp/progressbar-store/speed
+				echo "$(echo $eta)m " > /tmp/progressbar-store/eta
+
+			else
+				echo "$(cat /tmp/progressbar-store/flatpak-install-status)" > "/tmp/progressbar-store/status"
+
+				# Progress bar and percentage
+				if [[ $progress == *"100%"* ]]; then
+					#If there are no more processes, clear the progress bar cache
+					sudo /opt/regataos-store/scripts/progress-bar/send-installing start
+					chmod 777 /tmp/progressbar-store/*
+					echo "" > /tmp/progressbar-store/progress
+					echo "installing" > /tmp/progressbar-store/progress-movement
+					rm -f "/tmp/progressbar-store/speed"
+					rm -f "/tmp/progressbar-store/eta"
+
+				else
+					chmod 777 /tmp/progressbar-store/*
+					echo $progress > /tmp/progressbar-store/progress
+					echo "$progress /" > /tmp/progressbar-store/file-size
+					echo "$speed " > /tmp/progressbar-store/speed
+					echo "$(echo $eta)m " > /tmp/progressbar-store/eta
+				fi
+			fi
+		fi
+	fi
+fi
+
+else
+	echo "Nothing to do..."
+	break
+fi
+
+   sleep 1
+done

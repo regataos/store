@@ -52,6 +52,18 @@ if test -e "/tmp/apps-scripts/checkapp.txt" ; then
     	fi
 	}
 
+	function check_installed_apps_flatpak() {
+    	if [[ $(flatpak list | grep $app_package_name) == *"$app_package_name"* ]]; then
+        	app_on_list=$(grep -r $app_name "/opt/regataos-store/installed-apps/installed-apps.txt")
+        	if [[ $app_on_list != *"$app_name"* ]]; then
+            	echo $app_name >> "/opt/regataos-store/installed-apps/installed-apps.txt"
+        	fi
+
+    	else
+        	sed -i "s/$app_name//" "/opt/regataos-store/installed-apps/installed-apps.txt"
+    	fi
+	}
+
 	function check_installed_apps_snap() {
     	if [[ $(snap list $app_package_name) == *"$app_package_name"* ]]; then
         	app_on_list=$(grep -r $app_name "/opt/regataos-store/installed-apps/installed-apps.txt")
@@ -71,6 +83,8 @@ if test -e "/tmp/apps-scripts/checkapp.txt" ; then
 
 		if [[ $(echo $package_manager) == *"zypper"* ]]; then
 			check_installed_apps_rpm
+		elif [[ $(echo $package_manager) == *"flatpak"* ]]; then
+			check_installed_apps_flatpak
 		else
 			check_installed_apps_snap
 		fi
@@ -79,7 +93,6 @@ if test -e "/tmp/apps-scripts/checkapp.txt" ; then
 	# Clear empty lines in file "installed-apps.txt"
 	sed '/^$/d' "/opt/regataos-store/installed-apps/installed-apps.txt" > "/opt/regataos-store/installed-apps/installed-apps-new.txt"
 	mv -f "/opt/regataos-store/installed-apps/installed-apps-new.txt" "/opt/regataos-store/installed-apps/installed-apps.txt"
-
 fi
 
 else
