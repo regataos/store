@@ -28,6 +28,7 @@ if test -e "/tmp/progressbar-store/snap-download-percentage"; then
 		# Prepare the progress bar and downloading
 		rm -f /tmp/progressbar-store/progress-movement
 		echo "installing" > /tmp/progressbar-store/installing
+		echo "0%" > /tmp/progressbar-store/progress
 		echo "show progress bar" > /tmp/progressbar-store/progressbar
 
 		if test -e "/tmp/progressbar-store/snap-download-percentage"; then
