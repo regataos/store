@@ -351,6 +351,26 @@ if (!err) {
 });
 }
 
+// Prepare to return to the "Installed" page.
+function go_install() {
+	var capture_iframe_url = document.getElementById("iframeregata").contentWindow.location.href
+
+	if ((capture_iframe_url.indexOf("apps-installed2") > -1) == "1") {
+		if (!fs.existsSync("/tmp/regataos-store/go-installed")) {
+			fs.writeFileSync("/tmp/regataos-store/go-installed", "go installed");
+		}
+
+	} else if ((capture_iframe_url.indexOf("app-") > -1) == "0") {
+		if (fs.existsSync("/tmp/regataos-store/go-installed")) {
+			fs.unlinkSync("/tmp/regataos-store/go-installed");
+		}
+	}
+}
+
+setInterval(function() {
+	go_install();
+}, 500);
+
 setInterval(function() {
 	for_enterprise();
 	show_progressbar();

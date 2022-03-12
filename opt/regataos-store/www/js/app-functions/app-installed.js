@@ -36,9 +36,9 @@ if ((capture_iframe_url.indexOf("apps-installed2") > -1) == "1") {
 			if (fs.existsSync("/tmp/regataos-configs/config/plasma-localerc")) {
 				var lang_data = fs.readFileSync("/tmp/regataos-configs/config/plasma-localerc", "utf8");
 				if (lang_data.indexOf("pt_BR") > -1) {
-					new_app_blocks.setAttribute("href", "https://newstore-regataos.blogspot.com/app-" + apps[i].nickname);;
+					new_app_blocks.setAttribute("href", "https://newstore-regataos.blogspot.com/app-" + apps[i].nickname);
 				} else if (lang_data.indexOf("pt_PT") > -1) {
-					new_app_blocks.setAttribute("href", "https://newstore-regataos.blogspot.com/app-" + apps[i].nickname);;
+					new_app_blocks.setAttribute("href", "https://newstore-regataos.blogspot.com/app-" + apps[i].nickname);
 				} else if (lang_data.indexOf("en_US") > -1) {
 					new_app_blocks.setAttribute("href", "https://en-newstore-regataos.blogspot.com/app-" + apps[i].nickname);
 				} else {
@@ -47,9 +47,9 @@ if ((capture_iframe_url.indexOf("apps-installed2") > -1) == "1") {
 			} else if (fs.existsSync("/tmp/regataos-configs/config/user-dirs.locale")) {
 				var lang_data = fs.readFileSync("/tmp/regataos-configs/config/user-dirs.locale", "utf8");
 				if (lang_data.indexOf("pt_BR") > -1) {
-					new_app_blocks.setAttribute("href", "https://newstore-regataos.blogspot.com/app-" + apps[i].nickname);;
+					new_app_blocks.setAttribute("href", "https://newstore-regataos.blogspot.com/app-" + apps[i].nickname);
 				} else if (lang_data.indexOf("pt_PT") > -1) {
-					new_app_blocks.setAttribute("href", "https://newstore-regataos.blogspot.com/app-" + apps[i].nickname);;
+					new_app_blocks.setAttribute("href", "https://newstore-regataos.blogspot.com/app-" + apps[i].nickname);
 				} else if (lang_data.indexOf("en_US") > -1) {
 					new_app_blocks.setAttribute("href", "https://en-newstore-regataos.blogspot.com/app-" + apps[i].nickname);
 				} else {
@@ -85,8 +85,8 @@ if ((capture_iframe_url.indexOf("apps-installed2") > -1) == "1") {
 }
 
 setInterval(function() {
-var capture_iframe_url = document.getElementById("iframeregata").contentWindow.location.href
-if ((capture_iframe_url.indexOf("apps-installed2") > -1) == "1") {
-	installed()
-}
-}, 1000);
+	var capture_iframe_url = document.getElementById("iframeregata").contentWindow.location.href
+	if ((capture_iframe_url.indexOf("apps-installed2") > -1) == "1") {
+		installed()
+	}
+}, 500);

@@ -1,24 +1,30 @@
 // Search
 function search() {
-var form = document.getElementById('form');
-var field = document.getElementById('field');
+	var form = document.getElementById('form');
+	var field = document.getElementById('field');
 
-checklang();
+	checklang();
 
-form.addEventListener('submit', function(e) {
-	// Capture the search
-	var data = field.value
-	$('#field').val("");
+	form.addEventListener('submit', function(e) {
+		// Capture the search
+		var data = field.value
+		$('#field').val("");
 
-	// Go search page
-	$("#iframeregata").attr("src", linkstore + "search?q=" + data);
+		// Go search page
+		$("#iframeregata").attr("src", linkstore + "search?q=" + data);
 
-	// Take the page to the top
-	window.scrollTo(0,0);
+		// Clear cache
+		const fs = require('fs');
+		if (fs.existsSync("/tmp/regataos-store/go-installed")) {
+			fs.unlinkSync("/tmp/regataos-store/go-installed");
+		}
 
-	// Prevent form submission
-	e.preventDefault();
-});
+		// Take the page to the top
+		window.scrollTo(0,0);
+
+		// Prevent form submission
+		e.preventDefault();
+	});
 }
 
 search();
