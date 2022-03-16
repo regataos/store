@@ -69,6 +69,7 @@ function installation_failed() {
     title=$error_notify_title
     message=$error_notify_text
 
+    curl https://regataos-statistics.vercel.app/api/appProblem?app=$app_name
     sudo -u $user DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$user_id/bus notify-send -i emblem-important-symbolic -u normal -a 'Regata OS Store' "$title" "$message"
 }
 
