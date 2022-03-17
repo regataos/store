@@ -53,6 +53,9 @@ if test ! -e "/tmp/regataos-configs/config/user-dirs.locale" ; then
 	fi
 fi
 
+# Fix for zenity
+xhost +si:localuser:root
+
 # Clear cache
 ps -C wget > /dev/null
 if [ $? = 1 ]

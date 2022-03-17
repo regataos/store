@@ -47,6 +47,10 @@ installation_error_status="Installation error!"
 progressbar_dir="/tmp/progressbar-store"
 installed_apps="/opt/regataos-store/installed-apps/installed-apps.txt"
 
+#Installation error feedback reported
+bug_reported_title="Problem detected!"
+bug_reported_text="We have been notified about the error installing the $app_name app."
+
 # Notify
 #Successful installation
 function success_installation() {
@@ -71,6 +75,7 @@ function installation_failed() {
 
     curl https://regataos-statistics.vercel.app/api/appProblem?app=$app_name
     sudo -u $user DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$user_id/bus notify-send -i emblem-important-symbolic -u normal -a 'Regata OS Store' "$title" "$message"
+    sudo -H env DISPLAY=:0 zenity --title "$bug_reported_title" --error --text="$bug_reported_text" --width="200"
 }
 
 # Download and Install app
