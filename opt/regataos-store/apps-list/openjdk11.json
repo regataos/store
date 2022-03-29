@@ -1,0 +1,17 @@
+[
+	{
+		"name": "OpenJDK 11",
+		"nickname": "openjdk11",
+		"executable": "",
+		"package": "java-11-openjdk-headless",
+		"extra_packages": "timezone-java java-11-openjdk",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://1.bp.blogspot.com/-MdyKD0iZT20/X7EqittlMHI/AAAAAAAAZAk/_7KgcAYwLqA4lgz9RBhKaKTUg_KS2h02wCLcBGAsYHQ/s0/openjdk-backg.png",
+		"price": "free",
+		"dgpu": "none"
+	}
+]
