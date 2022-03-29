@@ -1,4 +1,4 @@
 mainRepositoryName=regataos_21
-mainRepositoryUrl=http://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.3/x86_64
+mainRepositoryUrl=https://download.opensuse.org/repositories/home:/regataos/openSUSE_Leap_15.3/x86_64
 basedOn=openSUSE_Leap_15.3
 basedOnVersion=15.3
