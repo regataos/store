@@ -8,8 +8,8 @@
 		"architecture": "noarch",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/games-tools",
-		"repository_url": "http://download.opensuse.org/repositories/games:/tools/[basedOn]/noarch",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEhkIOt2Y8DcMYPp1gIETbxQe7KCwvYjUauFdEHyi2XF8TR23gMi8EYDirdLByKdhw4sOon_oYeICm0RblHyaRw6patdR42vUQewGlPVBG8nUg9ZJFhi_-1dGDae6hyY6UhCF2XN8GUYx8F7SIsUqRiST5_ppS_fQprYjNX-299hzBDl6zaGY4AdNd-EiQ",
 		"price": "free",
 		"dgpu": "none"
