@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Onedriver",
+		"nickname": "onedriver",
+		"executable": "onedriver-launcher",
+		"package": "onedriver",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6tv1CaWLhZE05EtRoWdyJyyY0GOdCTm3CZEmcPqf_FerV2C2QRJGN4Fzt_gQ8oDl1LkXZ-k8D47rdqOI_3upkMDs35gdseXbj1u94xlhLmg3iNNWZXSB54K8_0WLQTVhAIK565fMKyrYcfPcncXyhagzxir9UDiKlFp7fMuDF1ElGWZFq0TESL9gBaw/s1600/onedriver-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]
