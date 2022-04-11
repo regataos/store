@@ -1,7 +1,7 @@
 [
 	{
 		"name": "Mesa OpenCL",
-		"nickname": "mesa-amd",
+		"nickname": "mesa-opencl",
 		"executable": "",
 		"package": "Mesa-libOpenCL",
 		"extra_packages": "clinfo",
