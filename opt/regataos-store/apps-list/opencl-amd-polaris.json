@@ -1,0 +1,17 @@
+[
+	{
+		"name": "AMD OpenCL Polaris",
+		"nickname": "opencl-amd-polaris",
+		"executable": "",
+		"package": "opencl-amd-polaris",
+		"extra_packages": "clinfo",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/videoregataos",
+		"repository_url": "https://download.opensuse.org/repositories/home:/videoregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgYZhwfKLSu_RIRGy2FejRtSIe5YMpz0Q-Ne0H-A8nUFhDauCmVnDMTGkCylEmAaM5Nr6nq1Im20kyO2rMbyRIrELahe3fZkd1CUIA2BEGHcs9iBD6ZqbSCfiJXdEqosv7vnQrXJ9wZnfNCZFu1vp6Ruwf9K-E5AxJgB7f2QXHUEsYfjxKKrfDynWBrg/s1600/amd-opencl-backg.png",
+		"price": "free",
+		"dgpu": "none"
+	}
+]

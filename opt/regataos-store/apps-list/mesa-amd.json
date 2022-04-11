@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Mesa OpenCL",
+		"nickname": "mesa-amd",
+		"executable": "",
+		"package": "Mesa-libOpenCL",
+		"extra_packages": "clinfo",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/videoregataos",
+		"repository_url": "https://download.opensuse.org/repositories/home:/videoregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhX9919K6e80wmXh7VNZxk7FJf6fPKJi5UhrNGC6YJzR7yNf2zf6iQevsiKVPevaRUeeitkqNjn3pZcoYdsbeMcBFP-USW78kQiR6Dywj1ntwlHvAdjK3m2sJxn-G8XEeROhohAqqui65pS2-Qq8WFd16uqJQYE_-dOZ05nosvuGAwf05fpqZUAKDmkhg/s1600/mesa-opencl-backg.png",
+		"price": "free",
+		"dgpu": "none"
+	}
+]
