@@ -203,6 +203,13 @@ if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
     # Install app
     Install_app
 
+    # If necessary, configure amf
+    if test -e "/tmp/regataos-prime/config/regataos-prime.conf"; then
+        if [[ $(grep -r "amf=" "/tmp/regataos-prime/config/regataos-prime.conf") == *"amf=on"* ]]; then
+            sudo /opt/regataos-prime/scripts/enable-amd-amf -amf-on
+        fi
+    fi
+
     # Confirm installation
     if [[ $(flatpak list) == *"$package_id"* ]]; then
 		chmod 777 /tmp/progressbar-store/*
