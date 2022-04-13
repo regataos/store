@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Bottles",
+		"nickname": "bottles",
+		"executable": "flatpak run com.usebottles.bottles",
+		"package": "com.usebottles.bottles",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2XltyO4mUQTY9nfcOyBpigZop6_qyo9VhQuN5t2kCLi6Gp6kwl0QPFHfu2DQYCkmgR2TNx_HSgHFMErJUdr0nQg-rpbIjYrZMsrBGvJDA-CfV7pLNMfHvsTf4n8sVHB7FLmgq4swg_GwN_MBqT7FfJ-Sck2IF3ZlsQflkEHQETWiSLdn6J4kObF1PNA/s1600/bottles-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]
