@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Zotero",
+		"nickname": "zotero",
+		"executable": "export GDK_BACKEND=x11; /usr/bin/zotero",
+		"package": "zotero",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhW-tC4ylhgEcMnEzPqX5bjB3I2BdFQogbxNpg_89WfygRojs_EyehcG_DfOFXgcUgingYOAxFlgI6gtRXtl_xC9n-gcpPE1KnF9yKRRIiRdJBoGHe8Roz_v4c5kADTJF6xK07fGhRdHWbEcXcbHCmsZrXNZVWjECk5V6XnuGL8ZPS5BRRJsU1UlGKHEg/s1600/zotero-backg.png",
+		"price": "free",
+		"dgpu": "none"
+	}
+]
