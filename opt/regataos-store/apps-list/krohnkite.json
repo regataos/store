@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Krohnkite",
+		"nickname": "krohnkite",
+		"executable": "systemsettings kcm_kwin_scripts",
+		"package": "krohnkite",
+		"extra_packages": "",
+		"architecture": "noarch",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOn]/noarch",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9evipb9AzbuqOPr2PL72H8qkdeimbSlQXjFD7tdHK8YzqlOBsfux3nL74QyqxTJJoWbuoATBZsBY9pOYnsP3noaMsb-nD_x5xsZYu78RFfmABHTe3xSeuT9LRPrKVRsxIXrqxnpJJoAVA2kfGwjegoj49HsCB8_6ARnzXv3cisPNp8VoOs9JsiTIL6w/s1600/krohnkite-backg.png",
+		"price": "free",
+		"dgpu": "none"
+    }
+]
