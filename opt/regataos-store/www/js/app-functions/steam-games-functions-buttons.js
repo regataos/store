@@ -17,10 +17,10 @@ for (var i = 0; i < game.length; i++) {
 // Make sure the Steam client is installed
 var installed = fs.readFileSync("/opt/regataos-store/installed-apps/installed-apps.txt", "utf8");
 if ((installed.indexOf("steam") > -1) == "1") {
-	var capture_iframe = document.getElementById("iframeregata").contentWindow;
+	var capture_iframe = document.getElementById("iframe-regataos-store").contentWindow;
 	capture_iframe.document.getElementById("aviso-steam").style.display = "none";
 } else {
-	var capture_iframe = document.getElementById("iframeregata").contentWindow;
+	var capture_iframe = document.getElementById("iframe-regataos-store").contentWindow;
 	capture_iframe.document.getElementById("aviso-steam").style.display = "block";
 }
 
@@ -31,8 +31,8 @@ const exec = require('child_process').exec;
 const fs = require('fs');
 
 // Capture iframe
-var capture_iframe = document.getElementById("iframeregata").contentWindow;
-var capture_iframe_url = document.getElementById("iframeregata").contentWindow.location.href
+var capture_iframe = document.getElementById("iframe-regataos-store").contentWindow;
+var capture_iframe_url = document.getElementById("iframe-regataos-store").contentWindow.location.href
 var nickname = capture_iframe_url.split("app-")[1];
 
 	if ((capture_iframe_url.indexOf(nickname) > -1) == "1") {

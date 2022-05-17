@@ -17,7 +17,7 @@ function run_command() {
 
 // Show install button
 function install_button() {
-	var capture_iframe = document.getElementById("iframeregata").contentWindow;
+	var capture_iframe = document.getElementById("iframe-regataos-store").contentWindow;
 	capture_iframe.document.getElementById("install-" + appname).style.display = "block";
 	capture_iframe.document.getElementById("open-" + appname).style.display = "none";
 	capture_iframe.document.getElementById("remove-" + appname).style.display = "none";
@@ -25,7 +25,7 @@ function install_button() {
 
 // Show remove button
 function remove_button() {
-	var capture_iframe = document.getElementById("iframeregata").contentWindow;
+	var capture_iframe = document.getElementById("iframe-regataos-store").contentWindow;
 	capture_iframe.document.getElementById("install-" + appname).style.display = "none";
 	capture_iframe.document.getElementById("open-" + appname).style.display = "block";
 	capture_iframe.document.getElementById("remove-" + appname).style.display = "block";

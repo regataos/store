@@ -31,8 +31,8 @@ const exec = require('child_process').exec;
 const fs = require('fs');
 
 // Capture iframe
-var capture_iframe = document.getElementById("iframeregata").contentWindow;
-var capture_iframe_url = document.getElementById("iframeregata").contentWindow.location.href
+var capture_iframe = document.getElementById("iframe-regataos-store").contentWindow;
+var capture_iframe_url = document.getElementById("iframe-regataos-store").contentWindow.location.href
 var appname = capture_iframe_url.split("app-")[1];
 	//appname = appname.replace(".html", "");
 
@@ -62,12 +62,6 @@ if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
 				console.log('The file has been saved!');
 				});
 			});
-
-			capture_iframe.document.getElementById("install-"+appname).style.backgroundColor = "";
-			capture_iframe.document.getElementById("install-"+appname).style.borderRadius = "5px";
-			capture_iframe.document.getElementById("install-"+appname).style.color = "#ffffff";
-			capture_iframe.document.getElementById("install-"+appname).style.pointerEvents = "auto";
-			capture_iframe.document.getElementById("install-"+appname).innerHTML=text_install;
 		};
 
 		//Open app
@@ -101,12 +95,6 @@ if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
 				console.log('The file has been saved!');
 				});
 			});
-
-			capture_iframe.document.getElementById("remove-"+appname).style.backgroundColor = "";
-			capture_iframe.document.getElementById("remove-"+appname).style.borderRadius = "5px";
-			capture_iframe.document.getElementById("remove-"+appname).style.color = "#ffffff";
-			capture_iframe.document.getElementById("remove-"+appname).style.pointerEvents = "auto";
-			capture_iframe.document.getElementById("remove-"+appname).innerHTML=text_uninstall;
 		};
 	}
 }

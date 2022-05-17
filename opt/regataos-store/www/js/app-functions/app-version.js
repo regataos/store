@@ -4,8 +4,8 @@ const exec = require('child_process').exec;
 const fs = require('fs');
 
 	// Capture iframe and check the url of the app page
-	var capture_iframe = document.getElementById("iframeregata").contentWindow;
-	var capture_iframe_url = document.getElementById("iframeregata").contentWindow.location.href
+	var capture_iframe = document.getElementById("iframe-regataos-store").contentWindow;
+	var capture_iframe_url = document.getElementById("iframe-regataos-store").contentWindow.location.href
 	var appname = capture_iframe_url.split("app-")[1];
 	// appname = appname.replace(".html", "");
 
@@ -88,8 +88,8 @@ const exec = require('child_process').exec;
 const fs = require('fs');
 
 	// Capture iframe and check the url of the app page
-	var capture_iframe = document.getElementById("iframeregata").contentWindow;
-	var capture_iframe_url = document.getElementById("iframeregata").contentWindow.location.href
+	var capture_iframe = document.getElementById("iframe-regataos-store").contentWindow;
+	var capture_iframe_url = document.getElementById("iframe-regataos-store").contentWindow.location.href
 	var appname = capture_iframe_url.split("app-")[1];
 	// appname = appname.replace(".html", "");
 

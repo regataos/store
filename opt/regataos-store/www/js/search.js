@@ -11,7 +11,7 @@ function search() {
 		$('#field').val("");
 
 		// Go search page
-		$("#iframeregata").attr("src", linkstore + "search?q=" + data);
+		$("#iframe-regataos-store").attr("src", linkstore + "search?q=" + data);
 
 		// Clear cache
 		const fs = require('fs');

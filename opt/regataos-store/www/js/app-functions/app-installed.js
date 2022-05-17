@@ -1,5 +1,5 @@
 function installed() {
-var capture_iframe_url = document.getElementById("iframeregata").contentWindow.location.href
+var capture_iframe_url = document.getElementById("iframe-regataos-store").contentWindow.location.href
 if ((capture_iframe_url.indexOf("apps-installed2") > -1) == "1") {
 
 	const exec = require('child_process').exec;
@@ -13,7 +13,7 @@ if ((capture_iframe_url.indexOf("apps-installed2") > -1) == "1") {
 	if(!err) {
 	var apps = JSON.parse(data);
 
-	var capture_iframe = document.getElementById("iframeregata").contentWindow;
+	var capture_iframe = document.getElementById("iframe-regataos-store").contentWindow;
 
 		//Read the list of apps that should appear in each block
 		for (var i = 0; i < apps.length; i++) {
@@ -85,7 +85,7 @@ if ((capture_iframe_url.indexOf("apps-installed2") > -1) == "1") {
 }
 
 setInterval(function() {
-	var capture_iframe_url = document.getElementById("iframeregata").contentWindow.location.href
+	var capture_iframe_url = document.getElementById("iframe-regataos-store").contentWindow.location.href
 	if ((capture_iframe_url.indexOf("apps-installed2") > -1) == "1") {
 		installed()
 	}
