@@ -296,6 +296,7 @@ a img {
     margin-bottom: 0px;
 	padding-top: 14px;
 	padding-bottom: 14px;
+    z-index: -1;
 }
 
 /*
@@ -327,11 +328,15 @@ a img {
     align-items: center;
 	height: 26px;
     font-size: 18px;
-    border-left: 4px solid #2f3136;
+    border-left: 4px solid #333334;
     transition: all 0.3s ease-in-out;
 	padding-top: 2px;
     padding-left: 20px;
 	padding-bottom: 2px;
+}
+
+.link-items-on {
+    border-left: 4px solid #0085e4;
 }
 
 .sidebar ul li:hover {
@@ -370,13 +375,19 @@ a img {
 }
 
 .progress-bar {
-	display: block;
-    height: 230px;
+	display: none;
+    position: absolute;
+    height: 205px;
     bottom: 0;
     float: left;
 	opacity: 1;
     animation-name: example;
     animation-duration: 2s;
+    padding-top: 20px;
+}
+
+.progress-bar-show {
+    display: block !important;
 }
 
 .iframe_pb {
@@ -406,6 +417,17 @@ a img {
     margin-left: 250px;
 	margin-bottom: 10px;
 	box-shadow: 0px 0px 10px 3px rgba(8, 13, 18, 0.5);
+}
+
+.progress-bar-full-show {
+    display: block !important;
+    margin-left: 250px;
+    opacity: 1;
+}
+
+.progress-bar-full-hide {
+    margin-left: 240px;
+    opacity: 0.5;
 }
 
 .iframe_pbf {

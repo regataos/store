@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="css/progressbar.css">
     <link rel="stylesheet" type="text/css" href="css/networkoff.css">
+	<link rel="stylesheet" type="text/css" href="css/style-progress-bar.css">
 	<script type="text/javascript" src="js/jquery.min-3.2.1.js"></script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
@@ -16,18 +17,6 @@
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/check-network.js"></script>
     <script type="text/javascript" src="js/app-functions/app-functions.js"></script>
-
-    <!-- Get the height of the site and move to the iframe
-    <script type="text/javascript">
-        window.addEventListener("message", function(e) {
-            var this_frame = document.getElementById("iframe-regataos-store");
-            if (this_frame.contentWindow === e.source) {
-
-            var text = e.data.height
-            alert(text);
-            }
-        })
-    </script> -->
 
 	<!-- Display content when everything is ready -->
 	<script type="text/javascript">
@@ -67,58 +56,58 @@
         </div>
         <script type="text/javascript" src="js/search.js"></script>
 
-		<ul>
-            <li class="li-sidebar home" onclick="go_home();">
-                <a class="link-items" onclick="go_home();">
+		<ul id="ul-menu">
+            <li class="li-sidebar home" onclick="goToHome();">
+                <a class="link-items" onclick="goToHome();">
                     <!-- <i class="fas fa-home" style="display: none;"></i> -->
                     <img class="icones-menu" title="Descobrir" style="margin-left: 3px;" src="images/img-sidebar/home.png"/>
                     <p style="margin-left: 17px;"></p>
                 </a>
             </li>
-            <li class="li-sidebar create" onclick="go_create();">
-                <a class="link-items" onclick="go_create();">
+            <li class="li-sidebar create" id="create" onclick="goInnerPage(this.id);">
+                <a class="link-items">
                     <!-- <i class="fas fa-paint-brush" style="margin-left: 1px;" style="display: none;"></i> -->
                     <img class="icones-menu" title="Criar" style="margin-left: 3px;" src="images/img-sidebar/create.png"/>
                     <p style="margin-left: 18px;"></p>
                 </a>
             </li>
-            <li class="li-sidebar work" onclick="go_work();">
-                <a class="link-items" onclick="go_work();">
+            <li class="li-sidebar work" id="work" onclick="goInnerPage(this.id);">
+                <a class="link-items">
                     <!-- <i class="fas fa-briefcase" style="margin-left: 1px;" style="display: none;"></i> -->
                     <img class="icones-menu" title="Trabalhar" style="margin-left: 2px;" src="images/img-sidebar/work.png"/>
                     <p  style="margin-left: 17px;"></p>
               </a>
             </li>
-            <li class="li-sidebar game" onclick="go_game();">
-                <a class="link-items" onclick="go_game();">
+            <li class="li-sidebar game" id="game" onclick="goInnerPage(this.id);">
+                <a class="link-items">
                     <!-- <i class="fas fas-margin fa-gamepad" style="margin-left: -2px;" style="display: none;"></i> -->
                     <img class="icones-menu" title="Jogar" style="width: 30px;" src="images/img-sidebar/gamepad.png"/>
                     <p style="margin-left: 15px;"></p>
                 </a>
             </li>
-            <li class="li-sidebar develop" onclick="go_develop();">
-                <a class="link-items" onclick="go_develop();">
+            <li class="li-sidebar develop" id="develop" onclick="goInnerPage(this.id);">
+                <a class="link-items">
                     <!-- <i class="fas fas-margin fa-laptop-code" style="margin-left: -2px;" style="display: none;"></i> -->
                     <img class="icones-menu" title="Desenvolver" style="width: 32px;" src="images/img-sidebar/develop.png"/>
                     <p style="margin-left: 14px;"></p>
               </a>
             </li>
-            <li class="li-sidebar utilities" onclick="go_utilities();">
-                <a class="link-items" onclick="go_utilities();">
+            <li class="li-sidebar utilities" id="utilities" onclick="goInnerPage(this.id);">
+                <a class="link-items">
                     <!-- <i class="fas fa-tools" style="margin-left: 1px;" style="display: none;"></i> -->
                     <img class="icones-menu" title="Utilidades" style="margin-left: 4px;" src="images/img-sidebar/tools.png"/>
                     <p style="margin-left: 19px;"></p>
               </a>
             </li>
-            <li class="li-sidebar category" onclick="go_category();" style="display: none;">
-                <a class="link-items" onclick="go_category();">
+            <li class="li-sidebar category" id="category" onclick="goInnerPage(this.id);" style="display: none;">
+                <a class="link-items">
                     <i class="fas fa-list" title="Categorias" style="display: none;"></i>
                     <img class="icones-menu" style="margin-left: 4px;" src="images/img-sidebar/category.png"/>
                     <p style="margin-left: 19px;"></p>
               </a>
             </li>
-            <li class="li-sidebar installed" onclick="go_installed(); setTimeout(function(){ installed(); }, 500);">
-                <a class="link-items" onclick="go_installed(); setTimeout(function(){ installed(); }, 500);">
+            <li class="li-sidebar installed" id="apps-installed2" onclick="goInnerPage(this.id); setTimeout(function(){ installed(); }, 500);">
+                <a class="link-items">
                     <!-- <i class="fas fa-check" style="margin-left: 1px;"></i> -->
                     <img class="icones-menu" title="Instalados" style="margin-left: 4px;" src="images/img-sidebar/installed.png"/>
                     <p style="margin-left: 18px;"></p>
@@ -141,9 +130,25 @@
         </ul>
 
         <div class="progress-bar">
-            <iframe src="progress-bar/progress-bar.html" frameborder="0" class="iframe_pb" id="iframepb"></iframe>
+            <div class="container">
+                <div class="app-installing">App</div>
+                <div class="light-grey">
+                    <div id="myBar" class="progress"></div>
+                    <div id="myBar-movement" class="progress-movement"></div>
+                    <div id="myBar-full" class="progress-full"></div>
+                </div>
+                <div class="status">Download</div>
+                <div class="percentage">50%</div>
+                <div class="down-functions">
+                <div class="down-file-size"><div id="filesize" class="file-size">700 MB /</div><div id="downsize" class="file-size">9.5 GB</div></div>
+                <div id="eta" class="eta-info">4h 25m 5s</div><div class="eta-info eta-desc">restante.</div>
+                    <div class="more-info" title="Mais informações" onclick="startFullProgressBar();" style="background-image:url(images/arrow-right-off.png);"></div>
+                    <div class="more-info2" onclick="startFullProgressBar();" style="background-image:url(images/arrow-right-off.png);"></div>
+                </div>
+            </div>
         </div>
-
+        <script type="text/javascript" src="js/progress-bar/progress-bar.js"></script>
+        <script type="text/javascript" src="js/translations/language/progressbar-lang.js"></script>
 	</div>
 
 	<div class="page">
@@ -160,12 +165,13 @@
             </div>
             </div>
 
-			<iframe src="" allowfullscreen frameborder="0" name="iframe-regataos-store" id="iframe-regataos-store" class="iframe-pages"></iframe>
+			<iframe onload="showHideElements(this)" src="" allowfullscreen frameborder="0" name="iframe-regataos-store" id="iframe-regataos-store" class="iframe-pages"></iframe>
             <script type="text/javascript">
-            setTimeout(function(){
-                homestore();
-            }, 500);
+                setTimeout(function(){
+                    homeStore();
+                }, 500);
             </script>
+
 	        <script type="text/javascript" src="js/app-functions/app-status.js"></script>
 	        <script type="text/javascript" src="js/app-functions/app-version.js"></script>
 	        <script type="text/javascript" src="js/app-functions/steam-games-functions-buttons.js"></script>

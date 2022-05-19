@@ -1,198 +1,248 @@
-const fs = require('fs');
-const exec = require('child_process').exec;
+const fs = require("fs");
+const exec = require("child_process").exec;
 
 // Show progress bar if process starts
-function show_progressbarfull() {
-	fs.access('/tmp/progressbar-store/show-barfull', (err) => {
-		if (!err) {
-			$(".progress-bar-full").css("display", "block")
-			$(".progress-bar-full").css("margin-left", "250px")
-			$(".progress-bar-full").css("opacity", "1")
-			$(".li-sidebar-uninstalling a").css("border-left", "4px solid #0085e4")
-			$(".li-sidebar-b a").css("border-left", "4px solid #0085e4")
-			return;
-		} else {
-			$(".progress-bar-full").css("margin-left", "240px")
-			$(".progress-bar-full").css("opacity", "0.5")
-			$(".li-sidebar-uninstalling a").css("border-left", "4px solid #2f3136")
-			$(".li-sidebar-b a").css("border-left", "4px solid #2f3136")
+function showProgressBar() {
+	const showMoreInfoButton = document.querySelector(".more-info");
+	const hideMoreInfoButton = document.querySelector(".more-info2");
+	const progressBar = document.querySelector(".progress-bar");
+	const installInconProgress = document.querySelector(".li-sidebar-b");
+	const showProgressBarFull = document.querySelector(".progress-bar-full");
+	const uninstallInconProgress = document.querySelector(".li-sidebar-uninstalling");
 
-			setTimeout(function () {
-				$(".progress-bar-full").css("display", "none")
-			}, 100);
+	if (fs.existsSync("/tmp/progressbar-store/progressbar")) {
+		progressBar.classList.add("progress-bar-show");
+
+		if (fs.existsSync("/tmp/progressbar-store/uninstalling")) {
+			installInconProgress.style.cssText = "display: none;";
+			uninstallInconProgress.style.cssText = "display: block;";
+		} else {
+			installInconProgress.style.cssText = "display: block;";
+			uninstallInconProgress.style.cssText = "display: none;";
 		}
-	});
+
+		if (fs.existsSync("/tmp/progressbar-store/queued-3")) {
+			showProgressBarFull.style.cssText = "width: 435px;";
+		} else {
+			showProgressBarFull.style.cssText = "width: 423px;";
+		}
+
+		if (fs.existsSync("/tmp/progressbar-store/speed")) {
+			progressBar.style.cssText = "height: 205px;";
+		} else {
+			progressBar.style.cssText = "height: 180px;";
+		}
+
+	} else {
+		progressBar.classList.remove("progress-bar-show");
+		showProgressBarFull.classList.remove("progress-bar-full-show");
+		installInconProgress.style.cssText = "display: none;";
+		uninstallInconProgress.style.cssText = "display: none;";
+		showMoreInfoButton.style.cssText = "display: block";
+		hideMoreInfoButton.style.cssText = "display: none";
+	}
 }
 
-// When prompted, display full progress bar
-function showbarfull() {
-	fs.writeFileSync("/tmp/progressbar-store/show-barfull", "show bar full");
+//Show progress bar if process starts
+function startFullProgressBar() {
+	const showProgressBarFull = document.querySelector(".progress-bar-full");
+	const showMoreInfoButton = document.querySelector(".more-info");
+	const hideMoreInfoButton = document.querySelector(".more-info2");
+	const sideBarButton = document.querySelector(".li-sidebar-b a");
+	const sideBarUninstalling = document.querySelector(".li-sidebar-uninstalling a");
+
+	function showFullProgressBar() {
+		showProgressBarFull.classList.add("progress-bar-full-show");
+		showProgressBarFull.classList.remove("progress-bar-full-hide");
+		sideBarUninstalling.style.cssText = "border-left: 4px solid #0085e4";
+		sideBarButton.style.cssText = "border-left: 4px solid #0085e4";
+
+		setTimeout(function () {
+			showMoreInfoButton.style.cssText = "display: none";
+			hideMoreInfoButton.style.cssText = "display: block";
+		}, 100);
+	}
+
+	function hideFullProgressBar() {
+		showProgressBarFull.classList.add("progress-bar-full-hide");
+		showProgressBarFull.classList.remove("progress-bar-full-show");
+		sideBarUninstalling.style.cssText = "border-left: 4px solid #2f3136";
+		sideBarButton.style.cssText = "border-left: 4px solid #2f3136";
+
+		setTimeout(function () {
+			showMoreInfoButton.style.cssText = "display: block";
+			hideMoreInfoButton.style.cssText = "display: none";
+			showProgressBarFull.style.cssText = "display: none";
+		}, 100);
+	}
+
+	if (showProgressBarFull.classList.contains("progress-bar-full-hide")) {
+		showFullProgressBar();
+	} else if (showProgressBarFull.classList.contains("progress-bar-full-show")) {
+		hideFullProgressBar();
+	} else {
+		showFullProgressBar();
+	}
 }
 
-function fullprogressbar() {
-	fs.access('/tmp/progressbar-store/show-barfull', (err) => {
-		if (!err) {
-			$(".more-info").css("display", "block")
-			$(".more-info2").css("display", "none")
-			fs.unlinkSync("/tmp/progressbar-store/show-barfull");
-
-			return;
-		} else {
-			$(".progress-bar-full").css("display", "block")
-			$(".more-info2").css("display", "block")
-			$(".more-info").css("display", "none")
-			showbarfull();
-		}
-	});
-}
-
-// Show progress bar if process starts
-function show_progressbar_icon() {
-	fs.access('/tmp/progressbar-store/uninstalling', (err) => {
-		if (!err) {
-			$(".li-sidebar-uninstalling").css("display", "block")
-			$(".li-sidebar-b").css("display", "none")
-			return;
-		} else {
-			$(".li-sidebar-uninstalling").css("display", "none")
-			$(".li-sidebar-b").css("display", "block")
-		}
-	});
-}
-
-function show_progressbar() {
-	fs.access('/tmp/progressbar-store/progressbar', (err) => {
-		if (!err) {
-			$(".progress-bar").css("display", "block")
-			$(".others").css("display", "none")
-			show_progressbar_icon()
-			show_progressbarfull()
-			return;
-		} else {
-			$(".progress-bar").css("display", "none")
-			$(".li-sidebar-b").css("display", "none")
-			$(".li-sidebar-uninstalling").css("display", "none")
-			$(".progress-bar-full").css("display", "none")
-			$(".others").css("display", "block")
-			fs.unlinkSync("/tmp/progressbar-store/show-barfull");
-		}
-	});
-
-	fs.access('/tmp/progressbar-store/queued-3', (err) => {
-		if (!err) {
-			console.error('myfile already exists');
-			$(".progress-bar-full").css("width", "435px")
-
-			return;
-		} else {
-			$(".progress-bar-full").css("width", "423px")
-		}
-	});
-}
-
-// If necessary, increase the size of the progress bar box
-function downspeed() {
-	fs.access('/tmp/progressbar-store/speed', (err) => {
-		if (!err) {
-			$("#iframepb").css("height", "205px")
-			return;
-		} else {
-			$("#iframepb").css("height", "180px")
-		}
-	});
+// Check configuration files
+function checkConfigFile(data, desiredString) {
+	const searchString = new RegExp(`(?<=${desiredString}).*`, "g");
+	let systemLanguage = data.match(searchString)[0];
+	systemLanguage = systemLanguage.replace(/:.*/g, '');
+	systemLanguage = systemLanguage.replace(/\.UTF-8/g, "");
+	return systemLanguage;
 }
 
 // Check the system language information to set the store's primary url
-function checklang() {
-	fs.access('/tmp/regataos-configs/config/plasma-localerc', (err) => {
-		if (!err) {
-			fs.readFile('/tmp/regataos-configs/config/plasma-localerc', (err, data) => {
-				if (err) throw err;
-				var data = data
+function setMainUrl() {
+	const urlStore = {
+		"pt_BR": "https://newstore-regataos.blogspot.com/",
+		"pt_PT": "https://newstore-regataos.blogspot.com/",
+		"en_US": "https://en-newstore-regataos.blogspot.com/",
+	};
 
-				if (data.indexOf("pt_BR") > -1) {
-					window.linkstore = "https://newstore-regataos.blogspot.com/";
-				} else if (data.indexOf("pt_PT") > -1) {
-					window.linkstore = "https://newstore-regataos.blogspot.com/";
-				} else if (data.indexOf("en_US") > -1) {
-					window.linkstore = "https://en-newstore-regataos.blogspot.com/";
-				} else {
-					window.linkstore = "https://en-newstore-regataos.blogspot.com/";
-				}
-			});
-			return;
+	if (fs.existsSync("/tmp/regataos-configs/config/plasma-localerc")) {
+		const checkLangSystem = fs.readFileSync("/tmp/regataos-configs/config/plasma-localerc", "utf8");
 
-		} else {
-			fs.readFile('/tmp/regataos-configs/config/user-dirs.locale', (err, data) => {
-				if (err) throw err;
-				var data = data
+		if (checkLangSystem.includes("LANGUAGE")) {
+			const configOption = "LANGUAGE="
+			const languageDetected = checkConfigFile(checkLangSystem, configOption);
 
-				if (data.indexOf("pt_BR") > -1) {
-					window.linkstore = "https://newstore-regataos.blogspot.com/";
-				} else if (data.indexOf("pt_PT") > -1) {
-					window.linkstore = "https://newstore-regataos.blogspot.com/";
-				} else if (data.indexOf("en_US") > -1) {
-					window.linkstore = "https://en-newstore-regataos.blogspot.com/";
-				} else {
-					window.linkstore = "https://en-newstore-regataos.blogspot.com/";
-				}
-			});
+			if (typeof urlStore[languageDetected] !== "undefined") {
+				return urlStore[languageDetected];
+			} else {
+				return urlStore["en_US"];
+			}
 		}
-	});
+
+		if (checkLangSystem.includes("LANG")) {
+			const configOption = "LANG="
+			const languageDetected = checkConfigFile(checkLangSystem, configOption);
+
+			if (typeof urlStore[languageDetected] !== "undefined") {
+				return urlStore[languageDetected];
+			} else {
+				return urlStore["en_US"];
+			}
+		}
+
+	} else if (fs.existsSync("/tmp/regataos-configs/config/user-dirs.locale")) {
+		const checkLangSystem = fs.readFileSync("/tmp/regataos-configs/config/user-dirs.locale", "utf8");
+
+		if (typeof urlStore[checkLangSystem] !== "undefined") {
+			return urlStore[checkLangSystem];
+		} else {
+			return urlStore["en_US"];
+		}
+	}
 }
-checklang();
+
+// Show or hide specific elements, depending on the URL visited
+function showHideElements() {
+	const iframeStoreUrl = document.getElementById("iframe-regataos-store").contentWindow.location.href;
+
+	if (((iframeStoreUrl.indexOf("app-") > -1) == "1") ||
+		((iframeStoreUrl.indexOf("search?q=") > -1) == "1")) {
+		document.querySelector(".topbar").style.cssText = "display: flex;";
+
+	} else {
+		document.querySelector(".topbar").style.cssText = "display: none;";
+	}
+
+	if ((iframeStoreUrl.indexOf("apps-installed2") > -1) == "1") {
+		document.querySelector(".installed a").classList.add("link-items-on");
+
+	} else {
+		document.querySelector(".installed a").classList.remove("link-items-on");
+	}
+
+	if (((iframeStoreUrl.indexOf("home") > -1) == "1") ||
+		((iframeStoreUrl.indexOf("enterprise") > -1) == "1")) {
+		document.querySelector(".home a").classList.add("link-items-on");
+
+	} else {
+		document.querySelector(".home a").classList.remove("link-items-on");
+	}
+
+	if ((iframeStoreUrl.indexOf("create") > -1) == "1") {
+		document.querySelector(".create a").classList.add("link-items-on");
+
+	} else {
+		document.querySelector(".create a").classList.remove("link-items-on");
+	}
+
+	if ((iframeStoreUrl.indexOf("work") > -1) == "1") {
+		document.querySelector(".work a").classList.add("link-items-on");
+
+	} else {
+		document.querySelector(".work a").classList.remove("link-items-on");
+	}
+
+	if ((iframeStoreUrl.indexOf("game") > -1) == "1") {
+		document.querySelector(".game a").classList.add("link-items-on");
+
+	} else {
+		document.querySelector(".game a").classList.remove("link-items-on");
+	}
+
+	if ((iframeStoreUrl.indexOf("develop") > -1) == "1") {
+		document.querySelector(".develop a").classList.add("link-items-on");
+
+	} else {
+		document.querySelector(".develop a").classList.remove("link-items-on");
+	}
+
+	if ((iframeStoreUrl.indexOf("utilities") > -1) == "1") {
+		document.querySelector(".utilities a").classList.add("link-items-on");
+
+	} else {
+		document.querySelector(".utilities a").classList.remove("link-items-on");
+	}
+}
+
+function goInnerPage(pageId) {
+	const urlForIframe = document.getElementById("iframe-regataos-store").contentWindow
+	urlForIframe.document.location.href = `${setMainUrl()}p/${pageId}.html`;
+
+	fs.unlinkSync("/tmp/regataos-store/go-installed");
+}
+
+// Open the iframe with the app store homepage
+function homeStore() {
+	const iframeRegataStore = document.getElementById("iframe-regataos-store").contentWindow;
+
+	if (fs.existsSync("/usr/share/regataos/enterprise-iso.txt")) {
+		iframeRegataStore.document.location.href = `${setMainUrl()}p/enterprise.html`;
+	} else {
+		iframeRegataStore.document.location.href = `${setMainUrl()}p/home.html`;
+	}
+}
+
+//Go for Home page
+function goToHome() {
+	const urlForIframe = document.getElementById("iframe-regataos-store").contentWindow
+
+	if (fs.existsSync("/usr/share/regataos/enterprise-iso.txt")) {
+		urlForIframe.document.location.href = `${setMainUrl()}p/enterprise.html`;
+	} else {
+		urlForIframe.document.location.href = `${setMainUrl()}p/home.html`;
+	}
+}
 
 // Function back button
 function voltar() {
+	setTimeout(function () {
+		const backButton = document.querySelector(".topbar");
+		backButton.style.cssText = "display: none;";
+	}, 500);
+
 	fs.access('/tmp/regataos-store/go-installed', (err) => {
 		if (!err) {
 			history.go(-2);
 			return;
 		} else {
 			history.go(-1);
-		}
-	});
-}
-
-// Open the iframe with the app store homepage
-function homestore() {
-	fs.access('/usr/share/regataos/enterprise-iso.txt', (err) => {
-		if (!err) {
-			document.getElementById("iframe-regataos-store").contentWindow.document.location.href = linkstore + "p/enterprise.html";
-		} else {
-			document.getElementById("iframe-regataos-store").contentWindow.document.location.href = linkstore + "p/home.html";
-		}
-	});
-}
-
-// Display elements according to the main pages
-function homeurl() {
-	fs.access('/usr/share/regataos/enterprise-iso.txt', (err) => {
-		if (!err) {
-			var captureIframe = document.getElementById("iframe-regataos-store").contentWindow.location.href
-			var homeurl = linkstore + "enterprise"
-
-			if (captureIframe == homeurl) {
-				$(".home a").css("border-left", "4px solid #0085e4")
-				$("#iframe-regataos-store").css("position", "absolute")
-				$(".topbar").css("display", "none")
-
-			} else {
-				$(".home a").css("border-left", "4px solid #333334")
-			}
-
-		} else {
-			var captureIframe = document.getElementById("iframe-regataos-store").contentWindow.location.href
-			var homeurl = linkstore + "home"
-
-			if (captureIframe == homeurl) {
-				$(".home a").css("border-left", "4px solid #0085e4")
-				$("#iframe-regataos-store").css("position", "absolute")
-				$(".topbar").css("display", "none")
-
-			} else {
-				$(".home a").css("border-left", "4px solid #333334")
-			}
 		}
 	});
 }
@@ -219,126 +269,6 @@ function check_network_topbar() {
 	});
 }
 check_network_topbar()
-
-function iframeurl() {
-	//Show or hide specific elements, depending on the URL visited
-	var captureIframe = document.getElementById("iframe-regataos-store").contentWindow.location.href
-
-	fs.access('/usr/share/regataos/enterprise-iso.txt', (err) => {
-		if (!err) {
-			if ((captureIframe.indexOf("enterprise") > -1) == "1") {
-				$(".topbar").css("display", "none")
-			}
-		} else {
-			if ((captureIframe.indexOf("home") > -1) == "1") {
-				$(".topbar").css("display", "none")
-			}
-		}
-	});
-
-	if ((captureIframe.indexOf("create") > -1) == "1") {
-		$(".topbar").css("display", "none")
-		$(".create a").css("border-left", "4px solid #0085e4")
-	} else {
-		$(".create a").css("border-left", "4px solid #333334")
-	}
-
-	if ((captureIframe.indexOf("work") > -1) == "1") {
-		$(".topbar").css("display", "none")
-		$(".work a").css("border-left", "4px solid #0085e4")
-	} else {
-		$(".work a").css("border-left", "4px solid #333334")
-	}
-
-	if ((captureIframe.indexOf("game") > -1) == "1") {
-		$(".topbar").css("display", "none")
-		$(".game a").css("border-left", "4px solid #0085e4")
-	} else {
-		$(".game a").css("border-left", "4px solid #333334")
-	}
-
-	if ((captureIframe.indexOf("develop") > -1) == "1") {
-		$(".topbar").css("display", "none")
-		$(".develop a").css("border-left", "4px solid #0085e4")
-	} else {
-		$(".develop a").css("border-left", "4px solid #333334")
-	}
-
-	if ((captureIframe.indexOf("utilities") > -1) == "1") {
-		$(".topbar").css("display", "none")
-		$(".utilities a").css("border-left", "4px solid #0085e4")
-	} else {
-		$(".utilities a").css("border-left", "4px solid #333334")
-	}
-
-	if ((captureIframe.indexOf("category") > -1) == "1") {
-		$(".topbar").css("display", "none")
-		$(".category a").css("border-left", "4px solid #0085e4")
-	} else {
-		$(".category a").css("border-left", "4px solid #333334")
-	}
-
-	if ((captureIframe.indexOf("apps-installed2") > -1) == "1") {
-		$(".topbar").css("display", "none")
-		$(".installed a").css("border-left", "4px solid #0085e4")
-	} else if ((captureIframe.indexOf("app-") > -1) == "1") {
-		$(".topbar").css("display", "flex")
-		$(".installed a").css("border-left", "4px solid #333334")
-	} else if ((captureIframe.indexOf("search?q=") > -1) == "1") {
-		$(".installed a").css("border-left", "4px solid #333334")
-		$(".topbar").css("display", "flex")
-	} else {
-		$(".installed a").css("border-left", "4px solid #333334")
-	}
-}
-
-// Functions to navigate between pages
-//Go for pages
-function go_home() {
-	fs.access('/usr/share/regataos/enterprise-iso.txt', (err) => {
-		if (!err) {
-			document.getElementById("iframe-regataos-store").contentWindow.document.location.href = linkstore + "p/enterprise.html";
-		} else {
-			document.getElementById("iframe-regataos-store").contentWindow.document.location.href = linkstore + "p/home.html";
-		}
-	});
-	fs.unlinkSync("/tmp/regataos-store/go-installed");
-}
-
-function go_create() {
-	document.getElementById("iframe-regataos-store").contentWindow.document.location.href = linkstore + "p/create.html";
-	fs.unlinkSync("/tmp/regataos-store/go-installed");
-}
-
-function go_work() {
-	document.getElementById("iframe-regataos-store").contentWindow.document.location.href = linkstore + "p/work.html";
-	fs.unlinkSync("/tmp/regataos-store/go-installed");
-}
-
-function go_game() {
-	document.getElementById("iframe-regataos-store").contentWindow.document.location.href = linkstore + "p/game.html";
-	fs.unlinkSync("/tmp/regataos-store/go-installed");
-}
-
-function go_develop() {
-	document.getElementById("iframe-regataos-store").contentWindow.document.location.href = linkstore + "p/develop.html";
-	fs.unlinkSync("/tmp/regataos-store/go-installed");
-}
-
-function go_utilities() {
-	document.getElementById("iframe-regataos-store").contentWindow.document.location.href = linkstore + "p/utilities.html";
-	fs.unlinkSync("/tmp/regataos-store/go-installed");
-}
-
-function go_category() {
-	document.getElementById("iframe-regataos-store").contentWindow.document.location.href = linkstore + "p/category.html";
-	fs.unlinkSync("/tmp/regataos-store/go-installed");
-}
-
-function go_installed() {
-	document.getElementById("iframe-regataos-store").contentWindow.document.location.href = linkstore + "p/apps-installed2.html";
-	fs.writeFileSync("/tmp/regataos-store/go-installed", "go installed");
-}
 
 // For Enterprise
 function for_enterprise() {
@@ -373,8 +303,5 @@ setInterval(function () {
 
 setInterval(function () {
 	for_enterprise();
-	show_progressbar();
-	downspeed();
-	homeurl();
-	iframeurl();
-}, 100);
+	showProgressBar();
+}, 500);

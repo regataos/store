@@ -1,5 +1,5 @@
-const exec = require('child_process').exec;
-const fs = require('fs');
+//const exec = require('child_process').exec;
+//const fs = require('fs');
 
 // folder with the file with the value
 var dir = "/tmp/progressbar-store/"

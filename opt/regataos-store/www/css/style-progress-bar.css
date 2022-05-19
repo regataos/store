@@ -1,57 +1,14 @@
-body {
-font-family: Oxygen;
-font-weight: 300;
-color: #f3f3f3;
-padding: 0;
-margin: 0;
--webkit-touch-callout: none;
--webkit-user-select: none;
-user-select: none;
-background-color: #1b1c1d00;
-}
-
-@font-face {
-font-family: "Oxygen";
-src: url('fonts/Oxygen.otf') format('truetype');
-}
-
-/* scrollbar css */
-/* width */
-::-webkit-scrollbar {
-width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-background: #202225; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-transition: all .3s;
-background: #383e42; 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-background: #43494d; 
-}
-
-html {
-background-color: #202225;
-}
-
 .container {
+position: relative;
 width: 207px;
-height: auto;
-min-height: 115px;
+height: 100%;
 line-height: 1.4em;
+color: #fff;
 background-color: #202225;
 margin-top: 0px;
 padding-top: 20px;
 padding-left: 11px;
 padding-right: 12px;
-padding-bottom: 25px;
 }
 
 .down-functions {
@@ -63,17 +20,17 @@ margin-left: 100px;
 
 .more-info {
 position: absolute;
-bottom: 0;
+bottom: 45px;
 right: 0;
 height: 15px;
 width: 15px;
+background-image:url("../images/arrow-right-off.png");
 background-position: 50% 50%;
 background-size: auto 15px;
 background-repeat: no-repeat;
 float: right;
 cursor: pointer;
 transition: all 0.3s ease;
-margin-bottom: 20px;
 margin-right: 8px;
 padding-top: 5px;
 padding-right: 5px;
@@ -93,17 +50,17 @@ background-image:url("../images/arrow-right-off.png") !important;
 .more-info2 {
 display: none;
 position: absolute;
-bottom: 0;
+bottom: 45px;
 right: 0;
 height: 15px;
 width: 15px;
+background-image:url("../images/arrow-right-off.png");
 background-position: 50% 50%;
 background-size: auto 15px;
 background-repeat: no-repeat;
 float: right;
 cursor: pointer;
 transition: all 0.3s ease;
-margin-bottom: 20px;
 margin-right: 8px;
 padding-top: 5px;
 padding-right: 5px;
