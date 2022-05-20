@@ -133,9 +133,9 @@ function checkConfigFile(data, desiredString) {
 // Check the system language information to set the store's primary url
 function setMainUrl() {
 	const urlStore = {
-		"pt_BR": "https://newstore-regataos.blogspot.com/",
-		"pt_PT": "https://newstore-regataos.blogspot.com/",
-		"en_US": "https://en-newstore-regataos.blogspot.com/",
+		"pt_BR": "https://newstore-regataos.blogspot.com",
+		"pt_PT": "https://newstore-regataos.blogspot.com",
+		"en_US": "https://en-newstore-regataos.blogspot.com",
 	};
 
 	if (fs.existsSync("/tmp/regataos-configs/config/plasma-localerc")) {
@@ -178,11 +178,11 @@ function homeStore() {
 	const iframeRegataStore = document.getElementById("iframe-regataos-store").contentWindow;
 
 	if (fs.existsSync("/usr/share/regataos/enterprise-iso.txt")) {
-		iframeRegataStore.document.location.href = `${setMainUrl()}p/enterprise.html`;
+		iframeRegataStore.document.location.href = `${setMainUrl()}/p/enterprise.html`;
 		document.querySelector("li.game").style.cssText = "display: none;";
 
 	} else {
-		iframeRegataStore.document.location.href = `${setMainUrl()}p/home.html`;
+		iframeRegataStore.document.location.href = `${setMainUrl()}/p/home.html`;
 		document.querySelector("li.game").style.cssText = "display: block;";
 	}
 }
@@ -237,7 +237,7 @@ function goInnerPage(pageId) {
 	const getIframeStore = document.getElementById("iframe-regataos-store").contentWindow;
 	const linksPage = document.querySelectorAll(".li-sidebar a");
 
-	getIframeStore.document.location.href = `${setMainUrl()}p/${pageId}.html`;
+	getIframeStore.document.location.href = `${setMainUrl()}/p/${pageId}.html`;
 	document.querySelector(".topbar").style.cssText = "display: none;";
 
 	setTimeout(function () {
@@ -260,9 +260,9 @@ function goToHome() {
 	const urlForIframe = document.getElementById("iframe-regataos-store").contentWindow
 
 	if (fs.existsSync("/usr/share/regataos/enterprise-iso.txt")) {
-		urlForIframe.document.location.href = `${setMainUrl()}p/enterprise.html`;
+		urlForIframe.document.location.href = `${setMainUrl()}/p/enterprise.html`;
 	} else {
-		urlForIframe.document.location.href = `${setMainUrl()}p/home.html`;
+		urlForIframe.document.location.href = `${setMainUrl()}/p/home.html`;
 	}
 }
 
@@ -305,7 +305,7 @@ function searchBox() {
 		const data = field.value
 		document.getElementById("field").value = "";
 
-		document.getElementById("iframe-regataos-store").contentWindow.document.location.href = `${setMainUrl()}search?q=${data}`;
+		document.getElementById("iframe-regataos-store").contentWindow.document.location.href = `${setMainUrl()}/search?q=${data}`;
 		sessionStorage.setItem("goInstalledPage", "noaccess");
 
 		window.scrollTo(0, 0);

@@ -1,135 +1,83 @@
 // Run the function according to the open app page
-function version_rpm() {
-const exec = require('child_process').exec;
-const fs = require('fs');
+function versionRpm(appNickname) {
+	const fs = require('fs');
 
-	// Capture iframe and check the url of the app page
-	var capture_iframe = document.getElementById("iframe-regataos-store").contentWindow;
-	var capture_iframe_url = document.getElementById("iframe-regataos-store").contentWindow.location.href
-	var appname = capture_iframe_url.split("app-")[1];
-	// appname = appname.replace(".html", "");
+	const data = fs.readFileSync(`/opt/regataos-store/apps-list/${appNickname}.json`, "utf8");
+	const appDate = JSON.parse(data);
 
-	// Show app version
-	if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
+	for (let i = 0; i < appDate.length; i++) {
+		const package = appDate[i].package
+		const repositoryCache = appDate[i].repository_cache
+		const RepositoryName = fs.readFileSync("/usr/share/regataos/regataos-base-version.txt", "utf8");
 
-		var files = [];
+		if ((repositoryCache.indexOf("mainRepositoryName") > -1) == "1") {
+			let mainRepository = RepositoryName.match(/(?<=mainRepositoryName=).*/g)[0];
 
-		var data = fs.readFileSync("/opt/regataos-store/apps-list/" + appname + ".json", "utf8");
-		var apps = JSON.parse(data);
+			const RepositoryFile = fs.readFileSync(`/var/cache/zypp/solv/${mainRepository}/solv.idx`, "utf8");
+			const searchString = new RegExp(`(?<=srcpackage:${package}).*`, "g");
+			let appVersion = RepositoryFile.match(searchString)[0];
+			appVersion = appVersion.replace(/-.*/g, "").trim();
+			return appVersion;
 
-		for (var i = 0; i < apps.length; i++) {
-		var package = apps[i].package
-		var repository_cache = apps[i].repository_cache
+		} else if ((repositoryCache.indexOf("basedOnVersion") > -1) == "1") {
+			let baseRepo = RepositoryName.match(/(?<=basedOnVersion=).*/g)[0];
+			baseRepo = repositoryCache.replace(/\[basedOnVersion\]/g, baseRepo);
 
-		if ((repository_cache.indexOf("mainRepositoryName") > -1) == "1") {
-			var main_repository_name = "grep -r mainRepositoryName= /usr/share/regataos/regataos-base-version.txt | cut -d'=' -f 2-";
-			exec(main_repository_name, (error, stdout, stderr) => {
-			if (stdout) {
-				var repository_name = stdout
-				var repository_name = repository_name.replace(/(\r\n|\n|\r)/gm, "");
-				var text_content = capture_iframe.document.getElementById("version-" + appname).textContent;
-				if ((text_content.indexOf("recent") > -1) == "1") {
-					var command_line = "grep -r " + package + " /var/cache/zypp/solv/" + repository_name + " | awk '{print $2}' | cut -d'-' -f -1 | cut -d'g' -f -1 | sed s'/file//g' | sed '/^$/d' | tail -1";
-					exec(command_line, (error, stdout, stderr) => {
-					if (stdout) {
-						var AppVersion = stdout
-						if ((stdout.indexOf("nickname") > -1) == "0") {
-							capture_iframe.document.getElementById("version-" + appname).innerHTML=AppVersion;
-						}
-					}
-					});
-				}
+			const prepareString1 = new RegExp(`-${package}.*`, "gm");
+			const prepareString2 = new RegExp(`${package}-.*`, "gm");
+
+			let RepositoryFile = fs.readFileSync(`${baseRepo}/solv.idx`, "utf8");
+			RepositoryFile = RepositoryFile.replace(prepareString1, "").replace(prepareString2, "");
+
+			const searchString = new RegExp(`(?<=${package}).*x86_64`, "g");
+
+			if (searchString) {
+				let appVersion = RepositoryFile.match(searchString)[0];
+				appVersion = appVersion.replace(/-.*/g, "").trim();
+				return appVersion;
+
+			} else {
+				const searchString = new RegExp(`(?<=${package}).*noarch`, "g");
+				let appVersion = RepositoryFile.match(searchString)[0];
+				appVersion = appVersion.replace(/-.*/g, "").trim();
+				return appVersion;
 			}
-			});
-
-		} else if ((repository_cache.indexOf("basedOnVersion") > -1) == "1") {
-			var repository_cache = repository_cache.replace(/(\[|\])/gm, "");
-			var based_on_version = 'export basedOnVersion=$(grep -r "basedOnVersion=" "/usr/share/regataos/regataos-base-version.txt" | cut -d"=" -f 2-); echo ' + repository_cache + ' | sed "s,basedOnVersion,$basedOnVersion,"';
-			exec(based_on_version, (error, stdout, stderr) => {
-
-			if (stdout) {
-				var repository_name = stdout
-				var repository_name = repository_name.replace(/(\r\n|\n|\r)/gm, "");
-
-				var text_content = capture_iframe.document.getElementById("version-" + appname).textContent;
-				if ((text_content.indexOf("recent") > -1) == "1") {
-					var command_line = "grep -r " + package + " " + repository_name + " | awk '{print $2}' | cut -d'-' -f -1 | cut -d'g' -f -1 | sed s'/file//g' | sed '/^$/d' | tail -1";
-					exec(command_line, (error, stdout, stderr) => {
-					if (stdout) {
-						var AppVersion = stdout
-						if ((stdout.indexOf("nickname") > -1) == "0") {
-							capture_iframe.document.getElementById("version-" + appname).innerHTML=AppVersion;
-						}
-					}
-					});
-				}
-			}
-			});
 
 		} else {
-			var text_content = capture_iframe.document.getElementById("version-" + appname).textContent;
-			if ((text_content.indexOf("recent") > -1) == "1") {
-				var command_line = "grep -r '" + package + "' " + repository_cache + " | awk '{print $2}' | cut -d'-' -f -1 | cut -d'g' -f -1 | sed s'/file//g' | sed '/^$/d' | tail -1";
-				exec(command_line, (error, stdout, stderr) => {
-				if (stdout) {
-					if ((stdout.indexOf("nickname") > -1) == "0") {
-						capture_iframe.document.getElementById("version-" + appname).innerHTML=stdout;
-					}
-				}
-				});
-			}
-		}
+			const RepositoryFile = fs.readFileSync(`${repositoryCache}/solv.idx`, "utf8");
+			const searchString = new RegExp(`(?<=${package}).*`, "g");
+			let appVersion = RepositoryFile.match(searchString)[0];
+			appVersion = appVersion.replace(/-.*/g, "").trim();
+			return appVersion;
 		}
 	}
 }
 
-function version() {
-const exec = require('child_process').exec;
-const fs = require('fs');
+function appVersion() {
+	const fs = require('fs');
 
-	// Capture iframe and check the url of the app page
-	var capture_iframe = document.getElementById("iframe-regataos-store").contentWindow;
-	var capture_iframe_url = document.getElementById("iframe-regataos-store").contentWindow.location.href
-	var appname = capture_iframe_url.split("app-")[1];
-	// appname = appname.replace(".html", "");
+	const captureIframe = document.getElementById("iframe-regataos-store").contentWindow;
+	const pageUrl = captureIframe.location.href
+	const appNickname = pageUrl.split("app-")[1];
 
-	// Show app version
-	if ((capture_iframe_url.indexOf(appname) > -1) == "1") {
-		// Read the list of Snap or Flatpak app version
-		var text_content = capture_iframe.document.getElementById("version-" + appname).textContent;
-		var snap_version_cache = fs.readFileSync("/opt/regataos-store/installed-apps/snap-version-cache.txt", "utf8");
-		var flatpak_version_cache = fs.readFileSync("/opt/regataos-store/installed-apps/flatpak-version-cache.txt", "utf8");
+	if ((pageUrl.indexOf(appNickname) > -1) == "1") {
+		const snapCahceVersion = fs.readFileSync("/opt/regataos-store/installed-apps/snap-version-cache.txt", "utf8");
+		const flatpakCahceVersion = fs.readFileSync("/opt/regataos-store/installed-apps/flatpak-version-cache.txt", "utf8");
 
-		if ((snap_version_cache.indexOf(appname) > -1) == "1") {
-			if ((text_content.indexOf("recent") > -1) == "1") {
-				var command_line = "grep -R '" + appname + "' /opt/regataos-store/installed-apps/snap-version-cache.txt | awk '{print $2}'";
-				exec(command_line, (error, stdout, stderr) => {
-				if (stdout) {
-					if ((stdout.indexOf("nickname") > -1) == "0") {
-						capture_iframe.document.getElementById("version-" + appname).innerHTML=stdout;
-					}
-				}
-				});
-			}
+		if ((snapCahceVersion.indexOf(appNickname) > -1) == "1") {
+			const searchString = new RegExp(`(?<=${appNickname}).*`, "g");
+			const appVersion = snapCahceVersion.match(searchString)[0];
 
-		} else if ((flatpak_version_cache.indexOf(appname) > -1) == "1") {
-			if ((text_content.indexOf("recent") > -1) == "1") {
-				var command_line = "grep -R '" + appname + "' /opt/regataos-store/installed-apps/flatpak-version-cache.txt | awk '{print $2}'";
-				exec(command_line, (error, stdout, stderr) => {
-				if (stdout) {
-					if ((stdout.indexOf("nickname") > -1) == "0") {
-						capture_iframe.document.getElementById("version-" + appname).innerHTML=stdout;
-					}
-				}
-				});
-			}
+			captureIframe.document.getElementById(`version-${appNickname}`).innerHTML = appVersion;
+
+		} else if ((flatpakCahceVersion.indexOf(appNickname) > -1) == "1") {
+			const searchString = new RegExp(`(?<=${appNickname}).*`, "g");
+			const appVersion = flatpakCahceVersion.match(searchString)[0];
+
+			captureIframe.document.getElementById(`version-${appNickname}`).innerHTML = appVersion;
 
 		} else {
-			version_rpm();
+			captureIframe.document.getElementById(`version-${appNickname}`).innerHTML = versionRpm(appNickname);
 		}
 	}
 }
-
-setInterval(function() {
-	version();
-}, 300);
