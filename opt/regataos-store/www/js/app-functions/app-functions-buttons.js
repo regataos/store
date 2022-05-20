@@ -14,30 +14,6 @@ function appButtonsFunction() {
 			const apps = JSON.parse(data);
 
 			for (let i = 0; i < apps.length; i++) {
-				// Show install or remove button
-				const installedApps = fs.readFileSync("/opt/regataos-store/installed-apps/installed-apps.txt", "utf8");
-
-				function checkInstalledApps(installedInfo) {
-					if ((installedInfo.indexOf(apps[i].nickname) > -1) == "1") {
-						captureIframe.document.getElementById(`install-${apps[i].nickname}`).style.cssText = "display: none;";
-						captureIframe.document.getElementById(`open-${apps[i].nickname}`).style.cssText = "display: block;";
-						captureIframe.document.getElementById(`remove-${apps[i].nickname}`).style.cssText = "display: block;";
-					} else {
-						captureIframe.document.getElementById(`install-${apps[i].nickname}`).style.cssText = "display: block;";
-						captureIframe.document.getElementById(`open-${apps[i].nickname}`).style.cssText = "display: none;";
-						captureIframe.document.getElementById(`remove-${apps[i].nickname}`).style.cssText = "display: none;";
-					}
-				}
-				checkInstalledApps(installedApps);
-
-				let installedStatus = "";
-				fs.watch("/opt/regataos-store/installed-apps/installed-apps.txt", function (event, filename) {
-					if (event == "change") {
-						installedStatus = fs.readFileSync("/opt/regataos-store/installed-apps/installed-apps.txt", "utf8");
-						checkInstalledApps(installedStatus);
-					}
-				});
-
 				// Open app
 				captureIframe.document.getElementById(`open-${apps[i].nickname}`).onclick = function () {
 					const commandOpen = apps[i].executable;

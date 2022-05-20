@@ -68,5 +68,18 @@ function appStatus() {
 			appRemoveButton.classList.remove("removing");
 			appOpenButton.classList.remove("open-button-off");
 		}
+
+		// Show install or remove button
+		const installedApps = fs.readFileSync("/opt/regataos-store/installed-apps/installed-apps.txt", "utf8");
+
+		if ((installedApps.indexOf(appName) > -1) == "1") {
+			captureIframe.document.getElementById(`install-${appName}`).style.cssText = "display: none;";
+			captureIframe.document.getElementById(`open-${appName}`).style.cssText = "display: block;";
+			captureIframe.document.getElementById(`remove-${appName}`).style.cssText = "display: block;";
+		} else {
+			captureIframe.document.getElementById(`install-${appName}`).style.cssText = "display: block;";
+			captureIframe.document.getElementById(`open-${appName}`).style.cssText = "display: none;";
+			captureIframe.document.getElementById(`remove-${appName}`).style.cssText = "display: none;";
+		}
 	}
 }
