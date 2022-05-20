@@ -3,8 +3,6 @@
   "description": "Regata OS Store",
   "version": "0.1.0",
   "main": "www/index.html",
-  "inject_js_start": "www/js/jquery.min.js",
-  "inject_js_end": "www/js/scripts.js",
   "window": {
     "toolbar": false,
     "position": "center",
