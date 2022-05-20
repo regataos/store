@@ -8,47 +8,45 @@ function versionRpm(appNickname) {
 	for (let i = 0; i < appDate.length; i++) {
 		const package = appDate[i].package
 		const repositoryCache = appDate[i].repository_cache
-		const RepositoryName = fs.readFileSync("/usr/share/regataos/regataos-base-version.txt", "utf8");
+		const repositoryName = fs.readFileSync("/usr/share/regataos/regataos-base-version.txt", "utf8");
 
-		if ((repositoryCache.indexOf("mainRepositoryName") > -1) == "1") {
-			let mainRepository = RepositoryName.match(/(?<=mainRepositoryName=).*/g)[0];
-
-			const RepositoryFile = fs.readFileSync(`/var/cache/zypp/solv/${mainRepository}/solv.idx`, "utf8");
-			const searchString = new RegExp(`(?<=srcpackage:${package}).*`, "g");
-			let appVersion = RepositoryFile.match(searchString)[0];
-			appVersion = appVersion.replace(/-.*/g, "").trim();
-			return appVersion;
-
-		} else if ((repositoryCache.indexOf("basedOnVersion") > -1) == "1") {
-			let baseRepo = RepositoryName.match(/(?<=basedOnVersion=).*/g)[0];
-			baseRepo = repositoryCache.replace(/\[basedOnVersion\]/g, baseRepo);
-
+		function captureAppVersion(repositoryFile) {
 			const prepareString1 = new RegExp(`-${package}.*`, "gm");
 			const prepareString2 = new RegExp(`${package}-.*`, "gm");
 
-			let RepositoryFile = fs.readFileSync(`${baseRepo}/solv.idx`, "utf8");
-			RepositoryFile = RepositoryFile.replace(prepareString1, "").replace(prepareString2, "");
+			let repoFile = fs.readFileSync(repositoryFile, "utf8");
+			repoFile = repoFile.replace(prepareString1, "").replace(prepareString2, "");
 
-			const searchString = new RegExp(`(?<=${package}).*x86_64`, "g");
+			if ((repoFile.indexOf("x86_64") > -1) == "1") {
+				const searchArch = new RegExp(`(?<=${package}).*x86_64`, "g");
 
-			if (searchString) {
-				let appVersion = RepositoryFile.match(searchString)[0];
+				let appVersion = repoFile.match(searchArch)[0];
 				appVersion = appVersion.replace(/-.*/g, "").trim();
 				return appVersion;
 
-			} else {
-				const searchString = new RegExp(`(?<=${package}).*noarch`, "g");
-				let appVersion = RepositoryFile.match(searchString)[0];
+			} else if ((repoFile.indexOf("noarch") > -1) == "1") {
+				const searchArch = new RegExp(`(?<=${package}).*noarch`, "g");
+
+				let appVersion = repoFile.match(searchArch)[0];
 				appVersion = appVersion.replace(/-.*/g, "").trim();
 				return appVersion;
 			}
+		}
+
+		if ((repositoryCache.indexOf("basedOnVersion") > -1) == "1") {
+			let baseRepo = repositoryName.match(/(?<=basedOnVersion=).*/g)[0];
+			baseRepo = repositoryCache.replace(/\[basedOnVersion\]/g, baseRepo);
+			const repositoryFile = `${baseRepo}/solv.idx`;
+			return captureAppVersion(repositoryFile);
+
+		} else if ((repositoryCache.indexOf("mainRepositoryName") > -1) == "1") {
+			const mainRepository = repositoryName.match(/(?<=mainRepositoryName=).*/g)[0];
+			const repositoryFile = `/var/cache/zypp/solv/${mainRepository}/solv.idx`;
+			return captureAppVersion(repositoryFile);
 
 		} else {
-			const RepositoryFile = fs.readFileSync(`${repositoryCache}/solv.idx`, "utf8");
-			const searchString = new RegExp(`(?<=${package}).*`, "g");
-			let appVersion = RepositoryFile.match(searchString)[0];
-			appVersion = appVersion.replace(/-.*/g, "").trim();
-			return appVersion;
+			const repositoryFile = `${repositoryCache}/solv.idx`;
+			return captureAppVersion(repositoryFile);
 		}
 	}
 }
