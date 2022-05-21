@@ -149,6 +149,7 @@ REPOCONTENT
     echo "$app_nickname" > $progressbar_dir/installing-$app_nickname
     echo "show progress bar" > $progressbar_dir/progressbar
     echo "installing" > $progressbar_dir/progress-movement
+    echo "installing" > "/tmp/regataos-store/config/status.txt"
 
     # Update app repo
     if [ -z $repo_name ];then
@@ -367,6 +368,7 @@ if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
 	    #If there are no more processes, clear the progress bar cache
 	    if test ! -e "$progressbar_dir/queued-1" ; then
 			chmod 777 /tmp/progressbar-store/*
+            echo "stopped" > "/tmp/regataos-store/config/status.txt"
 		    rm -f $progressbar_dir/progressbar
 		    rm -f $progressbar_dir/*
 	    fi
@@ -392,6 +394,7 @@ if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
 	    # If there are no more processes, clear the progress bar cache
 	    if test ! -e "$progressbar_dir/queued-1" ; then
 			chmod 777 /tmp/progressbar-store/*
+            echo "stopped" > "/tmp/regataos-store/config/status.txt"
 		    rm -f $progressbar_dir/progressbar
 		    rm -f $progressbar_dir/*
 	    fi

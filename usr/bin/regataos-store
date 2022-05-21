@@ -1,25 +1,23 @@
 #!/bin/bash
 
 # Create the application settings directory
-if test -e "/tmp/regataos-store/config" ; then
-	chmod 777 "/tmp/regataos-store/config"
-else
-	mkdir -p "/tmp/regataos-store/config"
-	chmod 777 "/tmp/regataos-store/config"
+if test ! -e "$HOME/.config/regataos-store" ; then
+	mkdir -p "$HOME/.config/regataos-store"
 fi
 
-if test ! -e "$HOME/.config/regataos-store" ; then
-	mkdir -p "$HOME/.config/regataos-store/"
+if test ! -e "/tmp/regataos-store/config" ; then
+	mkdir -p "/tmp/regataos-store"
+	ln -sf "$HOME/.config/regataos-store" "/tmp/regataos-store/config"
+fi
+
+if test -e "$HOME/.local/share/Steam/steamapps" ; then
+	if test ! -e "$HOME/.config/regataos-store/steamapps" ; then
+		ln -sf "$HOME/.local/share/Steam/steamapps" "$HOME/.config/regataos-store/"
+	fi
 fi
 
 if test ! -e "/opt/regataos-store/installed-apps/installed-apps.txt" ; then
 	echo "" > "/opt/regataos-store/installed-apps/installed-apps.txt"
-fi
-
-if test -e "$HOME/.local/share/Steam/steamapps" ; then
-	if test ! -e "/tmp/regataos-store/config/steamapps" ; then
-		ln -sf "$HOME/.local/share/Steam/steamapps" "/tmp/regataos-store/config/"
-	fi
 fi
 
 # Create progress bar directory
@@ -70,6 +68,9 @@ rm -f "/tmp/regataos-store/go-installed"
 mkdir -p /tmp/apps-scripts/
 echo "installed" > "/tmp/apps-scripts/checkapp.txt"
 echo "" >> "/tmp/progressbar-store/queued-process"
+
+# Create status file
+echo "stopped" > "$HOME/.config/regataos-store/status.txt"
 
 # Check if the store needs a password to open
 if test -e "/usr/share/regataos/enterprise-iso.txt" ; then

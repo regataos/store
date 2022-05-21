@@ -7,7 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="css/roboto-style.css">
     <link rel="stylesheet" type="text/css" href="css/search.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="css/progressbar.css">
     <link rel="stylesheet" type="text/css" href="css/networkoff.css">
 	<link rel="stylesheet" type="text/css" href="css/style-progress-bar.css">
 	<script type="text/javascript" src="js/jquery.min-3.2.1.js"></script>
@@ -15,11 +14,13 @@
 	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 	<script type="text/javascript" src="js/fas-icons.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/progress-bar/progress-bar.js"></script>
     <!-- For apps -->
     <script type="text/javascript" src="js/app-functions/app-functions-buttons.js"></script>
     <script type="text/javascript" src="js/app-functions/app-installed.js"></script>
     <script type="text/javascript" src="js/app-functions/app-status.js"></script>
     <script type="text/javascript" src="js/app-functions/app-version.js"></script>
+    <script type="text/javascript" src="js/app-functions/steam-games-buttons.js"></script>
 
 	<!-- Display content when everything is ready -->
 	<script type="text/javascript">
@@ -143,14 +144,16 @@
                 <div class="status">Download</div>
                 <div class="percentage">50%</div>
                 <div class="down-functions">
-                <div class="down-file-size"><div id="filesize" class="file-size">700 MB /</div><div id="downsize" class="file-size">9.5 GB</div></div>
-                <div id="eta" class="eta-info">4h 25m 5s</div><div class="eta-info eta-desc">restante.</div>
+                <div id="download-file-size" class="dinfo down-file-size">
+                    <div id="filesize" class="file-size">700 MB /</div>
+                    <div id="downsize" class="file-size">9.5 GB</div>
+                </div>
+                <div class="dinfo eta-info">4h 25m 5s</div><div class="dinfo eta-info eta-desc">restante.</div>
                     <div class="more-info" title="Mais informações" onclick="startFullProgressBar();" style="background-image:url(images/arrow-right-off.png);"></div>
                     <div class="more-info2" onclick="startFullProgressBar();" style="background-image:url(images/arrow-right-off.png);"></div>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="js/progress-bar/progress-bar.js"></script>
         <script type="text/javascript" src="js/translations/language/progressbar-lang.js"></script>
 	</div>
 
@@ -174,12 +177,6 @@
                     homeStore();
                 }, 500);
             </script>
-
-	        <script type="text/javascript" src="js/app-functions/steam-games-functions-buttons.js"></script>
-                    <!-- Third party games -->
-            <script type="text/javascript" src="js/app-functions/games/games-thirdparty.js"></script>
-                    <!-- Game Access -->
-            <script type="text/javascript" src="js/app-functions/game-access/game-access.js"></script>
         </div>
 	</div>
 

@@ -56,6 +56,14 @@ padding-right: 11px;
 padding-bottom: 25px;
 }
 
+.install-on {
+    display: block;
+}
+
+.install-off {
+    display: none;
+}
+
 .down-functions {
 float: right;
 margin-left: 100px;

@@ -377,7 +377,7 @@ a img {
 .progress-bar {
 	display: none;
     position: absolute;
-    height: 205px;
+    height: 200px;
     bottom: 0;
     float: left;
 	opacity: 1;

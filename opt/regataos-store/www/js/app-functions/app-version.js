@@ -56,26 +56,29 @@ function appVersion() {
 
 	const captureIframe = document.getElementById("iframe-regataos-store").contentWindow;
 	const pageUrl = captureIframe.location.href
-	const appNickname = pageUrl.split("app-")[1];
 
-	if ((pageUrl.indexOf(appNickname) > -1) == "1") {
-		const snapCahceVersion = fs.readFileSync("/opt/regataos-store/installed-apps/snap-version-cache.txt", "utf8");
-		const flatpakCahceVersion = fs.readFileSync("/opt/regataos-store/installed-apps/flatpak-version-cache.txt", "utf8");
+	if ((pageUrl.indexOf("app-") > -1) == "1") {
+		const appNickname = pageUrl.split("app-")[1];
 
-		if ((snapCahceVersion.indexOf(appNickname) > -1) == "1") {
-			const searchString = new RegExp(`(?<=${appNickname}).*`, "g");
-			const appVersion = snapCahceVersion.match(searchString)[0];
+		if (fs.existsSync(`/opt/regataos-store/apps-list/${appNickname}.json`)) {
+			const snapCahceVersion = fs.readFileSync("/opt/regataos-store/installed-apps/snap-version-cache.txt", "utf8");
+			const flatpakCahceVersion = fs.readFileSync("/opt/regataos-store/installed-apps/flatpak-version-cache.txt", "utf8");
 
-			captureIframe.document.getElementById(`version-${appNickname}`).innerHTML = appVersion;
+			if ((snapCahceVersion.indexOf(appNickname) > -1) == "1") {
+				const searchString = new RegExp(`(?<=${appNickname}).*`, "g");
+				const appVersion = snapCahceVersion.match(searchString)[0];
 
-		} else if ((flatpakCahceVersion.indexOf(appNickname) > -1) == "1") {
-			const searchString = new RegExp(`(?<=${appNickname}).*`, "g");
-			const appVersion = flatpakCahceVersion.match(searchString)[0];
+				captureIframe.document.getElementById(`version-${appNickname}`).innerHTML = appVersion;
 
-			captureIframe.document.getElementById(`version-${appNickname}`).innerHTML = appVersion;
+			} else if ((flatpakCahceVersion.indexOf(appNickname) > -1) == "1") {
+				const searchString = new RegExp(`(?<=${appNickname}).*`, "g");
+				const appVersion = flatpakCahceVersion.match(searchString)[0];
 
-		} else {
-			captureIframe.document.getElementById(`version-${appNickname}`).innerHTML = versionRpm(appNickname);
+				captureIframe.document.getElementById(`version-${appNickname}`).innerHTML = appVersion;
+
+			} else {
+				captureIframe.document.getElementById(`version-${appNickname}`).innerHTML = versionRpm(appNickname);
+			}
 		}
 	}
 }

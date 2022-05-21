@@ -52,12 +52,6 @@ function showProgressBar() {
 				showProgressBarFull.style.cssText = "width: 423px;";
 			}
 
-			if (fs.existsSync("/tmp/progressbar-store/speed")) {
-				progressBar.style.cssText = "height: 205px;";
-			} else {
-				progressBar.style.cssText = "height: 180px;";
-			}
-
 		} else {
 			progressBar.classList.remove("progress-bar-show");
 			showProgressBarFull.classList.remove("progress-bar-full-show");
@@ -71,8 +65,10 @@ function showProgressBar() {
 	let storeStatus = "";
 	fs.watch("/tmp/regataos-store/config/status.txt", function (event, filename) {
 		if (event == "change") {
-			storeStatus = fs.readFileSync("/tmp/regataos-store/config/status.txt", "utf8");
-			appStoreWorkStatus(storeStatus);
+			setInterval(function () {
+				storeStatus = fs.readFileSync("/tmp/regataos-store/config/status.txt", "utf8");
+				appStoreWorkStatus(storeStatus);
+			}, 1000);
 		}
 	});
 }
@@ -93,8 +89,8 @@ function startFullProgressBar() {
 		sideBarButton.style.cssText = "border-left: 4px solid #0085e4";
 
 		setTimeout(function () {
-			showMoreInfoButton.style.cssText = "display: none";
-			hideMoreInfoButton.style.cssText = "display: block";
+			showMoreInfoButton.style.cssText = "display: none;";
+			hideMoreInfoButton.style.cssText = "display: block;";
 		}, 100);
 	}
 
@@ -105,9 +101,9 @@ function startFullProgressBar() {
 		sideBarButton.style.cssText = "border-left: 4px solid #2f3136";
 
 		setTimeout(function () {
-			showMoreInfoButton.style.cssText = "display: block";
-			hideMoreInfoButton.style.cssText = "display: none";
-			showProgressBarFull.style.cssText = "display: none";
+			showMoreInfoButton.style.cssText = "display: block;";
+			hideMoreInfoButton.style.cssText = "display: none;";
+			showProgressBarFull.style.cssText = "display: none;";
 		}, 100);
 	}
 
@@ -202,15 +198,11 @@ function showHideElements() {
 
 	if (((iframeStoreUrl.indexOf("app-") > -1) == "1") ||
 		((iframeStoreUrl.indexOf("search?q=") > -1) == "1")) {
-		document.querySelector(".topbar").style.cssText = "display: flex;";
 
 		const linksPage = document.querySelectorAll(".li-sidebar a");
 		for (let i = 0; i < linksPage.length; i++) {
 			linksPage[i].classList.remove("link-items-on");
 		}
-
-	} else {
-		document.querySelector(".topbar").style.cssText = "display: none;";
 	}
 
 	if ((iframeStoreUrl.indexOf(specialPage[pageId]) > -1) == "1") {
@@ -238,7 +230,6 @@ function goInnerPage(pageId) {
 	const linksPage = document.querySelectorAll(".li-sidebar a");
 
 	getIframeStore.document.location.href = `${setMainUrl()}/p/${pageId}.html`;
-	document.querySelector(".topbar").style.cssText = "display: none;";
 
 	setTimeout(function () {
 		const iframeStoreUrl = getIframeStore.location.href;
@@ -269,9 +260,6 @@ function goToHome() {
 // Function back button
 function backButton() {
 	setTimeout(function () {
-		const backButton = document.querySelector(".topbar");
-		backButton.style.cssText = "display: none;";
-
 		const iframeStoreUrl = document.getElementById("iframe-regataos-store").contentWindow.location.href;
 		const linksPage = document.querySelectorAll(".li-sidebar a");
 
