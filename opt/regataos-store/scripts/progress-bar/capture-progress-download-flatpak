@@ -50,13 +50,19 @@ if test -e "/tmp/progressbar-store/flatpak-download-percentage"; then
 		app_id=$(cat /tmp/progressbar-store/flatpak-app-name)
 		app_installation_step=$(cat /tmp/progressbar-store/flatpak-download-percentage | grep "$app_id" | tail -1 | head -1 | awk '{print $1}' | sed 's/\.//')
 		current_stage_installation=$(cat /tmp/progressbar-store/flatpak-download-percentage | grep "Installing" | tail -1 | head -1 | awk '{print $2}' | cut -d"/" -f -1)
+		checkCompleted=$(cat /tmp/progressbar-store/flatpak-download-percentage)
 
 		check_numbers=$(expr $(echo ${current_stage_installation//[^0-9]/} | wc -c) - 1)
 		if [ $check_numbers -eq 0 ]; then
+			rm -f "/tmp/progressbar-store/runtime-download-size"
 			echo "$(cat /tmp/progressbar-store/flatpak-install-status)" > "/tmp/progressbar-store/status"
 
 			# Progress bar and percentage
-			if [[ $progress == *"100%"* ]]; then
+			if [[ $checkCompleted == *"Installation complete"* ]]; then
+				chmod 777 /tmp/progressbar-store/*
+				echo "" > /tmp/progressbar-store/status
+
+			elif [[ $progress == *"100%"* ]]; then
 				#If there are no more processes, clear the progress bar cache
 				sudo /opt/regataos-store/scripts/progress-bar/send-installing start
 				chmod 777 /tmp/progressbar-store/*
@@ -77,6 +83,10 @@ if test -e "/tmp/progressbar-store/flatpak-download-percentage"; then
 			if [ $(echo $app_installation_step) -ne $(echo $current_stage_installation) ]; then
 				echo "($step) $(cat /tmp/progressbar-store/download-runtime)" > "/tmp/progressbar-store/status"
 
+				runtime_number=$(cat /tmp/progressbar-store/flatpak-download-percentage | grep "Installing"  | awk '{print $2}' | cut -d"/" -f -1 | tail -1 | head -1)
+				runtime_size=$(grep -r "flathub" /tmp/progressbar-store/flatpak-download-percentage | grep " $runtime_number." | head -1 | tail -1 | awk '{print $7}')
+				echo "$runtime_size" > "/tmp/progressbar-store/runtime-download-size"
+
 				# Progress bar and percentage
 				chmod 777 /tmp/progressbar-store/*
 				echo $progress > /tmp/progressbar-store/progress
@@ -85,10 +95,15 @@ if test -e "/tmp/progressbar-store/flatpak-download-percentage"; then
 				echo "$(echo $eta)m " > /tmp/progressbar-store/eta
 
 			else
+				rm -f "/tmp/progressbar-store/runtime-download-size"
 				echo "$(cat /tmp/progressbar-store/flatpak-install-status)" > "/tmp/progressbar-store/status"
 
 				# Progress bar and percentage
-				if [[ $progress == *"100%"* ]]; then
+				if [[ $checkCompleted == *"Installation complete"* ]]; then
+					chmod 777 /tmp/progressbar-store/*
+					echo "" > /tmp/progressbar-store/status
+
+				elif [[ $progress == *"100%"* ]]; then
 					#If there are no more processes, clear the progress bar cache
 					sudo /opt/regataos-store/scripts/progress-bar/send-installing start
 					chmod 777 /tmp/progressbar-store/*

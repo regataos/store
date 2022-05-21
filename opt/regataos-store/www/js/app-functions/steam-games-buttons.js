@@ -1,5 +1,5 @@
 // Install and remove apps
-setInterval(steamFunctionButtons, 1000);
+setInterval(steamFunctionButtons, 500);
 function steamFunctionButtons() {
 	const exec = require('child_process').exec;
 	const fs = require("fs");

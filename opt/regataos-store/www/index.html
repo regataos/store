@@ -9,9 +9,6 @@
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="css/networkoff.css">
 	<link rel="stylesheet" type="text/css" href="css/style-progress-bar.css">
-	<script type="text/javascript" src="js/jquery.min-3.2.1.js"></script>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 	<script type="text/javascript" src="js/fas-icons.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/progress-bar/progress-bar.js"></script>
@@ -22,22 +19,9 @@
     <script type="text/javascript" src="js/app-functions/app-version.js"></script>
     <script type="text/javascript" src="js/app-functions/steam-games-buttons.js"></script>
 
-	<!-- Display content when everything is ready -->
-	<script type="text/javascript">
-		$(function(){
-			$("#loadscreen").fadeOut("slow");
-		});
-
-		$(function(){
-			$(".blocks").fadeIn("slow");
-		});
-	</script>
-
     <title>Regata OS Store</title>
 </head>
 <body>
-<div id='loadscreen'></div>
-
     <div class="progress-bar-full">
         <iframe src="progress-bar/progress-bar-full.html" frameborder="0" class="iframe_pbf" id="iframepbf"></iframe>
     </div>
@@ -141,14 +125,14 @@
                     <div id="myBar-movement" class="progress-movement"></div>
                     <div id="myBar-full" class="progress-full"></div>
                 </div>
-                <div class="status">Download</div>
+                <div id="status-download" class="status">Download</div>
                 <div class="percentage">50%</div>
                 <div class="down-functions">
                 <div id="download-file-size" class="dinfo down-file-size">
                     <div id="filesize" class="file-size">700 MB /</div>
                     <div id="downsize" class="file-size">9.5 GB</div>
                 </div>
-                <div class="dinfo eta-info">4h 25m 5s</div><div class="dinfo eta-info eta-desc">restante.</div>
+                <div id="eta" class="dinfo eta-info">4h 25m 5s</div><div class="dinfo eta-info eta-desc">restante.</div>
                     <div class="more-info" title="Mais informações" onclick="startFullProgressBar();" style="background-image:url(images/arrow-right-off.png);"></div>
                     <div class="more-info2" onclick="startFullProgressBar();" style="background-image:url(images/arrow-right-off.png);"></div>
                 </div>
@@ -173,19 +157,16 @@
 
 			<iframe onload="showHideElements(this); appButtonsFunction(this); installedPage(this); appVersion(this);" src="" allowfullscreen frameborder="0" name="iframe-regataos-store" id="iframe-regataos-store" class="iframe-pages"></iframe>
             <script type="text/javascript">
-                setTimeout(function(){
                     homeStore();
-                }, 500);
             </script>
         </div>
 	</div>
 
-<div class="networkoff">
-    <div class="networkoff-img" style="background-image:url(images/dino.png);"></div>
-    <div class="networkoff-title">Não foi possível conectar-se à Internet</div>
-    <div class="networkoff-desc">Verifique os cabos de rede, modem e roteador ou<br/> conecte à rede Wi-Fi novamente.</div>
-</div>
-<script type="text/javascript" src="js/translations/language/index-lang.js"></script>
-
+    <div class="networkoff">
+        <div class="networkoff-img" style="background-image:url(images/dino.png);"></div>
+        <div class="networkoff-title">Não foi possível conectar-se à Internet</div>
+        <div class="networkoff-desc">Verifique os cabos de rede, modem e roteador ou<br/> conecte à rede Wi-Fi novamente.</div>
+    </div>
+    <script type="text/javascript" src="js/translations/language/index-lang.js"></script>
 </body>
 </html>

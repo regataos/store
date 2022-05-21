@@ -1,5 +1,9 @@
 const fs = require("fs");
-const exec = require("child_process").exec;
+
+setInterval(function () {
+	const getIframeStore = document.getElementById("iframe-regataos-store").contentWindow;
+	window.location.href
+}, 500);
 
 // Check internet connection for topbar
 function checkImage(url) {
@@ -188,7 +192,7 @@ function showHideElements() {
 	const iframeStoreUrl = document.getElementById("iframe-regataos-store").contentWindow.location.href;
 
 	const removeString = new RegExp(setMainUrl(), "g");
-	const pageId = iframeStoreUrl.replace(removeString).replace(/undefined/g, "");
+	const pageId = iframeStoreUrl.replace(removeString).replace(/undefined/g, "").replace(/\//g, "");
 
 	const specialPage = {
 		"home": "home",
@@ -259,12 +263,19 @@ function goToHome() {
 
 // Function back button
 function backButton() {
+	let installedPageStatus = sessionStorage.getItem("goInstalledPage");
+	if ((installedPageStatus.indexOf("noaccess") > -1) == "0") {
+		history.go(-2);
+	} else {
+		history.go(-1);
+	}
+
 	setTimeout(function () {
 		const iframeStoreUrl = document.getElementById("iframe-regataos-store").contentWindow.location.href;
 		const linksPage = document.querySelectorAll(".li-sidebar a");
 
 		const removeString = new RegExp(setMainUrl(), "g");
-		const pageId = iframeStoreUrl.replace(removeString).replace(/undefined/g, "");
+		const pageId = iframeStoreUrl.replace(removeString).replace(/undefined/g, "").replace(/\//g, "");
 
 		for (let i = 0; i < linksPage.length; i++) {
 			if ((iframeStoreUrl.indexOf(pageId) > -1) == "1") {
@@ -275,13 +286,6 @@ function backButton() {
 			}
 		}
 	}, 500);
-
-	let installedPageStatus = sessionStorage.getItem("goInstalledPage");
-	if ((installedPageStatus.indexOf("noaccess") > -1) == "0") {
-		history.go(-2);
-	} else {
-		history.go(-1);
-	}
 }
 
 // Search box

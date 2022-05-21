@@ -199,29 +199,31 @@ if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
 		chmod 777 /tmp/progressbar-store/*
 	    rm -f $progressbar_dir/progress-movement
 	    echo "completed" > $progressbar_dir/progress-full
-	    echo "" > $progressbar_dir/status
-	    echo $success_installation > $progressbar_dir/progress
+	    echo "" > $progressbar_dir/status && echo $success_installation > $progressbar_dir/progress
         echo "$app_nickname" >> $installed_apps
 		chmod 777 /tmp/progressbar-store/*
 
         #Clear cache
-	    rm -f $progressbar_dir/progress-full
 	    rm -f $progressbar_dir/installing
 	    rm -f $progressbar_dir/installing-$app_nickname
 	    success_installation
+	    sleep 2
 
 	    #If there are no more processes, clear the progress bar cache
 	    if test ! -e "$progressbar_dir/queued-1" ; then
 			chmod 777 /tmp/progressbar-store/*
             echo "stopped" > "/tmp/regataos-store/config/status.txt"
+            sleep 2
+            rm -f $progressbar_dir/progress-full
 		    rm -f $progressbar_dir/progressbar
 		    rm -f $progressbar_dir/*
+        else
+            rm -f $progressbar_dir/progress-full
 	    fi
 
     else
 		chmod 777 /tmp/progressbar-store/*
 	    rm -f $progressbar_dir/progress-movement
-	    rm -f $progressbar_dir/progress-full
 	    echo $installation_error > $progressbar_dir/progress
 	    echo $installation_error_status > $progressbar_dir/status
 	    sudo rm -f /etc/zypp/repos.d/gqrx.repo
@@ -239,5 +241,6 @@ if test ! -e "$progressbar_dir/installing-$app_nickname" ; then
 		    rm -f $progressbar_dir/progressbar
 		    rm -f $progressbar_dir/*
 	    fi
+	    rm -f $progressbar_dir/progress-full
     fi
 fi

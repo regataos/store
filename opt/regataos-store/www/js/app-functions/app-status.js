@@ -1,5 +1,5 @@
 // Checking if apps are being installed or removed
-setInterval(appStatus, 1000);
+setInterval(appStatus, 500);
 
 function appStatus() {
 	const fs = require('fs');
@@ -87,7 +87,7 @@ function appStatus() {
 	}
 }
 
-setInterval(backButtonView, 1000);
+setInterval(backButtonView, 500);
 function backButtonView() {
 	const GetiframeUrl = document.getElementById("iframe-regataos-store").contentWindow.location.href;
 

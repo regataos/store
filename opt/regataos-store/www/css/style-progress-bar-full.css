@@ -279,6 +279,7 @@ width: 20px;
 background-position: 50% 50%;
 background-size: auto 20px;
 background-repeat: no-repeat;
+background-image: url("../images/close-off.png");
 float: right;
 cursor: pointer;
 transition: all 0.3s ease;
@@ -287,11 +288,11 @@ margin-bottom: 10px;
 }
 
 .close-button:hover {
-background-image:url("../images/close-on.png") !important;
+background-image: url("../images/close-on.png");
 }
 
 .close-button:active {
-background-image:url("../images/close-off.png") !important;
+background-image: url("../images/close-off.png");
 }
 
 .down-file-size {
