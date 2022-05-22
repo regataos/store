@@ -47,6 +47,10 @@ function translateAppPage() {
 }
 
 // Translation for the desktop app
+//Check internet connection
+document.querySelector(".networkoff .networkoff-title").innerHTML = "Unable to connect to the Internet";
+document.querySelector(".networkoff .networkoff-desc").innerHTML = "Check the network, modem and router cables or<br/> connect to the Wi-Fi network again.";
+
 //Top search
 document.querySelector("#field").value = "Search";
 document.querySelector("#field").setAttribute("onfocus", "if (this.value == 'Search') {this.value = '';}");
@@ -79,7 +83,3 @@ document.querySelector(".installed p").innerHTML = "Installed";
 
 //Installing
 document.querySelector(".li-sidebar-b i").title = "Installation in progress...";
-
-// Check internet connection
-document.querySelector(".networkoff-title").innerHTML = "Unable to connect to the Internet";
-document.querySelector(".networkoff-desc").innerHTML = "Check the network, modem and router cables or<br/> connect to the Wi-Fi network again.";

@@ -1,31 +1,23 @@
 const fs = require("fs");
 
-setInterval(function () {
-	const getIframeStore = document.getElementById("iframe-regataos-store").contentWindow;
-	window.location.href
-}, 500);
-
 // Check internet connection for topbar
-function checkImage(url) {
-	let request = new XMLHttpRequest();
-	request.open("GET", url, true);
-	request.send();
-	request.onload = function () {
-		let status = request.status;
-		if (request.status == 200) {
-			document.querySelector(".networkoff").style.cssText = "display: none;";
-			document.querySelector(".sidebar").style.cssText = "display: block;";
-			document.querySelector(".page").style.cssText = "display: block;";
-			document.querySelector("body").style.cssText = "background: #ccc;";
-		} else {
-			document.querySelector("body").style.cssText = "background: #36393f;";
-			document.querySelector(".sidebar").style.cssText = "display: none;";
-			document.querySelector(".page").style.cssText = "display: none;";
-			document.querySelector(".networkoff").style.cssText = "display: block;";
-		}
-	}
+function checkOnline() {
+	fetch('https://regataos.com', {
+		method: 'GET',
+		mode: 'no-cors',
+	}).then((result) => {
+		document.querySelector(".networkoff").style.cssText = "display: none;";
+		document.querySelector(".sidebar").style.cssText = "display: block;";
+		document.querySelector(".page").style.cssText = "display: block;";
+		document.querySelector("body").style.cssText = "background: #ccc;";
+	}).catch(e => {
+		document.querySelector("body").style.cssText = "background: #36393f;";
+		document.querySelector(".sidebar").style.cssText = "display: none;";
+		document.querySelector(".page").style.cssText = "display: none;";
+		document.querySelector(".networkoff").style.cssText = "display: block;";
+	})
 }
-checkImage("https://www.google.com/logos/google.jpg");
+checkOnline();
 
 // Show progress bar if process starts
 function showProgressBar() {
