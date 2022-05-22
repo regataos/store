@@ -1,27 +1,27 @@
 #!/bin/bash
 
 # Create the application settings directory
-if test ! -e "$HOME/.config/regataos-store" ; then
+if test ! -e "$HOME/.config/regataos-store"; then
 	mkdir -p "$HOME/.config/regataos-store"
 fi
 
-if test ! -e "/tmp/regataos-store/config" ; then
+if test ! -e "/tmp/regataos-store/config"; then
 	mkdir -p "/tmp/regataos-store"
 	ln -sf "$HOME/.config/regataos-store" "/tmp/regataos-store/config"
 fi
 
-if test -e "$HOME/.local/share/Steam/steamapps" ; then
-	if test ! -e "$HOME/.config/regataos-store/steamapps" ; then
+if test -e "$HOME/.local/share/Steam/steamapps"; then
+	if test ! -e "$HOME/.config/regataos-store/steamapps"; then
 		ln -sf "$HOME/.local/share/Steam/steamapps" "$HOME/.config/regataos-store/"
 	fi
 fi
 
-if test ! -e "/opt/regataos-store/installed-apps/installed-apps.txt" ; then
-	echo "" > "/opt/regataos-store/installed-apps/installed-apps.txt"
+if test ! -e "/opt/regataos-store/installed-apps/installed-apps.txt"; then
+	echo "" >"/opt/regataos-store/installed-apps/installed-apps.txt"
 fi
 
 # Create progress bar directory
-if test -e "/tmp/progressbar-store/" ; then
+if test -e "/tmp/progressbar-store/"; then
 	chmod 777 "/tmp/progressbar-store/"
 else
 	mkdir -p "/tmp/progressbar-store/"
@@ -29,22 +29,22 @@ else
 fi
 
 # Check language
-if test ! -e "/tmp/regataos-configs/config/plasma-localerc" ; then
-	if test ! -e "$HOME/.config/plasma-localerc" ; then
-		if test -e "/etc/xdg/plasma-localerc" ; then
+if test ! -e "/tmp/regataos-configs/config/plasma-localerc"; then
+	if test ! -e "$HOME/.config/plasma-localerc"; then
+		if test -e "/etc/xdg/plasma-localerc"; then
 			cp -f "/etc/xdg/plasma-localerc" "$HOME/.config/plasma-localerc"
 		fi
 	fi
 
 	mkdir -p "/tmp/regataos-configs/config"
 	chmod 777 "/tmp/regataos-configs/config"
-	if test -e "$HOME/.config/plasma-localerc" ; then
+	if test -e "$HOME/.config/plasma-localerc"; then
 		ln -sf "$HOME/.config/plasma-localerc" "/tmp/regataos-configs/config/"
 	fi
 fi
 
-if test ! -e "/tmp/regataos-configs/config/user-dirs.locale" ; then
-	if test -e "$HOME/.config/user-dirs.locale" ; then
+if test ! -e "/tmp/regataos-configs/config/user-dirs.locale"; then
+	if test -e "$HOME/.config/user-dirs.locale"; then
 		mkdir -p "/tmp/regataos-configs/config"
 		chmod 777 "/tmp/regataos-configs/config"
 		ln -sf "$HOME/.config/user-dirs.locale" "/tmp/regataos-configs/config/"
@@ -55,9 +55,8 @@ fi
 xhost +si:localuser:root
 
 # Clear cache
-ps -C wget > /dev/null
-if [ $? = 1 ]
-then
+ps -C wget >/dev/null
+if [ $? = 1 ]; then
 	chmod 777 /tmp/progressbar-store/*
 	rm -rf /tmp/progressbar-store/*
 fi
@@ -66,14 +65,16 @@ rm -f "/tmp/regataos-store/go-installed"
 
 # Check installed apps
 mkdir -p /tmp/apps-scripts/
-echo "installed" > "/tmp/apps-scripts/checkapp.txt"
-echo "" >> "/tmp/progressbar-store/queued-process"
+echo "installed" >"/tmp/apps-scripts/checkapp.txt"
+echo "" >>"/tmp/progressbar-store/queued-process"
 
 # Create status file
-echo "stopped" > "$HOME/.config/regataos-store/status.txt"
+if test ! -e "$HOME/.config/regataos-store/status.txt"; then
+	echo "stopped" >"$HOME/.config/regataos-store/status.txt"
+fi
 
 # Check if the store needs a password to open
-if test -e "/usr/share/regataos/enterprise-iso.txt" ; then
+if test -e "/usr/share/regataos/enterprise-iso.txt"; then
 	permission_store="superuser"
 fi
 
@@ -85,60 +86,63 @@ if [[ $(echo $permission_store) == *"superuser"* ]]; then
 	rm -f "/tmp/apps-scripts/store-superuser.txt"
 	xdg-su -c "regataos_store"
 
-	if test -e "/tmp/apps-scripts/store-superuser.txt" ; then
+	if test -e "/tmp/apps-scripts/store-superuser.txt"; then
 		if [[ $(ls -l /tmp/apps-scripts/store-superuser.txt) == *"root"* ]]; then
 			if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
-				magma --disable-gpu /opt/regataos-store & sleep 1; \
-				/opt/regataos-store/scripts/progress-bar/capture-progress-download & \
-				/opt/regataos-store/scripts/progress-bar/create-process-queues & \
-				/opt/regataos-store/scripts/checkapp & \
-				/opt/regataos-store/scripts/progress-bar/run-process-queues & \
-				/opt/regataos-store/scripts/snap-version-cache & \
-				/opt/regataos-store/scripts/flatpak-version-cache & \
-				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap & \
+				magma --disable-gpu /opt/regataos-store &
+				sleep 1
+				/opt/regataos-store/scripts/progress-bar/capture-progress-download &
+				/opt/regataos-store/scripts/progress-bar/create-process-queues &
+				/opt/regataos-store/scripts/checkapp &
+				/opt/regataos-store/scripts/progress-bar/run-process-queues &
+				/opt/regataos-store/scripts/snap-version-cache &
+				/opt/regataos-store/scripts/flatpak-version-cache &
+				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
 				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 			else
-				magma /opt/regataos-store & sleep 1; \
-				/opt/regataos-store/scripts/progress-bar/capture-progress-download & \
-				/opt/regataos-store/scripts/progress-bar/create-process-queues & \
-				/opt/regataos-store/scripts/checkapp & \
-				/opt/regataos-store/scripts/progress-bar/run-process-queues & \
-				/opt/regataos-store/scripts/snap-version-cache & \
-				/opt/regataos-store/scripts/flatpak-version-cache & \
-				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap & \
+				magma /opt/regataos-store &
+				sleep 1
+				/opt/regataos-store/scripts/progress-bar/capture-progress-download &
+				/opt/regataos-store/scripts/progress-bar/create-process-queues &
+				/opt/regataos-store/scripts/checkapp &
+				/opt/regataos-store/scripts/progress-bar/run-process-queues &
+				/opt/regataos-store/scripts/snap-version-cache &
+				/opt/regataos-store/scripts/flatpak-version-cache &
+				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
 				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 			fi
 		else
 			exit 0
 		fi
 
-	elif test ! -e "/tmp/apps-scripts/store-superuser.txt" ; then
+	elif test ! -e "/tmp/apps-scripts/store-superuser.txt"; then
 		exit 0
-
 	else
 		exit 0
 	fi
 
 else
 	if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
-		magma --disable-gpu /opt/regataos-store & sleep 1; \
-		/opt/regataos-store/scripts/progress-bar/capture-progress-download & \
-		/opt/regataos-store/scripts/progress-bar/create-process-queues & \
-		/opt/regataos-store/scripts/checkapp & \
-		/opt/regataos-store/scripts/progress-bar/run-process-queues & \
-		/opt/regataos-store/scripts/snap-version-cache & \
-		/opt/regataos-store/scripts/flatpak-version-cache & \
-		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap & \
+		magma --disable-gpu /opt/regataos-store &
+		sleep 1
+		/opt/regataos-store/scripts/progress-bar/capture-progress-download &
+		/opt/regataos-store/scripts/progress-bar/create-process-queues &
+		/opt/regataos-store/scripts/checkapp &
+		/opt/regataos-store/scripts/progress-bar/run-process-queues &
+		/opt/regataos-store/scripts/snap-version-cache &
+		/opt/regataos-store/scripts/flatpak-version-cache &
+		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
 		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 	else
-		magma /opt/regataos-store & sleep 1; \
-		/opt/regataos-store/scripts/progress-bar/capture-progress-download & \
-		/opt/regataos-store/scripts/progress-bar/create-process-queues & \
-		/opt/regataos-store/scripts/checkapp & \
-		/opt/regataos-store/scripts/progress-bar/run-process-queues & \
-		/opt/regataos-store/scripts/snap-version-cache & \
-		/opt/regataos-store/scripts/flatpak-version-cache & \
-		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap & \
+		magma /opt/regataos-store &
+		sleep 1
+		/opt/regataos-store/scripts/progress-bar/capture-progress-download &
+		/opt/regataos-store/scripts/progress-bar/create-process-queues &
+		/opt/regataos-store/scripts/checkapp &
+		/opt/regataos-store/scripts/progress-bar/run-process-queues &
+		/opt/regataos-store/scripts/snap-version-cache &
+		/opt/regataos-store/scripts/flatpak-version-cache &
+		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
 		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 	fi
 fi

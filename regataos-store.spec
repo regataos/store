@@ -1,5 +1,5 @@
 Name: regataos-store
-Version: 21.3
+Version: 22.0
 Release: 0
 Url: https://github.com/regataos/store
 Summary: Application store of Regata OS
@@ -20,7 +20,6 @@ Requires: xz
 Requires: xdpyinfo
 Requires: magma >= 5.54.1
 Requires: zypper
-Requires: snapd
 Requires: xdg-desktop-portal
 Requires: lsof
 Requires: zenity
@@ -29,6 +28,8 @@ Requires: pv
 Requires: libnotify4
 Requires: libnotify4-32bit
 Requires: libnotify-tools
+Requires: regataos-snapd
+Requires: regataos-flatpak
 BuildRoot: %{_tmppath}/%{name}-%{version}-build
 
 %description
@@ -48,18 +49,26 @@ cp -f %{SOURCE2} %{buildroot}/opt/regataos-store/%{name}.desktop
 # Extract store files at the root of the system
 tar xf /opt/regataos-base/regataos-store-%{version}.tar.xz -C /
 
-# Fix installed apps
-if test -e "/tmp/regataos-store/config" ; then
+# Prepare store status
+if test ! -e "/tmp/regataos-store/config" ; then
+	user=$(users | awk '{print $1}')
+ 
+	mkdir -p "/tmp/regataos-store"
+	ln -sf "/home/$user/.config/regataos-store" "/tmp/regataos-store/config"
 	chmod 777 "/tmp/regataos-store/config"
+	chmod 777 /tmp/regataos-store/config/*
+
 else
-	mkdir -p "/tmp/regataos-store/config"
+	user=$(users | awk '{print $1}')
+
+	rm -rf "/tmp/regataos-store/config"
+	ln -sf "/home/$user/.config/regataos-store" "/tmp/regataos-store/config"
 	chmod 777 "/tmp/regataos-store/config"
+	chmod 777 /tmp/regataos-store/config/*
 fi
 
+# Fix installed apps
 if test ! -e "/tmp/regataos-store/config/installed-apps.txt" ; then
-	mkdir -p "/tmp/regataos-store/config"
-	chmod 777 "/tmp/regataos-store/config"
-
   user=$(users | awk '{print $1}')
   mkdir -p "/home/$user/.config/regataos-store"
   chmod 777 "/home/$user/.config/regataos-store"
@@ -71,8 +80,8 @@ if test ! -e "/tmp/regataos-store/config/installed-apps.txt" ; then
 fi
 
 # Create directory containing the list of installed apps
-mkdir -p /opt/regataos-store/installed-apps/
-chmod 777 /opt/regataos-store/installed-apps/
+mkdir -p "/opt/regataos-store/installed-apps"
+chmod 777 "/opt/regataos-store/installed-apps"
 
 # Hide YaST .desktop files
 if [[ $(grep -r "NoDisplay=true" "/usr/share/applications/org.opensuse.yast.Packager.desktop") != *"NoDisplay=true"* ]]; then
@@ -103,6 +112,8 @@ sudo /opt/regataos-store/scripts/select-language
 update-desktop-database
 
 # We're finished!
+rm -f "/opt/regataos-store/installed-apps/snap-version-cache.txt"
+rm -f "/opt/regataos-store/installed-apps/flatpak-version-cache.txt"
 exit 0
 
 %clean
