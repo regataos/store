@@ -2,15 +2,15 @@
 	{
 		"name": "Rambox",
 		"nickname": "rambox",
-		"executable": "snap run rambox",
+		"executable": "rambox",
 		"package": "rambox",
 		"extra_packages": "",
-		"architecture": "",
-		"package_manager": "snap",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "",
-		"repository_url": "",
-		"icon_backg": "https://4.bp.blogspot.com/-ECpn7sEBlUk/WWP3QKmPS2I/AAAAAAAASNY/3IFHIUFdO4s4U0V2qvi2hVwIBcfIbuuGQCLcBGAs/s1600/rambox-backg.png",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4hS3oKEiNYnZJAuztjVFGl0bt0cVPbsWAyQI69-zlp7J8V_kEQEuHf38As84Pjklkw0ov9KAZVgsyhWwGV9zJeo7mXSjZmW9cyjVrZsTp07KKqHqVjMKArbbHTBUsVSoEXo3UdyhqNk9hY8x34ZtK7D8JeKrI_9IxhWM-y8mnLTA6t7R8h8ry-IfsHg/s1600/rambox-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"
     }
