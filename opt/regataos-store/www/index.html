@@ -22,6 +22,13 @@
     <title>Regata OS Store</title>
 </head>
 <body>
+    <div id="loadscreen"></div>
+    <script>
+        setInterval(function () {
+            document.getElementById("loadscreen").style.display= "none";
+        }, 1200);
+    </script>
+
     <div class="progress-bar-full">
         <iframe src="progress-bar/progress-bar-full.html" frameborder="0" class="iframe_pbf" id="iframepbf"></iframe>
     </div>
