@@ -14,27 +14,6 @@ body {
     user-select: none;
 }
 
-/* Display content when everything is ready */
-#loadscreen {
-	display: block;
-	position: absolute;
-    opacity: 1;
-	width: 100%;
-	height: 100%;
-	background-color: #ccc;
-	z-index: 40000;
-    animation-name: initEffect;
-    animation-duration: 1.2s;
-}
-
-@keyframes initEffect {
-    from {
-        opacity: 1;
-    } to {
-        opacity: 0;
-    }
-}
-
 ::-webkit-scrollbar-track {
     background-color: #b4b6b8;
 }
@@ -71,6 +50,28 @@ a {
 a img {
     border: none;
     position: relative;
+}
+
+/* Display content when everything is ready */
+#loadscreen {
+	display: block;
+    opacity: 1;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #2f3136;
+	z-index: 40000;
+    animation-name: initEffect;
+    animation-duration: 1.2s;
+    animation-delay: 1.3s;
+}
+
+@keyframes initEffect {
+    from {
+        opacity: 1;
+    } to {
+        opacity: 0;
+    }
 }
 
 .page {
