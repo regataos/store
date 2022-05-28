@@ -14,6 +14,12 @@ function translateAppPage() {
 			installButton.innerHTML = "Install";
 		}
 
+		const gameButton = captureIframe.document.querySelector(".game-button");
+		const gameButtonExists = captureIframe.document.body.contains(gameButton)
+		if (gameButtonExists) {
+			gameButton.innerHTML = "Install";
+		}
+
 		const InstallingButton = captureIframe.document.querySelector(".installing");
 		const InstallingButtonExists = captureIframe.document.body.contains(InstallingButton)
 		if (InstallingButtonExists) {
