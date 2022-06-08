@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/emulator",
-		"repository_url": "http://download.opensuse.org/repositories/Emulators/[basedOn]/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/Emulators/[basedOnVersion]/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-WRhAW0mUuB8/WWKlIaeZEsI/AAAAAAAASGg/GZ-yqUuAVbsDUt9I3i4dwGjHws-EYN_ggCLcBGAs/s1600/dolphin-emulator-backg.png",
 		"price": "free",
 		"dgpu": "activate"

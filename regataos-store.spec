@@ -1,5 +1,5 @@
 Name: regataos-store
-Version: 22.0
+Version: 22.1
 Release: 0
 Url: https://github.com/regataos/store
 Summary: Application store of Regata OS
@@ -15,10 +15,10 @@ BuildRequires: grep
 License: MIT
 Source1: regataos-store-%{version}.tar.xz
 Source2: regataos-store.desktop.txt
-Requires: regataos-repo >= 5.0
+Requires: regataos-repo >= 22.0
 Requires: xz
 Requires: xdpyinfo
-Requires: magma >= 5.54.1
+Requires: magma >= 6.64.1
 Requires: zypper
 Requires: xdg-desktop-portal
 Requires: lsof

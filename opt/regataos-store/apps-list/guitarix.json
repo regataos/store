@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
-		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/[basedOnVersion]/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/[basedOn]/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-Fc9Nj8NLnQQ/XGB_e3NfZsI/AAAAAAAAWd8/DuP1XnIngPUDTbnwM5D2TBPbY3HxJ0dzwCLcBGAs/s1600/guitarix-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

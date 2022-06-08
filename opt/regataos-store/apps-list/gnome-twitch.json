@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
-		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/[basedOnVersion]/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/multimedia:/apps/[basedOn]/x86_64",
 		"icon_backg": "https://3.bp.blogspot.com/-8LeYhEnq9wc/XHNJ0obOrlI/AAAAAAAAWog/9Iq7N7BRFB8ge_GXbLYilO3k6yoTDuT5ACLcBGAs/s1600/gnome-twitch-backg2.png",
 		"price": "free",
 		"dgpu": "deactivate"

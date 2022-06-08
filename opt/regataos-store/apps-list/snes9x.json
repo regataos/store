@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/emulator",
-		"repository_url": "http://download.opensuse.org/repositories/Emulators/[basedOn]/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/Emulators/[basedOnVersion]/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-EqHmn-uoXGs/WWKdIn7946I/AAAAAAAASGE/SujTpQtwIL4pyeOAsxPNw-J-j-S_icVwACLcBGAs/s1600/snes-emulator-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

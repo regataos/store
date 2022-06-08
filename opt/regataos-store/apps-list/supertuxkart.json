@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/games",
-		"repository_url": "http://download.opensuse.org/repositories/games/[basedOn]/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/games/[basedOnVersion]/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-tDHNCEabfNY/WPeLAo55PDI/AAAAAAAARe0/lzcAEsZ2oMoP9lujSEsZBSQLsG8NUJngACLcB/s1600/kart.png",
 		"price": "free",
 		"dgpu": "activate"

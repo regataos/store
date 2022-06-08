@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
-		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOn]/x86_64",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
 		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEgjtbPLfY5VSX6cwnJVpqwXqKyxK1N2Vac4WgkApvTLPXSan4ORu7V154TsUW-Ac8Pp_igFFrqoB7QSAG-yEbSJY2YjGmAe66PbsU4hR8p__ZSb5r-dwPQU2_b4stn4bQaCYS8-_lK54pPCEbHAlXZZbhnNGtSeD0fube53YbKh8Top9aMKNOn4EuGrCg",
 		"price": "free",
 		"dgpu": "deactivate"

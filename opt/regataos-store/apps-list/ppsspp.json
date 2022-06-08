@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/emulator",
-		"repository_url": "http://download.opensuse.org/repositories/Emulators/[basedOn]/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/Emulators/[basedOnVersion]/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-Ym8gftgYZ7k/WWKnzo0WHOI/AAAAAAAASGs/d3-QrUlmUE81YvFc-GlwVOCnRjlhcqlnACLcBGAs/s1600/ppsspp-emulator-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/graphics",
-		"repository_url": "http://download.opensuse.org/repositories/graphics/[basedOn]/x86_64",
+		"repository_url": "http://download.opensuse.org/repositories/graphics/[basedOnVersion]/x86_64",
 		"icon_backg": "https://3.bp.blogspot.com/-DIPxY8BTuLE/WWLORj4boLI/AAAAAAAASJc/UuA76BJF7-8gvgrEPgSf7VimgIm2sb1CACLcBGAs/s1600/RawTherapee-backg.png",
 		"price": "free",
 		"dgpu": "activate"
