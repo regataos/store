@@ -138,7 +138,6 @@ function setMainUrl() {
 		if (checkLangSystem.includes("LANGUAGE")) {
 			const configOption = "LANGUAGE="
 			const languageDetected = checkConfigFile(checkLangSystem, configOption);
-			fs.writeFileSync("/tmp/regataos-configs/foo.txt", languageDetected);
 
 			if (typeof urlStore[languageDetected] !== "undefined") {
 				return urlStore[languageDetected];
