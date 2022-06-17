@@ -117,17 +117,19 @@ function checkConfigFile(data, desiredString) {
 	const searchString = new RegExp(`(?<=${desiredString}).*`, "g");
 
 	let systemConfig = data.match(searchString)[0];
+	systemConfig = systemConfig.toLowerCase()
 	systemConfig = systemConfig.replace(/:.*/g, '');
-	systemConfig = systemConfig.replace(/\.UTF-8/g, "");
+	systemConfig = systemConfig.replace(/\.utf-8/g, "").replace(/\.utf8/g, "");;
 	return systemConfig;
 }
 
 // Check the system language information to set the store's primary url
 function setMainUrl() {
 	const urlStore = {
-		"pt_BR": "https://newstore-regataos.blogspot.com",
-		"pt_PT": "https://newstore-regataos.blogspot.com",
-		"en_US": "https://en-newstore-regataos.blogspot.com",
+		"pt_br": "https://newstore-regataos.blogspot.com",
+		"pt_pt": "https://newstore-regataos.blogspot.com",
+		"en_us": "https://en-newstore-regataos.blogspot.com",
+		"en": "https://en-newstore-regataos.blogspot.com",
 	};
 
 	if (fs.existsSync("/tmp/regataos-configs/config/plasma-localerc")) {
@@ -136,6 +138,7 @@ function setMainUrl() {
 		if (checkLangSystem.includes("LANGUAGE")) {
 			const configOption = "LANGUAGE="
 			const languageDetected = checkConfigFile(checkLangSystem, configOption);
+			fs.writeFileSync("/tmp/regataos-configs/foo.txt", languageDetected);
 
 			if (typeof urlStore[languageDetected] !== "undefined") {
 				return urlStore[languageDetected];
