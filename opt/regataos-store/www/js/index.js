@@ -142,7 +142,7 @@ function setMainUrl() {
 			if (typeof urlStore[languageDetected] !== "undefined") {
 				return urlStore[languageDetected];
 			} else {
-				return urlStore["en_US"];
+				return urlStore["en_us"];
 			}
 
 		} else if (checkLangSystem.includes("LANG")) {
@@ -152,7 +152,7 @@ function setMainUrl() {
 			if (typeof urlStore[languageDetected] !== "undefined") {
 				return urlStore[languageDetected];
 			} else {
-				return urlStore["en_US"];
+				return urlStore["en_us"];
 			}
 		}
 
@@ -160,9 +160,9 @@ function setMainUrl() {
 		const checkLangSystem = fs.readFileSync("/tmp/regataos-configs/config/user-dirs.locale", "utf8");
 
 		if (typeof urlStore[checkLangSystem] !== "undefined") {
-			return urlStore[checkLangSystem];
+			return urlStore[checkLangSystem.toLowerCase()];
 		} else {
-			return urlStore["en_US"];
+			return urlStore["en_us"];
 		}
 	}
 }
