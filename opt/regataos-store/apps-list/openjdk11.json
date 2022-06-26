@@ -2,7 +2,7 @@
 	{
 		"name": "OpenJDK 11",
 		"nickname": "openjdk11",
-		"executable": "",
+		"executable": "none",
 		"package": "java-11-openjdk-headless",
 		"extra_packages": "timezone-java java-11-openjdk",
 		"architecture": "x86_64",

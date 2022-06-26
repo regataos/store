@@ -2,7 +2,7 @@
 	{
 		"name": "Mesa OpenCL",
 		"nickname": "mesa-opencl",
-		"executable": "",
+		"executable": "none",
 		"package": "Mesa-libOpenCL",
 		"extra_packages": "clinfo",
 		"architecture": "x86_64",

@@ -2,7 +2,7 @@
   {
     "name": "OpenJDK 1.8",
     "nickname": "openjdk18",
-    "executable": "",
+    "executable": "none",
     "package": "java-1_8_0-openjdk-headless",
     "extra_packages": "timezone-java java-1_8_0-openjdk",
     "architecture": "x86_64",

@@ -2,7 +2,7 @@
 	{
 		"name": "MariaDB",
 		"nickname": "mariadb",
-		"executable": "",
+		"executable": "none",
 		"package": "mariadb",
 		"extra_packages": "psqlODBC",
 		"architecture": "x86_64",

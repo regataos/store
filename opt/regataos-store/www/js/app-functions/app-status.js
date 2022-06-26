@@ -76,8 +76,24 @@ function appStatus() {
 
 			if ((installedApps.indexOf(appNickname) > -1) == "1") {
 				captureIframe.document.getElementById(`install-${appNickname}`).style.cssText = "display: none;";
-				captureIframe.document.getElementById(`open-${appNickname}`).style.cssText = "display: block;";
 				captureIframe.document.getElementById(`remove-${appNickname}`).style.cssText = "display: block;";
+
+				// Check if the "open" button should be functional
+				const data = fs.readFileSync(`/opt/regataos-store/apps-list/${appNickname}.json`, "utf8");
+				const apps = JSON.parse(data);
+
+				for (let i = 0; i < apps.length; i++) {
+					const displayOpenButton = apps[i].executable
+
+					if ((displayOpenButton.indexOf("none") > -1) == "1") {
+						appOpenButton.classList.add("open-button-off");
+						captureIframe.document.getElementById(`open-${appNickname}`).style.cssText = "display: block;";
+
+					} else {
+						captureIframe.document.getElementById(`open-${appNickname}`).style.cssText = "display: block;";
+					}
+				}
+
 			} else {
 				captureIframe.document.getElementById(`install-${appNickname}`).style.cssText = "display: block;";
 				captureIframe.document.getElementById(`open-${appNickname}`).style.cssText = "display: none;";

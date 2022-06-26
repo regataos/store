@@ -26,15 +26,15 @@ function installedPage() {
 									newAppBlock.setAttribute("href", `${setMainUrl()}/app-${apps[i].nickname}`);
 
 									newAppBlock.innerHTML = ` \
-								<div class="app" style="padding-top: 0px;"> \
-									<div class="bloco"> \
-									<img src="${apps[i].icon_backg}" title="${apps[i].name}" alt="${apps[i].name}" /> \
-									</div> \
-									<div class="cloco-texto"> \
-										<p class="app-nome">${apps[i].name}</p> \
-										<p class="display-price price-${apps[i].price}"></p> \
-									</div> \
-								</div>`;
+									<div class="app" style="padding-top: 0px;"> \
+										<div class="bloco"> \
+										<img src="${apps[i].icon_backg}" title="${apps[i].name}" alt="${apps[i].name}" /> \
+										</div> \
+										<div class="cloco-texto"> \
+											<p class="app-nome">${apps[i].name}</p> \
+											<p class="display-price price-${apps[i].price}"></p> \
+										</div> \
+									</div>`;
 
 									dad.appendChild(newAppBlock);
 									const alphabet = `apps-${apps[i].name.substr(0, 1).toLowerCase()}`;

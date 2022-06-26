@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Broadcom Wireless",
+		"nickname": "broadcom-wl",
+		"executable": "none",
+		"package": "broadcom-wl",
+		"extra_packages": "broadcom-wl-kmp-default broadcom-wl-ueficert",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiUIb4qbqNUOxYIwQd18xYnO6EnhUjkFxFm7pf_YFPL3fVrNRT1IMShr5ltF6rYMZDbJWHBbFbLTIzM_6zaSttSSfbz5E_6ISX0gL2RdUB4FZpzBPGlKcnCeQmXitkyBsFLa7qmecQGesAzRnkRNWZ1JgE2Ml2Sk7AC_DzFPfOIklagNS9h7Sv0kCjOA/s1600/bwl-backg.png",
+		"price": "free",
+		"dgpu": "none"
+	}
+]

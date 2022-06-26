@@ -2,7 +2,7 @@
 	{
 		"name": "AMD OpenCL Polaris",
 		"nickname": "opencl-amd-polaris",
-		"executable": "",
+		"executable": "none",
 		"package": "opencl-amd-polaris",
 		"extra_packages": "clinfo",
 		"architecture": "x86_64",

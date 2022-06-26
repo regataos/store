@@ -2,7 +2,7 @@
 	{
 		"name": "Flutter",
 		"nickname": "flutter",
-		"executable": "",
+		"executable": "none",
 		"package": "flutter --classic",
 		"extra_packages": "",
 		"architecture": "",
