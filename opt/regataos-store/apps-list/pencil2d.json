@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
+		"repository_cache": "/var/cache/zypp/solv/graphics",
+		"repository_url": "https://download.opensuse.org/repositories/graphics/[basedOnVersion]/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-b4SrAxdNxQM/XujgC29HshI/AAAAAAAAYgk/dSq4leg_XugpT9IcFPfQ3ecdw1hDnTCNwCLcBGAsYHQ/s1600/pencil2d-backg.png",
 		"price": "free",
 		"dgpu": "activate"

@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/games-tools",
-		"repository_url": "https://download.opensuse.org/repositories/games:/tools/[basedOnVersion]/x86_64",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://2.bp.blogspot.com/-aDmHmcSNwao/XHNIyhm7yxI/AAAAAAAAWoQ/vgUxJwI2e8shSo9TDodVKA0gLpKmx9-AACLcBGAs/s1600/orion-backg2.png",
 		"price": "free",
 		"dgpu": "deactivate"

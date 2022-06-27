@@ -5,7 +5,7 @@
 		"executable": "polychromatic",
 		"package": "polychromatic",
 		"extra_packages": "python3-openrazer",
-		"architecture": "x86_64",
+		"architecture": "noarch",
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "[mainRepositoryName]",

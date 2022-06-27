@@ -7,7 +7,7 @@
 		"extra_packages": "virt-manager-extra",
 		"architecture": "noarch",
 		"package_manager": "zypper",
-		"repository_name": "virt-manager",
+		"repository_name": "",
 		"repository_cache": "[mainRepositoryName]",
 		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://1.bp.blogspot.com/-NYRLgq0zmBg/YKlJunDk6vI/AAAAAAAAZ24/VRk-15vgj_khQNv_wO7bqcS2pf9kRz-WQCLcBGAsYHQ/s0/virt-manager-backg.png",

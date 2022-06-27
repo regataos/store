@@ -2,8 +2,8 @@
 	{
 		"name": "FreeOffice",
 		"nickname": "freeoffice",
-		"executable": "textmaker18free",
-		"package": "softmaker-freeoffice-2018",
+		"executable": "textmaker21free",
+		"package": "softmaker-freeoffice-2021",
 		"extra_packages": "",
 		"architecture": "x86_64",
 		"package_manager": "zypper",

@@ -7,9 +7,9 @@
 		"extra_packages": "",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
-		"repository_name": "kde-extra",
-		"repository_cache": "/var/cache/zypp/solv/kde-extra",
-		"repository_url": "https://download.opensuse.org/repositories/KDE:/Extra/[basedOn]/x86_64",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-MFevJNVh2Uo/WWTopiscSCI/AAAAAAAASRQ/Yq6j2neLORs3dlvRBGLK8kMove05GEGuwCLcBGAs/s1600/scribus-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

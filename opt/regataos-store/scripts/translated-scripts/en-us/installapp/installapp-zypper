@@ -14,7 +14,7 @@ check_installation="rpm -q $package"
 # Capture repository url
 repoUrl="$repository_url"
 if [[ $repoUrl == *"[mainRepositoryUrl]"* ]]; then
-    repo_link="$(grep -r mainRepositoryUrl= /usr/share/regataos/regataos-base-version.txt | cut -d'=' -f 2-)"
+    repo_link="$(grep -r mainRepositoryUrl= /usr/share/regataos/regataos-base-version.txt | cut -d'=' -f 2-)/$architecture"
 
 elif [[ $repoUrl == *"[basedOnVersion]"* ]]; then
     basedOnVersion="$(grep -r basedOnVersion= /usr/share/regataos/regataos-base-version.txt | cut -d'=' -f 2-)"
@@ -193,37 +193,32 @@ REPOCONTENT
     # Download
     #Link download
     if [ -z $download_link ]; then
-        version=$(zypper info $file_download | grep Ver | awk '{print $3}')
-        app_download_file_name="$file_download-$version.$architecture.rpm"
+        version=$(zypper info $file_download | grep Ver | awk '{print $3}' | head -1 | tail -1)
+
+        app_download_file_name="$file_download"_"$version.$architecture.rpm"
         app_download_link="$repo_link/$app_download_file_name"
 
         wget --spider "$app_download_link"
         if [ $? != 0 ]; then
-            app_download_file_name="$file_download"_"$version.$architecture.rpm"
+            app_download_file_name="$file_download-$version.$architecture.rpm"
             app_download_link="$repo_link/$app_download_file_name"
         fi
 
     elif [[ $download_link == *"undefined"* ]]; then
-        version=$(zypper info $file_download | grep Ver | awk '{print $3}')
-        app_download_file_name="$file_download-$version.$architecture.rpm"
+        version=$(zypper info $file_download | grep Ver | awk '{print $3}' | head -1 | tail -1)
+
+        app_download_file_name="$file_download"_"$version.$architecture.rpm"
         app_download_link="$repo_link/$app_download_file_name"
 
         wget --spider "$app_download_link"
         if [ $? != 0 ]; then
-            app_download_file_name="$file_download"_"$version.$architecture.rpm"
+            app_download_file_name="$file_download-$version.$architecture.rpm"
             app_download_link="$repo_link/$app_download_file_name"
         fi
 
     else
-        version=$(zypper info $file_download | grep Ver | awk '{print $3}' | sed "s/-0//")
-        app_download_file_name="$file_download-$version.$architecture.rpm"
+        version=$(zypper info $file_download | grep Ver | awk '{print $3}' | head -1 | tail -1 | sed "s/-0//")
         app_download_link=$(echo $download_link | sed "s/\[version\]/$version/")
-
-        wget --spider "$app_download_link"
-        if [ $? != 0 ]; then
-            app_download_file_name="$file_download"_"$version.$architecture.rpm"
-            app_download_link=$(echo $download_link | sed "s/\[version\]/$version/")
-        fi
     fi
 
     #Prepare the progress bar and downloading
