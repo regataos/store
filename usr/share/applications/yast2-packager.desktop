@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=YaST software manager
 Name[pt_BR]=Gerenciador de software do YaST
-GenericName=Instalar e remover softwares
+GenericName=Install and remove software
 GenericName[pt_BR]=Instalar e remover softwares
 Exec=/usr/lib/YaST2/bin/sw_single_wrapper %F
 Icon=yast-sw_single

@@ -31,21 +31,21 @@ while :; do
 		}
 
 		function lang_pt_BR() {
-			ln -s /opt/regataos-store/scripts/translated-scripts/pt-br/installapp /opt/regataos-store/
-			ln -s /opt/regataos-store/scripts/translated-scripts/pt-br/removeapp /opt/regataos-store/
-			ln -s /opt/regataos-store/www/js/translations/pt-br /opt/regataos-store/www/js/translations/language
+			ln -sf /opt/regataos-store/scripts/translated-scripts/pt-br/installapp /opt/regataos-store/
+			ln -sf /opt/regataos-store/scripts/translated-scripts/pt-br/removeapp /opt/regataos-store/
+			ln -sf /opt/regataos-store/www/js/translations/pt-br /opt/regataos-store/www/js/translations/language
 		}
 
 		function lang_pt_PT() {
-			ln -s /opt/regataos-store/scripts/translated-scripts/pt-br/installapp /opt/regataos-store/
-			ln -s /opt/regataos-store/scripts/translated-scripts/pt-br/removeapp /opt/regataos-store/
-			ln -s /opt/regataos-store/www/js/translations/pt-br /opt/regataos-store/www/js/translations/language
+			ln -sf /opt/regataos-store/scripts/translated-scripts/pt-br/installapp /opt/regataos-store/
+			ln -sf /opt/regataos-store/scripts/translated-scripts/pt-br/removeapp /opt/regataos-store/
+			ln -sf /opt/regataos-store/www/js/translations/pt-br /opt/regataos-store/www/js/translations/language
 		}
 
 		function lang_en_US() {
-			ln -s /opt/regataos-store/scripts/translated-scripts/en-us/installapp /opt/regataos-store/
-			ln -s /opt/regataos-store/scripts/translated-scripts/en-us/removeapp /opt/regataos-store/
-			ln -s /opt/regataos-store/www/js/translations/en-us /opt/regataos-store/www/js/translations/language
+			ln -sf /opt/regataos-store/scripts/translated-scripts/en-us/installapp /opt/regataos-store/
+			ln -sf /opt/regataos-store/scripts/translated-scripts/en-us/removeapp /opt/regataos-store/
+			ln -sf /opt/regataos-store/www/js/translations/en-us /opt/regataos-store/www/js/translations/language
 		}
 
 		user=$(users | awk '{print $1}')
