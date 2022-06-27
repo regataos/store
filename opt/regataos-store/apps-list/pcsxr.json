@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/packman",
-		"repository_url": "http://ftp.gwdg.de/pub/linux/misc/packman/suse/[basedOnVersion]/Games/x86_64",
+		"repository_url": "https://ftp.gwdg.de/pub/linux/misc/packman/suse/[basedOnVersion]/Games/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-m3Ks-4HS4lw/WWKmTz8bVtI/AAAAAAAASGk/w27Pu4G_MOQ6Fwp-M4SvoS7ye3nL1o6fQCLcBGAs/s1600/pcsxr-emulator-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

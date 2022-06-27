@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/graphics",
-		"repository_url": "http://download.opensuse.org/repositories/graphics/[basedOnVersion]/x86_64",
+		"repository_url": "https://download.opensuse.org/repositories/graphics/[basedOnVersion]/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-Fx6-lsJlsGQ/WWLWlCquczI/AAAAAAAASKI/GSepmgBtQq8eddrr2t_92pHhSxZ46LPEACLcBGAs/s1600/mypaint-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

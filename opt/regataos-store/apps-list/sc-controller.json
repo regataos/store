@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/games-tools",
-		"repository_url": "http://download.opensuse.org/repositories/games:/tools/[basedOnVersion]/x86_64",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://4.bp.blogspot.com/-0aGxHb62r84/WWKtWmm7jOI/AAAAAAAASHM/bogDTK9qgQs9IL61jDLVkKmxfIYUGAvbwCLcBGAs/s1600/sc-controller-baxkg.png",
 		"price": "free",
 		"dgpu": "none"

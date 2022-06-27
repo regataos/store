@@ -9,8 +9,8 @@
 		"package_manager": "zypper",
 		"repository_name": "softmaker",
 		"repository_cache": "/var/cache/zypp/solv/softmaker",
-		"repository_url": "http://shop.softmaker.com/repo/rpm",
-		"download_link": "http://shop.softmaker.com/repo/rpm/x86_64/RPMS/softmaker-freeoffice-[version].x86_64.rpm",
+		"repository_url": "https://shop.softmaker.com/repo/rpm",
+		"download_link": "https://shop.softmaker.com/repo/rpm/x86_64/RPMS/softmaker-freeoffice-[version].x86_64.rpm",
 		"icon_backg": "https://1.bp.blogspot.com/-VAtFzFuIbaE/YALmKAM3KZI/AAAAAAAAZSw/OWTVjxkbUgQCEosNLKLkA-tIrIzhHxHoACLcBGAsYHQ/s0/freeoffice-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

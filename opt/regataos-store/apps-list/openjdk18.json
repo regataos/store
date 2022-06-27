@@ -9,7 +9,7 @@
     "package_manager": "zypper",
     "repository_name": "",
     "repository_cache": "/var/cache/zypp/solv/leap_[basedOnVersion]",
-    "repository_url": "http://download.opensuse.org/distribution/leap/[basedOnVersion]/repo/oss/x86_64",
+    "repository_url": "https://download.opensuse.org/distribution/leap/[basedOnVersion]/repo/oss/x86_64",
     "icon_backg": "https://1.bp.blogspot.com/-MdyKD0iZT20/X7EqittlMHI/AAAAAAAAZAk/_7KgcAYwLqA4lgz9RBhKaKTUg_KS2h02wCLcBGAsYHQ/s0/openjdk-backg.png",
     "price": "free",
     "dgpu": "none"

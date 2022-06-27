@@ -9,8 +9,8 @@
 		"package_manager": "zypper",
 		"repository_name": "stable-opera",
 		"repository_cache": "/var/cache/zypp/solv/stable-opera",
-		"repository_url": "http://rpm.opera.com/rpm",
-		"download_link": "http://rpm.opera.com/rpm/opera_stable-[version]-linux-release-x64-signed.rpm",
+		"repository_url": "https://rpm.opera.com/rpm",
+		"download_link": "https://rpm.opera.com/rpm/opera_stable-[version]-linux-release-x64-signed.rpm",
 		"icon_backg": "https://3.bp.blogspot.com/-By1US_-4CHU/WWQl5esu_qI/AAAAAAAASO8/FLJGSfYtKlkB2-uANGI7rOCp5eZsZQv3ACLcBGAs/s1600/opera-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

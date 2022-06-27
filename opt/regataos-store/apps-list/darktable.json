@@ -2,7 +2,7 @@
 	{
 		"name": "Darktable",
 		"nickname": "darktable",
-		"executable": "regataos_darktable",
+		"executable": "darktable",
 		"package": "darktable",
 		"extra_packages": "darktable-tools-basecurve darktable-tools-noise",
 		"architecture": "x86_64",

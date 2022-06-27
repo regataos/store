@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/leap_[basedOnVersion]",
-		"repository_url": "http://download.opensuse.org/distribution/leap/[basedOnVersion]/repo/oss/x86_64",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-MiDi64dDbkI/Xkq3-hFPDNI/AAAAAAAAYMw/JENIrEJ_EmIyO53WCdEAdqVam6QgPuqmgCLcBGAsYHQ/s1600/kate-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/gnome_apps",
-		"repository_url": "http://download.opensuse.org/repositories/GNOME:/Apps/[basedOnVersion]/x86_64",
+		"repository_url": "https://download.opensuse.org/repositories/GNOME:/Apps/[basedOnVersion]/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-BhmLaBHDo1Y/X7MYzqCVfDI/AAAAAAAAZFQ/TIBXjgsurloNt1J__Lq1P70l7SYOMFGMgCLcBGAsYHQ/s0/transmission-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

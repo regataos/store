@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "vivaldi-repo",
 		"repository_cache": "/var/cache/zypp/solv/vivaldi-repo",
-		"repository_url": "http://repo.vivaldi.com/archive/rpm/x86_64",
+		"repository_url": "https://repo.vivaldi.com/archive/rpm/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-g3oBfgQZU80/WWQjAxAGx_I/AAAAAAAASOw/4cnj88M1jewljZ-sxT9QkJVd2ceyiRftACLcBGAs/s1600/vivaldi-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

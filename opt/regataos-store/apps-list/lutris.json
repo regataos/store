@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/games-tools",
-		"repository_url": "http://download.opensuse.org/repositories/games:/tools/[basedOnVersion]/noarch",
+		"repository_url": "https://download.opensuse.org/repositories/games:/tools/[basedOnVersion]/noarch",
 		"icon_backg": "https://3.bp.blogspot.com/-jv_JIyC8KUQ/XGCExstm5yI/AAAAAAAAWeg/piJ99a6p0jMTGUiItCRbAJPpurPXrVzZACLcBGAs/s1600/lutris-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

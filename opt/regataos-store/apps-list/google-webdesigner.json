@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "google-webdesigner",
 		"repository_cache": "/var/cache/zypp/solv/google-webdesigner",
-		"repository_url": "http://dl.google.com/linux/webdesigner/rpm/stable/x86_64",
+		"repository_url": "https://dl.google.com/linux/webdesigner/rpm/stable/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-_7XH78Mowbk/WWTcjCxTjhI/AAAAAAAASQc/7jWrMNIHEEQgyYQhZLgFf22w7_4jNuKQQCLcBGAs/s1600/g-web-design-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

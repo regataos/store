@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "http://download.opensuse.org/repositories/home:/regataos/[basedOn]/noarch",
+		"repository_url": "https://download.opensuse.org/repositories/home:/regataos/[basedOn]/noarch",
 		"icon_backg": "https://3.bp.blogspot.com/-K3uX4C53pX8/WWKsAedJp6I/AAAAAAAASHA/qIIVoEXSszkzH5W1eZpi8bSN5_pDDoe1gCLcBGAs/s1600/playonlinux-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

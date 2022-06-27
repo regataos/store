@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "google-chrome",
 		"repository_cache": "/var/cache/zypp/solv/google-chrome",
-		"repository_url": "http://dl.google.com/linux/chrome/rpm/stable/x86_64",
+		"repository_url": "https://dl.google.com/linux/chrome/rpm/stable/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-zLtSRyrJHAg/WWQnDO2R2RI/AAAAAAAASPA/8qMm_WXIzKk2iv4WIAX2uvQ5-hRqeR21ACLcBGAs/s1600/chrome-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

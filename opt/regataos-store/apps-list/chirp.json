@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "hardware-sdr",
 		"repository_cache": "/var/cache/zypp/solv/hamradio",
-		"repository_url": "http://download.opensuse.org/repositories/hamradio/[basedOn]/noarch",
+		"repository_url": "https://download.opensuse.org/repositories/hamradio/[basedOn]/noarch",
 		"icon_backg": "https://3.bp.blogspot.com/-qIEXGsmX80g/XujkzEwJ9MI/AAAAAAAAYg8/QNpictVMD1ooqjz-pJDQziHeJM3vHrMNgCLcBGAsYHQ/s1600/chirp-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/emulator",
-		"repository_url": "http://download.opensuse.org/repositories/Emulators/[basedOnVersion]/noarch",
+		"repository_url": "https://download.opensuse.org/repositories/Emulators/[basedOnVersion]/noarch",
 		"icon_backg": "https://2.bp.blogspot.com/-EFqIuDjawEo/WWKpOot05CI/AAAAAAAASG0/uQTWXzhzHs4GmdimszA9ZU9HtOxCj_qtQCLcBGAs/s1600/mupen64plus-emulator-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

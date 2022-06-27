@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "vscode",
 		"repository_cache": "/var/cache/zypp/solv/vscode",
-		"repository_url": "http://packages.microsoft.com/yumrepos/vscode",
+		"repository_url": "https://packages.microsoft.com/yumrepos/vscode",
 		"icon_backg": "https://3.bp.blogspot.com/-1tFERLiZBsU/XujYx6BqGPI/AAAAAAAAYgA/zzrnf-f2ZuEzD4ngik1AE-Vb63H-DNTcQCLcBGAsYHQ/s1600/vs-code-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

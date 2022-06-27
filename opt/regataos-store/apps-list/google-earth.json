@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "google-earth",
 		"repository_cache": "/var/cache/zypp/solv/google-earth",
-		"repository_url": "http://dl.google.com/linux/earth/rpm/stable/x86_64",
+		"repository_url": "https://dl.google.com/linux/earth/rpm/stable/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-lS1OSRhz2o8/X69C73XFfEI/AAAAAAAAZAM/X6Of7zOSo0Ibcu4SxihNEtfSfsx4GPpqwCLcBGAsYHQ/s0/google-earth.png",
 		"price": "free",
 		"dgpu": "activate"

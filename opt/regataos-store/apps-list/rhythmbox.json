@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/gnome_apps",
-		"repository_url": "http://download.opensuse.org/repositories/GNOME:/Apps/[basedOnVersion]/x86_64",
+		"repository_url": "https://download.opensuse.org/repositories/GNOME:/Apps/[basedOnVersion]/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-9GKxVbq47LE/XGB-2t-6umI/AAAAAAAAWdk/werfDnFC_eIHsjh2HKIgpUVLrU8rM5mNQCLcBGAs/s1600/rhythmbox-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

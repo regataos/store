@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/hardware",
-		"repository_url": "http://download.opensuse.org/repositories/hardware/[basedOnVersion]/noarch",
+		"repository_url": "https://download.opensuse.org/repositories/hardware/[basedOnVersion]/noarch",
 		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEiSwPDTSXZMpQydgtymFkpLckluoEWjVBDBearf7C1K0SuKtbaIpdZWUoO6xDXLjDETmLxwgWpFnGpdRvT849bCpzllmeMy6AYDRdhP8lta2JRnzmXTWiG2bkBDgVe1r_1vOxPdO-XcnR7l-Tjb0mNplf4drejwqkCRpl8rQHb-s7teqp2Q89ipmU9kwA",
 		"price": "free",
 		"dgpu": "deactivate"

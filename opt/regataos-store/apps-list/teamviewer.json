@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "teamviewer",
 		"repository_cache": "/var/cache/zypp/solv/teamviewer",
-		"repository_url": "http://linux.teamviewer.com/yum/stable/main/binary-x86_64",
+		"repository_url": "https://linux.teamviewer.com/yum/stable/main/binary-x86_64",
 		"download_link": "https://linux.teamviewer.com/yum/stable/main/binary-x86_64/teamviewer-suse_[version].x86_64.rpm",
 		"icon_backg": "https://2.bp.blogspot.com/-Pooc6jRj708/WWQLvOEsZiI/AAAAAAAASOE/A8UZTqbBzpYj3cGlfnDoZstXb8NSmmT4gCLcBGAs/s1600/teamviewer-backg.png",
 		"price": "free",

@@ -7,9 +7,9 @@
 		"extra_packages": "amarok-lang",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/leap_[basedOnVersion]",
-		"repository_url": "http://download.opensuse.org/distribution/leap/[basedOnVersion]/repo/oss/x86_64",
+		"repository_name": "kde-extra",
+		"repository_cache": "/var/cache/zypp/solv/kde-extra",
+		"repository_url": "https://download.opensuse.org/repositories/KDE:/Extra/[basedOn]/x86_64",
 		"icon_backg": "https://2.bp.blogspot.com/-ovHmCD4Gn5s/WWPb0H0CihI/AAAAAAAASLY/kFHi_wv9TTgW_8QisSabzphxxN-WAs4iwCLcBGAs/s1600/amarok-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

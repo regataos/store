@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/packman",
-		"repository_url": "http://ftp.gwdg.de/pub/linux/misc/packman/suse/[basedOn]/Multimedia/x86_64",
+		"repository_url": "https://ftp.gwdg.de/pub/linux/misc/packman/suse/[basedOn]/Multimedia/x86_64",
 		"icon_backg": "https://3.bp.blogspot.com/-kxt3zFk8Kd4/WWPpzjeSpTI/AAAAAAAASMo/p5npQcAScLwc_coAiJLjkofYi_hh1Rh_ACLcBGAs/s1600/obs-studio-backg.png",
 		"price": "free",
 		"dgpu": "activate"

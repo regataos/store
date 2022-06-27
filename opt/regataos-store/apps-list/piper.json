@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/hardware",
-		"repository_url": "http://download.opensuse.org/repositories/hardware/[basedOnVersion]/noarch",
+		"repository_url": "https://download.opensuse.org/repositories/hardware/[basedOnVersion]/noarch",
 		"icon_backg": "https://1.bp.blogspot.com/-GRhADQHIP9Y/X7Es-AqiRKI/AAAAAAAAZAw/9L8sk-F_ZGkRVDYghU9rZadYwYVkHr2MACLcBGAsYHQ/s0/piper-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"
