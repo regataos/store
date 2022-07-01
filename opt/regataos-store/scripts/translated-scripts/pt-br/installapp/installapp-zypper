@@ -181,6 +181,10 @@ REPOCONTENT
         sudo zypper --non-interactive refresh $repo_name
     fi
 
+    # Update regataos repo
+    sudo zypper --non-interactive refresh regataos_22
+    sudo zypper --non-interactive refresh plasmaregataos1
+
     # Check if there is a need to install or remove any packages before installing the app
     if [ ! -z $package_prerm ]; then
         sudo zypper --non-interactive remove $package_prerm
@@ -194,7 +198,6 @@ REPOCONTENT
     #Link download
     if [ -z $download_link ]; then
         version=$(zypper info $file_download | grep Ver | awk '{print $3}' | head -1 | tail -1)
-
         app_download_file_name="$file_download"_"$version.$architecture.rpm"
         app_download_link="$repo_link/$app_download_file_name"
 
@@ -206,7 +209,6 @@ REPOCONTENT
 
     elif [[ $download_link == *"undefined"* ]]; then
         version=$(zypper info $file_download | grep Ver | awk '{print $3}' | head -1 | tail -1)
-
         app_download_file_name="$file_download"_"$version.$architecture.rpm"
         app_download_link="$repo_link/$app_download_file_name"
 
@@ -217,7 +219,8 @@ REPOCONTENT
         fi
 
     else
-        version=$(zypper info $file_download | grep Ver | awk '{print $3}' | head -1 | tail -1 | sed "s/-0//")
+        version=$(zypper info $file_download | grep Ver | awk '{print $3}' | sed "s/-0//")
+        app_download_file_name="$file_download-$version.$architecture.rpm"
         app_download_link=$(echo $download_link | sed "s/\[version\]/$version/")
     fi
 
@@ -259,7 +262,7 @@ REPOCONTENT
     #Install with rpm
     cd $progressbar_dir/
     $command_install $app_download_file_name
-    $command_install $extra_package
+    $command_install $extra_package > /var/log/regataos-logs/install-app-extra.log
 }
 
 # Check if the application is already being installed
