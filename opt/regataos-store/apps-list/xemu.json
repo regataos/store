@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Xemu",
+		"nickname": "xemu",
+		"executable": "flatpak run app.xemu.xemu",
+		"package": "app.xemu.xemu",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmLngKtjeBiYthcWthRZdLAkPxweZrqWl24OzdvaxJAUTVIzqgxS4rrNofnMkn3rpc2I0wfaoDbYWNmHBi7JRz7ro9Ec_XiTvWBPuedUSjhCGn799r_zQbl6UvnfVCbRlfrJnYmYm1RVtqOo2VMx9YKLHoecACQS_B6Yaoy5cH8LM7XzKYfacwttDXoQ/s1600/xemu-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

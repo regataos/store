@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Citra",
+		"nickname": "citra",
+		"executable": "flatpak run org.citra_emu.citra",
+		"package": "org.citra_emu.citra",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr1xkLZn0fw72wdn6c7UDIm5ETfJol0v0QU2UEaYY26RUbC-Efy5e3drdgwH-vIcIbN9djidiTz3k6bT1WQXEVadl6kXg38veKQYPYk_Fue7u83T6fQkwEG7yleUU5CmICxnMVDCPBQ5ceD1kIv90gbql30P4szCDtUY-opUFMs6QVwOy-1i_vIdKefA/s1600/citra-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Ryujinx",
+		"nickname": "ryujinx",
+		"executable": "flatpak run org.ryujinx.Ryujinx",
+		"package": "org.ryujinx.Ryujinx",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiOdmXYauT1o_byIyrWp2L9nydninH5mKfHKM4C0CDFx6KnR1mHroFYWNZ9SAZhcwIAbIReDVhKjiB9YtXKhRPC0QQ2mYS4eMDnh8ycdJMGZg71pxXulOK83qxj11nyhccibthT5A0DP6KjJ5VYbzqudaWXOmDVOR_Hb3NZWgYEzLIt5YsbGF47dfDsig/s1600/ryujinx-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

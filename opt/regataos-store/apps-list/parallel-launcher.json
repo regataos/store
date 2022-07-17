@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Parallel Launcher",
+		"nickname": "parallel-launcher",
+		"executable": "flatpak run ca.parallel_launcher.ParallelLauncher",
+		"package": "ca.parallel_launcher.ParallelLauncher",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi11Ew4y2Fy6NgsypxJhHIdi3GMdIrW69gWH6CS6gSEIl7SkzoNChSU5LDsjT1ZOnHJsk2kHrJ7_xn9zJT4G05pmRC_aAHaIBx9jz0k1CGQevdvDLvI3RK5shcAlGyCxzOZDJhIqBK6Zvx68grwvMPLMPPcGto5tvHe-ign-ik7q8GH6oU3kJMezJ277w/s1600/parallel-launcher-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

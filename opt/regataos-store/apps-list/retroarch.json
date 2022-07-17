@@ -4,7 +4,7 @@
 		"nickname": "retroarch",
 		"executable": "retroarch",
 		"package": "retroarch",
-		"extra_packages": "retroarch-joypad-autoconfig",
+		"extra_packages": "",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
