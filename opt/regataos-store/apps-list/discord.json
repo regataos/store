@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/packman",
-		"repository_url": "https://ftp.gwdg.de/pub/linux/misc/packman/suse/[basedOn]/Extra/x86_64",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
 		"icon_backg": "https://2.bp.blogspot.com/-7fWKxroNQJk/WWQbLL5c4lI/AAAAAAAASOg/q0uxGexjh6U151ybBsvlj8PiASDBpvMwACLcBGAs/s1600/discord-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"
