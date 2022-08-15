@@ -262,7 +262,7 @@ REPOCONTENT
     #Install with rpm
     cd $progressbar_dir/
     $command_install $app_download_file_name
-    $command_install $extra_package > /var/log/regataos-logs/install-app-extra.log
+    $command_install $extra_package > "/var/log/regataos-logs/install-app-extra-$app_nickname.log"
 }
 
 # Check if the application is already being installed

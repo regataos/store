@@ -38,7 +38,7 @@ function appButtonsFunction() {
 
 					exec(commandInstall, (error, stdout, stderr) => {
 						if (stdout) {
-							fs.writeFile('/var/log/regataos-logs/install-app.log', stdout, (err) => {
+							fs.writeFile(`/var/log/regataos-logs/install-app-${apps[i].nickname}.log`, stdout, (err) => {
 								if (err) throw err;
 								console.log('The file has been saved!');
 							});
