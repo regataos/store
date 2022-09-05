@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
-		"repository_url": "https://download.opensuse.org/repositories/multimedia:/apps/[basedOn]/x86_64",
+		"repository_url": "https://download.opensuse.org/repositories/multimedia:/apps/[basedOnVersion]/x86_64",
 		"icon_backg": "https://3.bp.blogspot.com/-Qu5O4fHCtFU/XGB_lmS8l4I/AAAAAAAAWeA/dwc84J-If7krmtOL0mcPCVNhOymKA0dtQCLcBGAs/s1600/ardour-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"

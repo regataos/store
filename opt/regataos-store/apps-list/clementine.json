@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
-		"repository_url": "https://download.opensuse.org/repositories/multimedia:/apps/[basedOn]/x86_64",
+		"repository_url": "https://download.opensuse.org/repositories/multimedia:/apps/[basedOnVersion]/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-5AacvqOK1L4/WWPUpsuSqLI/AAAAAAAASLE/FLdy483lO6QTtQmje6RCFaUzOlTm-vdLQCLcBGAs/s1600/clementine-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"
