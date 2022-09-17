@@ -144,7 +144,7 @@ function setMainUrl() {
 			if (typeof urlStore[languageDetected] !== "undefined") {
 				return urlStore[languageDetected];
 			} else {
-				return urlStore["en_us"];
+				return urlStore["en-us"];
 			}
 
 		} else if (checkLangSystem.includes("LANG")) {
@@ -154,7 +154,7 @@ function setMainUrl() {
 			if (typeof urlStore[languageDetected] !== "undefined") {
 				return urlStore[languageDetected];
 			} else {
-				return urlStore["en_us"];
+				return urlStore["en-us"];
 			}
 		}
 
@@ -164,7 +164,7 @@ function setMainUrl() {
 		if (typeof urlStore[checkLangSystem] !== "undefined") {
 			return urlStore[checkLangSystem.toLowerCase()];
 		} else {
-			return urlStore["en_us"];
+			return urlStore["en-us"];
 		}
 	}
 }
