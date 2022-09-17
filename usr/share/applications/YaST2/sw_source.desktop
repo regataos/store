@@ -21,7 +21,8 @@ Exec=xdg-su -c "/sbin/yast2 repositories"
 
 Name=Software Repositories
 Name[pt_BR]=Repositórios de softwares
-GenericName=Choose the repositories for installation of software packages (CD, network, etc.), add the community repositories
+Name[pt]=Repositórios de softwares
+GenericName=Choose repositories for installing new software
 GenericName[pt_BR]=Escolha os repositórios para a instalação de novos softwares
+GenericName[pt]=Escolha os repositórios para a instalação de novos softwares
 StartupNotify=true
-

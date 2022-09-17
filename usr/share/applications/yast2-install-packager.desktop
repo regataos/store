@@ -2,8 +2,10 @@
 Encoding=UTF-8
 Name=Install RPM package
 Name[pt_BR]=Instalar pacote RPM
+Name[pt]=Instalar pacote RPM
 GenericName=Install third-party RPM packages
 GenericName[pt_BR]=Instale pacotes RPM de terceiros
+GenericName[pt]=Instale pacotes RPM de terceiros
 Exec=/usr/lib/YaST2/bin/sw_single_wrapper %F
 Icon=muon
 Terminal=false

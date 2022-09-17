@@ -21,7 +21,8 @@ Exec=xdg-su -c "/sbin/yast2 hwinfo"
 
 Name=Hardware Information
 Name[pt_BR]=Informações do hardware
+Name[pt]=Informações do hardware
 GenericName=View hardware information
 GenericName[pt_BR]=Informações detalhadas do hardware
+GenericName[pt]=Informações detalhadas do hardware
 StartupNotify=true
-
