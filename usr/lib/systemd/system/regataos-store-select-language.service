@@ -1,9 +1,0 @@
-[Unit]
-Description=Regata OS Store Select Language
-Before=display-manager.service
-
-[Service]
-ExecStart=/bin/bash /opt/regataos-store/scripts/select-language
-
-[Install]
-WantedBy=graphical.target

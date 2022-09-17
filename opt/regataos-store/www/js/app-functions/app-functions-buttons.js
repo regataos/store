@@ -33,7 +33,7 @@ function appButtonsFunction() {
 					export repository_name="${apps[i].repository_name}"; \
 					export repository_url="${apps[i].repository_url}"; \
 					export download_link="${apps[i].download_link}"; \
-					sudo -E /opt/regataos-store/installapp/installapp-${apps[i].package_manager}; \
+					sudo -E ${selectTranslationScript()}/installapp/installapp-${apps[i].package_manager}; \
 					sudo /opt/regataos-prime/scripts/apps-hybrid-graphics`;
 
 					exec(commandInstall, (error, stdout, stderr) => {
@@ -53,7 +53,7 @@ function appButtonsFunction() {
 					export package="${apps[i].package}"; \
 					export extra_packages="${apps[i].extra_packages}"; \
 					export architecture="${apps[i].architecture}"; \
-					sudo -E /opt/regataos-store/removeapp/removeapp-${apps[i].package_manager}; \
+					sudo -E ${selectTranslationScript()}/removeapp/removeapp-${apps[i].package_manager}; \
 					sudo /opt/regataos-prime/scripts/apps-hybrid-graphics`;
 
 					exec(commandRemove, (error, stdout, stderr) => {

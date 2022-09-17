@@ -1,5 +1,5 @@
 Name: regataos-store
-Version: 22.1
+Version: 22.2
 Release: 0
 Url: https://github.com/regataos/store
 Summary: Application store of Regata OS
@@ -48,6 +48,11 @@ cp -f %{SOURCE2} %{buildroot}/opt/regataos-store/%{name}.desktop
 %post
 # Extract store files at the root of the system
 tar xf /opt/regataos-base/regataos-store-%{version}.tar.xz -C /
+
+# Remove obsolete files
+if test -e "/opt/regataos-store/apps-list/opencl-amd.json"; then
+  rm -f "/opt/regataos-store/apps-list/opencl-amd.json"
+fi
 
 # Prepare store status
 if test ! -e "/tmp/regataos-store/config" ; then
@@ -107,9 +112,11 @@ fi
 # Add guest user group
 getent group guest-session >/dev/null || groupadd -r guest-session
 
-# Setting the Regata OS Store language
-sudo /opt/regataos-store/scripts/select-language
 update-desktop-database
+
+systemctl stop regataos-store-select-language.service
+systemctl disable regataos-store-select-language.service
+systemctl daemon-reload
 
 # We're finished!
 rm -f "/opt/regataos-store/installed-apps/snap-version-cache.txt"

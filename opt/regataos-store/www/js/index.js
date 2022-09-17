@@ -1,3 +1,15 @@
+// Show app only when the UI is ready
+const gui = require('nw.gui');
+
+onload = function () {
+	gui.Window.get().show();
+}
+
+// Disable main hover effect after few seconds
+setTimeout(function () {
+	document.getElementById("loadscreen").style.display = "none";
+}, 2500);
+
 const fs = require("fs");
 
 // Check internet connection for topbar
@@ -112,24 +124,14 @@ function startFullProgressBar() {
 	}
 }
 
-// Check configuration files
-function checkConfigFile(data, desiredString) {
-	const searchString = new RegExp(`(?<=${desiredString}).*`, "g");
-
-	let systemConfig = data.match(searchString)[0];
-	systemConfig = systemConfig.toLowerCase();
-	systemConfig = systemConfig.replace(/:.*/g, '');
-	systemConfig = systemConfig.replace(/\.utf-8/g, "").replace(/\.utf8/g, "");
-	return systemConfig;
-}
-
 // Check the system language information to set the store's primary url
 function setMainUrl() {
 	const urlStore = {
-		"pt_br": "https://newstore-regataos.blogspot.com",
-		"pt_pt": "https://newstore-regataos.blogspot.com",
-		"en_us": "https://en-newstore-regataos.blogspot.com",
-		"en": "https://en-newstore-regataos.blogspot.com",
+		"pt-br": "https://newstore-regataos.blogspot.com",
+		"pt-pt": "https://newstore-regataos.blogspot.com",
+		"pt": "https://newstore-regataos.blogspot.com",
+		"en-us": "https://en-newstore-regataos.blogspot.com",
+		"en-gb": "https://en-newstore-regataos.blogspot.com"
 	};
 
 	if (fs.existsSync("/tmp/regataos-configs/config/plasma-localerc")) {

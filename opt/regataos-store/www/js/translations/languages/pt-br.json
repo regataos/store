@@ -1,0 +1,42 @@
+[
+    {
+        "sidebar": {
+            "search": {
+                "defaultText": "Pesquisar"
+            },
+            "memu": {
+                "backButton": "Voltar",
+                "discover": "Descobrir",
+                "create": "Criar",
+                "work": "Trabalhar",
+                "play": "Jogar",
+                "develop": "Desenvolver",
+                "utilities": "Utilidades",
+                "installed": "Instalados",
+                "installProgress": "Instalação em andamento..."
+            }
+        },
+        "storeAppPages": {
+            "installButton": "Instalar",
+            "InstallingButton": "Instalando...",
+            "removeButton": "Desinstalar",
+            "removingButton": "Desinstalando...",
+            "gameButton": "Instalar",
+            "queueButton": "Pendente...",
+            "openButton": "Abrir"
+        },
+        "networkOff": {
+            "title": "Não foi possível conectar-se à Internet",
+            "description": "Verifique os cabos de rede, modem e roteador ou<br/> conecte à rede Wi-Fi novamente."
+        },
+        "progressBar": {
+            "downSpeed": "Velocidade:",
+            "etaDesc": "restante(s).",
+            "moreInfo": "Mais informações",
+            "downPause": "Pausar o download",
+            "downPlay": "Iniciar o download",
+            "downCancel": "Cancelar",
+            "removeItem": "Remover"
+        }
+    }
+]

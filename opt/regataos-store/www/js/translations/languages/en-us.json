@@ -1,0 +1,42 @@
+[
+    {
+        "sidebar": {
+            "search": {
+                "defaultText": "Search"
+            },
+            "memu": {
+                "backButton": "Go Back",
+                "discover": "Discover",
+                "create": "Create",
+                "work": "Work",
+                "play": "Play",
+                "develop": "Develop",
+                "utilities": "Utilities",
+                "installed": "Installed",
+                "installProgress": "Installation in progress..."
+            }
+        },
+        "storeAppPages": {
+            "installButton": "Install",
+            "InstallingButton": "Installing...",
+            "removeButton": "Uninstall",
+            "removingButton": "Uninstalling...",
+            "gameButton": "Install",
+            "queueButton": "Pending...",
+            "openButton": "Open"
+        },
+        "networkOff": {
+            "title": "Unable to connect to the Internet",
+            "description": "Check the network, modem and router cables or<br/> connect to the Wi-Fi network again."
+        },
+        "progressBar": {
+            "downSpeed": "Speed:",
+            "etaDesc": "remaining.",
+            "moreInfo": "More information",
+            "downPause": "Pause download",
+            "downPlay": "Start download",
+            "downCancel": "Cancel",
+            "removeItem": "Remove"
+        }
+    }
+]
