@@ -17,14 +17,14 @@ function versionRpm(appNickname) {
 			let repoFile = fs.readFileSync(repositoryFile, "utf8");
 			repoFile = repoFile.replace(prepareString1, "").replace(prepareString2, "");
 
-			if ((repoFile.indexOf("x86_64") > -1) == "1") {
+			if ((data.indexOf("x86_64") > -1) == "1") {
 				const searchArch = new RegExp(`(?<=${package}).*x86_64`, "g");
 
 				let appVersion = repoFile.match(searchArch)[0];
 				appVersion = appVersion.replace(/-.*/g, "").trim();
 				return appVersion;
 
-			} else if ((repoFile.indexOf("noarch") > -1) == "1") {
+			} else if ((data.indexOf("noarch") > -1) == "1") {
 				const searchArch = new RegExp(`(?<=${package}).*noarch`, "g");
 
 				let appVersion = repoFile.match(searchArch)[0];

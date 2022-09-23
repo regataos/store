@@ -64,7 +64,6 @@ function applyTranslation() {
 
     let data = fs.readFileSync(selectTranslationFile(), "utf8");
     data = JSON.parse(data);
-    console.log("teste2: " + data)
 
     for (let i = 0; i < data.length; i++) {
         // Search
