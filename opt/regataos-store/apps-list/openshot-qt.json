@@ -8,8 +8,8 @@
 		"architecture": "noarch",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
+		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
+		"repository_url": "https://download.opensuse.org/repositories/multimedia:/apps/[basedOnVersion]/noarch",
 		"icon_backg": "https://4.bp.blogspot.com/-HaoY-dYQIvY/WWPjNG8MTUI/AAAAAAAASMM/cr620hOSpegEzS3cf-mdYN5xK089VvHnQCLcBGAs/s1600/openshot-backg.png",
 		"price": "free",
 		"dgpu": "activate"
