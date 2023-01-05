@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Ferdium",
+		"nickname": "ferdium",
+		"executable": "ferdium",
+		"package": "ferdium",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifZyqjt4Y8NdXI4U5psuZY65PyhQMtFwbHhYRfAukHXrA40ZedvtbJRSdmfi_chABr88MhIpX-C1rcrBHkUmAVtqqneitoXYjNKvP9IvxUU5qFD0M-RS7O8tEETH4f1SxGn16lrC-REcOlrVhWI__ofIkLXV7z2UKC17V_cK8jDs5VBh5wQM-pfofp1w/s1600/ferdium-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
