@@ -14,7 +14,17 @@ echo "" > /tmp/progressbar-store/progress
 echo "installing" > /tmp/progressbar-store/progress-movement
 
 #Check the default language
-lang=$(grep -r LANG /tmp/regataos-configs/config/plasma-localerc)
+checkLocaleFile=$(cat /tmp/regataos-configs/config/plasma-localerc)
+
+if [[ $checkLocaleFile == *"LANGUAGE"* ]]; then
+	lang=$(grep -r LANGUAGE /tmp/regataos-configs/config/plasma-localerc | sed 's/:/ /g' | awk '{print $1}' | cut -d"=" -f 2-)
+
+elif [[ $checkLocaleFile == *"LANG"* ]]; then
+	lang=$(grep -r LANG /tmp/regataos-configs/config/plasma-localerc | cut -d"=" -f 2-)
+
+else
+	lang="en_US"
+fi
 
 #Take the name of the application
 app_name=$(cat /tmp/progressbar-store/app-name)
