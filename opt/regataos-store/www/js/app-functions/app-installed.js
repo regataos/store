@@ -43,6 +43,23 @@ function installedPage() {
 							}
 						}
 					}
+
+					// Disable draggable
+					const image = captureIframe.document.querySelectorAll("img");
+					for (let i = 0; i < image.length; i++) {
+						image[i].draggable = false;
+					}
+
+					const div = captureIframe.document.querySelectorAll("div");
+					for (let i = 0; i < div.length; i++) {
+						div[i].draggable = false;
+					}
+
+					const a = captureIframe.document.querySelectorAll("a");
+					for (let i = 0; i < a.length; i++) {
+						a[i].draggable = false;
+					}
+
 					return;
 				}
 			});
