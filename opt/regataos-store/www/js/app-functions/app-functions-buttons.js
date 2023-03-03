@@ -7,7 +7,20 @@ function appButtonsFunction() {
 	const captureIframeUrl = captureIframe.location.href;
 
 	if ((captureIframeUrl.indexOf("app-") > -1) == "1") {
-		const appNickname = captureIframeUrl.split("app-")[1];
+		// Get the app's nickname by checking the action buttons on the page.
+		const getNicknameInstall = captureIframe.document.querySelector(".install-button").id;
+		const getNicknameRemove = captureIframe.document.querySelector(".remove-button").id;
+		let appNickname = ""
+
+		if (getNicknameInstall !== null) {
+			appNickname = getNicknameInstall.replace("install-", "");
+
+		} else if (getNicknameRemove !== null) {
+			appNickname = getNicknameRemove.replace("remove-", "");
+
+		} else {
+			appNickname = captureIframeUrl.split("app-")[1];
+		}
 
 		if (fs.existsSync(`/opt/regataos-store/apps-list/${appNickname}.json`)) {
 			const data = fs.readFileSync(`/opt/regataos-store/apps-list/${appNickname}.json`, "utf8");
@@ -36,6 +49,7 @@ function appButtonsFunction() {
 					sudo -E ${selectTranslationScript()}/installapp/installapp-${apps[i].package_manager}; \
 					sudo /opt/regataos-prime/scripts/apps-hybrid-graphics`;
 
+					console.log(commandInstall);
 					exec(commandInstall, (error, stdout, stderr) => {
 						if (stdout) {
 							fs.writeFile(`/var/log/regataos-logs/install-app-${apps[i].nickname}.log`, stdout, (err) => {
@@ -56,6 +70,7 @@ function appButtonsFunction() {
 					sudo -E ${selectTranslationScript()}/removeapp/removeapp-${apps[i].package_manager}; \
 					sudo /opt/regataos-prime/scripts/apps-hybrid-graphics`;
 
+					console.log(commandRemove);
 					exec(commandRemove, (error, stdout, stderr) => {
 						if (stdout) {
 							fs.writeFile('/var/log/regataos-logs/remove-app.log', stdout, (err) => {
