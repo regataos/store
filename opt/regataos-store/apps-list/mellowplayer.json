@@ -2,8 +2,8 @@
 	{
 		"name": "MellowPlayer",
 		"nickname": "mellowplayer",
-		"executable": "mellowplayer",
-		"package": "mellowplayer",
+		"executable": "MellowPlayer",
+		"package": "MellowPlayer",
 		"extra_packages": "",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
