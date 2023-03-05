@@ -3,7 +3,7 @@
 		"name": "NVIDIA Driver",
 		"nickname": "nvidia-driver-g05",
 		"executable": "nvidia-settings",
-		"package": "nvidia-gfxG05-kmp-default",
+		"package": "x11-video-nvidiaG05",
 		"package_prerm": "nvidia-driver-extra-g04 nvidia-computeG04 nvidia-computeG04-32bit nvidia-gfxG04-kmp-default nvidia-glG04 nvidia-glG04-32bit x11-video-nvidiaG04 x11-video-nvidiaG04-32bit nvidia-driver-extra nvidia-compute-G06 nvidia-compute-G06-32bit nvidia-compute-utils-G06 nvidia-driver-G06-kmp-default nvidia-drivers-G06 nvidia-drivers-minimal-G06 nvidia-gl-G06 nvidia-gl-G06-32bit nvidia-utils-G06 nvidia-video-G06 nvidia-video-G06-32bit",
 		"package_preinst": "",
 		"extra_packages": "nvidia-driver-extra-g05 nvidia-computeG05 nvidia-computeG05-32bit nvidia-gfxG05-kmp-default nvidia-glG05 nvidia-glG05-32bit x11-video-nvidiaG05 x11-video-nvidiaG05-32bit",
