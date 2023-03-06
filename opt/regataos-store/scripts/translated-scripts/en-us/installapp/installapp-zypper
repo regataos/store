@@ -186,16 +186,12 @@ REPOCONTENT
     sudo zypper --non-interactive refresh plasmaregataos1
 
     # Check if there is a need to install or remove any packages before installing the app
-    if [[ $package_prerm != *"undefined"* ]]; then
-        if [ ! -z $package_preinst ]; then
-            sudo zypper --non-interactive remove $package_prerm
-        fi
+    if [[ $(echo $package_prerm) != *"undefined"* ]]; then
+        sudo zypper --non-interactive remove $package_prerm
     fi
 
-    if [[ $package_preinst != *"undefined"* ]]; then
-        if [ ! -z $package_preinst ]; then
-            sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses $package_preinst
-        fi
+    if [[ $(echo $package_preinst) != *"undefined"* ]]; then
+        sudo zypper --non-interactive --no-gpg-checks install --auto-agree-with-licenses $package_preinst
     fi
 
     # Download
