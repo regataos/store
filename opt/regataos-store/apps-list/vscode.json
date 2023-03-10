@@ -10,6 +10,7 @@
 		"repository_name": "vscode",
 		"repository_cache": "/var/cache/zypp/solv/vscode",
 		"repository_url": "https://packages.microsoft.com/yumrepos/vscode",
+		"download_link": "https://packages.microsoft.com/yumrepos/vscode/Packages/c/code-[version].x86_64.rpm",
 		"icon_backg": "https://3.bp.blogspot.com/-1tFERLiZBsU/XujYx6BqGPI/AAAAAAAAYgA/zzrnf-f2ZuEzD4ngik1AE-Vb63H-DNTcQCLcBGAsYHQ/s1600/vs-code-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"
