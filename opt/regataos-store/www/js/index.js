@@ -42,7 +42,8 @@ function showProgressBar() {
 		const uninstallInconProgress = document.querySelector(".li-sidebar-uninstalling");
 
 		if (((storeStatus.indexOf("installing") > -1) == "1") ||
-			((storeStatus.indexOf("uninstalling") > -1) == "1")) {
+			((storeStatus.indexOf("uninstalling") > -1) == "1") ||
+			((storeStatus.indexOf("stopped") > -1) == "1")) {
 			// Show the progress of installing/uninstalling apps.
 			progressBar.classList.add("progress-bar-show");
 

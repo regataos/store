@@ -47,6 +47,13 @@ installation_error_status="Erro na instalação!"
 progressbar_dir="/tmp/progressbar-store"
 installed_apps="/opt/regataos-store/installed-apps/installed-apps.txt"
 
+#Reboot system
+reboot_title="Regata OS Store - Reiniciar o sistema"
+reboot_text="Para funcionar, o $app_name precisa que o sistema\nseja reiniciado. Você quer fazer isso agora?"
+reboot_text_notice="Para funcionar, o $app_name precisa que o sistema seja\nreiniciado. Faça isso assim que puder."
+reboot_confirm_button="Reiniciar o sistema"
+reboot_cancel_button="Cancelar"
+
 #Installation error feedback reported
 bug_reported_title="Problema detectado!"
 bug_reported_text="Fomos notificados sobre o erro na instalação do app $app_name."
@@ -62,6 +69,27 @@ function success_installation() {
     message=$success_notify_text
 
     sudo -u $user DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$user_id/bus notify-send -i emblem-ok-symbolic -u normal -a 'Regata OS Store' "$title" "$message"
+
+    if [[ $restart_system == *"true"* ]]; then
+        if test ! -e "$progressbar_dir/queued-1"; then
+            sudo -H env DISPLAY=:0 zenity --question --text "$reboot_text" --icon-name=system-reboot \
+            --title "$reboot_title" --ok-label "$reboot_confirm_button" --cancel-label "$reboot_cancel_button" --width 350 \
+            --window-icon "/usr/share/pixmaps/regataos-store-icon.png"
+
+            if [ $? -eq "0" ]; then
+                sleep 1
+                sudo reboot
+
+            else
+                echo "Process canceled"
+            fi
+
+        else
+            sudo -H env DISPLAY=:0 zenity --warning --text "$reboot_text_notice" --icon-name=system-reboot \
+            --title "$reboot_title" --ok-label "OK" --width 350 \
+            --window-icon "/usr/share/pixmaps/regataos-store-icon.png"
+        fi
+    fi
 }
 
 #Installation failed
@@ -293,6 +321,8 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
             kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
             if [[ $kmsg != *"$app_nickname"* ]]; then
                 chmod 777 /tmp/progressbar-store/*
+                echo "stopped" > "/tmp/regataos-store/config/status.txt"
+                echo "$app_name" > "$progressbar_dir/busy-installer-for.txt"
                 echo "$app_nickname=install process-$installation_queue_packagekitd" >>$progressbar_dir/queued-process
                 echo "" >$progressbar_dir/progress
                 echo "installing" >$progressbar_dir/progress-movement
@@ -319,6 +349,8 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
         kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
         if [[ $kmsg != *"$app_nickname"* ]]; then
             chmod 777 /tmp/progressbar-store/*
+            echo "stopped" > "/tmp/regataos-store/config/status.txt"
+            echo "$app_name" > "$progressbar_dir/busy-installer-for.txt"
             echo "$app_nickname=install process-$installation_queue" >>$progressbar_dir/queued-process
             echo "" >$progressbar_dir/progress
             echo "installing" >$progressbar_dir/progress-movement
@@ -339,6 +371,8 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
         kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
         if [[ $kmsg != *"$app_nickname"* ]]; then
             chmod 777 /tmp/progressbar-store/*
+            echo "stopped" > "/tmp/regataos-store/config/status.txt"
+            echo "$app_name" > "$progressbar_dir/busy-installer-for.txt"
             echo "$app_nickname=install process-$installation_queue" >>$progressbar_dir/queued-process
             echo "" >$progressbar_dir/progress
             echo "installing" >$progressbar_dir/progress-movement
@@ -349,6 +383,31 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
         #I'm in the process queue, see you later
         chmod 777 /tmp/progressbar-store/*
         exit 0
+    fi
+
+    ps -C "regataos-check- | regataos-update | regataos-up" >/dev/null
+    if [ $? = 0 ]; then
+        ps -C "zypper | regataos-up-all | regataos-up-specific | regataos-up-other-up" >/dev/null
+        if [ $? = 0 ]; then
+            echo "Installation in queue, zypper is here"
+
+            # Put the process in the installation queue
+            kmsg=$(grep -r $app_nickname $progressbar_dir/queued-process)
+            if [[ $kmsg != *"$app_nickname"* ]]; then
+                chmod 777 /tmp/progressbar-store/*
+                echo "stopped" > "/tmp/regataos-store/config/status.txt"
+                echo "$app_name" > "$progressbar_dir/busy-installer-for.txt"
+                echo "$app_nickname=install process-$installation_queue" >>$progressbar_dir/queued-process
+                echo "" >$progressbar_dir/progress
+                echo "installing" >$progressbar_dir/progress-movement
+                echo $installation_queue >$progressbar_dir/status
+                echo "show progress bar" >$progressbar_dir/progressbar
+            fi
+
+            #I'm in the process queue, see you later
+            chmod 777 /tmp/progressbar-store/*
+            exit 0
+        fi
     fi
 
     # Install app
@@ -373,13 +432,14 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
         #Clear cache
         rm -f $progressbar_dir/installing
         rm -f $progressbar_dir/installing-$app_nickname
+        rm -f "$progressbar_dir/busy-installer-for.txt"
         success_installation
         sleep 2
 
         #If there are no more processes, clear the progress bar cache
         if test ! -e "$progressbar_dir/queued-1"; then
             chmod 777 /tmp/progressbar-store/*
-            echo "stopped" >"/tmp/regataos-store/config/status.txt"
+            echo "inactive" >"/tmp/regataos-store/config/status.txt"
             sleep 2
             rm -f $progressbar_dir/progress-full
             rm -f $progressbar_dir/progressbar
@@ -403,11 +463,12 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
         #Clear cache
         rm -f $progressbar_dir/installing
         rm -f $progressbar_dir/installing-$app_nickname
+        rm -f "$progressbar_dir/busy-installer-for.txt"
 
         # If there are no more processes, clear the progress bar cache
         if test ! -e "$progressbar_dir/queued-1"; then
             chmod 777 /tmp/progressbar-store/*
-            echo "stopped" >"/tmp/regataos-store/config/status.txt"
+            echo "inactive" >"/tmp/regataos-store/config/status.txt"
             rm -f $progressbar_dir/progressbar
             rm -f $progressbar_dir/*
         fi

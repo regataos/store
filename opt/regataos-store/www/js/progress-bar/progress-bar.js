@@ -7,7 +7,10 @@ function getAppInfo() {
 	// App name
 	if (fs.existsSync("/tmp/progressbar-store/app-name")) {
 		const appName = fs.readFileSync("/tmp/progressbar-store/app-name", "utf8");
+		document.querySelector(".app-installing").innerHTML = appName;
 
+	} else if (fs.existsSync("/tmp/progressbar-store/busy-installer-for.txt")) {
+		const appName = fs.readFileSync("/tmp/progressbar-store/busy-installer-for.txt", "utf8");
 		document.querySelector(".app-installing").innerHTML = appName;
 	}
 
