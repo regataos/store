@@ -360,7 +360,7 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
         fi
     fi
 
-    ps -C zypper >/dev/null
+    ps -C "zypper | Zypp-main" >/dev/null
     if [ $? = 0 ]; then
         echo "Installation in queue, zypper is here"
 
@@ -406,7 +406,7 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
 
     ps -C "regataos-check- | regataos-update | regataos-up" >/dev/null
     if [ $? = 0 ]; then
-        ps -C "zypper | regataos-up-all | regataos-up-specific | regataos-up-other-up" >/dev/null
+        ps -C "zypper | Zypp-main | regataos-up-all | regataos-up-specific | regataos-up-other-up" >/dev/null
         if [ $? = 0 ]; then
             echo "Installation in queue, zypper is here"
 
