@@ -86,3 +86,20 @@ function appButtonsFunction() {
 		}
 	}
 }
+
+setInterval(openLogFile, 1000);
+function openLogFile() {
+	const fs = require("fs");
+	const exec = require('child_process').exec;
+
+	if (fs.existsSync("/var/log/regataos-logs/open-log-file.log")) {
+		let appNickname = fs.readFileSync("/var/log/regataos-logs/open-log-file.log", "utf8");
+		appNickname = appNickname.replace(/(\r\n|\n|\r)/gm, "");
+		appNickname = appNickname.replace(/ /g, '');
+
+		let commandLine = `rm -f "/var/log/regataos-logs/open-log-file.log"; \
+		kate "/var/log/regataos-logs/install-app-${appNickname}.log"`;
+		exec(commandLine, (error, stdout, stderr) => {
+		});
+	}
+}

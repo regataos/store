@@ -57,6 +57,8 @@ reboot_cancel_button="Cancel"
 #Installation error feedback reported
 bug_reported_title="Problem detected!"
 bug_reported_text="We have been notified about the error installing the $app_name app."
+bug_reported_view_log="View log file"
+bug_reported_close_alert="Close"
 
 # Notify
 #Successful installation
@@ -103,7 +105,24 @@ function installation_failed() {
 
     curl https://regataos-statistics.vercel.app/api/appProblem?app=$app_name
     sudo -u $user DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$user_id/bus notify-send -i emblem-important-symbolic -u normal -a 'Regata OS Store' "$title" "$message"
-    sudo -H env DISPLAY=:0 zenity --title "$bug_reported_title" --error --text="$bug_reported_text" --width="200"
+    
+    sudo -H env DISPLAY=:0 zenity --question --text "$bug_reported_text" --icon-name=error \
+    --title "$bug_reported_title" --ok-label "$bug_reported_view_log" --cancel-label "$bug_reported_close_alert" --width 280 \
+    --window-icon "/usr/share/pixmaps/regataos-store-icon.png"
+
+    if [ $? -eq "0" ]; then
+        sleep 1
+
+        users=`who | cut -d' ' -f1 | uniq`
+        for user in $users
+        do
+            echo "$user"
+            su - $user -c "echo '$app_nickname' > /var/log/regataos-logs/open-log-file.log"
+        done
+
+    else
+        echo "Process canceled"
+    fi
 }
 
 # Download and Install app
