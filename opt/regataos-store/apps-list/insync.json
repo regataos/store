@@ -9,7 +9,7 @@
 		"package_manager": "zypper",
 		"repository_name": "insync",
 		"repository_cache": "/var/cache/zypp/solv/insync",
-		"repository_url": "http://yum.insync.io/fedora/32/x86_64",
+		"repository_url": "http://yum.insync.io/fedora/36/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-TwUSOLsmi7Y/YF3sV2qpKxI/AAAAAAAAZoo/lCZZceC0nBA9keCktR_TNIyvMwxOOqZEgCLcBGAsYHQ/s0/insync-backg.png",
 		"price": "trial",
 		"dgpu": "deactivate"
