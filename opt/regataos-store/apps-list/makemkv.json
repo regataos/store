@@ -1,0 +1,17 @@
+[
+	{
+		"name": "MakeMKV",
+		"nickname": "makemkv",
+		"executable": "makemkv",
+		"package": "makemkv",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "makemkv",
+		"repository_cache": "/var/cache/zypp/solv/makemkv",
+		"repository_url": "https://download.opensuse.org/repositories/home:/TEggers/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgX09iUdQW7U_nASBtA2IzGy93qlwiOkuIFl9uE0-c4P1bvuTr5ZevZQD5-xdb-7NuPK5pHLN7oxFQHBo0gYicLTVZtP2W-vRCMOaoVEreHcLZGCH8iBMu3844HLBlFe058asqBvYIj3eS3m4yMaCAU2LbKrJ7YR4gQ61NN9Fu4wbXg2LAGXv12GLqIbA/s1600/makemkv-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

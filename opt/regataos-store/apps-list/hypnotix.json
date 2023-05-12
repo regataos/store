@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Hypnotix",
+		"nickname": "hypnotix",
+		"executable": "hypnotix",
+		"package": "hypnotix",
+		"extra_packages": "",
+		"architecture": "noarch",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioiZep6RPoGNGTMSjypKYDrCjV84kdnvR7kaTF2AdXLqu4D9GW1afLGWGja-H_E87DZgRuyAmOYBdlZJUJI7LqJvHBNVWMkUwqbeMCWy-9td2m2-niZtQTBa-BqBEOapy2EYrMbp8dPSrSqE97fqldXfWRDSK_AG5MdCS8ReqKdQe7KmB2J2m3ki6DLg/s1600/hypnotix-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]

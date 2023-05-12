@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Elisa",
+		"nickname": "elisa",
+		"executable": "elisa",
+		"package": "elisa",
+		"extra_packages": "elisa-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWi7VQtkVFhV_2CHYPniKJBZ6dJDKmfR1upzQmJyoGudZSTTclPqQ59BSw8X0YKuTi_jbjpj02d9ceawBuDSQ8MJTiMJzVfNed9m-loFAgXrNs9KljZFl3Qo2mFxM9UQbJJ1jw_hblQdSdtVrm59ujvBWDFfEayUkSo6hBNR-lvhCK1usFSW9-crUAJQ/s1600/elisa-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
