@@ -1,0 +1,17 @@
+[
+	{
+		"name": "NeoChat",
+		"nickname": "neochat",
+		"executable": "neochat",
+		"package": "neochat",
+		"extra_packages": "neochat-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBAJGub0pQ_htJbXXTpsFFyVgLEBfS0lRsjf_OExGSeHgt8s46j1n4ocKA4j4vgyYqQit7jYRxSjPcpRZ9fBsasxTGk0eCTEhobPOXsB0eShzlyzyMkhyeqXKFxccWl3-0EaZH_LndDXXMu3Gx8LjjiGAcVw1jm6bGmdouomuY19QIXN3tdr5SPtGjww/s1600/neochat-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Skanpage",
+		"nickname": "skanpage",
+		"executable": "skanpage",
+		"package": "skanpage",
+		"extra_packages": "skanpage-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcgKlTkT1GWCRdRkTOKPxsuqAwYC9bRdVleUHZ-RXkKy4dnwz_G57cZmlVnqG5OT0M8DpV2Jql9fDxspzsT1CP2u7S3FJ6R2c1oFR28c8VnYC0GPRO2kgBcDryK3QhbWhoShHiyebIGDmnKZBvbiKYQYRIKJTHt3kVNuEhAMTgBSVW9m5Zkjbot4o9TA/s1600/skanpage-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

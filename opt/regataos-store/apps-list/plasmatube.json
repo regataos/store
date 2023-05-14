@@ -1,0 +1,17 @@
+[
+	{
+		"name": "PlasmaTube",
+		"nickname": "plasmatube",
+		"executable": "plasmatube",
+		"package": "plasmatube",
+		"extra_packages": "plasmatube-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGa3FZd2q1r_yXRADJwSP9H5IxX2LiLWTKV1R-vCNhISYqTPCRuJm2FhtE2mydYHTR3sNps9tcaA2mlvUTP-Lbd0ooxtHZwNP2Lr9QMECmfLXgFwUT9EV46mQmVYuq-Ip9_5dfyl13mSvGMLYKIWcde6di2KkBJLkPZSyQcITrZ3MuISFV2owqfijAIA/s1600/plasmatube-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

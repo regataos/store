@@ -1,0 +1,17 @@
+[
+	{
+		"name": "KDevelop",
+		"nickname": "kdevelop",
+		"executable": "kdevelop",
+		"package": "kdevelop",
+		"extra_packages": "kdevelop-lang kdevplatform kdevplatform-lang kdevelop5-plugin-php kdevelop5-plugin-php-lang kdevelop5-plugin-python3 kdevelop5-plugin-python3-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiuPL2eLSE1BcRCFNPsjMQtUgNpWc0oaiTl42aX1MPQ74AkZNwaJf5_vSqxE-PbHq1aIOgtnPwiIzoE5rcWSQGBfFteHIK_vwq3_c0uXzENocQ8CrbcxqWFTWqMc89WxKaYL1s2_zwCCCIwAUlkh-rO2t2JlrAjDmeHQIO47t45qzHr-_G9mTsswUWIw/s1600/kdevelop-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

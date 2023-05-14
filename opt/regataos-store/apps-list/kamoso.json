@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Kamoso",
+		"nickname": "kamoso",
+		"executable": "kamoso",
+		"package": "kamoso",
+		"extra_packages": "kamoso-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIVw09YphjFgm2sSlqu86FNr7Fr8JSUQllYDvhdibkiBE1C2ygCuBbauDRg2G8vsQRj3-4ybpcNMaKqUpzvOc2HMIJjbOw1hviTgzzyff9PZvIrdWcKZmBvTF8IpN5tduAZCaodSobrRv2jcKUn3GHxSO4cMEY-euB87sEwm9UpflCrubZW4Fmynev2g/s1600/kamoso-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
