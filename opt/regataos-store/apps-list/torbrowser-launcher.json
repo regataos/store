@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Tor Browser Launcher",
+		"nickname": "torbrowser-launcher",
+		"executable": "flatpak run com.github.micahflee.torbrowser-launcher",
+		"package": "com.github.micahflee.torbrowser-launcher",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiBBPbnH3ZvfoIuOiz7XXWJICjo-puK_SsbuMQwFtnaO9IiYESNjTL8H23zZojp7X4Aki9c2p-IHs8zBYNexPoQ81RfLPqcDDjXl4EdujYXf-ap2-dCQcKlcqAUiAF0yp_OuePf6rPFDLlj0jTgaEPrerAIdMzZ9FHIa0SGG1c-Ycb79yGfkGASJE21og/s1600/torbrowser-launcher-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
