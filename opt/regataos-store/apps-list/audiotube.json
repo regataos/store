@@ -1,0 +1,17 @@
+[
+	{
+		"name": "AudioTube",
+		"nickname": "audiotube",
+		"executable": "flatpak run org.kde.audiotube",
+		"package": "org.kde.audiotube",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXwRYHvOFN8h_kwxpLwHDfCBkBB5_s_b1n-a1mnwfZnxIJiZQp1I2iJRm97Jn783fYz-DqQQxlhAGhgYSV7BzKb6PXgwLXSdxolbsWIhpWNU0eauFzHubkPrPe-QhU2AcCuD0_wecz3bY0BWaYHMpo7N73CqPz_BbWgY_U6KzolQhDDJciVONUgDDJHA/s1600/audiotube-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
