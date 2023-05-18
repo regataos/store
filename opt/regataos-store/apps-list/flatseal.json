@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Flatseal",
+		"nickname": "flatseal",
+		"executable": "flatpak run com.github.tchx84.Flatseal",
+		"package": "com.github.tchx84.Flatseal",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBIDB6f2KvXV27FWFbzyIjFXx0ug5OUIcZQz_5MeB9pTUWYUgsfQyxJhsFbUop6OC76ysLZfufClkEGeW4F8X1tFe3BtDvw9q5xUQo5d1prhO7F2fD4OH20gqda8h4W2j9LTx6D6cS0I_it78WIOvBSt1kf2vM1VbfgtpMqEmRpGjlLpF53fw-PmHgTA/s1600/flatseal-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
