@@ -244,7 +244,7 @@ REPOCONTENT
     # Download
     #Link download
     if [ -z $download_link ]; then
-        version=$(zypper info $file_download | grep Ver | awk '{print $3}' | head -1 | tail -1)
+        version=$(zypper --non-interactive info $file_download | grep Ver | awk '{print $3}' | head -1 | tail -1)
         app_download_file_name="$file_download"_"$version.$architecture.rpm"
         app_download_link="$repo_link/$app_download_file_name"
 
@@ -255,7 +255,7 @@ REPOCONTENT
         fi
 
     elif [[ $download_link == *"undefined"* ]]; then
-        version=$(zypper info $file_download | grep Ver | awk '{print $3}' | head -1 | tail -1)
+        version=$(zypper --non-interactive info $file_download | grep Ver | awk '{print $3}' | head -1 | tail -1)
         app_download_file_name="$file_download"_"$version.$architecture.rpm"
         app_download_link="$repo_link/$app_download_file_name"
 
@@ -266,7 +266,7 @@ REPOCONTENT
         fi
 
     else
-        version=$(zypper info $file_download | grep Ver | awk '{print $3}' | sed "s/-0//")
+        version=$(zypper --non-interactive info $file_download | grep Ver | awk '{print $3}' | sed "s/-0//")
         app_download_file_name="$file_download-$version.$architecture.rpm"
         app_download_link=$(echo $download_link | sed "s/\[version\]/$version/")
     fi
