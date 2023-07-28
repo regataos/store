@@ -4,7 +4,7 @@
 		"nickname": "snes9x",
 		"executable": "snes9x-gtk",
 		"package": "snes9x",
-		"extra_packages": "",
+		"extra_packages": "snes9x-gtk",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
