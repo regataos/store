@@ -4,7 +4,7 @@
 		"nickname": "virtualbox",
 		"executable": "VirtualBox",
 		"package": "virtualbox",
-		"extra_packages": "virtualbox-extra virtualbox-qt virtualbox-host-source",
+		"extra_packages": "virtualbox-extra virtualbox-qt virtualbox-kmp-default",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
