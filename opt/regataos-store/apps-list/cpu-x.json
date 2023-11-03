@@ -2,9 +2,9 @@
 	{
 		"name": "CPU-X",
 		"nickname": "cpu-x",
-		"executable": "cpu-x",
+		"executable": "cpu-x --gtk",
 		"package": "cpu-x",
-		"extra_packages": "cpu-x-lang",
+		"extra_packages": "cpu-x-lang cpu-x-bash-completion",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",

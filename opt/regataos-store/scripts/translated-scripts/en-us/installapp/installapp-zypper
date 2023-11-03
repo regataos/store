@@ -24,6 +24,10 @@ elif [[ $repoUrl == *"[basedOn]"* ]]; then
     basedOn="$(grep -r basedOn= /usr/share/regataos/regataos-base-version.txt | cut -d'=' -f 2-)"
     repo_link=$(echo $repoUrl | sed "s,\[basedOn\],$basedOn,")
 
+elif [[ $repoUrl == *"[sleOnVersion]"* ]]; then
+    sleOnVersion="$(grep -r sleOnVersion= /usr/share/regataos/regataos-base-version.txt | cut -d'=' -f 2-)"
+    repo_link=$(echo $repoUrl | sed "s,\[sleOnVersion\],$basedOnVersion,")
+
 else
     repo_link="$repoUrl"
 fi

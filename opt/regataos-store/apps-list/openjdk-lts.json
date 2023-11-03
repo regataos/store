@@ -1,0 +1,17 @@
+[
+	{
+		"name": "OpenJDK LTS",
+		"nickname": "openjdk-lts",
+		"executable": "none",
+		"package": "java-21-openjdk-headless",
+		"extra_packages": "timezone-java java-21-openjdk",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "openjdk-lts",
+		"repository_cache": "/var/cache/zypp/solv/openjdk-lts",
+		"repository_url": "https://mirrorcache-us.opensuse.org/repositories/Java:/Factory/[sleOnVersion]/x86_64",
+		"icon_backg": "https://1.bp.blogspot.com/-MdyKD0iZT20/X7EqittlMHI/AAAAAAAAZAk/_7KgcAYwLqA4lgz9RBhKaKTUg_KS2h02wCLcBGAsYHQ/s0/openjdk-backg.png",
+		"price": "free",
+		"dgpu": "none"
+	}
+]

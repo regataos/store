@@ -2,3 +2,4 @@ mainRepositoryName=regataos_22
 mainRepositoryUrl=https://download.opensuse.org/repositories/home:/regataos/15.4
 basedOn=openSUSE_Leap_15.4
 basedOnVersion=15.4
+sleOnVersion=SLE_15_SP4
