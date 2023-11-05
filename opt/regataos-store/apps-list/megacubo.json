@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Megacubo",
+		"nickname": "megacubo",
+		"executable": "megacubo",
+		"package": "megacubo",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCveqmo81Bvih1VPoL5uP3u53TKwlcVLtMM5hx-Xm4rp58o8Dtcp8CkdFmVbHAG6-4zH8WbR500Boe3zIz0xBhcNKAucdWCGiJbYN-Hd6RfPQzz_m2Npqf4ajgPkIhNWnjHGEnW7RezSszVOunoAThxrkrnbTC4Y7lH8Oxgr2Qaw1slfcMZ8ZWf-MOcuva/s1600/megacubo-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]

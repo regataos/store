@@ -1,0 +1,17 @@
+[
+	{
+		"name": "JetBrains Toolbox",
+		"nickname": "jbtoolbox",
+		"executable": "jetbrains-toolbox",
+		"package": "jbtoolbox",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh72DX7TGLd_wR4duXCSTi8oDllv9uhR4uP-Ts_e5UjY7xUkvqNCIPt8RIqW1KArUUlUUzEo9Hoz2Fq_wFXef7rSvBkirJ7dMeL8wXE9uIImH4Mj6xZ0FCI9PIR_k3cAxDwYkI_NuIYTt13yWnhRWohZbSO2ggRNobH1vopwUySz7YBKL9BDSsskxODca58/s1600/jbtoolbox-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]
