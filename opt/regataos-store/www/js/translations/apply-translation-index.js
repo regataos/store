@@ -66,7 +66,6 @@ function translateAppPage() {
 function applyTranslation() {
     const fs = require('fs');
 
-    console.log(selectTranslationFile())
     let data = fs.readFileSync(selectTranslationFile(), "utf8");
     data = JSON.parse(data);
 
