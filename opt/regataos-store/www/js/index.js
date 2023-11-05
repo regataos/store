@@ -135,38 +135,10 @@ function setMainUrl() {
 		"en-gb": "https://en-newstore-regataos.blogspot.com"
 	};
 
-	if (fs.existsSync("/tmp/regataos-configs/config/plasma-localerc")) {
-		const checkLangSystem = fs.readFileSync("/tmp/regataos-configs/config/plasma-localerc", "utf8");
-
-		if (checkLangSystem.includes("LANGUAGE")) {
-			const configOption = "LANGUAGE="
-			const languageDetected = checkConfigFile(checkLangSystem, configOption);
-
-			if (typeof urlStore[languageDetected] !== "undefined") {
-				return urlStore[languageDetected];
-			} else {
-				return urlStore["en-us"];
-			}
-
-		} else if (checkLangSystem.includes("LANG")) {
-			const configOption = "LANG="
-			const languageDetected = checkConfigFile(checkLangSystem, configOption);
-
-			if (typeof urlStore[languageDetected] !== "undefined") {
-				return urlStore[languageDetected];
-			} else {
-				return urlStore["en-us"];
-			}
-		}
-
-	} else if (fs.existsSync("/tmp/regataos-configs/config/user-dirs.locale")) {
-		const checkLangSystem = fs.readFileSync("/tmp/regataos-configs/config/user-dirs.locale", "utf8");
-
-		if (typeof urlStore[checkLangSystem] !== "undefined") {
-			return urlStore[checkLangSystem.toLowerCase()];
-		} else {
-			return urlStore["en-us"];
-		}
+	if (typeof urlStore[getSystemLanguage()] !== "undefined") {
+		return urlStore[getSystemLanguage()];
+	} else {
+		return urlStore["en-us"];
 	}
 }
 

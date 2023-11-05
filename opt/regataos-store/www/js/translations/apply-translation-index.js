@@ -3,56 +3,60 @@
 // Internal pages
 setInterval(translateAppPage, 300);
 function translateAppPage() {
-    const captureIframe = document.getElementById("iframe-regataos-store").contentWindow;
-    const pageUrl = captureIframe.location.href;
+    const checkIframe = document.getElementById("iframe-regataos-store");
 
-    if ((pageUrl.indexOf("app-") > -1) == "1") {
-        const fs = require('fs');
+    if (checkIframe) {
+        const captureIframe = checkIframe.contentWindow;
+        const pageUrl = captureIframe.location.href;
 
-        let data = fs.readFileSync(selectTranslationFile(), "utf8");
-        data = JSON.parse(data);
+        if (pageUrl.includes("app-")) {
+            const fs = require('fs');
 
-        for (let i = 0; i < data.length; i++) {
-            const installButton = captureIframe.document.querySelector(".install-button");
-            const installButtonExists = captureIframe.document.body.contains(installButton)
-            if (installButtonExists) {
-                installButton.innerHTML = data[i].storeAppPages.installButton;
-            }
+            let data = fs.readFileSync(selectTranslationFile(), "utf8");
+            data = JSON.parse(data);
 
-            const InstallingButton = captureIframe.document.querySelector(".installing");
-            const InstallingButtonExists = captureIframe.document.body.contains(InstallingButton)
-            if (InstallingButtonExists) {
-                InstallingButton.innerHTML = data[i].storeAppPages.InstallingButton;
-            }
+            for (let i = 0; i < data.length; i++) {
+                const installButton = captureIframe.document.querySelector(".install-button");
+                const installButtonExists = captureIframe.document.body.contains(installButton)
+                if (installButtonExists) {
+                    installButton.innerHTML = data[i].storeAppPages.installButton;
+                }
 
-            const removeButton = captureIframe.document.querySelector(".remove-button");
-            const removeButtonExists = captureIframe.document.body.contains(removeButton)
-            if (removeButtonExists) {
-                removeButton.innerHTML = data[i].storeAppPages.removeButton;
-            }
+                const InstallingButton = captureIframe.document.querySelector(".installing");
+                const InstallingButtonExists = captureIframe.document.body.contains(InstallingButton)
+                if (InstallingButtonExists) {
+                    InstallingButton.innerHTML = data[i].storeAppPages.InstallingButton;
+                }
 
-            const removingButton = captureIframe.document.querySelector(".removing");
-            const removingButtonExists = captureIframe.document.body.contains(removingButton)
-            if (removingButtonExists) {
-                removingButton.innerHTML = data[i].storeAppPages.removingButton;
-            }
+                const removeButton = captureIframe.document.querySelector(".remove-button");
+                const removeButtonExists = captureIframe.document.body.contains(removeButton)
+                if (removeButtonExists) {
+                    removeButton.innerHTML = data[i].storeAppPages.removeButton;
+                }
 
-            const gameButton = captureIframe.document.querySelector(".game-button");
-            const gameButtonExists = captureIframe.document.body.contains(gameButton)
-            if (gameButtonExists) {
-                gameButton.innerHTML = data[i].storeAppPages.gameButton;
-            }
+                const removingButton = captureIframe.document.querySelector(".removing");
+                const removingButtonExists = captureIframe.document.body.contains(removingButton)
+                if (removingButtonExists) {
+                    removingButton.innerHTML = data[i].storeAppPages.removingButton;
+                }
 
-            const queueButton = captureIframe.document.querySelector(".remove-queue, .install-queue");
-            const queueButtonExists = captureIframe.document.body.contains(queueButton)
-            if (queueButtonExists) {
-                queueButton.innerHTML = data[i].storeAppPages.queueButton;
-            }
+                const gameButton = captureIframe.document.querySelector(".game-button");
+                const gameButtonExists = captureIframe.document.body.contains(gameButton)
+                if (gameButtonExists) {
+                    gameButton.innerHTML = data[i].storeAppPages.gameButton;
+                }
 
-            const openButton = captureIframe.document.querySelector(".open-button");
-            const openButtonExists = captureIframe.document.body.contains(openButton)
-            if (openButtonExists) {
-                openButton.innerHTML = data[i].storeAppPages.openButton;
+                const queueButton = captureIframe.document.querySelector(".remove-queue, .install-queue");
+                const queueButtonExists = captureIframe.document.body.contains(queueButton)
+                if (queueButtonExists) {
+                    queueButton.innerHTML = data[i].storeAppPages.queueButton;
+                }
+
+                const openButton = captureIframe.document.querySelector(".open-button");
+                const openButtonExists = captureIframe.document.body.contains(openButton)
+                if (openButtonExists) {
+                    openButton.innerHTML = data[i].storeAppPages.openButton;
+                }
             }
         }
     }
@@ -62,6 +66,7 @@ function translateAppPage() {
 function applyTranslation() {
     const fs = require('fs');
 
+    console.log(selectTranslationFile())
     let data = fs.readFileSync(selectTranslationFile(), "utf8");
     data = JSON.parse(data);
 
