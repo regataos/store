@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/roboto-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/roboto-style.css">
     <link rel="stylesheet" type="text/css" href="css/search.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="css/networkoff.css">
-	<link rel="stylesheet" type="text/css" href="css/style-progress-bar.css">
+    <link rel="stylesheet" type="text/css" href="css/style-progress-bar.css">
     <script type="text/javascript" src="js/settings-checker.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/progress-bar/progress-bar.js"></script>
     <!-- For apps -->
     <script type="text/javascript" src="js/app-functions/app-functions-buttons.js"></script>
@@ -21,6 +22,7 @@
 
     <title>Regata OS Store</title>
 </head>
+
 <body>
     <div id="loadscreen"></div>
 
@@ -31,81 +33,97 @@
     <div class="topbar" onclick='backButton(); setTimeout(function(){ installed(); }, 500);' title='Voltar'>
         <div class='top-bar-arrow'>
             <span class='svg svg-arrow-left'>
-            <svg enable-background='new 0 0 14 26' height='20px' id='svg4-Layer_1' version='1.1' viewBox='0 0 14 26' width='14px' x='0px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' y='0px'> <path d='M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z'/> </svg>
-            <span class='alt sr-only'></span>
+                <svg enable-background='new 0 0 14 26' height='20px' id='svg4-Layer_1' version='1.1' viewBox='0 0 14 26'
+                    width='14px' x='0px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg'
+                    xmlns:xlink='http://www.w3.org/1999/xlink' y='0px'>
+                    <path
+                        d='M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z' />
+                </svg>
+                <span class='alt sr-only'></span>
             </span>
         </div>
     </div>
 
-	<div class="sidebar">
+    <div class="sidebar">
         <div id='search'>
             <form id="form">
-                <div><input id='field' name='q' onblur='if (this.value == "") {this.value = "Pesquisar";}' onfocus='if (this.value == "Pesquisar") {this.value = "";}' type='text' value='Pesquisar'/>
-                <input class='submit' name='submit' type='submit' value='Pesquisar'/></div>
+                <div><input id='field' name='q' onblur='if (this.value == "") {this.value = "Pesquisar";}'
+                        onfocus='if (this.value == "Pesquisar") {this.value = "";}' type='text' value='Pesquisar' />
+                    <input class='submit' name='submit' type='submit' value='Pesquisar' />
+                </div>
             </form>
         </div>
         <script type="text/javascript">searchBox();</script>
 
-		<ul id="ul-menu">
+        <ul id="ul-menu">
             <li class="li-sidebar special-page home" onclick="goToHome();">
                 <a class="link-items" onclick="goToHome();">
-                    <img class="icones-menu" title="Descobrir" style="margin-left: 3px;" src="images/img-sidebar/home.png"/>
+                    <img class="icones-menu" title="Descobrir" style="margin-left: 3px;"
+                        src="images/img-sidebar/home.png" />
                     <p style="margin-left: 17px;"></p>
                 </a>
             </li>
             <li class="li-sidebar create" id="create" onclick="goInnerPage(this.id);">
                 <a class="link-items">
-                    <img class="icones-menu" title="Criar" style="margin-left: 3px;" src="images/img-sidebar/create.png"/>
+                    <img class="icones-menu" title="Criar" style="margin-left: 3px;"
+                        src="images/img-sidebar/create.png" />
                     <p style="margin-left: 18px;"></p>
                 </a>
             </li>
             <li class="li-sidebar work" id="work" onclick="goInnerPage(this.id);">
                 <a class="link-items">
-                    <img class="icones-menu" title="Trabalhar" style="margin-left: 2px;" src="images/img-sidebar/work.png"/>
-                    <p  style="margin-left: 17px;"></p>
-              </a>
+                    <img class="icones-menu" title="Trabalhar" style="margin-left: 2px;"
+                        src="images/img-sidebar/work.png" />
+                    <p style="margin-left: 17px;"></p>
+                </a>
             </li>
             <li class="li-sidebar game" id="game" onclick="goInnerPage(this.id);">
                 <a class="link-items">
-                    <img class="icones-menu" title="Jogar" style="width: 30px;" src="images/img-sidebar/gamepad.png"/>
+                    <img class="icones-menu" title="Jogar" style="width: 30px;" src="images/img-sidebar/gamepad.png" />
                     <p style="margin-left: 15px;"></p>
                 </a>
             </li>
             <li class="li-sidebar develop" id="develop" onclick="goInnerPage(this.id);">
                 <a class="link-items">
-                    <img class="icones-menu" title="Desenvolver" style="width: 32px;" src="images/img-sidebar/develop.png"/>
+                    <img class="icones-menu" title="Desenvolver" style="width: 32px;"
+                        src="images/img-sidebar/develop.png" />
                     <p style="margin-left: 14px;"></p>
-              </a>
+                </a>
             </li>
             <li class="li-sidebar utilities" id="utilities" onclick="goInnerPage(this.id);">
                 <a class="link-items">
-                    <img class="icones-menu" title="Utilidades" style="margin-left: 4px;" src="images/img-sidebar/tools.png"/>
+                    <img class="icones-menu" title="Utilidades" style="margin-left: 4px;"
+                        src="images/img-sidebar/tools.png" />
                     <p style="margin-left: 19px;"></p>
-              </a>
+                </a>
             </li>
             <li class="li-sidebar category" id="category" onclick="goInnerPage(this.id);" style="display: none;">
                 <a class="link-items">
-                    <img class="icones-menu" style="margin-left: 4px;" src="images/img-sidebar/category.png"/>
+                    <img class="icones-menu" style="margin-left: 4px;" src="images/img-sidebar/category.png" />
                     <p style="margin-left: 19px;"></p>
-              </a>
+                </a>
             </li>
-            <li class="li-sidebar special-page installed" id="apps-installed2" onclick="goInnerPage(this.id); setTimeout(function(){ installedPage(); }, 500);">
+            <li class="li-sidebar special-page installed" id="apps-installed2"
+                onclick="goInnerPage(this.id); setTimeout(function(){ installedPage(); }, 500);">
                 <a class="link-items">
-                    <img class="icones-menu" title="Instalados" style="margin-left: 4px;" src="images/img-sidebar/installed.png"/>
+                    <img class="icones-menu" title="Instalados" style="margin-left: 4px;"
+                        src="images/img-sidebar/installed.png" />
                     <p style="margin-left: 18px;"></p>
-              </a>
+                </a>
             </li>
             <li class="li-sidebar-b" onclick="fullprogressbar();" style="width: 55px;">
                 <a class="link-items" onclick="fullprogressbar();">
-                    <img class="icones-menu" title="Instalação em andamento..." onclick="fullprogressbar();" style="margin-left: 1px;" src="images/img-sidebar/download.png"/>
+                    <img class="icones-menu" title="Instalação em andamento..." onclick="fullprogressbar();"
+                        style="margin-left: 1px;" src="images/img-sidebar/download.png" />
                     <p style="margin-left: 18px;"></p>
-              </a>
+                </a>
             </li>
             <li class="li-sidebar-uninstalling" onclick="fullprogressbar();" style="width: 55px;">
                 <a class="link-items" onclick="fullprogressbar();">
-                    <img class="icones-menu" title="Desinstalação em andamento..." onclick="fullprogressbar();" style="margin-left: 1px;" src="images/img-sidebar/uninstall.png"/>
+                    <img class="icones-menu" title="Desinstalação em andamento..." onclick="fullprogressbar();"
+                        style="margin-left: 1px;" src="images/img-sidebar/uninstall.png" />
                     <p style="margin-left: 18px;"></p>
-              </a>
+                </a>
             </li>
         </ul>
 
@@ -120,44 +138,51 @@
                 <div id="status-download" class="status">Download</div>
                 <div class="percentage">50%</div>
                 <div class="down-functions">
-                <div id="download-file-size" class="dinfo down-file-size">
-                    <div id="filesize" class="file-size">700 MB /</div>
-                    <div id="downsize" class="file-size">9.5 GB</div>
-                </div>
-                <div id="eta" class="dinfo eta-info">4h 25m 5s</div><div class="dinfo eta-info eta-desc">restante.</div>
-                    <div class="more-info" title="Mais informações" onclick="startFullProgressBar();" style="background-image:url(images/arrow-right-off.png);"></div>
-                    <div class="more-info2" onclick="startFullProgressBar();" style="background-image:url(images/arrow-right-off.png);"></div>
+                    <div id="download-file-size" class="dinfo down-file-size">
+                        <div id="filesize" class="file-size">700 MB /</div>
+                        <div id="downsize" class="file-size">9.5 GB</div>
+                    </div>
+                    <div id="eta" class="dinfo eta-info">4h 25m 5s</div>
+                    <div class="dinfo eta-info eta-desc">restante.</div>
+                    <div class="more-info" title="Mais informações" onclick="startFullProgressBar();"
+                        style="background-image:url(images/arrow-right-off.png);"></div>
+                    <div class="more-info2" onclick="startFullProgressBar();"
+                        style="background-image:url(images/arrow-right-off.png);"></div>
                 </div>
             </div>
         </div>
-	</div>
+    </div>
 
-	<div class="page">
-		<div class="content" id="principle">
+    <div class="page">
+        <div class="content" id="principle">
 
             <div class="actions">
-			<div class="action-buttons">
-				<div class="button install" id="installapp">Instalar</div>
-				<div class="button installing">Instalando...</div>
-				<div class="button remove" id="removeapp">Remover</div>
-				<div class="button removing">Removendo...</div>
-                <div class="button open" id="openapp">Abrir</div>
-				<div class="button steam">Disponível no Steam</div>
-            </div>
+                <div class="action-buttons">
+                    <div class="button install" id="installapp">Instalar</div>
+                    <div class="button installing">Instalando...</div>
+                    <div class="button remove" id="removeapp">Remover</div>
+                    <div class="button removing">Removendo...</div>
+                    <div class="button open" id="openapp">Abrir</div>
+                    <div class="button steam">Disponível no Steam</div>
+                </div>
             </div>
 
-			<iframe onload="showHideElements(this); appButtonsFunction(this); installedPage(this); appVersion(this);" src="" allowfullscreen frameborder="0" name="iframe-regataos-store" id="iframe-regataos-store" class="iframe-pages"></iframe>
+            <iframe onload="showHideElements(this); appButtonsFunction(this); installedPage(this); appVersion(this);"
+                src="" allowfullscreen frameborder="0" name="iframe-regataos-store" id="iframe-regataos-store"
+                class="iframe-pages"></iframe>
             <script type="text/javascript">
-                    homeStore();
+                homeStore();
             </script>
         </div>
-	</div>
+    </div>
 
     <div class="networkoff">
         <div class="networkoff-img" style="background-image:url(images/dino.png);"></div>
         <div class="networkoff-title">Não foi possível conectar-se à Internet</div>
-        <div class="networkoff-desc">Verifique os cabos de rede, modem e roteador ou<br/> conecte à rede Wi-Fi novamente.</div>
+        <div class="networkoff-desc">Verifique os cabos de rede, modem e roteador ou<br /> conecte à rede Wi-Fi
+            novamente.</div>
     </div>
     <script type="text/javascript" src="js/translations/apply-translation-index.js"></script>
 </body>
+
 </html>

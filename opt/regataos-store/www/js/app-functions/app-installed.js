@@ -3,7 +3,7 @@ function installedPage() {
 	let jsonFiles = [];
 
 	const captureIframeUrl = document.getElementById("iframe-regataos-store").contentWindow.location.href
-	if ((captureIframeUrl.indexOf("apps-installed2") > -1) == "1") {
+	if (captureIframeUrl.includes("apps-installed2")) {
 		fs.readdirSync("/opt/regataos-store/apps-list").forEach(jsonFiles => {
 			fs.readFile(`/opt/regataos-store/apps-list/${jsonFiles}`, "utf8", function (err, data) {
 				if (!err) {
@@ -18,7 +18,7 @@ function installedPage() {
 						const child = dad.querySelector(`a#${apps[i].nickname}`);
 
 						if (!showStore) {
-							if ((installed.indexOf(appNickname) > -1) == "1") {
+							if (installed.includes(appNickname)) {
 								if (child === null) {
 									//Request the creation of the new element (block) for each app
 									const newAppBlock = document.createElement("a");

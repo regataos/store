@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Simple64",
+		"nickname": "simple64",
+		"executable": "flatpak run io.github.simple64.simple64",
+		"package": "io.github.simple64.simple64",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEglwGS6-LjzlO0YCHMAinB2wZEF2bYNt8Z96D66ceoaGmGhZfOZvN0pl0aJNiXNavPko7FiY1So37pDGsdR-bMQKTwp3u8JPN1WwwCm6DFvAO3_8u679nTYCThvY1k4XhwgchV_dYOQgehJPwMAwJdNL-9ry1DEnvQ1504pF-Hp-gpwOQzX_pTniP5XGwCi/s1600/simple64-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

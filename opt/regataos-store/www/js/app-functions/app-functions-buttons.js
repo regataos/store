@@ -1,42 +1,30 @@
 // Install and remove apps
 function appButtonsFunction() {
-	const fs = require("fs");
-	const exec = require('child_process').exec;
-
 	const captureIframe = document.getElementById("iframe-regataos-store").contentWindow;
-	const captureIframeUrl = captureIframe.location.href;
+	const checkActionButtons = captureIframe.document.querySelectorAll(".versionapp");
 
-	if ((captureIframeUrl.indexOf("app-") > -1) == "1") {
-		// Get the app's nickname by checking the action buttons on the page.
-		const getNicknameInstall = captureIframe.document.querySelector(".install-button").id;
-		const getNicknameRemove = captureIframe.document.querySelector(".remove-button").id;
-		let appNickname = ""
+	if (checkActionButtons) {
+		const exec = require('child_process').exec;
+		const fs = require("fs");
 
-		if (getNicknameInstall !== null) {
-			appNickname = getNicknameInstall.replace("install-", "");
+		for (let i = 0; i < checkActionButtons.length; i++) {
+			let appNickname = checkActionButtons[i].id.split("version-")[1];
 
-		} else if (getNicknameRemove !== null) {
-			appNickname = getNicknameRemove.replace("remove-", "");
+			if (fs.existsSync(`/opt/regataos-store/apps-list/${appNickname}.json`)) {
+				const data = fs.readFileSync(`/opt/regataos-store/apps-list/${appNickname}.json`, "utf8");
+				const apps = JSON.parse(data);
 
-		} else {
-			appNickname = captureIframeUrl.split("app-")[1];
-		}
+				for (let i = 0; i < apps.length; i++) {
+					// Open app
+					captureIframe.document.getElementById(`open-${apps[i].nickname}`).onclick = function () {
+						const commandOpen = apps[i].executable;
+						exec(commandOpen, (error, stdout, stderr) => {
+						});
+					};
 
-		if (fs.existsSync(`/opt/regataos-store/apps-list/${appNickname}.json`)) {
-			const data = fs.readFileSync(`/opt/regataos-store/apps-list/${appNickname}.json`, "utf8");
-			const apps = JSON.parse(data);
-
-			for (let i = 0; i < apps.length; i++) {
-				// Open app
-				captureIframe.document.getElementById(`open-${apps[i].nickname}`).onclick = function () {
-					const commandOpen = apps[i].executable;
-					exec(commandOpen, (error, stdout, stderr) => {
-					});
-				};
-
-				// Install app
-				captureIframe.document.getElementById(`install-${apps[i].nickname}`).onclick = function () {
-					const commandInstall = `export name="${apps[i].name}"; \
+					// Install app
+					captureIframe.document.getElementById(`install-${apps[i].nickname}`).onclick = function () {
+						const commandInstall = `export name="${apps[i].name}"; \
 					export nickname="${apps[i].nickname}"; \
 					export package="${apps[i].package}"; \
 					export package_prerm="${apps[i].package_prerm}"; \
@@ -50,20 +38,20 @@ function appButtonsFunction() {
 					sudo -E ${selectTranslationScript()}/installapp/installapp-${apps[i].package_manager}; \
 					sudo /opt/regataos-prime/scripts/apps-hybrid-graphics`;
 
-					console.log(commandInstall);
-					exec(commandInstall, (error, stdout, stderr) => {
-						if (stdout) {
-							fs.writeFile(`/var/log/regataos-logs/install-app-${apps[i].nickname}.log`, stdout, (err) => {
-								if (err) throw err;
-								console.log('The file has been saved!');
-							});
-						}
-					});
-				};
+						console.log(commandInstall);
+						exec(commandInstall, (error, stdout, stderr) => {
+							if (stdout) {
+								fs.writeFile(`/var/log/regataos-logs/install-app-${apps[i].nickname}.log`, stdout, (err) => {
+									if (err) throw err;
+									console.log('The file has been saved!');
+								});
+							}
+						});
+					};
 
-				// Remove app
-				captureIframe.document.getElementById(`remove-${apps[i].nickname}`).onclick = function () {
-					const commandRemove = `export name="${apps[i].name}"; \
+					// Remove app
+					captureIframe.document.getElementById(`remove-${apps[i].nickname}`).onclick = function () {
+						const commandRemove = `export name="${apps[i].name}"; \
 					export nickname="${apps[i].nickname}"; \
 					export package="${apps[i].package}"; \
 					export extra_packages="${apps[i].extra_packages}"; \
@@ -72,16 +60,17 @@ function appButtonsFunction() {
 					sudo -E ${selectTranslationScript()}/removeapp/removeapp-${apps[i].package_manager}; \
 					sudo /opt/regataos-prime/scripts/apps-hybrid-graphics`;
 
-					console.log(commandRemove);
-					exec(commandRemove, (error, stdout, stderr) => {
-						if (stdout) {
-							fs.writeFile('/var/log/regataos-logs/remove-app.log', stdout, (err) => {
-								if (err) throw err;
-								console.log('The file has been saved!');
-							});
-						}
-					});
-				};
+						console.log(commandRemove);
+						exec(commandRemove, (error, stdout, stderr) => {
+							if (stdout) {
+								fs.writeFile('/var/log/regataos-logs/remove-app.log', stdout, (err) => {
+									if (err) throw err;
+									console.log('The file has been saved!');
+								});
+							}
+						});
+					};
+				}
 			}
 		}
 	}
