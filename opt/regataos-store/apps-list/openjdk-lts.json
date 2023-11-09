@@ -4,7 +4,7 @@
 		"nickname": "openjdk-lts",
 		"executable": "none",
 		"package": "java-21-openjdk-headless",
-		"extra_packages": "timezone-java java-21-openjdk",
+		"extra_packages": "timezone-java java-21-openjdk java-21-openjdk-devel",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "openjdk-lts",
