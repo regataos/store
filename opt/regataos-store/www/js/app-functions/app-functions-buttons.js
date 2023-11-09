@@ -87,7 +87,7 @@ function openLogFile() {
 		appNickname = appNickname.replace(/ /g, '');
 
 		let commandLine = `rm -f "/var/log/regataos-logs/open-log-file.log"; \
-		kate "/var/log/regataos-logs/install-app-${appNickname}.log"`;
+		kwrite "/var/log/regataos-logs/install-app-${appNickname}.log"`;
 		exec(commandLine, (error, stdout, stderr) => {
 		});
 	}

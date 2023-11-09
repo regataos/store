@@ -1,6 +1,5 @@
 // Show app only when the UI is ready
 const gui = require('nw.gui');
-
 onload = function () {
 	gui.Window.get().show();
 }
@@ -41,13 +40,30 @@ function showProgressBar() {
 		const showProgressBarFull = document.querySelector(".progress-bar-full");
 		const uninstallInconProgress = document.querySelector(".li-sidebar-uninstalling");
 
-		if (((storeStatus.indexOf("installing") > -1) == "1") ||
-			((storeStatus.indexOf("uninstalling") > -1) == "1") ||
-			((storeStatus.indexOf("stopped") > -1) == "1")) {
+		if ((storeStatus.includes("installing")) ||
+			(storeStatus.includes("uninstalling")) ||
+			(storeStatus.includes("stopped"))) {
 			// Show the progress of installing/uninstalling apps.
-			progressBar.classList.add("progress-bar-show");
+			if (window.innerWidth >= 1176) {
+				progressBar.classList.add("progress-bar-show");
+			} else {
+				progressBar.classList.remove("progress-bar-show");
+			}
 
-			if ((status.indexOf("uninstalling") > -1) == "1") {
+			window.addEventListener('resize', function () {
+				let win = this;
+				let checkStatus = fs.readFileSync("/tmp/regataos-store/config/status.txt", "utf8");
+
+				if (win.innerWidth >= 1176) {
+					if (!checkStatus.includes("inactive")) {
+						progressBar.classList.add("progress-bar-show");
+					}
+				} else {
+					progressBar.classList.remove("progress-bar-show");
+				}
+			});
+
+			if (status.includes("uninstalling")) {
 				installInconProgress.style.cssText = "display: none;";
 				uninstallInconProgress.style.cssText = "display: block;";
 			} else {
@@ -72,6 +88,13 @@ function showProgressBar() {
 	}
 
 	let storeStatus = "";
+	if (fs.existsSync("/tmp/progressbar-store/installing")) {
+		setInterval(function () {
+			storeStatus = "installing";
+			appStoreWorkStatus("installing");
+		}, 1000);
+	}
+
 	fs.watch("/tmp/regataos-store/config/status.txt", function (event, filename) {
 		if (event == "change") {
 			setInterval(function () {
@@ -149,7 +172,6 @@ function homeStore() {
 	if (fs.existsSync("/usr/share/regataos/enterprise-iso.txt")) {
 		iframeRegataStore.document.location.href = `${setMainUrl()}/p/enterprise.html`;
 		document.querySelector("li.game").style.cssText = "display: none;";
-
 	} else {
 		iframeRegataStore.document.location.href = `${setMainUrl()}/p/home.html`;
 		document.querySelector("li.game").style.cssText = "display: block;";
@@ -169,8 +191,8 @@ function showHideElements() {
 		"apps-installed2": "installed",
 	};
 
-	if (((iframeStoreUrl.indexOf("app-") > -1) == "1") ||
-		((iframeStoreUrl.indexOf("search?q=") > -1) == "1")) {
+	if ((iframeStoreUrl.includes("app-")) ||
+		(iframeStoreUrl.includes("search?q="))) {
 
 		const linksPage = document.querySelectorAll(".li-sidebar a");
 		for (let i = 0; i < linksPage.length; i++) {
@@ -178,22 +200,21 @@ function showHideElements() {
 		}
 	}
 
-	if ((iframeStoreUrl.indexOf(specialPage[pageId]) > -1) == "1") {
+	if (iframeStoreUrl.includes(specialPage[pageId])) {
 		const linksPage = document.querySelectorAll(".li-sidebar a");
 		for (let i = 0; i < linksPage.length; i++) {
 			linksPage[i].classList.remove("link-items-on");
 		}
 
 		document.querySelector(`.${specialPage[pageId]} a`).classList.add("link-items-on");
-
 	} else {
 		document.querySelector(".special-page a").classList.remove("link-items-on");
 	}
 
 	// Special handling is required when the installed apps page is accessed
-	if ((iframeStoreUrl.indexOf("apps-installed2") > -1) == "1") {
+	if (iframeStoreUrl.includes("apps-installed2")) {
 		sessionStorage.setItem("goInstalledPage", "access");
-	} else if ((iframeStoreUrl.indexOf("app-") > -1) == "0") {
+	} else if (!iframeStoreUrl.includes("app-")) {
 		sessionStorage.setItem("goInstalledPage", "noaccess");
 	}
 }
@@ -208,10 +229,9 @@ function goInnerPage(pageId) {
 		const iframeStoreUrl = getIframeStore.location.href;
 
 		for (let i = 0; i < linksPage.length; i++) {
-			if ((iframeStoreUrl.indexOf(pageId) > -1) == "1") {
+			if (iframeStoreUrl.includes(pageId)) {
 				linksPage[i].classList.remove("link-items-on");
 				document.querySelector(`.${pageId} a`).classList.add("link-items-on");
-
 			} else {
 				linksPage[i].classList.remove("link-items-on");
 			}
@@ -233,7 +253,7 @@ function goToHome() {
 // Function back button
 function backButton() {
 	let installedPageStatus = sessionStorage.getItem("goInstalledPage");
-	if ((installedPageStatus.indexOf("noaccess") > -1) == "0") {
+	if (!installedPageStatus.includes("noaccess")) {
 		history.go(-2);
 	} else {
 		history.go(-1);
@@ -247,7 +267,7 @@ function backButton() {
 		const pageId = iframeStoreUrl.replace(removeString).replace(/undefined/g, "").replace(/\//g, "");
 
 		for (let i = 0; i < linksPage.length; i++) {
-			if ((iframeStoreUrl.indexOf(pageId) > -1) == "1") {
+			if (iframeStoreUrl.includes(pageId)) {
 				linksPage[i].classList.remove("link-items-on");
 				document.querySelector(`.${pageId} a`).classList.add("link-items-on");
 			} else {

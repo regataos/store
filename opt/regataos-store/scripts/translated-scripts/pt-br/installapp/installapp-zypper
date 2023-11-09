@@ -480,7 +480,7 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
             sudo rm -f "/etc/zypp/repos.d/$repo_name.repo"
         fi
 
-        installation_failed
+        installation_failed &
         chmod 777 /tmp/progressbar-store/*
         sleep 3
         #Clear cache

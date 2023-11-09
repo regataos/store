@@ -8,10 +8,6 @@
 }
 
 @media screen and (max-width: 1327px) {
-    .progress-bar {
-        position: initial;
-    }
-
     .progress-bar-full {
         margin-left: 250px;
         animation-name: example2;
@@ -51,6 +47,8 @@
 
     #search input#field {
         width: 2px;
+        color: #494d54;
+        background-position: 50%;
     }
 
     #search input#field:focus {
@@ -58,6 +56,13 @@
         background-color: #444;
         margin-left: 170px;
         box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus {
+      -webkit-text-fill-color: initial;
+      -webkit-box-shadow: initial;
     }
 
     .link-items {

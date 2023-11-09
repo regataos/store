@@ -30,7 +30,7 @@
         <iframe src="progress-bar/progress-bar-full.html" frameborder="0" class="iframe_pbf" id="iframepbf"></iframe>
     </div>
 
-    <div class="topbar" onclick='backButton(); setTimeout(function(){ installed(); }, 500);' title='Voltar'>
+    <div class="topbar" onclick='backButton(); setTimeout(function(){ installedPage(); }, 500);' title='Voltar'>
         <div class='top-bar-arrow'>
             <span class='svg svg-arrow-left'>
                 <svg enable-background='new 0 0 14 26' height='20px' id='svg4-Layer_1' version='1.1' viewBox='0 0 14 26'
@@ -111,17 +111,17 @@
                     <p style="margin-left: 18px;"></p>
                 </a>
             </li>
-            <li class="li-sidebar-b" onclick="fullprogressbar();" style="width: 55px;">
-                <a class="link-items" onclick="fullprogressbar();">
-                    <img class="icones-menu" title="Instalação em andamento..." onclick="fullprogressbar();"
-                        style="margin-left: 1px;" src="images/img-sidebar/download.png" />
+            <li class="li-sidebar-b" id="icon-install-app" onclick="startFullProgressBar(this.id);">
+                <a class="link-items">
+                    <img class="icones-menu" title="Instalação em andamento..." style="margin-left: 1px;"
+                        src="images/img-sidebar/download.png" />
                     <p style="margin-left: 18px;"></p>
                 </a>
             </li>
-            <li class="li-sidebar-uninstalling" onclick="fullprogressbar();" style="width: 55px;">
-                <a class="link-items" onclick="fullprogressbar();">
-                    <img class="icones-menu" title="Desinstalação em andamento..." onclick="fullprogressbar();"
-                        style="margin-left: 1px;" src="images/img-sidebar/uninstall.png" />
+            <li class="li-sidebar-uninstalling" id="icon-remove-app" onclick="startFullProgressBar(this.id);">
+                <a class="link-items">
+                    <img class="icones-menu" title="Desinstalação em andamento..." style="margin-left: 1px;"
+                        src="images/img-sidebar/uninstall.png" />
                     <p style="margin-left: 18px;"></p>
                 </a>
             </li>

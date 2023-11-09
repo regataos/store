@@ -1,5 +1,6 @@
 .container {
 position: relative;
+float: left;
 width: 207px;
 height: 100%;
 line-height: 1.4em;
@@ -9,6 +10,7 @@ margin-top: 0px;
 padding-top: 20px;
 padding-left: 11px;
 padding-right: 12px;
+padding-bottom: 20px;
 }
 
 .install-on {
@@ -28,7 +30,7 @@ margin-left: 100px;
 
 .more-info {
 position: absolute;
-bottom: 45px;
+top: 18px;
 right: 0;
 height: 15px;
 width: 15px;
@@ -58,7 +60,7 @@ background-image:url("../images/arrow-right-off.png") !important;
 .more-info2 {
 display: none;
 position: absolute;
-bottom: 45px;
+top: 18px;
 right: 0;
 height: 15px;
 width: 15px;
