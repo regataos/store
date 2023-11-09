@@ -89,10 +89,10 @@ function showProgressBar() {
 
 	let storeStatus = "";
 	if (fs.existsSync("/tmp/progressbar-store/installing")) {
-		setInterval(function () {
+		setTimeout(function () {
 			storeStatus = "installing";
 			appStoreWorkStatus("installing");
-		}, 1000);
+		}, 3000);
 	}
 
 	fs.watch("/tmp/regataos-store/config/status.txt", function (event, filename) {

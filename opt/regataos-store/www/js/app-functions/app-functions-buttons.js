@@ -1,3 +1,18 @@
+// Run shell process including scripts and commands
+function runShellProcess(commandLine) {
+	// Keep the process running independently from
+	// the main process using 'spawn'.
+	const { spawn } = require('child_process');
+	const runCommandLine = spawn(commandLine, {
+		shell: true,
+		detached: true,
+		stdio: 'ignore'
+	});
+
+	// Unlink the child process
+	runCommandLine.unref();
+}
+
 // Install and remove apps
 function appButtonsFunction() {
 	const captureIframe = document.getElementById("iframe-regataos-store").contentWindow;
@@ -18,8 +33,7 @@ function appButtonsFunction() {
 					// Open app
 					captureIframe.document.getElementById(`open-${apps[i].nickname}`).onclick = function () {
 						const commandOpen = apps[i].executable;
-						exec(commandOpen, (error, stdout, stderr) => {
-						});
+						runShellProcess(commandOpen);
 					};
 
 					// Install app
@@ -38,15 +52,7 @@ function appButtonsFunction() {
 					sudo -E ${selectTranslationScript()}/installapp/installapp-${apps[i].package_manager}; \
 					sudo /opt/regataos-prime/scripts/apps-hybrid-graphics`;
 
-						console.log(commandInstall);
-						exec(commandInstall, (error, stdout, stderr) => {
-							if (stdout) {
-								fs.writeFile(`/var/log/regataos-logs/install-app-${apps[i].nickname}.log`, stdout, (err) => {
-									if (err) throw err;
-									console.log('The file has been saved!');
-								});
-							}
-						});
+						runShellProcess(commandInstall);
 					};
 
 					// Remove app
@@ -60,15 +66,7 @@ function appButtonsFunction() {
 					sudo -E ${selectTranslationScript()}/removeapp/removeapp-${apps[i].package_manager}; \
 					sudo /opt/regataos-prime/scripts/apps-hybrid-graphics`;
 
-						console.log(commandRemove);
-						exec(commandRemove, (error, stdout, stderr) => {
-							if (stdout) {
-								fs.writeFile('/var/log/regataos-logs/remove-app.log', stdout, (err) => {
-									if (err) throw err;
-									console.log('The file has been saved!');
-								});
-							}
-						});
+						runShellProcess(commandRemove);
 					};
 				}
 			}
