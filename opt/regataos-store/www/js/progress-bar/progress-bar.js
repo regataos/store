@@ -58,36 +58,64 @@ function getAppInfo() {
 setInterval(progressBarMovement, 500);
 function progressBarMovement() {
 	const fs = require('fs');
+	
+	const lightGreyfull = document.querySelector(".light-greyfull");
 
-	fs.access("/tmp/progressbar-store/progress-movement", (err) => {
-		if (!err) {
-			document.querySelector(".progress").style.display = "none";
-			document.querySelector(".progress-full").style.display = "none";
-			document.querySelector(".progress-movement").style.display = "block";
-			document.querySelector(".percentage").style.display = "block";
-			document.querySelector(".light-greyfull").style.display = "none";
-			return;
+	if (fs.existsSync("/tmp/progressbar-store/progress-movement")) {
+		document.querySelector(".progress").style.display = "none";
+		document.querySelector(".progress-full").style.display = "none";
+		document.querySelector(".progress-full-red").style.display = "none";
+		document.querySelector(".progress-movement").style.display = "block";
+		document.querySelector(".percentage").style.display = "block";
 
-		} else {
-			fs.access("/tmp/progressbar-store/progress-full", (err) => {
-				if (!err) {
-					document.querySelector(".progress").style.display = "none";
-					document.querySelector(".progress-movement").style.display = "none";
-					document.querySelector(".progress-full").style.display = "block";
-					document.querySelector(".percentage").style.display = "block";
-					document.querySelector(".light-greyfull").style.display = "block";
-					return;
-
-				} else {
-					document.querySelector(".progress-movement").style.display = "none";
-					document.querySelector(".progress-full").style.display = "none";
-					document.querySelector(".progress").style.display = "block";
-					document.querySelector(".percentage").style.display = "block";
-					document.querySelector(".light-greyfull").style.display = "block";
-				}
-			});
+		if (lightGreyfull) {
+			lightGreyfull.style.display = "none";
 		}
-	});
+
+	} else if (fs.existsSync("/tmp/progressbar-store/progress-full")) {
+		document.querySelector(".progress").style.display = "none";
+		document.querySelector(".progress-full").style.display = "block";
+		document.querySelector(".progress-full-red").style.display = "none";
+		document.querySelector(".progress-movement").style.display = "none";
+		document.querySelector(".percentage").style.display = "block";
+
+		if (lightGreyfull) {
+			lightGreyfull.style.display = "block";
+		}
+
+	} else if (fs.existsSync("/tmp/progressbar-store/progress-full-red")) {
+		document.querySelector(".progress").style.display = "none";
+		document.querySelector(".progress-full").style.display = "none";
+		document.querySelector(".progress-full-red").style.display = "block";
+		document.querySelector(".progress-movement").style.display = "none";
+		document.querySelector(".percentage").style.display = "block";
+
+		if (lightGreyfull) {
+			lightGreyfull.style.display = "block";
+		}
+
+	} else if (fs.existsSync("/tmp/progressbar-store/installing")) {
+		document.querySelector(".progress").style.display = "block";
+		document.querySelector(".progress-full").style.display = "none";
+		document.querySelector(".progress-full-red").style.display = "none";
+		document.querySelector(".progress-movement").style.display = "none";
+		document.querySelector(".percentage").style.display = "block";
+
+		if (lightGreyfull) {
+			lightGreyfull.style.display = "block";
+		}
+
+	}  else {
+		document.querySelector(".progress").style.display = "none";
+		document.querySelector(".progress-full").style.display = "none";
+		document.querySelector(".progress-full-red").style.display = "none";
+		document.querySelector(".progress-movement").style.display = "none";
+		document.querySelector(".percentage").style.display = "block";
+
+		if (lightGreyfull) {
+			lightGreyfull.style.display = "block";
+		}
+	}
 
 	// Show download speed
 	const speedInfo = document.querySelectorAll(".dinfo");
@@ -127,4 +155,21 @@ function progressBarMovement() {
 			iconMoreInfo.style.backgroundImage = "url(./images/arrow-right-off.png)";
 		}
 	});
+
+	// Display more information
+	const moreInfo = document.querySelector(".down-functions");
+	if (fs.existsSync("/tmp/progressbar-store/file-size")) {
+		let showMoreInfo = fs.readFileSync("/tmp/progressbar-store/file-size", "utf8");
+			showMoreInfo = showMoreInfo.replace('% /','');
+
+		if (showMoreInfo >= 2) {
+			moreInfo.style.display = "block";
+		} else if (showMoreInfo === "saved") {
+			moreInfo.style.display = "none";
+		} else {
+			moreInfo.style.display = "none";
+		}
+	} else {
+		moreInfo.style.display = "none";
+	}
 }

@@ -458,16 +458,16 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
         chmod 777 /tmp/progressbar-store/*
 
         #Clear cache
-        rm -f $progressbar_dir/installing
         rm -f $progressbar_dir/installing-$app_nickname
         rm -f "$progressbar_dir/busy-installer-for.txt"
+
         success_installation
         sleep 2
+        rm -f $progressbar_dir/installing
 
         #If there are no more processes, clear the progress bar cache
         if test ! -e "$progressbar_dir/queued-1"; then
             chmod 777 /tmp/progressbar-store/*
-            sleep 2
             rm -f $progressbar_dir/progress-full
             rm -f $progressbar_dir/progressbar
             rm -f $progressbar_dir/*
@@ -478,6 +478,7 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
     else
         chmod 777 /tmp/progressbar-store/*
         rm -f $progressbar_dir/progress-movement
+        echo "error" > $progressbar_dir/progress-full-red
         echo $installation_error >$progressbar_dir/progress
         echo $installation_error_status >$progressbar_dir/status
         if [ ! -z $repo_name ]; then
@@ -485,9 +486,10 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
         fi
 
         installation_failed &
-        chmod 777 /tmp/progressbar-store/*
-        sleep 3
+        sleep 2
+
         #Clear cache
+        chmod 777 /tmp/progressbar-store/*
         rm -f $progressbar_dir/installing
         rm -f $progressbar_dir/installing-$app_nickname
         rm -f "$progressbar_dir/busy-installer-for.txt"
@@ -499,9 +501,14 @@ if test ! -e "$progressbar_dir/installing-$app_nickname"; then
             rm -f $progressbar_dir/*
         fi
         rm -f $progressbar_dir/progress-full
+        rm -f $progressbar_dir/progress-full-red
     fi
 
-    if test ! -e "/tmp/progressbar-store/installing"; then
-        echo "inactive" > "/tmp/regataos-store/config/status.txt"
+    if test ! -e "$progressbar_dir/queued-1" ; then
+        if test -e "/tmp/progressbar-store/installing"; then
+            echo "installing" > "/tmp/regataos-store/config/status.txt"
+        else
+            echo "inactive" > "/tmp/regataos-store/config/status.txt"
+        fi
     fi
 fi
