@@ -10,10 +10,6 @@ function appStatus() {
 		for (let i = 0; i < checkActionButtons.length; i++) {
 			let appNickname = checkActionButtons[i].id.split("version-")[1];
 
-			if (appNickname.includes("heroic")) {
-				console.log(appNickname)
-			}
-
 			if (fs.existsSync(`/opt/regataos-store/apps-list/${appNickname}.json`)) {
 				const appInstallButton = captureIframe.document.getElementById(`install-${appNickname}`);
 				const appRemoveButton = captureIframe.document.getElementById(`remove-${appNickname}`);

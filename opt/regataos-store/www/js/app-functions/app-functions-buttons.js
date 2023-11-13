@@ -19,7 +19,6 @@ function appButtonsFunction() {
 	const checkActionButtons = captureIframe.document.querySelectorAll(".versionapp");
 
 	if (checkActionButtons) {
-		const exec = require('child_process').exec;
 		const fs = require("fs");
 
 		for (let i = 0; i < checkActionButtons.length; i++) {
@@ -67,6 +66,19 @@ function appButtonsFunction() {
 					sudo /opt/regataos-prime/scripts/apps-hybrid-graphics`;
 
 						runShellProcess(commandRemove);
+					};
+				}
+			}
+
+			if (fs.existsSync(`/opt/regataos-store/ebook-list/${appNickname}.json`)) {
+				const data = fs.readFileSync(`/opt/regataos-store/ebook-list/${appNickname}.json`, "utf8");
+				const ebook = JSON.parse(data);
+
+				for (let i = 0; i < ebook.length; i++) {
+					// Open external page
+					captureIframe.document.getElementById(`open-page-${ebook[i].nickname}`).onclick = function () {
+						const commandOpen = `xdg-open ${ebook[i].salepage}`;
+						runShellProcess(commandOpen);
 					};
 				}
 			}
