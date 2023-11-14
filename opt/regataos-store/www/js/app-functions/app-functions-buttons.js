@@ -84,6 +84,15 @@ function appButtonsFunction() {
 			}
 		}
 	}
+
+	// Display featured ebooks on the store home page only if the store app is up to date.
+	const showEbook = captureIframe.document.querySelectorAll(".show-ebook");
+	if (showEbook) {
+		for (let i = 0; i < showEbook.length; i++) {
+			console.log(showEbook);
+			showEbook[i].style.display = "block";
+		}
+	}
 }
 
 setInterval(openLogFile, 1000);
