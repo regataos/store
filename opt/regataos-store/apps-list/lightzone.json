@@ -2,16 +2,16 @@
 	{
 		"name": "LightZone",
 		"nickname": "lightzone",
-		"executable": "lightzone",
-		"package": "lightzone",
+		"executable": "flatpak run io.github.ktgw0316.LightZone",
+		"package": "io.github.ktgw0316.LightZone",
 		"extra_packages": "",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
 		"icon_backg": "https://2.bp.blogspot.com/-inOXPltEX_U/WWLSOcRyWCI/AAAAAAAASJs/BBngYtjBOxUFIzKamPKYWaKLcEMVChHIwCLcBGAs/s1600/LightZone-backg.png",
 		"price": "free",
 		"dgpu": "activate"
-    }
+	}
 ]
