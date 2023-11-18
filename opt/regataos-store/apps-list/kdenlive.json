@@ -8,7 +8,7 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
 		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-TUqQrOp23rM/WWPlottjbSI/AAAAAAAASMU/YvcOSiwTR_ce9172Uqj45HC1qhgd_pVgACLcBGAs/s1600/kdenlive-backg.png",
 		"price": "free",

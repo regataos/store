@@ -8,7 +8,7 @@
 		"architecture": "noarch",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
 		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/noarch",
 		"icon_backg": "https://blogger.googleusercontent.com/img/a/AVvXsEjMDlRhOyCfI4y2rjoBnQ47Pa9_R4AkKvBVmQCNGC-21y8Ct2bGCuiaKroIOVSWgYR57aDnfHZSp4zCl2o21TlzQZ7tcDkf_yQ74Xwc11Nb2KhKC-NOkLAr7bOIq9CtZGzQ6xN4gcZJBpmXoZnRkA-n2DogunMTYyVArjyi-Cvfe5CpZ4fNghWb7YjH1g",
 		"price": "free",

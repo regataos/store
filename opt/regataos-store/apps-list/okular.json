@@ -8,7 +8,7 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
 		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
 		"icon_backg": "https://4.bp.blogspot.com/-zy7cVptm6fY/Wu0VeT5TpaI/AAAAAAAAUdY/K039zcN6ooY3YUsNZ0cHets2Z9VqsFiowCLcBGAs/s1600/okular-backg.png",
 		"price": "free",

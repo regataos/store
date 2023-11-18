@@ -8,7 +8,7 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
 		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
 		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGbq5fwDdbamG1ympbvfOX8Ky_U7EXyNMMlai-RgRehNqCk_IboWrDTbM4dKs-57lV5t2B3uH7Qz53kQ8lzgE4p-jJlmgvMsSL5F8knTEKVhEjSpJlFuAUIqVSn18sLbh-Qu56X59kCttmi8aFRyPSgm8asS8U5BpzAFVKg3uQ4HbOOaDT3ABxf9yUaA/s1600/subtitlecomposer-backg.png",
 		"price": "free",

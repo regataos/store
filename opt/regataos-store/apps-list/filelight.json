@@ -8,7 +8,7 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/plasmaregataos1",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
 		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
 		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTLv2fo15nWwFt0sEdEVMWfVsdxFe0w0Lo6nl1FEN_Kjw6ivIFY53ClTI3ypZzCJPJTR3OdZgi8sHT20b_myH8YyaFrhy5AKPfkOyJqPuNGGxOTZHTYaHQ5yIy3pLtzN2ivzabyH2tZ55go0DlPzbQLRi9dOaSpiALOD9M9wTdqUmuySkne7TyHfJmJA/s1600/filelight-backg.png",
 		"price": "free",
