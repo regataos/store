@@ -8,8 +8,8 @@ appname=$(echo $package | sed 's/ --classic\| --beta//')
 command_uninstall="sudo snap remove $appname"
 
 #Variables for notifications
-success_notify_title="$app_name desinstalado com sucesso!"
-success_notify_text=""
+success_notify_title="$app_name"
+success_notify_text="$app_name desinstalado com sucesso!"
 error_notify_title="Erro na desinstalação do $app_name!"
 error_notify_text="Ocorreu algum erro na desinstalação do $app_name."
 

@@ -33,8 +33,8 @@ else
 fi
 
 #Variables for notifications
-success_notify_title="$app_name instalado com sucesso!"
-success_notify_text=""
+success_notify_title="$app_name"
+success_notify_text="$app_name instalado com sucesso!"
 error_notify_title="Erro na instalação do $app_name!"
 error_notify_text="Ocorreu algum erro na instalação do $app_name."
 

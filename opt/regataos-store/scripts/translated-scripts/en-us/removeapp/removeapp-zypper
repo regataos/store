@@ -10,8 +10,8 @@ architecture="$architecture"
 check_uninstall="rpm -q $package"
 
 #Variables for notifications
-success_notify_title="$app_name successfully uninstalled!"
-success_notify_text=""
+success_notify_title="$app_name"
+success_notify_text="$app_name successfully uninstalled!"
 error_notify_title="Error uninstalling $app_name!"
 error_notify_text="There was an error uninstalling $app_name."
 
