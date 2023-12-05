@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Flowblade",
+		"nickname": "flowblade",
+		"executable": "flatpak run io.github.jliljebl.Flowblade",
+		"package": "io.github.jliljebl.Flowblade",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-gH0llgKU39c/WWPoSGFVURI/AAAAAAAASMg/khnyUZ60Z8c23kMcO4cZvt7yYj5mYi5lACLcBGAs/s1600/flowblade-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]
