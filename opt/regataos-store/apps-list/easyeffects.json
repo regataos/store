@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Easy Effects",
+		"nickname": "easyeffects",
+		"executable": "easyeffects",
+		"package": "easyeffects",
+		"extra_packages": "easyeffects-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4JJUooKWRiRdjeFYf4Mjomjg_bQJSHZEq4UsGFQjwuoEoIVp6ikJEIPNgwC7MdaSo_TvVE_7lpqioyTJa2IHi-v0Bvu7YqGQMp7DVfzikxXH-I8jXlwqZC09rWC4lM7vFczP0nw3_TzugETyhmgrqGwb6-JHafS3QVN07HKyLhrxWK4oxaN_w6psFhPZV/s1600/easyeffects-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]
