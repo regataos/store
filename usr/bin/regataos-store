@@ -80,6 +80,11 @@ fi
 
 rm -f "/tmp/regataos-store/go-installed"
 
+# Clear GPUCache files
+if test -e "$HOME/.config/Regata OS Store/Default/GPUCache/index"; then
+	rm -f "$HOME/.config/Regata OS Store/Default/GPUCache/"*
+fi
+
 # Check installed apps
 mkdir -p /tmp/apps-scripts/
 echo "installed" >"/tmp/apps-scripts/checkapp.txt"

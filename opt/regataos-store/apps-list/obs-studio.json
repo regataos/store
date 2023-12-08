@@ -4,7 +4,7 @@
 		"nickname": "obs-studio",
 		"executable": "obs",
 		"package": "obs-studio",
-		"extra_packages": "",
+		"extra_packages": "obs-studio-plugin-vkcapture",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
