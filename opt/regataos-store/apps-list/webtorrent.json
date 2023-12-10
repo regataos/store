@@ -1,0 +1,17 @@
+[
+	{
+		"name": "WebTorrent",
+		"nickname": "WebTorrent",
+		"executable": "flatpak run io.webtorrent.WebTorrent",
+		"package": "io.webtorrent.WebTorrent",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "https://dl.flathub.org/repo/appstream/io.webtorrent.WebTorrent.flatpakref",
+		"icon_backg": "https://dl.flathub.org/repo/appstream/x86_64/icons/128x128/io.webtorrent.WebTorrent.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]
