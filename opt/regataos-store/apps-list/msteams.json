@@ -2,16 +2,16 @@
 	{
 		"name": "Microsoft Teams",
 		"nickname": "msteams",
-		"executable": "teams",
-		"package": "teams",
+		"executable": "flatpak run com.github.IsmaelMartinez.teams_for_linux",
+		"package": "com.github.IsmaelMartinez.teams_for_linux",
 		"extra_packages": "",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "teams",
-		"repository_cache": "/var/cache/zypp/solv/teams",
-		"repository_url": "https://packages.microsoft.com/yumrepos/ms-teams",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
 		"icon_backg": "https://2.bp.blogspot.com/-qmYUCusT72c/XoDGOPGYGII/AAAAAAAAYVU/sqEAToGrBxQBlsgam7cnGUD8h9f252rbwCLcBGAsYHQ/s1600/msteams-backg.png",
 		"price": "free",
 		"dgpu": "deactivate"
-    }
+	}
 ]
