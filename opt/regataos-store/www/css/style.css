@@ -1,6 +1,6 @@
-@font-face{
+@font-face {
     font-family: "Oxygen";
-    src: url('fonts/Oxygen.otf') format('truetype');
+    src: url('fonts/Oxygen/Oxygen-Regular.ttf');
 }
 
 body {
@@ -17,14 +17,17 @@ body {
 ::-webkit-scrollbar-track {
     background-color: #b4b6b8;
 }
+
 ::-webkit-scrollbar {
     width: 10px;
     background: #b4b6b8;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #74777a;
-	border-radius: 6px;
+    border-radius: 6px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #3fb0e8;
 }
@@ -34,9 +37,9 @@ img {
 }
 
 ul {
-	animation-name: example;
-	animation-duration: 2s;
-	padding-left: 0px;
+    animation-name: example;
+    animation-duration: 2s;
+    padding-left: 0px;
 }
 
 li {
@@ -54,13 +57,13 @@ a img {
 
 /* Display content when everything is ready */
 #loadscreen {
-	display: block;
+    display: block;
     opacity: 1;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	background-color: #2f3136;
-	z-index: 40000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #2f3136;
+    z-index: 40000;
     animation-name: initEffect;
     animation-duration: 1.2s;
     animation-delay: 1.3s;
@@ -69,7 +72,9 @@ a img {
 @keyframes initEffect {
     from {
         opacity: 1;
-    } to {
+    }
+
+    to {
         opacity: 0;
     }
 }
@@ -85,11 +90,11 @@ a img {
 
 .iframe-pages {
     position: absolute;
-	overflow: hidden;
-	overflow-x: hidden;
-	overflow-y: hidden;
-	height: 100%;
-	width: 100%;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 .iframe-pages::-webkit-scrollbar {
@@ -126,7 +131,7 @@ a img {
     cursor: pointer;
     overflow: hidden;
     border-radius: 2px;
-    font: 20px 'Roboto', sans-serif;
+    font: 20px 'Oxygen', sans-serif;
     font-weight: 300;
     padding: 15px;
     -webkit-transition: all 0.3s ease-in-out;
@@ -140,9 +145,9 @@ a img {
     float: right;
     background-color: #0e8420;
     width: 140px;
-	opacity: 1;
-	animation-name: example;
-	animation-duration: 2s;
+    opacity: 1;
+    animation-name: example;
+    animation-duration: 2s;
 }
 
 .install:hover {
@@ -172,9 +177,9 @@ a img {
     float: right;
     background-color: #bf2d32;
     width: 140px;
-	opacity: 1;
-	animation-name: example;
-	animation-duration: 2s;
+    opacity: 1;
+    animation-name: example;
+    animation-duration: 2s;
 }
 
 .remove:hover {
@@ -205,9 +210,9 @@ a img {
     background-color: #0e8420;
     width: 60px;
     margin-right: 10px;
-	opacity: 1;
-	animation-name: example;
-	animation-duration: 2s;
+    opacity: 1;
+    animation-name: example;
+    animation-duration: 2s;
 }
 
 .open:hover {
@@ -227,9 +232,9 @@ a img {
     float: right;
     background-color: #0067b8;
     width: 140px;
-	opacity: 1;
-	animation-name: example;
-	animation-duration: 2s;
+    opacity: 1;
+    animation-name: example;
+    animation-duration: 2s;
 }
 
 .steam:hover {
@@ -267,9 +272,9 @@ a img {
     -webkit-box-shadow: 0px 0px 6px 0px rgba(8, 13, 18, 0.5);
     -moz-box-shadow: 0px 0px 6px 0px rgba(8, 13, 18, 0.5);
     box-shadow: 0px 0px 6px 0px rgba(8, 13, 18, 0.5);
-	opacity: 1;
-	animation-name: example;
-	animation-duration: .5s;
+    opacity: 1;
+    animation-name: example;
+    animation-duration: .5s;
 }
 
 .topbar:hover {
@@ -278,17 +283,17 @@ a img {
 
 /* top bar arrow css */
 .top-bar-arrow {
-	float: left;
-	color: #fff;
+    float: left;
+    color: #fff;
     cursor: pointer;
     height: 26px;
-	opacity: 1;
-	animation-name: example;
-	animation-duration: .3s;
+    opacity: 1;
+    animation-name: example;
+    animation-duration: .3s;
 }
 
 .svg {
-	fill: #ffffff;
+    fill: #ffffff;
 }
 
 .sidebar {
@@ -303,9 +308,7 @@ a img {
     padding: 0px 0px 14px 0px;
     user-select: none;
     z-index: 30000;
-    -webkit-box-shadow: 0px 0px 6px 0px rgba(8, 13, 18, 0.5);
-    -moz-box-shadow: 0px 0px 6px 0px rgba(8, 13, 18, 0.5);
-    box-shadow: 0px 0px 6px 0px rgba(8, 13, 18, 0.5);
+    box-shadow: 0 0 2px rgb(0 0 0 / 40%);
 }
 
 .sidebar ul li {
@@ -313,52 +316,40 @@ a img {
     background-color: #2f3136;
     transition: all 0.3s ease-in-out;
     color: #d2d5da;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Oxygen', sans-serif;
     margin-top: 0px;
     margin-bottom: 0px;
-	padding-top: 14px;
-	padding-bottom: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     z-index: -1;
 }
-
-/*
-.sidebar ul li:hover {
-    background-color: #242424;
-    color: #d2d5da;
-}
-*/
 
 .li-sidebar-b {
     display: none;
     bottom: 0;
     width: 55px;
-	animation-name: example;
-	animation-duration: 2s;
+    animation-name: example;
+    animation-duration: 2s;
 }
 
 .li-sidebar-uninstalling {
     display: none;
     bottom: 0;
     width: 55px;
-	animation-name: example;
-	animation-duration: 2s;
+    animation-name: example;
+    animation-duration: 2s;
 }
 
 .link-items {
     display: flex;
     flex-direction: row;
     align-items: center;
-	height: 26px;
+    height: 26px;
     font-size: 18px;
-    border-left: 4px solid #333334;
     transition: all 0.3s ease-in-out;
-	padding-top: 2px;
+    padding-top: 2px;
     padding-left: 20px;
-	padding-bottom: 2px;
-}
-
-.link-items-on {
-    border-left: 4px solid #0085e4;
+    padding-bottom: 2px;
 }
 
 .sidebar ul li:hover {
@@ -366,18 +357,36 @@ a img {
     color: #d2d5da;
 }
 
-.sidebar ul li:hover .link-items {
-    border-left: 4px solid #0085e4 !important;
-}
-
-.link-items:hover {
-    border-left: 4px solid #0085e4 !important;
-}
-
 .link-items p {
     margin-top: 0px;
     margin-left: 10px;
     margin-bottom: 0px;
+}
+
+.sidebar-item-effect {
+    display: block;
+    float: left;
+    width: 5px;
+    height: 30px;
+    border-radius: 4px;
+    margin-left: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar-item-effect-on {
+    background-color: #0085e4;
+}
+
+.sidebar-item-effect-dark {
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar #ul-menu li:hover .sidebar-item-effect {
+    background-color: #0085e4;
+}
+
+.sidebar #ul-menu li:hover .sidebar-item-effect-dark {
+    background-color: #3daee9;
 }
 
 .fas {
@@ -392,17 +401,19 @@ a img {
 
 .icones-menu {
     display: inline-block;
+    height: 25px;
+    width: auto;
     padding-right: 5px;
     left: -8px;
 }
 
 .progress-bar {
-	display: none;
+    display: none;
     position: fixed;
     bottom: 0px;
     min-height: 135px;
     float: left;
-	opacity: 1;
+    opacity: 1;
     animation-name: example;
     animation-duration: 2s;
 }
@@ -412,32 +423,32 @@ a img {
 }
 
 .iframe_pb {
-	overflow:hidden;
-	overflow-x:hidden;
-	overflow-y:hidden;
-	height:180px;
-	width:100%;
-	position:absolute;
-	bottom:0;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 180px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 .progress-bar-full {
-	display: none;
+    display: none;
     height: 300px;
     width: 423px;
     bottom: 0;
     float: right;
     opacity: 1;
-	border: 8px #202225 solid;
-	border-radius: 5px;
+    border: 8px #202225 solid;
+    border-radius: 5px;
     animation-name: example2;
     animation-duration: .3s;
-	transition: all .3s;
+    transition: all .3s;
     z-index: 30000;
     position: fixed;
     margin-left: 250px;
-	margin-bottom: 10px;
-	box-shadow: 0px 0px 10px 3px rgba(8, 13, 18, 0.5);
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px 3px rgba(8, 13, 18, 0.5);
 }
 
 .progress-bar-full-show {
@@ -452,22 +463,34 @@ a img {
 }
 
 .iframe_pbf {
-	overflow:hidden;
-	overflow-x:hidden;
-	overflow-y:hidden;
-	height:300px;
-	width:100%;
-	position:absolute;
-	bottom:0;
-	background-color: #202225;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 300px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #202225;
 }
 
 @keyframes example {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes example2 {
-    from {opacity: 0.5; margin-left: 245px;}
-    to {opacity: 1; margin-left: 250px;}
+    from {
+        opacity: 0.5;
+        margin-left: 245px;
+    }
+
+    to {
+        opacity: 1;
+        margin-left: 250px;
+    }
 }

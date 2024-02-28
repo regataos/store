@@ -6,7 +6,7 @@ while :
 do
 
 # Check if the OS Store Regatta is running
-ps -C "magma /opt/regataos-store" > /dev/null
+ps -C "regataosstore /opt/regataos-store" > /dev/null
 if [ $? = 0 ]; then
 	function start_installation() {
 		#Check the default language

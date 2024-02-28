@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/roboto-style.css">
     <link rel="stylesheet" type="text/css" href="css/search.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="css/networkoff.css">
@@ -57,72 +56,83 @@
 
         <ul id="ul-menu">
             <li class="li-sidebar special-page home" onclick="goToHome();">
+                <div class="sidebar-item-effect"></div>
                 <a class="link-items" onclick="goToHome();">
                     <img class="icones-menu" title="Descobrir" style="margin-left: 3px;"
                         src="images/img-sidebar/home.png" />
-                    <p style="margin-left: 17px;"></p>
+                    <p></p>
                 </a>
             </li>
             <li class="li-sidebar create" id="create" onclick="goInnerPage(this.id);">
+                <div class="sidebar-item-effect"></div>
                 <a class="link-items">
                     <img class="icones-menu" title="Criar" style="margin-left: 3px;"
                         src="images/img-sidebar/create.png" />
-                    <p style="margin-left: 18px;"></p>
+                    <p></p>
                 </a>
             </li>
             <li class="li-sidebar work" id="work" onclick="goInnerPage(this.id);">
+                <div class="sidebar-item-effect"></div>
                 <a class="link-items">
                     <img class="icones-menu" title="Trabalhar" style="margin-left: 2px;"
                         src="images/img-sidebar/work.png" />
-                    <p style="margin-left: 17px;"></p>
+                    <p style="margin-left: 12px;"></p>
                 </a>
             </li>
             <li class="li-sidebar game" id="game" onclick="goInnerPage(this.id);">
+                <div class="sidebar-item-effect"></div>
                 <a class="link-items">
-                    <img class="icones-menu" title="Jogar" style="width: 30px;" src="images/img-sidebar/gamepad.png" />
-                    <p style="margin-left: 15px;"></p>
+                    <img class="icones-menu" title="Jogar" style="height: 30px;left: -10px;"
+                        src="images/img-sidebar/gamepad.png" />
+                    <p style="margin-left: 9px;"></p>
                 </a>
             </li>
             <li class="li-sidebar develop" id="develop" onclick="goInnerPage(this.id);">
+                <div class="sidebar-item-effect"></div>
                 <a class="link-items">
-                    <img class="icones-menu" title="Desenvolver" style="width: 32px;"
+                    <img class="icones-menu" title="Desenvolver" style="left: -7px;"
                         src="images/img-sidebar/develop.png" />
-                    <p style="margin-left: 14px;"></p>
+                    <p style="margin-left: 13px;"></p>
                 </a>
             </li>
             <li class="li-sidebar utilities" id="utilities" onclick="goInnerPage(this.id);">
+                <div class="sidebar-item-effect"></div>
                 <a class="link-items">
-                    <img class="icones-menu" title="Utilidades" style="margin-left: 4px;"
+                    <img class="icones-menu" title="Utilidades" style="height: 28px;left: -10px;"
                         src="images/img-sidebar/tools.png" />
-                    <p style="margin-left: 19px;"></p>
+                    <p></p>
                 </a>
             </li>
             <li class="li-sidebar category" id="category" onclick="goInnerPage(this.id);" style="display: none;">
+                <div class="sidebar-item-effect"></div>
                 <a class="link-items">
                     <img class="icones-menu" style="margin-left: 4px;" src="images/img-sidebar/category.png" />
-                    <p style="margin-left: 19px;"></p>
+                    <p></p>
                 </a>
             </li>
             <li class="li-sidebar special-page installed" id="apps-installed2"
                 onclick="goInnerPage(this.id); setTimeout(function(){ installedPage(); }, 500);">
+                <div class="sidebar-item-effect"></div>
                 <a class="link-items">
-                    <img class="icones-menu" title="Instalados" style="margin-left: 4px;"
+                    <img class="icones-menu" title="Instalados" style="margin-left: 2px;"
                         src="images/img-sidebar/installed.png" />
-                    <p style="margin-left: 18px;"></p>
+                    <p style="margin-left: 11px;"></p>
                 </a>
             </li>
             <li class="li-sidebar-b" id="icon-install-app" onclick="startFullProgressBar(this.id);">
+                <div class="sidebar-item-effect"></div>
                 <a class="link-items">
                     <img class="icones-menu" title="Instalação em andamento..." style="margin-left: 1px;"
                         src="images/img-sidebar/download.png" />
-                    <p style="margin-left: 18px;"></p>
+                    <p></p>
                 </a>
             </li>
             <li class="li-sidebar-uninstalling" id="icon-remove-app" onclick="startFullProgressBar(this.id);">
+                <div class="sidebar-item-effect"></div>
                 <a class="link-items">
                     <img class="icones-menu" title="Desinstalação em andamento..." style="margin-left: 1px;"
                         src="images/img-sidebar/uninstall.png" />
-                    <p style="margin-left: 18px;"></p>
+                    <p></p>
                 </a>
             </li>
         </ul>

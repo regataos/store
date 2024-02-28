@@ -1,5 +1,5 @@
 Name: regataos-store
-Version: 23
+Version: 24.0
 Release: 0
 Url: https://github.com/regataos/store
 Summary: Application store of Regata OS
@@ -49,9 +49,13 @@ cp -f %{SOURCE2} %{buildroot}/opt/regataos-store/%{name}.desktop
 # Extract store files at the root of the system
 tar xf /opt/regataos-base/regataos-store-%{version}.tar.xz -C /
 
-# Remove obsolete files
-if test -e "/opt/regataos-store/apps-list/opencl-amd.json"; then
-  rm -f "/opt/regataos-store/apps-list/opencl-amd.json"
+if test -e "/opt/magma/nw"; then
+	rm -f "/opt/magma/regataosstore"
+	cp -f "/opt/magma/nw" "/opt/magma/regataosstore"
+fi
+
+if test ! -e "/usr/bin/regataosstore"; then
+	ln -sf "/opt/magma/regataosstore" "/usr/bin/regataosstore"
 fi
 
 # Prepare store status

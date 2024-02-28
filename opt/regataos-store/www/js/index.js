@@ -193,22 +193,20 @@ function showHideElements() {
 
 	if ((iframeStoreUrl.includes("app-")) ||
 		(iframeStoreUrl.includes("search?q="))) {
-
-		const linksPage = document.querySelectorAll(".li-sidebar a");
+		const linksPage = document.querySelectorAll(".li-sidebar .sidebar-item-effect");
 		for (let i = 0; i < linksPage.length; i++) {
-			linksPage[i].classList.remove("link-items-on");
+			linksPage[i].classList.remove("sidebar-item-effect-on");
 		}
 	}
 
 	if (iframeStoreUrl.includes(specialPage[pageId])) {
-		const linksPage = document.querySelectorAll(".li-sidebar a");
+		const linksPage = document.querySelectorAll(".li-sidebar .sidebar-item-effect");
 		for (let i = 0; i < linksPage.length; i++) {
-			linksPage[i].classList.remove("link-items-on");
+			linksPage[i].classList.remove("sidebar-item-effect-on");
 		}
-
-		document.querySelector(`.${specialPage[pageId]} a`).classList.add("link-items-on");
+		document.querySelector(`.${specialPage[pageId]} .sidebar-item-effect`).classList.add("sidebar-item-effect-on");
 	} else {
-		document.querySelector(".special-page a").classList.remove("link-items-on");
+		document.querySelector(".special-page .sidebar-item-effect").classList.remove("sidebar-item-effect-on");
 	}
 
 	// Special handling is required when the installed apps page is accessed
@@ -221,19 +219,18 @@ function showHideElements() {
 
 function goInnerPage(pageId) {
 	const getIframeStore = document.getElementById("iframe-regataos-store").contentWindow;
-	const linksPage = document.querySelectorAll(".li-sidebar a");
-
 	getIframeStore.document.location.href = `${setMainUrl()}/p/${pageId}.html`;
+	const linksPage = document.querySelectorAll(".li-sidebar .sidebar-item-effect");
 
 	setTimeout(function () {
 		const iframeStoreUrl = getIframeStore.location.href;
-
 		for (let i = 0; i < linksPage.length; i++) {
 			if (iframeStoreUrl.includes(pageId)) {
-				linksPage[i].classList.remove("link-items-on");
-				document.querySelector(`.${pageId} a`).classList.add("link-items-on");
+				linksPage[i].classList.remove("sidebar-item-effect-on");
+				console.log(pageId);
+				document.querySelector(`.${pageId} .sidebar-item-effect`).classList.add("sidebar-item-effect-on");
 			} else {
-				linksPage[i].classList.remove("link-items-on");
+				linksPage[i].classList.remove("sidebar-item-effect-on");
 			}
 		}
 	}, 500);
@@ -261,17 +258,17 @@ function backButton() {
 
 	setTimeout(function () {
 		const iframeStoreUrl = document.getElementById("iframe-regataos-store").contentWindow.location.href;
-		const linksPage = document.querySelectorAll(".li-sidebar a");
+		const linksPage = document.querySelectorAll(".li-sidebar .sidebar-item-effect");
 
 		const removeString = new RegExp(setMainUrl(), "g");
 		const pageId = iframeStoreUrl.replace(removeString).replace(/undefined/g, "").replace(/\//g, "");
 
 		for (let i = 0; i < linksPage.length; i++) {
 			if (iframeStoreUrl.includes(pageId)) {
-				linksPage[i].classList.remove("link-items-on");
-				document.querySelector(`.${pageId} a`).classList.add("link-items-on");
+				linksPage[i].classList.remove("sidebar-item-effect-on");
+				document.querySelector(`.${pageId} .sidebar-item-effect`).classList.add("sidebar-item-effect-on");
 			} else {
-				linksPage[i].classList.remove("link-items-on");
+				linksPage[i].classList.remove("sidebar-item-effect-on");
 			}
 		}
 	}, 500);
