@@ -111,14 +111,14 @@ function startFullProgressBar() {
 	const showProgressBarFull = document.querySelector(".progress-bar-full");
 	const showMoreInfoButton = document.querySelector(".more-info");
 	const hideMoreInfoButton = document.querySelector(".more-info2");
-	const sideBarButton = document.querySelector(".li-sidebar-b a");
-	const sideBarUninstalling = document.querySelector(".li-sidebar-uninstalling a");
+	const sideBarButton = document.querySelector(".li-sidebar-b .sidebar-item-effect");
+	const sideBarUninstalling = document.querySelector(".li-sidebar-uninstalling .sidebar-item-effect");
 
 	function showFullProgressBar() {
 		showProgressBarFull.classList.add("progress-bar-full-show");
 		showProgressBarFull.classList.remove("progress-bar-full-hide");
-		sideBarUninstalling.style.cssText = "border-left: 4px solid #0085e4";
-		sideBarButton.style.cssText = "border-left: 4px solid #0085e4";
+		sideBarUninstalling.classList.add("sidebar-item-effect-on");
+		sideBarButton.classList.add("sidebar-item-effect-on");
 
 		setTimeout(function () {
 			showMoreInfoButton.style.cssText = "display: none;";
@@ -129,8 +129,8 @@ function startFullProgressBar() {
 	function hideFullProgressBar() {
 		showProgressBarFull.classList.add("progress-bar-full-hide");
 		showProgressBarFull.classList.remove("progress-bar-full-show");
-		sideBarUninstalling.style.cssText = "border-left: 4px solid #2f3136";
-		sideBarButton.style.cssText = "border-left: 4px solid #2f3136";
+		sideBarUninstalling.classList.remove("sidebar-item-effect-on");
+		sideBarButton.classList.remove("sidebar-item-effect-on");
 
 		setTimeout(function () {
 			showMoreInfoButton.style.cssText = "display: block;";

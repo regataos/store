@@ -62,7 +62,7 @@ a img {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: #2f3136;
+    background-color: #2a2e32;
     z-index: 40000;
     animation-name: initEffect;
     animation-duration: 1.2s;
@@ -257,7 +257,7 @@ a img {
     width: 50px;
     height: 40px;
     border-radius: 8px;
-    background-color: #2f3136;
+    background-color: #2a2e32;
     border-bottom: 0px solid #121212;
     position: fixed;
     top: 0px;
@@ -299,7 +299,7 @@ a img {
 .sidebar {
     display: block;
     position: fixed;
-    background-color: #2f3136;
+    background-color: #2a2e32;
     text-align: left;
     /* top: 50px; */
     left: 0px;
@@ -313,7 +313,7 @@ a img {
 
 .sidebar ul li {
     cursor: pointer;
-    background-color: #2f3136;
+    background-color: #2a2e32;
     transition: all 0.3s ease-in-out;
     color: #d2d5da;
     font-family: 'Oxygen', sans-serif;
@@ -327,7 +327,7 @@ a img {
 .li-sidebar-b {
     display: none;
     bottom: 0;
-    width: 55px;
+    width: 58px;
     animation-name: example;
     animation-duration: 2s;
 }
@@ -335,7 +335,7 @@ a img {
 .li-sidebar-uninstalling {
     display: none;
     bottom: 0;
-    width: 55px;
+    width: 58px;
     animation-name: example;
     animation-duration: 2s;
 }
@@ -353,11 +353,12 @@ a img {
 }
 
 .sidebar ul li:hover {
-    background-color: #242424;
+    background-color: #373e46;
     color: #d2d5da;
 }
 
 .link-items p {
+    color: #d2d5da;
     margin-top: 0px;
     margin-left: 10px;
     margin-bottom: 0px;
@@ -374,7 +375,7 @@ a img {
 }
 
 .sidebar-item-effect-on {
-    background-color: #0085e4;
+    background-color: #3daee9;
 }
 
 .sidebar-item-effect-dark {
@@ -382,7 +383,7 @@ a img {
 }
 
 .sidebar #ul-menu li:hover .sidebar-item-effect {
-    background-color: #0085e4;
+    background-color: #3daee9;
 }
 
 .sidebar #ul-menu li:hover .sidebar-item-effect-dark {
@@ -401,7 +402,7 @@ a img {
 
 .icones-menu {
     display: inline-block;
-    height: 25px;
+    height: 28px;
     width: auto;
     padding-right: 5px;
     left: -8px;
