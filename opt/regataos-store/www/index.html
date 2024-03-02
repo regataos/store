@@ -31,26 +31,17 @@
 
     <div class="topbar" onclick='backButton(); setTimeout(function(){ installedPage(); }, 500);' title='Voltar'>
         <div class='top-bar-arrow'>
-            <span class='svg svg-arrow-left'>
-                <svg enable-background='new 0 0 14 26' height='20px' id='svg4-Layer_1' version='1.1' viewBox='0 0 14 26'
-                    width='14px' x='0px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg'
-                    xmlns:xlink='http://www.w3.org/1999/xlink' y='0px'>
-                    <path
-                        d='M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z' />
-                </svg>
-                <span class='alt sr-only'></span>
-            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <path
+                    d="m127.384-480 301.308 301.308q11.923 11.923 11.615 28.077-.308 16.153-12.231 28.076-11.922 11.923-28.076 11.923t-28.076-11.923L65.078-428.77Q54.23-439.616 49-453.077 43.77-466.539 43.77-480q0-13.461 5.23-26.923 5.231-13.461 16.078-24.307l306.846-306.846q11.922-11.923 28.384-11.616 16.461.308 28.384 12.231 11.923 11.923 11.923 28.076 0 16.154-11.923 28.077L127.384-480Z" />
+            </svg>
         </div>
     </div>
 
     <div class="sidebar">
         <div id='search'>
-            <form id="form">
-                <div><input id='field' name='q' onblur='if (this.value == "") {this.value = "Pesquisar";}'
-                        onfocus='if (this.value == "Pesquisar") {this.value = "";}' type='text' value='Pesquisar' />
-                    <input class='submit' name='submit' type='submit' value='Pesquisar' />
-                </div>
-            </form>
+            <input id='field' name='q' onblur='if (this.value == "") {this.value = "Pesquisar";}'
+                onfocus='if (this.value == "Pesquisar") {this.value = "";}' type='text' value='Pesquisar' />
         </div>
         <script type="text/javascript">searchBox();</script>
 

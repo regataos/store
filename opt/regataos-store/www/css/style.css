@@ -5,7 +5,7 @@
 
 body {
     font-family: Oxygen;
-    font-weight: 300;
+    font-weight: 400;
     background: #ccc;
     padding: 0;
     margin: 0;
@@ -250,17 +250,16 @@ a img {
 }
 
 .topbar {
-    /* display: flex; */
     display: none;
+    position: fixed;
     cursor: pointer;
+    top: 0px;
     left: 0;
-    width: 50px;
+    width: 40px;
     height: 40px;
     border-radius: 8px;
     background-color: #2a2e32;
     border-bottom: 0px solid #121212;
-    position: fixed;
-    top: 0px;
     user-select: none;
     transition: all 0.3s ease-in-out;
     z-index: 10000;
@@ -275,10 +274,15 @@ a img {
     opacity: 1;
     animation-name: example;
     animation-duration: .5s;
+    padding-left: 10px;
 }
 
 .topbar:hover {
-    background-color: #202225;
+    background-color: #373e46;
+}
+
+.top-bar-arrow svg {
+    fill: #fff;
 }
 
 /* top bar arrow css */
@@ -290,10 +294,7 @@ a img {
     opacity: 1;
     animation-name: example;
     animation-duration: .3s;
-}
-
-.svg {
-    fill: #ffffff;
+    padding-top: 2px;
 }
 
 .sidebar {
@@ -375,7 +376,7 @@ a img {
 }
 
 .sidebar-item-effect-on {
-    background-color: #3daee9;
+    background-color: #1c86fa;
 }
 
 .sidebar-item-effect-dark {
@@ -383,11 +384,11 @@ a img {
 }
 
 .sidebar #ul-menu li:hover .sidebar-item-effect {
-    background-color: #3daee9;
+    background-color: #1c86fa;
 }
 
 .sidebar #ul-menu li:hover .sidebar-item-effect-dark {
-    background-color: #3daee9;
+    background-color: #1c86fa;
 }
 
 .fas {

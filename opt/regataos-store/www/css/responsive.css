@@ -48,13 +48,11 @@
     #search input#field {
         width: 2px;
         color: #494d54;
-        background-position: 50%;
+        margin-left: 9px;
     }
 
     #search input#field:focus {
         width: 165px;
-        background-color: #444;
-        margin-left: 170px;
         box-shadow: 0 2px 5px rgba(0,0,0,.3);
     }
 
@@ -66,7 +64,7 @@
     }
 
     .link-items {
-        padding-left: 10px;
+        padding-left: 11px;
     }
 
     .link-items p {

@@ -233,7 +233,7 @@ function goInnerPage(pageId) {
 				linksPage[i].classList.remove("sidebar-item-effect-on");
 			}
 		}
-	}, 500);
+	}, 1000);
 }
 
 //Go for Home page
@@ -271,22 +271,21 @@ function backButton() {
 				linksPage[i].classList.remove("sidebar-item-effect-on");
 			}
 		}
-	}, 500);
+	}, 1000);
 }
 
 // Search box
 function searchBox() {
-	const form = document.getElementById("form");
-	const field = document.getElementById("field");
-
-	form.addEventListener('submit', function (e) {
-		const data = field.value
+	const input = document.getElementById("field");
+	input.addEventListener("keypress", function(event) {
+	if (event.key === "Enter") {
+		const iframe = document.getElementById("iframe-regataos-store");
+		const data = input.value
 		document.getElementById("field").value = "";
-
-		document.getElementById("iframe-regataos-store").contentWindow.document.location.href = `${setMainUrl()}/search?q=${data}`;
+		iframe.contentWindow.document.location.href = `${setMainUrl()}/search?q=${data}`;
 		sessionStorage.setItem("goInstalledPage", "noaccess");
-
 		window.scrollTo(0, 0);
-		e.preventDefault();
+		event.preventDefault();
+	}
 	});
 }
