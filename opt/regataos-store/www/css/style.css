@@ -442,7 +442,7 @@ a img {
     float: right;
     opacity: 1;
     border: 8px #202225 solid;
-    border-radius: 5px;
+    border-radius: 8px;
     animation-name: example2;
     animation-duration: .3s;
     transition: all .3s;

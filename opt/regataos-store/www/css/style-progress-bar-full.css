@@ -154,6 +154,7 @@ html {
     width: 100%;
     height: 10px;
     background-color: #36393f;
+    border-radius: 2em;
     margin-bottom: 10px;
 }
 
