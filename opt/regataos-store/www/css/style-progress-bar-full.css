@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Oxygen";
+    src: url('fonts/Oxygen/Oxygen-Regular.ttf');
+}
+
 body {
     font-family: Oxygen;
     font-weight: 300;
