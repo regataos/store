@@ -8,8 +8,8 @@
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/multimedia-apps",
-		"repository_url": "https://download.opensuse.org/repositories/multimedia:/apps/[basedOnVersion]/x86_64",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-eLjowjw3v5k/WWPqtve7nQI/AAAAAAAASMs/wb35ZYt9wzgcLBS4MgVekqpiMWh_um8TgCLcBGAs/s1600/shotcut-backg.png",
 		"price": "free",
 		"dgpu": "activate"
