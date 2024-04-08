@@ -2,8 +2,8 @@
 	{
 		"name": "Proton VPN",
 		"nickname": "protonvpn",
-		"executable": "protonvpn",
-		"package": "protonvpn-gui",
+		"executable": "protonvpn-app",
+		"package": "proton-vpn",
 		"extra_packages": "",
 		"architecture": "noarch",
 		"package_manager": "zypper",
