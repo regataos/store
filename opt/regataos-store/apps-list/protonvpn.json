@@ -5,7 +5,7 @@
 		"executable": "protonvpn",
 		"package": "protonvpn-gui",
 		"extra_packages": "",
-		"architecture": "x86_64",
+		"architecture": "noarch",
 		"package_manager": "zypper",
 		"repository_name": "",
 		"repository_cache": "[mainRepositoryName]",
