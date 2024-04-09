@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Marknote",
+		"nickname": "marknote",
+		"executable": "marknote",
+		"package": "marknote",
+		"extra_packages": "marknote-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCUPkWkzGStkoLrsYWI16ZUnPmF0FTu1E0pJeX0XB2c8bx5hycw8pQolJEC0yQUR5VEBJJRJiArm-H2x69aTEWzdiuXZtFummEWxdFsIxQ9UHOnV86tBgDl-ZAkW1zpelpj3VVQlcDhIAzM9LyvtuL3Ad73hJcqCRyXA4aWYAVngXbvPByysfQTeMZNLNW/s1600/marknote-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

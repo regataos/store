@@ -1,0 +1,17 @@
+[
+	{
+		"name": "PeaZip",
+		"nickname": "peazip",
+		"executable": "peazip",
+		"package": "peazip",
+		"extra_packages": "peazip-kf5",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMYyRTIFfqk3VcefaTq1LjaN6c_SmoLYBvyGePqAk7bPxHDTrTmGNzeJmvVmomPBhw-55k0q6H-Tto2iYziK6NGdF8L2cGzs_8clc5YEnAyruPS0hp4-qsTRZocn9USw1ogpoJpm-KkzjtAsIsoQRj9SBXVZ1C0fK8DWd2Q9mOnh_UvaLZ166zX3e6dnfL/s1600/peazip-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

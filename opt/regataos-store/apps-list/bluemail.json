@@ -1,0 +1,17 @@
+[
+	{
+		"name": "BlueMail",
+		"nickname": "bluemail",
+		"executable": "snap run bluemail",
+		"package": "bluemail",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPlO4XGWmscYxSu2RnvffOeLVumOZiGrloa6prPhVnUDtm_KdSzdPIAFmjggd2fjrXmwg5dpupBGR2cZZOrQPPh1dsR0pevWzPcB6loPtp0h2706m12rAbYAezRuSYQonRNRIiZhQPlk9mw-ctlgzVKfZwPioZMA4T32h5Be1C5w1RaRBCh9cZ9bHLSihf/s1600/bluemail-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+	}
+]

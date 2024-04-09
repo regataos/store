@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Flameshot",
+		"nickname": "flameshot",
+		"executable": "flameshot",
+		"package": "flameshot",
+		"extra_packages": "flameshot-bash-completion",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAw8QaII61qUSc4TqRJK9_KWx9myKOuO1lNMyVbYQ6uhHYAmZ3y5aNbvvXqu6-WDa6n6sgd2qGZEZJhWsiVK9Xs9GL6meh9W3JKrHcn_6MoodN2qBs5c0LRaejSrrEQ0e52wJe11P3OrA9gp8NiBHAe6ELXqspcWm5qlWg2kjnnuH6zUuh9Qgg-xYFPo0Q/s1600/flameshot-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
