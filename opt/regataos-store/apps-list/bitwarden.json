@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Bitwarden",
+		"nickname": "bitwarden",
+		"executable": "flatpak run com.bitwarden.desktop",
+		"package": "com.bitwarden.desktop",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNO32IJiErUzJPsx1lSJVSo9SwsfVNCa_LgXC-ER0HwvLh6W1vCvz0NYy0MDFQ7aMsTrk5giiGt6GBG1a2jcpHQ0NeeyaDHtJqj831j3bI5WDNf28wUc3Y4PVHgf9Lgpw6qv4sxckQ_3hzKMoxDXhdnSL3cF5MOR5TIDb6-u2kxB4uTGgsLQRlsEY7jwiq/s1600/bitwarden-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

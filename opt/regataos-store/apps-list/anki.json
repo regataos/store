@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Anki",
+		"nickname": "anki",
+		"executable": "anki",
+		"package": "anki",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgfw4ijdCMgpDpY_xQLBjIl_LeWIGJ7ttoxGekcSV6Hjk7ovP6tEIYHNmrV0K3HNJEyneQy_Huxj0yQFMvJal3ygNuwwP3dMUZ_jTgAdsYYwWq8VVhZ_Jn7qpGVMmFx7HXfnFmBeqpHVp6vsU6ffkZt0ab-_2wbEjj9XDV4SDwVf9dJxQbgvqRoOj9e0uyB/s1600/anki-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

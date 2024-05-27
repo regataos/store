@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Lazarus IDE",
+		"nickname": "lazarus",
+		"executable": "lazarus-ide",
+		"package": "lazarus-ide",
+		"extra_packages": "lazarus lazarus-lcl lazarus-lcl-gtk2 lazarus-lcl-gtk3 lazarus-lcl-nogui lazarus-lcl-qt5 lazarus-lcl-qt6 lazarus-tools",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjD4YZ0o_AvAVzGdWZHUc6edsu08VJbNAqvJkjE4yqWLez2dPQmL18zPQW_JGqL-VfPKOlkwewq2gpaqBpq0ay57KcgJw0bdOF08PZl29V1qXslTVE8fCc0tbNEB4D2cYA4tLTYT4W_vzul8RWSuEaj_GAVDx_BHuuHLhixDh0tqS3CnfHcfhfClJFW3Y2I/s1600/lazarus-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

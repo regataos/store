@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Pomodoro",
+		"nickname": "pomodoro",
+		"executable": "flatpak run io.gitlab.idevecore.Pomodoro",
+		"package": "io.gitlab.idevecore.Pomodoro",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiABggw5KUNf9CoUbPD-ipdAcFKyNMZYnVV0WOSSvEa2MWVRhPy-vtGmsW5oYcSsQ9WC2SpLup2E7N_boFO89WuxlxMLaprAo1MbylHiCCI86TkgCBJfS0-axworzu5ntRxG1FrMc-V3qVEqQ_I5Mx4py8yHQxqnIhyphenhyphenGqVIPmJvAj3gIjq_oYXPNJlls8LN/s1600/pomodoro-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

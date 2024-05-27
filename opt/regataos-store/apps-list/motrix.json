@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Motrix",
+		"nickname": "motrix",
+		"executable": "flatpak run net.agalwood.Motrix",
+		"package": "net.agalwood.Motrix",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEF29VlWcseRTpct5jbHZuVr7PugFiefW_QDWXSgvR7WPeH7xdQVrw86cIXuRnSuB2jFAcgpDdsyUSdS6OyIsPQAgKEDFEWdJDHT_ohZLEnWPCy1_oqMt-fwp5YtLNhnii8nswSFdESXb0IcLquO4ZIVMhFbbS3f0fK5aKLOcz9A4jLm4ruOO4VuApo2QD/s1600/motrix-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+    }
+]

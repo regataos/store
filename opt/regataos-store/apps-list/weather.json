@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Weather",
+		"nickname": "weather",
+		"executable": "flatpak run org.gnome.Weather",
+		"package": "org.gnome.Weather",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjG0sUMvemD27ssC25DYuCVXAMkWaZ6R4ph5RM76QQp5c85y8Rx-jyYpVyjn2_k1infm9oqiVhkvPlHO71q2HEB_f745NnYVggMyzIkcQ0qPP6MSma92BHnzXh2RVOB6fQdVZ2llktIRrH_9_OUZCpuaybe42n2unhtRXTpvFcbqvMgU1ypQsHtSSomM803/s1600/weather-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

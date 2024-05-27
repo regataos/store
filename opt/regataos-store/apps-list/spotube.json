@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Spotube",
+		"nickname": "spotube",
+		"executable": "flatpak run com.github.KRTirtho.Spotube",
+		"package": "com.github.KRTirtho.Spotube",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcrbBLXzvyh0R3rVszMHipMt1juKmPeSUtcpOZOxRqghMXtyBRVfUZQbniM0nxgRok5qKDST_vEcO0pKWBHaw1MKX9rKGunWXPtpBZ3FzkLZ-wq68CQQ9uCZvLJTb6hzVWec8V9yjvF9S7_9dYW73-EDeTwk3TFFfnp3As_ya6pi_r7_lrCzNpQ4zcE8Tn/s1600/spotube-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

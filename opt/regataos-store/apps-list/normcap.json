@@ -1,0 +1,17 @@
+[
+	{
+		"name": "NormCap",
+		"nickname": "normcap",
+		"executable": "flatpak run com.github.dynobo.normcap",
+		"package": "com.github.dynobo.normcap",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkzZdtR4VVVMqWlezEDpk4mPysenNU6Yv07uwXZsRpZN0vqWS46nOLOEmwe7dTf3FD8kADfyx8zlvg61GMrJAhk5512K1NiVGPeqYLRlpXDFuz_0fZJ7JWjjhdMTTlOlEle7AQxZUpV56KuHRzoMp1-S9pf-IjPoh5cQOgLT9er2hM2l-ljj2Pwuz1nPPu/s1600/normcap-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

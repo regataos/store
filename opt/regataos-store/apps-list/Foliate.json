@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Foliate",
+		"nickname": "foliate",
+		"executable": "flatpak run com.github.johnfactotum.Foliate",
+		"package": "com.github.johnfactotum.Foliate",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYDczAtu2IOvddB-wIf5yY3zVdMQQZCTd-ShOQcXlmi7hL1bkYPuw-b_Ob7_ZYIQcwsZ3MvqGcomMTTAeNx-ZfKF7scloIys6nt19wKROpNPhmeak_3LEcpgpDj6wuoDILI6f0a8WEfQio75fYIHEhATeSx1nWcFq57XGN-n16aiu_yrIC32uB_s0tDU_s/s1600/foliate-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
