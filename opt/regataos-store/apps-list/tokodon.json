@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Tokodon",
+		"nickname": "tokodon",
+		"executable": "tokodon",
+		"package": "tokodon",
+		"extra_packages": "tokodon-lang",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
+		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjELstmv-_j3XutQWCDnakfAALO-CH1kMQqrvNX7vbIcWgFWb-_W1zJ_LFoJyPG75i-uuUqiv3P6L-ar6h5P1gtMdoUUu6rTUMaXuahlYSjxiCYU1H4ftcONt2ulwzfubAWlS6t7T8GypcjQGJ7t98gNLBSsuk12toO9WGVYWtKqqEgppOz6ZYpEEtDZI8d/s1600/tokodon-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
