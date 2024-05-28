@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Warehouse",
+		"nickname": "warehouse",
+		"executable": "flatpak run io.github.flattool.Warehouse",
+		"package": "io.github.flattool.Warehouse",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEganvfkxK0CuG9tX4PLjqJj9S0BuK-gjZQP4lBJ3gQ6LQxQkQivB8mlU6qpjrbVoTq_6u_8sCWzwPgmd5-ZKOvoPwZBu8cnb_F9y_VSgmwVGaQ36sgSqdVfmXYxmtinWaX-mwyjKTr60gsRYvQBVhHtCg6eVP3tgm_guOVbyfH8hXa0whdwctYUHeOw3xMG/s1600/warehouse-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

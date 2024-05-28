@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Dev Toolbox",
+		"nickname": "devtoolbox",
+		"executable": "flatpak run me.iepure.devtoolbox",
+		"package": "me.iepure.devtoolbox",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFW5eCpkVi9cbjvHTmYUw8Eyk0VpdCeqD7WtYPkj7VwrvPYJVN2xWdRX-S4aHMik8gEbns9UdFQH68buB8r85ON0wIGMi4aLSFBwJ-WWxjS49vxio81iiX_JV2lHQQyiVvSvfGCIYZLwemRFruyU0odC6a2pG3AI6GAQ-GSrWPUvceuiNMp9UBq7KfJPLx/s1600/devtoolbox-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

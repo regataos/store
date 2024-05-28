@@ -1,0 +1,17 @@
+[
+	{
+		"name": "REAL Video Enhancer",
+		"nickname": "realvideo-enhancer",
+		"executable": "flatpak run io.github.tntwise.REAL-Video-Enhancer",
+		"package": "io.github.tntwise.REAL-Video-Enhancer",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhU3bPXNwA50zpN8-9qih9ug3GOBOFiwurrVxO4GoTJPoSApTfUCsTmPriHL_wptEWOCe0TEFD-B5JzBgqkEpRHnqwy4oY7efWxSC8YXoQR0QQPg1fhHkzWSxTK1NqWKOo2-JkJq5Q909mX-wUFnH0sGiw1MYKou9Rh4NxySDnpwZ9Hv4q8xAaW0XRjK0aN/s1600/realvideo-enhancer-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
