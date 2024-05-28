@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Clapper",
+		"nickname": "clapper",
+		"executable": "flatpak run com.github.rafostar.Clapper",
+		"package": "com.github.rafostar.Clapper",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyP8COSVWSSH84T45GzGoKaN-n1l1OD96p7qTzET-KYyXTL8rVZ5ffak2_lX749nqLxbV6yj6GvQVQl2pP5bHsCHQypYr64ky4EDv4PXp18TizruTaAC7T9z0MYItxLq8z2kixAGcvAz0P_eer_trCV7JNjqHaMlS1PA21Dfe-iCx-kR1GP16xv0fn9iZw/s1600/clapper-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

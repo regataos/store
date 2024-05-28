@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Tuba",
+		"nickname": "tuba",
+		"executable": "flatpak run dev.geopjr.Tuba",
+		"package": "dev.geopjr.Tuba",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3bu-JI1n_7CO31AaopRJzPoVuTUiRvlW8loe1oXpgwdCm2UeE49VoiN1oO6nThGvbOSTmufw9FDR5hRhX0ogQ8L91ITOaB27SrkIdUYagx5Bu3GMmzIclM94IaIVDFxJBAdXKqQo1I0-HIB9yEah9eSrSXopZQ4thE0gwh86n-fxGRqiUvHDlzJxyvVLk/s1600/tuba-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
