@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Whatsie",
+		"nickname": "whatsie",
+		"executable": "flatpak run com.ktechpit.whatsie",
+		"package": "com.ktechpit.whatsie",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhwGUSuNNYCBxJmiHR-vE_htR2U6yzdPiddFbAQtdz9vbjzQZBaXXiYcAnkwyDFUx7hROH7f4QGPh5cB1weDSsAoNxRHQwvtZrcjgVxqeysQETu8RjN0k8xqR4eBWSHp0cnidktyAjzPcKAbLuENW0CdwHbjwT1TTG0ay24CgTw2ZqcLD8WsrJkeIRgNzdF/s1600/whatsie-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
