@@ -7,8 +7,8 @@
     "show": false,
     "toolbar": false,
     "position": "center",
-    "width": 1366,
-    "height": 800,
+    "width": 1920,
+    "height": 1080,
     "icon": "www/images/icon.png"
   }
 }
