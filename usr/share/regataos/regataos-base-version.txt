@@ -1,5 +1,5 @@
 mainRepositoryName=regataos_24
-mainRepositoryUrl=https://download.opensuse.org/repositories/home:/regataos/15.5
-basedOn=openSUSE_Leap_15.5
-basedOnVersion=15.5
+mainRepositoryUrl=https://download.opensuse.org/repositories/home:/regataos/15.6
+basedOn=openSUSE_Leap_15.6
+basedOnVersion=15.6
 sleOnVersion=SLE_15_SP6
