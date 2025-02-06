@@ -7,7 +7,7 @@
 		"extra_packages": "timeshift-lang",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
-		"repository_name": "",
+		"repository_name": "archiving-backup",
 		"repository_cache": "/var/cache/zypp/solv/archiving-backup",
 		"repository_url": "https://download.opensuse.org/repositories/Archiving:/Backup/[basedOnVersion]/x86_64",
 		"icon_backg": "https://1.bp.blogspot.com/-rRUSqmJqknE/YKcSmdVlcGI/AAAAAAAAZ1Y/IYkWQ3Va86EcI-ScQ2bvc-4aCsPQ_qWQACLcBGAsYHQ/s0/timeshift-backg.png",
