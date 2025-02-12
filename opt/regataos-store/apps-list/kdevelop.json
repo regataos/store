@@ -4,7 +4,7 @@
 		"nickname": "kdevelop",
 		"executable": "kdevelop",
 		"package": "kdevelop",
-		"extra_packages": "kdevelop-lang kdevplatform kdevplatform-lang kdevelop5-plugin-php kdevelop5-plugin-php-lang kdevelop5-plugin-python3 kdevelop5-plugin-python3-lang",
+		"extra_packages": "kdevelop-lang kdevelop-plugin-php kdevelop-plugin-php-lang kdevelop-plugin-python3 kdevelop-plugin-python3-lang",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
 		"repository_name": "",

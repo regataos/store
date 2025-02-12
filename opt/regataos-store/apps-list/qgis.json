@@ -3,7 +3,7 @@
 		"name": "QGIS",
 		"nickname": "qgis",
 		"executable": "flatpak run org.qgis.qgis",
-		"package": "org.qgis.qgis",
+		"package": "org.qgis.qgis/x86_64/stable",
 		"extra_packages": "",
 		"architecture": "",
 		"package_manager": "flatpak",

@@ -2,8 +2,8 @@
 	{
 		"name": "Ryujinx",
 		"nickname": "ryujinx",
-		"executable": "flatpak run org.ryujinx.Ryujinx",
-		"package": "org.ryujinx.Ryujinx",
+		"executable": "flatpak run io.github.ryubing.Ryujinx",
+		"package": "io.github.ryubing.Ryujinx",
 		"extra_packages": "",
 		"architecture": "",
 		"package_manager": "flatpak",

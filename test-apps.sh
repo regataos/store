@@ -5,6 +5,13 @@ sudo zypper --non-interactive refresh
 
 user=$(users | awk '{print $1}')
 
+nonrpm="$1"
+if [[ $nonrpm == *"--nonrpm"* ]]; then
+    echo ""
+    echo "*** RPM package verification disabled! ***"
+    echo ""
+fi
+
 for i in /home/$user/develop/store/opt/regataos-store/apps-list/*.json; do
     app_nickname="$(grep -R '"nickname"' $i | cut -d'"' -f 4- | cut -d'"' -f -1 | head -1 | tail -2)"
     file_download="$(grep -R '"package"' $i | cut -d'"' -f 4- | cut -d'"' -f -1 | head -1 | tail -2)"
@@ -12,9 +19,10 @@ for i in /home/$user/develop/store/opt/regataos-store/apps-list/*.json; do
     download_link="$(grep -R '"download_link"' $i | cut -d'"' -f 4- | cut -d'"' -f -1 | head -1 | tail -2)"
     repo_name="$(grep -R '"repository_name"' $i | cut -d'"' -f 4- | cut -d'"' -f -1 | head -1 | tail -2)"
     repoUrl="$(grep -R '"repository_url"' $i | cut -d'"' -f 4- | cut -d'"' -f -1 | head -1 | tail -2)"
-    ifRPM="$(grep -R '"package_manager"' $i | cut -d'"' -f 4- | cut -d'"' -f -1 | head -1 | tail -2)"
+    check_package_manager="$(grep -R '"package_manager"' $i | cut -d'"' -f 4- | cut -d'"' -f -1 | head -1 | tail -2)"
 
-    if [[ $ifRPM == *"zypper"* ]]; then
+    if [[ $check_package_manager == *"zypper"* ]]; then
+    if [[ $nonrpm != *"--nonrpm"* ]]; then
         if [[ $repoUrl == *"[mainRepositoryUrl]"* ]]; then
             repo_link="$(grep -r mainRepositoryUrl= /usr/share/regataos/regataos-base-version.txt | cut -d'=' -f 2-)/$architecture"
 
@@ -111,10 +119,11 @@ REPOCONTENT
 
                 wget --spider "$app_download_link"
                 if [ $? != 0 ]; then
-                    echo "Error for $app_nickname"
+                    echo "*** Error for $app_nickname ***"
                     echo "Error for $app_nickname: $app_download_link" >>/home/$user/test-link-error.txt
                     echo "url1=$url1" >>/home/$user/test-link-error.txt
                     echo "url2=$url2" >>/home/$user/test-link-error.txt
+                    echo "" >>/home/$user/test-link-error.txt
                 fi
             fi
 
@@ -134,10 +143,11 @@ REPOCONTENT
 
                 wget --spider "$app_download_link"
                 if [ $? != 0 ]; then
-                    echo "Error for $app_nickname"
+                    echo "*** Error for $app_nickname ***"
                     echo "Error for $app_nickname: $app_download_link" >>/home/$user/test-link-error.txt
                     echo "url1=$url1" >>/home/$user/test-link-error.txt
                     echo "url2=$url2" >>/home/$user/test-link-error.txt
+                    echo "" >>/home/$user/test-link-error.txt
                 fi
             fi
 
@@ -147,10 +157,44 @@ REPOCONTENT
 
             wget --spider "$app_download_link"
             if [ $? != 0 ]; then
-                echo "Error for $app_nickname"
+                echo "*** Error for $app_nickname ***"
                 echo "Error for $app_nickname: $app_download_link" >>/home/$user/test-link-error.txt
+                echo "" >>/home/$user/test-link-error.txt
             fi
         fi
+    fi
+
+    elif [[ $check_package_manager == *"flatpak"* ]]; then
+        check_remote_info=$(flatpak remote-info flathub $file_download)
+        
+        if [[ $check_remote_info == *"$(echo $file_download)"* ]]; then
+            echo ""
+            echo "*** All set for the Flatpak $file_download app! ***"
+            echo ""
+        else
+            echo "*** Error for $app_nickname ***"
+            echo "Error for $app_nickname: Flatpak app" >>/home/$user/test-link-error.txt
+            echo "" >>/home/$user/test-link-error.txt
+        fi
+
+    elif [[ $check_package_manager == *"snap"* ]]; then
+        package_name=$(echo $file_download  | sed "s/ --classic//")
+        check_remote_info=$(snap info $package_name)
+
+        if [[ $check_remote_info == *"$(echo $package_name)"* ]]; then
+            echo ""
+            echo "*** All set for the Snap $file_download app! ***"
+            echo ""
+        else
+            echo "*** Error for $app_nickname ***"
+            echo "Error for $app_nickname: Snap app" >>/home/$user/test-link-error.txt
+            echo "" >>/home/$user/test-link-error.txt
+        fi
+
+    else
+        echo ""
+        echo "*** The package manager for the $app_nickname app was not recognized! ***"
+        echo ""
     fi
 
 done
