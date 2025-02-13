@@ -34,6 +34,10 @@ for i in /home/$user/develop/store/opt/regataos-store/apps-list/*.json; do
             basedOn="$(grep -r basedOn= /usr/share/regataos/regataos-base-version.txt | cut -d'=' -f 2-)"
             repo_link=$(echo $repoUrl | sed "s,\[basedOn\],$basedOn,")
 
+        elif [[ $repoUrl == *"[sleOnVersion]"* ]]; then
+            sleOnVersion="$(grep -r sleOnVersion= /usr/share/regataos/regataos-base-version.txt | cut -d'=' -f 2-)"
+            repo_link=$(echo $repoUrl | sed "s,\[sleOnVersion\],$sleOnVersion,")
+
         else
             repo_link="$repoUrl"
         fi
