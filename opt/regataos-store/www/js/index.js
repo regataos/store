@@ -13,7 +13,7 @@ const fs = require("fs");
 
 // Check internet connection for topbar
 function checkOnline() {
-	fetch('https://www.regataos.com.br/', {
+	fetch('https://www.google.com/', {
 		method: 'GET',
 		mode: 'no-cors',
 	}).then((result) => {
