@@ -1,9 +1,9 @@
 [
 	{
-		"name": "Heroic",
+		"name": "HeroicGamesLauncher",
 		"nickname": "heroic",
 		"executable": "heroic",
-		"package": "heroic",
+		"package": "HeroicGamesLauncher",
 		"extra_packages": "",
 		"architecture": "x86_64",
 		"package_manager": "zypper",
