@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Itinerary",
+		"nickname": "Itinerary",
+		"executable": "flatpak run org.kde.itinerary",
+		"package": "org.kde.itinerary",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi71LQdPdPC-HFHEgSmi3gfUiO3wKUr97A1LhTJw9buJDW3_1Kzb3vIRWpLxm5IhY1tOOwkTIU-jJWLUwhZcxdzJtPvb1vLf9S6XX1cMJmD0-DryGcKkt8U2kMhoYciHtEn9CMhE7JYZc9y7N6xtFrqnkzoCAqdpHqhctcKbnQLq2MSuoTxIv_vBKArPrSe/s1600/itinerary-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+	}
+] 
