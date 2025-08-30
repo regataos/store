@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Zen Browser",
+		"nickname": "zen-browser",
+		"executable": "flatpak run app.zen_browser.zen",
+		"package": "app.zen_browser.zen",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilnrrDdN1iwtObKqY3mloooUWhIKzfXgUvbFzd2ouLZRMptNRzxhTxP53XaGg1RVYfypIAB0lgkzRViVHh97UX_cNTu-gYElPs5FoCUcBy14mA02NKa8HkgkMlIsoprNrwMy0O_A0d8wwfmzah5NC-yTK05pY-vMd4fPL3FOvMkTWajaCJ46He4mESmEfT/s1600/zen-browser-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

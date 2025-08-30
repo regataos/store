@@ -1,0 +1,17 @@
+[
+	{
+		"name": "melonDS",
+		"nickname": "melonds",
+		"executable": "flatpak run net.kuribo64.melonDS",
+		"package": "net.kuribo64.melonDS",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRbKvflboEf1w2zWoP-wqFZvvc9XVoop0giMU0vOGeXqYdKT4v-AgjVwWIzn_drP3LGWbGRuPqaE8e0GoOSTdJzzKUbb5YsB1vj-bVrlSH3ToKCdvZdJqjWjwNJzCaJi6-4fmKnrpnCstygHmJamyH-SCaLlT2a8q-TBvb1tvdojJueqoE0Rn0Vv48EYyI/s1600/melonds-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

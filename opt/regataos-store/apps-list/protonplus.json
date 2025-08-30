@@ -1,0 +1,17 @@
+[
+	{
+		"name": "ProtonPlus",
+		"nickname": "protonplus",
+		"executable": "flatpak run com.vysp3r.ProtonPlus",
+		"package": "com.vysp3r.ProtonPlus",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyRa4LCExA8kwYwXyS04Fjc_yE0rV8d1BXIK9OXUuY7aj6l1Hcl6L2gOFsmL8yFbYPO1LXOrRsESibUi72zs38xGWPankg96qeVvnKJ67nJd_X6ZNx841NP27t7fh_6I76eH0pwSPTCqN1ef7kBTP7XXNWc6siXBrt63yhzT_ECYyeYBPvlcxIm-oL_AAk/s1600/protonplus-backg.png",
+		"price": "free",
+		"dgpu": "none"
+    }
+]

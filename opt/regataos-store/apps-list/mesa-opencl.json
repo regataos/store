@@ -3,7 +3,7 @@
 		"name": "Mesa OpenCL",
 		"nickname": "mesa-opencl",
 		"executable": "none",
-		"package": "Mesa-libOpenCL",
+		"package": "Mesa-libRusticlOpenCL",
 		"extra_packages": "clinfo",
 		"architecture": "x86_64",
 		"package_manager": "zypper",

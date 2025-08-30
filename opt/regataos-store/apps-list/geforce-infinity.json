@@ -1,0 +1,17 @@
+[
+	{
+		"name": "GeForce Infinity",
+		"nickname": "geforce-infinity",
+		"executable": "flatpak run io.github.astralvixen.geforce-infinity",
+		"package": "io.github.astralvixen.geforce-infinity",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiV7nahObktMMx9ft0CJbj7dPAaCtgofgzzGfAOgW2IDGq3q_agmt8PxQnKbq0udMsPEGlbBZ-UEGfe7kjjJa5Sew-U-5JDpCkzwwfgpo6WuSUToirnN8I6fK5JK7ww5RJTBWiugRst_ljL5HQaUPEpA2Y6dzJDtyEB-KbP3txMgifjd0Sv24XQBr32ZMO2/s1600/geforce-infinity-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

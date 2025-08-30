@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Prism Launcher",
+		"nickname": "prismlauncher",
+		"executable": "flatpak run org.prismlauncher.PrismLauncher",
+		"package": "org.prismlauncher.PrismLauncher",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPt5RrQOACib5ncRKm0DU2w3UBnsqk2KVYDq1E65d1lTmbvJbfEOVq_agDUaNltXvTHBRyVERvC3quZW6zEaA1yNP6OO_LKwYKLpIkIMk0JlZIwFFMTjDbap0MAXNqi8tmYG2cMFHPq62trmaKE_Q5pHwZgluJGQpdDelSBsTt9Izq3An0Bfu5ra9BAkYv/s1600/prismlauncher-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

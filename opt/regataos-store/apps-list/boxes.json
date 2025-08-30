@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Boxes",
+		"nickname": "boxes",
+		"executable": "flatpak run org.gnome.Boxes",
+		"package": "org.gnome.Boxes",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRH580f5BzIgHnUs1yUDVckMJiJGONlV32xWL_Hq8nnVJkhaMkKdxka0MdZGkGCJXd98JxDQSf3YK3_bOt2xxaAfpGCly1lM4Q-Wd2eYeQ1fhCWsfacM4QdNmqQN_GAfYZCBjGIkVVML6WBhaqvZYAwI3mMdZqd0PoJf8u1oRk1JjHgdO57yPADMlLr9Tb/s1600/boxes-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

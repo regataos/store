@@ -1,0 +1,17 @@
+[
+	{
+		"name": "DuckStation",
+		"nickname": "duckstation",
+		"executable": "flatpak run org.duckstation.DuckStation",
+		"package": "org.duckstation.DuckStation",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhk5OUFI2zyXZNyaBSSywupzJyMs6T68vuSDKWE-tU6ysEF8rsTzkjX7jKuVTDs5HtHwv98DchAy6ktTnDPtElsJeK3uumRuTyf4zojHPG5OMjCLzV5l-bmQLjIQ9AwzrHwBu9gDhStJHr-QDipikwXaaGfb-Dt5_8P9V0ZGD1piUJOEKoJrUsYOBvqsv3z/s1600/duckstation-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
