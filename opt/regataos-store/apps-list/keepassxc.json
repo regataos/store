@@ -1,0 +1,17 @@
+[
+	{
+		"name": "KeePassXC",
+		"nickname": "keepassxc",
+		"executable": "flatpak run org.keepassxc.KeePassXC",
+		"package": "org.keepassxc.KeePassXC",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiVmAeMs0atrzDxF3xffeo_9fmqQgR0xg_EfugMgEHSZe5O7oLgle2DeHOdSKvzK_Yzi0Q9JOaTjYRDIJFZyFPRBcdUn420rtNKhZ8C2leX_J1dKrC5lWU4DR4lgdgETL-5bU7brMDu69DXxAClLmkI3fQBArgUviMKnb-bCT2eXaUSur260ej-dalViYqH/s1600/keepassxc-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

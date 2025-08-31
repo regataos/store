@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Notesnook",
+		"nickname": "notesnook",
+		"executable": "flatpak run com.notesnook.Notesnook",
+		"package": "com.notesnook.Notesnook",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidnb48J4Jk53W_ENpRlnbFUKdGM6bN520jmdp0cY21cMVQSOAfCbYih_BrUqnYepohd7Vg7SkBEa5bcoP7g1odqUokdYZ87wNFe71wyvAMuJR38zUUzIZEWT29ZZ8XSSYCOHsEun7A4Tq3BfuUTLS0QCy7oDxMKg6mn2QyeCfG7jbRYQ_2n5bRxTKGp-QJ/s1600/notesnook-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

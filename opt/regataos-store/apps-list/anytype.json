@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Anytype",
+		"nickname": "anytype",
+		"executable": "flatpak run io.anytype.anytype",
+		"package": "io.anytype.anytype",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibd6JOoD8oTFWrprYB2y5NbaBibAQ4TfcUFAhycipvbHew0X_GUYC_NGCyjzF89PlDnA9F7AT3sZvNDetSQx6jnpio1TRbQdLuYKTZjvknY4L46G1x2z0gfy1Vloi9ZqUwokJJSo8-uB90hQeYlsQcxRxaObRtJ6Mxyhk9RU4sB7lrtPsSbmCNzHYrMVA0/s1600/anytype-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
