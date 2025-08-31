@@ -1,0 +1,17 @@
+[
+	{
+		"name": "Toolbox",
+		"nickname": "linuxtoys",
+		"executable": "linuxtoys",
+		"package": "linuxtoys",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgESljzBVIKCQB4s9daY4iRYRxODXqo_sB2qhasMS7uSJDX3H5kZGPAiu5A6e13blGraJYSY6eH1u2QdA1HB72HglgQ8ULy93ZaQkETx341RyBIw87-l8XDLW9KRpUhmZjYOeezksNblJYBC_Y9meS9RiER3WoDy4rCgi63WOlfeyvgBbn9mNo71_gHO30k/s1600/toolbox-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]

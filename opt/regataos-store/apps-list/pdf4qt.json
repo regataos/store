@@ -1,0 +1,17 @@
+[
+	{
+		"name": "PDF4QT",
+		"nickname": "pdf4qt",
+		"executable": "flatpak run io.github.JakubMelka.Pdf4qt",
+		"package": "io.github.JakubMelka.Pdf4qt",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiI8GF83-xTjytThFMwlYSZF8B43krfiQCGvexYza58lhmQ57xGPw2dS4XrbOaZipPK5eWn0LqWILKuhxTszsa1lW_Jcu3RCXJ6SA1DB2ue-BNDV0MR6ay2flYBiFe7ZJF9CKM3wkzcwME-x3c7MwqCLUL7DzWlZmq0Umz7xnx2ctqklTiDnELH-cdt4fS2/s1600/pdf4qt-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
+    }
+]
