@@ -42,7 +42,43 @@ function versionRpm(appNickname) {
 	}
 }
 
-function appVersion() {
+async function versionFlatpak(appNickname) {
+	const fs = require('fs');
+	
+	async function getFlathubVersion(appId) {
+		try {
+			const response = await fetch(`https://flathub.org/api/v2/appstream/${appId}`);
+			if (!response.ok) {
+				throw new Error(`App não encontrado: ${appId}`);
+			}
+			const data = await response.json();
+			if (data.releases && data.releases.length > 0) {
+				return data.releases[0].version;
+			}
+			
+			if (data.version) {
+				return data.version;
+			}
+			
+			return null;
+		} catch (error) {
+			console.error('Erro ao buscar versão:', error.message);
+			return null;
+		}
+	}
+	
+	const data = fs.readFileSync(`/opt/regataos-store/apps-list/${appNickname}.json`, "utf8");
+	const getAppId = JSON.parse(data);
+	
+	for (let i = 0; i < getAppId.length; i++) {
+		const appId = getAppId[i].package;
+		const version = await getFlathubVersion(appId);
+		console.log('Versão:', version);
+		return version; // Retorna a primeira versão encontrada
+	}
+}
+
+async function appVersion() {
 	const captureIframe = document.getElementById("iframe-regataos-store").contentWindow;
 	const packageVersion = captureIframe.document.querySelectorAll(".versionapp");
 
@@ -52,7 +88,6 @@ function appVersion() {
 
 			if (fs.existsSync(`/opt/regataos-store/apps-list/${appNickname}.json`)) {
 				const snapCacheVersion = fs.readFileSync("/opt/regataos-store/installed-apps/snap-version-cache.txt", "utf8");
-				const flatpakCacheVersion = fs.readFileSync("/opt/regataos-store/installed-apps/flatpak-version-cache.txt", "utf8");
 
 				const versionElement = captureIframe.document.getElementById(`version-${appNickname}`);
 
@@ -66,7 +101,7 @@ function appVersion() {
 				if (appVersion !== null) {
 					versionElement.innerHTML = appVersion;
 				} else {
-					appVersion = findAppVersion(flatpakCacheVersion, appNickname);
+					appVersion = await versionFlatpak(appNickname);
 					if (appVersion !== null) {
 						versionElement.innerHTML = appVersion;
 					} else {

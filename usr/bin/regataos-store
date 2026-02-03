@@ -118,7 +118,6 @@ if [[ $(echo $permission_store) == *"superuser"* ]]; then
 				/opt/regataos-store/scripts/checkapp &
 				/opt/regataos-store/scripts/progress-bar/run-process-queues &
 				/opt/regataos-store/scripts/snap-version-cache &
-				/opt/regataos-store/scripts/flatpak-version-cache &
 				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
 				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 			else
@@ -129,7 +128,6 @@ if [[ $(echo $permission_store) == *"superuser"* ]]; then
 				/opt/regataos-store/scripts/checkapp &
 				/opt/regataos-store/scripts/progress-bar/run-process-queues &
 				/opt/regataos-store/scripts/snap-version-cache &
-				/opt/regataos-store/scripts/flatpak-version-cache &
 				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
 				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 			fi
@@ -152,7 +150,6 @@ else
 		/opt/regataos-store/scripts/checkapp &
 		/opt/regataos-store/scripts/progress-bar/run-process-queues &
 		/opt/regataos-store/scripts/snap-version-cache &
-		/opt/regataos-store/scripts/flatpak-version-cache &
 		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
 		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 	else
@@ -163,7 +160,6 @@ else
 		/opt/regataos-store/scripts/checkapp &
 		/opt/regataos-store/scripts/progress-bar/run-process-queues &
 		/opt/regataos-store/scripts/snap-version-cache &
-		/opt/regataos-store/scripts/flatpak-version-cache &
 		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
 		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
 	fi
