@@ -100,5 +100,5 @@ else
 	break
 fi
 
-   sleep 3
+   sleep 1
 done
