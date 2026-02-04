@@ -104,6 +104,15 @@ if [[ $(groups | grep guest-session) == *"guest-session"* ]]; then
 	permission_store="superuser"
 fi
 
+function runStore() {
+	/opt/regataos-store/scripts/progress-bar/capture-progress-download &
+	/opt/regataos-store/scripts/progress-bar/create-process-queues &
+	/opt/regataos-store/scripts/checkapp &
+	/opt/regataos-store/scripts/progress-bar/run-process-queues &
+	sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
+	sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
+}
+
 if [[ $(echo $permission_store) == *"superuser"* ]]; then
 	rm -f "/tmp/apps-scripts/store-superuser.txt"
 	xdg-su -c "regataos_store"
@@ -113,23 +122,11 @@ if [[ $(echo $permission_store) == *"superuser"* ]]; then
 			if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
 				regataosstore --disable-gpu /opt/regataos-store &
 				sleep 1
-				/opt/regataos-store/scripts/progress-bar/capture-progress-download &
-				/opt/regataos-store/scripts/progress-bar/create-process-queues &
-				/opt/regataos-store/scripts/checkapp &
-				/opt/regataos-store/scripts/progress-bar/run-process-queues &
-				/opt/regataos-store/scripts/snap-version-cache &
-				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
-				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
+				runStore
 			else
 				regataosstore /opt/regataos-store &
 				sleep 1
-				/opt/regataos-store/scripts/progress-bar/capture-progress-download &
-				/opt/regataos-store/scripts/progress-bar/create-process-queues &
-				/opt/regataos-store/scripts/checkapp &
-				/opt/regataos-store/scripts/progress-bar/run-process-queues &
-				/opt/regataos-store/scripts/snap-version-cache &
-				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
-				sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
+				runStore
 			fi
 		else
 			exit 0
@@ -145,23 +142,11 @@ else
 	if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
 		regataosstore --disable-gpu /opt/regataos-store &
 		sleep 1
-		/opt/regataos-store/scripts/progress-bar/capture-progress-download &
-		/opt/regataos-store/scripts/progress-bar/create-process-queues &
-		/opt/regataos-store/scripts/checkapp &
-		/opt/regataos-store/scripts/progress-bar/run-process-queues &
-		/opt/regataos-store/scripts/snap-version-cache &
-		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
-		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
+		runStore
 	else
 		regataosstore /opt/regataos-store &
 		sleep 1
-		/opt/regataos-store/scripts/progress-bar/capture-progress-download &
-		/opt/regataos-store/scripts/progress-bar/create-process-queues &
-		/opt/regataos-store/scripts/checkapp &
-		/opt/regataos-store/scripts/progress-bar/run-process-queues &
-		/opt/regataos-store/scripts/snap-version-cache &
-		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
-		sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
+		runStore
 	fi
 fi
 

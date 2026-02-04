@@ -93,6 +93,8 @@ if test -e "/tmp/apps-scripts/checkapp.txt" ; then
 	# Clear empty lines in file "installed-apps.txt"
 	sed '/^$/d' "/opt/regataos-store/installed-apps/installed-apps.txt" > "/opt/regataos-store/installed-apps/installed-apps-new.txt"
 	mv -f "/opt/regataos-store/installed-apps/installed-apps-new.txt" "/opt/regataos-store/installed-apps/installed-apps.txt"
+
+	break
 fi
 
 else
