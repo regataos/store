@@ -1,17 +1,21 @@
 [
-	{
-		"name": "LibreCAD",
-		"nickname": "librecad",
-		"executable": "librecad",
-		"package": "librecad",
-		"extra_packages": "",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/graphics",
-		"repository_url": "https://download.opensuse.org/repositories/graphics/[basedOnVersion]/x86_64",
-		"icon_backg": "https://1.bp.blogspot.com/-HFskGaWjO2w/WWTytbt-9VI/AAAAAAAASSQ/_4NQyDSLk7MvV4b9lzncOnM2TavrCRrHACLcBGAs/s1600/librecad-backg.png",
-		"price": "free",
-		"dgpu": "deactivate"
+    {
+        "name": "LibreCAD",
+        "nickname": "librecad",
+        "executable": [
+            "librecad"
+        ],
+        "package": [
+            "librecad"
+        ],
+        "extra_packages": [],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "/var/cache/zypp/solv/graphics",
+        "repository_url": "https://download.opensuse.org/repositories/graphics/[basedOnVersion]/x86_64",
+        "icon_backg": "https://1.bp.blogspot.com/-HFskGaWjO2w/WWTytbt-9VI/AAAAAAAASSQ/_4NQyDSLk7MvV4b9lzncOnM2TavrCRrHACLcBGAs/s1600/librecad-backg.png",
+        "price": "free",
+        "dgpu": "deactivate"
     }
 ]

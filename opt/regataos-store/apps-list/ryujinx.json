@@ -1,17 +1,23 @@
 [
-	{
-		"name": "Ryujinx",
-		"nickname": "ryujinx",
-		"executable": "flatpak run io.github.ryubing.Ryujinx",
-		"package": "io.github.ryubing.Ryujinx",
-		"extra_packages": "",
-		"architecture": "",
-		"package_manager": "flatpak",
-		"repository_name": "flathub",
-		"repository_cache": "",
-		"repository_url": "",
-		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj27dGli-KgT-Dt9kj32UAcUwOxbgEoQ84anZEKkL4mJjYbd70GO3KQ-I0UwWQVOQeuEooF5bzun1apdzmQ-InSfSSANDqAWWhYHV2170WpwZrHMWnbX6GsAbUaUYywlJ2upqvwOtzNBhcUXJ_A3nj3P-pmVQY5k5AK56rKZWlmPzcLwk37LHMYEiax6EmL/s1600/ryujinx-backg.png",
-		"price": "free",
-		"dgpu": "activate"
+    {
+        "name": "Ryujinx",
+        "nickname": "ryujinx",
+        "executable": [
+            "flatpak",
+            "run",
+            "io.github.ryubing.Ryujinx"
+        ],
+        "package": [
+            "io.github.ryubing.Ryujinx"
+        ],
+        "extra_packages": [],
+        "architecture": "",
+        "package_manager": "flatpak",
+        "repository_name": "flathub",
+        "repository_cache": "",
+        "repository_url": "",
+        "icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj27dGli-KgT-Dt9kj32UAcUwOxbgEoQ84anZEKkL4mJjYbd70GO3KQ-I0UwWQVOQeuEooF5bzun1apdzmQ-InSfSSANDqAWWhYHV2170WpwZrHMWnbX6GsAbUaUYywlJ2upqvwOtzNBhcUXJ_A3nj3P-pmVQY5k5AK56rKZWlmPzcLwk37LHMYEiax6EmL/s1600/ryujinx-backg.png",
+        "price": "free",
+        "dgpu": "activate"
     }
 ]

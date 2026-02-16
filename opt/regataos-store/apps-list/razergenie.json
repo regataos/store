@@ -1,17 +1,23 @@
 [
-	{
-		"name": "RazerGenie",
-		"nickname": "razergenie",
-		"executable": "razergenie",
-		"package": "razergenie",
-		"extra_packages": "python3-openrazer",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://1.bp.blogspot.com/-EwPkuiXofiQ/XGB9HUHrF6I/AAAAAAAAWdY/Nkh5t_CjJgERShNxUMxCK4EjH6Uf9CTnACLcBGAs/s1600/razer-backg2.png",
-		"price": "free",
-		"dgpu": "deactivate"
+    {
+        "name": "RazerGenie",
+        "nickname": "razergenie",
+        "executable": [
+            "razergenie"
+        ],
+        "package": [
+            "razergenie"
+        ],
+        "extra_packages": [
+            "python3-openrazer"
+        ],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://1.bp.blogspot.com/-EwPkuiXofiQ/XGB9HUHrF6I/AAAAAAAAWdY/Nkh5t_CjJgERShNxUMxCK4EjH6Uf9CTnACLcBGAs/s1600/razer-backg2.png",
+        "price": "free",
+        "dgpu": "deactivate"
     }
 ]

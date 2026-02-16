@@ -1,17 +1,21 @@
 [
-	{
-		"name": "Lightworks",
-		"nickname": "lightworks",
-		"executable": "lightworks",
-		"package": "lightworks-updater",
-		"extra_packages": "",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://3.bp.blogspot.com/-FUAztFdM6fA/WWPgxzCm_jI/AAAAAAAASMA/gZ7fr5pQ3csoYQBi33xpqqOy8oGOlh-ZwCLcBGAs/s1600/lightworks-backg.png",
-		"price": "free",
-		"dgpu": "activate"
-	}
+    {
+        "name": "Lightworks",
+        "nickname": "lightworks",
+        "executable": [
+            "lightworks"
+        ],
+        "package": [
+            "lightworks-updater"
+        ],
+        "extra_packages": [],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://3.bp.blogspot.com/-FUAztFdM6fA/WWPgxzCm_jI/AAAAAAAASMA/gZ7fr5pQ3csoYQBi33xpqqOy8oGOlh-ZwCLcBGAs/s1600/lightworks-backg.png",
+        "price": "free",
+        "dgpu": "activate"
+    }
 ]

@@ -21,7 +21,6 @@ function checkConfigFile(data, desiredString) {
 
 // Get the system language
 function getSystemLanguage() {
-    const fs = require('fs');
     let languageDetected = "";
 
     if (fs.existsSync("/tmp/regataos-configs/config/plasma-localerc")) {
@@ -50,7 +49,6 @@ function selectTranslationFile() {
 
 // Choose script language.
 function selectTranslationScript() {
-    const fs = require('fs');
     const translationDir = "/opt/regataos-store/scripts/translated-scripts"
 
     if (fs.existsSync(`${translationDir}/${getSystemLanguage()}`)) {

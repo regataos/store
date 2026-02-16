@@ -1,17 +1,21 @@
 [
-	{
-		"name": "Scribus",
-		"nickname": "scribus",
-		"executable": "scribus",
-		"package": "scribus",
-		"extra_packages": "",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "/var/cache/zypp/solv/plasmaregataos",
-		"repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
-		"icon_backg": "https://1.bp.blogspot.com/-MFevJNVh2Uo/WWTopiscSCI/AAAAAAAASRQ/Yq6j2neLORs3dlvRBGLK8kMove05GEGuwCLcBGAs/s1600/scribus-backg.png",
-		"price": "free",
-		"dgpu": "deactivate"
+    {
+        "name": "Scribus",
+        "nickname": "scribus",
+        "executable": [
+            "scribus"
+        ],
+        "package": [
+            "scribus"
+        ],
+        "extra_packages": [],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "/var/cache/zypp/solv/plasmaregataos",
+        "repository_url": "https://download.opensuse.org/repositories/home:/plasmaregataos/[basedOnVersion]/x86_64",
+        "icon_backg": "https://1.bp.blogspot.com/-MFevJNVh2Uo/WWTopiscSCI/AAAAAAAASRQ/Yq6j2neLORs3dlvRBGLK8kMove05GEGuwCLcBGAs/s1600/scribus-backg.png",
+        "price": "free",
+        "dgpu": "deactivate"
     }
 ]

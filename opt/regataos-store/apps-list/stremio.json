@@ -1,17 +1,23 @@
 [
-	{
-		"name": "Stremio",
-		"nickname": "stremio",
-		"executable": "flatpak run com.stremio.Stremio",
-		"package": "com.stremio.Stremio",
-		"extra_packages": "",
-		"architecture": "",
-		"package_manager": "flatpak",
-		"repository_name": "flathub",
-		"repository_cache": "",
-		"repository_url": "",
-		"icon_backg": "https://3.bp.blogspot.com/-eP2CC5o7hzc/WWPYbUKMVZI/AAAAAAAASLM/9NgRfdHmsI4H32ejCEp12xCTFoIwWMZhgCLcBGAs/s1600/stremio-backg.png",
-		"price": "free",
-		"dgpu": "deactivate"
+    {
+        "name": "Stremio",
+        "nickname": "stremio",
+        "executable": [
+            "flatpak",
+            "run",
+            "com.stremio.Stremio"
+        ],
+        "package": [
+            "com.stremio.Stremio"
+        ],
+        "extra_packages": [],
+        "architecture": "",
+        "package_manager": "flatpak",
+        "repository_name": "flathub",
+        "repository_cache": "",
+        "repository_url": "",
+        "icon_backg": "https://3.bp.blogspot.com/-eP2CC5o7hzc/WWPYbUKMVZI/AAAAAAAASLM/9NgRfdHmsI4H32ejCEp12xCTFoIwWMZhgCLcBGAs/s1600/stremio-backg.png",
+        "price": "free",
+        "dgpu": "deactivate"
     }
 ]

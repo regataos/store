@@ -1,17 +1,21 @@
 [
-	{
-		"name": "Safenet Authentication Client",
-		"nickname": "safenet-authentication-client",
-		"executable": "SACTools",
-		"package": "safenet-authentication-client-updater",
-		"extra_packages": "",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://1.bp.blogspot.com/-hsskwDCxL3I/YJKwHWCkHMI/AAAAAAAAZwQ/l7QIaSPzqzcLCV3tTdHjI1_mPp6IvTRnACLcBGAsYHQ/s0/sac-backg.png",
-		"price": "free",
-		"dgpu": "none"
+    {
+        "name": "Safenet Authentication Client",
+        "nickname": "safenet-authentication-client",
+        "executable": [
+            "SACTools"
+        ],
+        "package": [
+            "safenet-authentication-client-updater"
+        ],
+        "extra_packages": [],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://1.bp.blogspot.com/-hsskwDCxL3I/YJKwHWCkHMI/AAAAAAAAZwQ/l7QIaSPzqzcLCV3tTdHjI1_mPp6IvTRnACLcBGAsYHQ/s0/sac-backg.png",
+        "price": "free",
+        "dgpu": "none"
     }
 ]

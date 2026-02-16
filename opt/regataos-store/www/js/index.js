@@ -30,8 +30,59 @@ function checkOnline() {
 }
 checkOnline();
 
+(function () {
+  "use strict";
+
+  let _loadTimer = null;
+  let _lastHref = "";
+
+  window.onStoreIframeLoad = function () {
+    clearTimeout(_loadTimer);
+    _loadTimer = setTimeout(() => {
+      const iframe = document.getElementById("iframe-regataos-store");
+      if (!iframe || !iframe.contentWindow) return;
+
+      const href = String(iframe.contentWindow.location && iframe.contentWindow.location.href || "");
+      // Evita rodar de novo se for o mesmo href
+      if (href === _lastHref) return;
+      _lastHref = href;
+
+      try { showHideElements(); } catch (e) { console.error(e); }
+      try { appButtonsFunction(); } catch (e) { console.error(e); }
+
+      // Só roda o que precisa, conforme a página
+      if (href.includes("apps-installed2")) {
+        try { installedPage(); } catch (e) { console.error(e); }
+      }
+
+      // Versão só faz sentido em páginas que exibem .versionapp
+      if (href.includes("app-") || href.includes("apps") || href.includes("search?q=")) {
+        try { appVersion(); } catch (e) { console.error(e); }
+      }
+    }, 50);
+  };
+})();
+
 // Show progress bar if process starts
 function showProgressBar() {
+
+	// --- Performance fixes (avoid interval leaks & repeated listeners) ---
+	const STATUS_PATH = "/tmp/regataos-store/config/status.txt";
+	let storeStatus = "inactive";
+	let statusDebounceTimer = null;
+	let resizeListenerRegistered = false;
+	let resizeTicking = false;
+
+	function updateProgressBarVisibility(progressBarEl) {
+		if (!progressBarEl) return;
+		// Only show progress bar on wide layouts and when store is not inactive
+		if (window.innerWidth >= 1176 && !storeStatus.includes("inactive")) {
+			progressBarEl.classList.add("progress-bar-show");
+		} else {
+			progressBarEl.classList.remove("progress-bar-show");
+		}
+	}
+
 	function appStoreWorkStatus(status) {
 		const showMoreInfoButton = document.querySelector(".more-info");
 		const hideMoreInfoButton = document.querySelector(".more-info2");
@@ -40,28 +91,30 @@ function showProgressBar() {
 		const showProgressBarFull = document.querySelector(".progress-bar-full");
 		const uninstallInconProgress = document.querySelector(".li-sidebar-uninstalling");
 
-		if ((storeStatus.includes("installing")) ||
-			(storeStatus.includes("uninstalling")) ||
-			(storeStatus.includes("stopped"))) {
-			// Show the progress of installing/uninstalling apps.
-			if (window.innerWidth >= 1176) {
-				progressBar.classList.add("progress-bar-show");
-			} else {
-				progressBar.classList.remove("progress-bar-show");
-			}
+		// Cache latest status for resize logic
+		storeStatus = String(status || "");
 
-			window.addEventListener('resize', function () {
-				let win = this;
-				let checkStatus = fs.readFileSync("/tmp/regataos-store/config/status.txt", "utf8");
-
-				if (win.innerWidth >= 1176) {
-					if (!checkStatus.includes("inactive")) {
-						progressBar.classList.add("progress-bar-show");
-					}
-				} else {
-					progressBar.classList.remove("progress-bar-show");
-				}
+		// Register ONE resize listener (previous code registered on every status update)
+		if (!resizeListenerRegistered) {
+			resizeListenerRegistered = true;
+			window.addEventListener("resize", function () {
+				if (resizeTicking) return;
+				resizeTicking = true;
+				requestAnimationFrame(function () {
+					resizeTicking = false;
+					updateProgressBarVisibility(document.querySelector(".progress-bar"));
+				});
 			});
+		}
+
+		updateProgressBarVisibility(progressBar);
+
+		if ((status.includes("installing")) ||
+			(status.includes("uninstalling")) ||
+			(status.includes("stopped"))) {
+			// Show the progress of installing/uninstalling apps.
+			// (Visibility is handled by updateProgressBarVisibility)
+
 
 			if (status.includes("uninstalling")) {
 				installInconProgress.style.cssText = "display: none;";
@@ -87,22 +140,42 @@ function showProgressBar() {
 		}
 	}
 
-	let storeStatus = "";
+	// Initial status check
 	if (fs.existsSync("/tmp/progressbar-store/installing")) {
 		setTimeout(function () {
 			storeStatus = "installing";
-			appStoreWorkStatus("installing");
+			appStoreWorkStatus(storeStatus);
 		}, 3000);
+
+	// Read current status once at startup
+	try {
+		if (fs.existsSync(STATUS_PATH)) {
+			storeStatus = fs.readFileSync(STATUS_PATH, "utf8");
+			appStoreWorkStatus(storeStatus);
+		}
+	} catch (e) {
+		// ignore
 	}
 
-	fs.watch("/tmp/regataos-store/config/status.txt", function (event, filename) {
-		if (event == "change") {
-			setInterval(function () {
-				storeStatus = fs.readFileSync("/tmp/regataos-store/config/status.txt", "utf8");
-				appStoreWorkStatus(storeStatus);
-			}, 1000);
-		}
-	});
+	}
+
+	// Watch for status changes without creating leaking intervals
+	try {
+		fs.watch(STATUS_PATH, function (event) {
+			if (event !== "change") return;
+			clearTimeout(statusDebounceTimer);
+			statusDebounceTimer = setTimeout(function () {
+				try {
+					storeStatus = fs.readFileSync(STATUS_PATH, "utf8");
+					appStoreWorkStatus(storeStatus);
+				} catch (e) {
+					// ignore transient read errors
+				}
+			}, 150);
+		});
+	} catch (e) {
+		// fs.watch can fail on some filesystems; ignore to avoid crashing
+	}
 }
 showProgressBar()
 

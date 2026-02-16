@@ -1,17 +1,21 @@
 [
-	{
-		"name": "AfterShot Pro 3",
-		"nickname": "aftershotpro",
-		"executable": "AfterShot3X64",
-		"package": "aftershot3-updater",
-		"extra_packages": "",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://2.bp.blogspot.com/-YkLtDez_AU0/WWLMp5vW0DI/AAAAAAAASJQ/nLGFNW1DWZUt5EbaL687NFdXD_wx4mZeACLcBGAs/s1600/AfterShot3X64-backg.png",
-		"price": "trial",
-		"dgpu": "activate"
+    {
+        "name": "AfterShot Pro 3",
+        "nickname": "aftershotpro",
+        "executable": [
+            "AfterShot3X64"
+        ],
+        "package": [
+            "aftershot3-updater"
+        ],
+        "extra_packages": [],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://2.bp.blogspot.com/-YkLtDez_AU0/WWLMp5vW0DI/AAAAAAAASJQ/nLGFNW1DWZUt5EbaL687NFdXD_wx4mZeACLcBGAs/s1600/AfterShot3X64-backg.png",
+        "price": "trial",
+        "dgpu": "activate"
     }
 ]

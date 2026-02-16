@@ -1,17 +1,23 @@
 [
-	{
-		"name": "Dolphin Emulator",
-		"nickname": "dolphin-emu",
-		"executable": "flatpak run org.DolphinEmu.dolphin-emu",
-		"package": "org.DolphinEmu.dolphin-emu",
-		"extra_packages": "",
-		"architecture": "",
-		"package_manager": "flatpak",
-		"repository_name": "flathub",
-		"repository_cache": "",
-		"repository_url": "",
-		"icon_backg": "https://4.bp.blogspot.com/-WRhAW0mUuB8/WWKlIaeZEsI/AAAAAAAASGg/GZ-yqUuAVbsDUt9I3i4dwGjHws-EYN_ggCLcBGAs/s1600/dolphin-emulator-backg.png",
-		"price": "free",
-		"dgpu": "activate"
+    {
+        "name": "Dolphin Emulator",
+        "nickname": "dolphin-emu",
+        "executable": [
+            "flatpak",
+            "run",
+            "org.DolphinEmu.dolphin-emu"
+        ],
+        "package": [
+            "org.DolphinEmu.dolphin-emu"
+        ],
+        "extra_packages": [],
+        "architecture": "",
+        "package_manager": "flatpak",
+        "repository_name": "flathub",
+        "repository_cache": "",
+        "repository_url": "",
+        "icon_backg": "https://4.bp.blogspot.com/-WRhAW0mUuB8/WWKlIaeZEsI/AAAAAAAASGg/GZ-yqUuAVbsDUt9I3i4dwGjHws-EYN_ggCLcBGAs/s1600/dolphin-emulator-backg.png",
+        "price": "free",
+        "dgpu": "activate"
     }
 ]

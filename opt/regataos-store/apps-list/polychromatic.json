@@ -1,17 +1,23 @@
 [
-	{
-		"name": "Polychromatic",
-		"nickname": "polychromatic",
-		"executable": "polychromatic",
-		"package": "polychromatic",
-		"extra_packages": "python3-openrazer",
-		"architecture": "noarch",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://4.bp.blogspot.com/-SgxUZnsEpu8/XGB9HcSWGyI/AAAAAAAAWdU/p_wGbuFePKsD35AKucJy6Y3OKdkszutXQCLcBGAs/s1600/razer-backg1.png",
-		"price": "free",
-		"dgpu": "deactivate"
+    {
+        "name": "Polychromatic",
+        "nickname": "polychromatic",
+        "executable": [
+            "polychromatic"
+        ],
+        "package": [
+            "polychromatic"
+        ],
+        "extra_packages": [
+            "python3-openrazer"
+        ],
+        "architecture": "noarch",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://4.bp.blogspot.com/-SgxUZnsEpu8/XGB9HcSWGyI/AAAAAAAAWdU/p_wGbuFePKsD35AKucJy6Y3OKdkszutXQCLcBGAs/s1600/razer-backg1.png",
+        "price": "free",
+        "dgpu": "deactivate"
     }
 ]

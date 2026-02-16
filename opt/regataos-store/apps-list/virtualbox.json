@@ -1,17 +1,25 @@
 [
-	{
-		"name": "VirtualBox",
-		"nickname": "virtualbox",
-		"executable": "VirtualBox",
-		"package": "virtualbox",
-		"extra_packages": "virtualbox-extra virtualbox-qt virtualbox-kmp-default",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://1.bp.blogspot.com/-AelHECUTxwA/WWT1DYNKBKI/AAAAAAAASSY/XuAOuewe62MZVlYIhPp6RgYcqWL89qbFQCLcBGAs/s1600/vbox-backg.png",
-		"price": "free",
-		"dgpu": "deactivate"
-	}
+    {
+        "name": "VirtualBox",
+        "nickname": "virtualbox",
+        "executable": [
+            "VirtualBox"
+        ],
+        "package": [
+            "virtualbox"
+        ],
+        "extra_packages": [
+            "virtualbox-extra",
+            "virtualbox-qt",
+            "virtualbox-kmp-default"
+        ],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://1.bp.blogspot.com/-AelHECUTxwA/WWT1DYNKBKI/AAAAAAAASSY/XuAOuewe62MZVlYIhPp6RgYcqWL89qbFQCLcBGAs/s1600/vbox-backg.png",
+        "price": "free",
+        "dgpu": "deactivate"
+    }
 ]

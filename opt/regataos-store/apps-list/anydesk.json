@@ -1,17 +1,21 @@
 [
-	{
-		"name": "AnyDesk",
-		"nickname": "anydesk",
-		"executable": "anydesk",
-		"package": "anydesk-updater",
-		"extra_packages": "",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://3.bp.blogspot.com/-o7y3uOz4se0/XGCEGlzpWAI/AAAAAAAAWeY/vz53bUlpgh0yKT3GSrR2Zei4sYdd0LZ7gCLcBGAs/s1600/anydesk-backg.png",
-		"price": "free",
-		"dgpu": "deactivate"
+    {
+        "name": "AnyDesk",
+        "nickname": "anydesk",
+        "executable": [
+            "anydesk"
+        ],
+        "package": [
+            "anydesk-updater"
+        ],
+        "extra_packages": [],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://3.bp.blogspot.com/-o7y3uOz4se0/XGCEGlzpWAI/AAAAAAAAWeY/vz53bUlpgh0yKT3GSrR2Zei4sYdd0LZ7gCLcBGAs/s1600/anydesk-backg.png",
+        "price": "free",
+        "dgpu": "deactivate"
     }
 ]

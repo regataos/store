@@ -1,17 +1,23 @@
 [
-	{
-		"name": "LightZone",
-		"nickname": "lightzone",
-		"executable": "flatpak run io.github.ktgw0316.LightZone",
-		"package": "io.github.ktgw0316.LightZone",
-		"extra_packages": "",
-		"architecture": "",
-		"package_manager": "flatpak",
-		"repository_name": "flathub",
-		"repository_cache": "",
-		"repository_url": "",
-		"icon_backg": "https://2.bp.blogspot.com/-inOXPltEX_U/WWLSOcRyWCI/AAAAAAAASJs/BBngYtjBOxUFIzKamPKYWaKLcEMVChHIwCLcBGAs/s1600/LightZone-backg.png",
-		"price": "free",
-		"dgpu": "activate"
-	}
+    {
+        "name": "LightZone",
+        "nickname": "lightzone",
+        "executable": [
+            "flatpak",
+            "run",
+            "io.github.ktgw0316.LightZone"
+        ],
+        "package": [
+            "io.github.ktgw0316.LightZone"
+        ],
+        "extra_packages": [],
+        "architecture": "",
+        "package_manager": "flatpak",
+        "repository_name": "flathub",
+        "repository_cache": "",
+        "repository_url": "",
+        "icon_backg": "https://2.bp.blogspot.com/-inOXPltEX_U/WWLSOcRyWCI/AAAAAAAASJs/BBngYtjBOxUFIzKamPKYWaKLcEMVChHIwCLcBGAs/s1600/LightZone-backg.png",
+        "price": "free",
+        "dgpu": "activate"
+    }
 ]

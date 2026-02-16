@@ -1,17 +1,23 @@
 [
-	{
-		"name": "PDF4QT",
-		"nickname": "pdf4qt",
-		"executable": "flatpak run io.github.JakubMelka.Pdf4qt",
-		"package": "io.github.JakubMelka.Pdf4qt",
-		"extra_packages": "",
-		"architecture": "",
-		"package_manager": "flatpak",
-		"repository_name": "flathub",
-		"repository_cache": "",
-		"repository_url": "",
-		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdfcUBYrBu2g506-BmhAvg-tO4bTVIEdnd8dA17-PoYaivY3mdeYIoxHaDgaBZV_uAJxpPr2WFhcVmxec_L5HjRN1LBLalIU6zpyHkuPWQXmRGieryn6znesNUQJpvQffbmQA1vt6O3nBej1UiaOXaaOuXqEAa7jtvWbJBu4MTtrZJ5Sj5_oaHzUus9hjA/s1600/pdf4qt-backg.png",
-		"price": "free",
-		"dgpu": "deactivate"
+    {
+        "name": "PDF4QT",
+        "nickname": "pdf4qt",
+        "executable": [
+            "flatpak",
+            "run",
+            "io.github.JakubMelka.Pdf4qt"
+        ],
+        "package": [
+            "io.github.JakubMelka.Pdf4qt"
+        ],
+        "extra_packages": [],
+        "architecture": "",
+        "package_manager": "flatpak",
+        "repository_name": "flathub",
+        "repository_cache": "",
+        "repository_url": "",
+        "icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdfcUBYrBu2g506-BmhAvg-tO4bTVIEdnd8dA17-PoYaivY3mdeYIoxHaDgaBZV_uAJxpPr2WFhcVmxec_L5HjRN1LBLalIU6zpyHkuPWQXmRGieryn6znesNUQJpvQffbmQA1vt6O3nBej1UiaOXaaOuXqEAa7jtvWbJBu4MTtrZJ5Sj5_oaHzUus9hjA/s1600/pdf4qt-backg.png",
+        "price": "free",
+        "dgpu": "deactivate"
     }
 ]

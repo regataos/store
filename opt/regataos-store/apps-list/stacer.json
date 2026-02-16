@@ -1,17 +1,23 @@
 [
-	{
-		"name": "Stacer",
-		"nickname": "stacer",
-		"executable": "stacer",
-		"package": "stacer",
-		"extra_packages": "stacer-lang",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://3.bp.blogspot.com/-WTBCLjofkJ4/WaGybogCi1I/AAAAAAAASh8/zPTWNw6-o8oMqVOBdH-xgM0r9GTZvswpgCLcBGAs/s1600/stacer.png",
-		"price": "free",
-		"dgpu": "deactivate"
+    {
+        "name": "Stacer",
+        "nickname": "stacer",
+        "executable": [
+            "stacer"
+        ],
+        "package": [
+            "stacer"
+        ],
+        "extra_packages": [
+            "stacer-lang"
+        ],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://3.bp.blogspot.com/-WTBCLjofkJ4/WaGybogCi1I/AAAAAAAASh8/zPTWNw6-o8oMqVOBdH-xgM0r9GTZvswpgCLcBGAs/s1600/stacer.png",
+        "price": "free",
+        "dgpu": "deactivate"
     }
 ]

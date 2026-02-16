@@ -1,17 +1,29 @@
 [
-	{
-		"name": "NetBeans IDE",
-		"nickname": "netbeans",
-		"executable": "netbeans",
-		"package": "netbeans",
-		"extra_packages": "netbeans-javaparser netbeans-resolver netbeans-svnclientadapter timezone-java bash-completion-devel libsvn_auth_kwallet-1-0 subversion-bash-completion",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://2.bp.blogspot.com/-eli6IaV8bes/WWTf7U-BhnI/AAAAAAAASQw/R4pzlVjyE_Yao9TJh-sh4cU9SzmRrAd8gCLcBGAs/s1600/netbeans-backg.png",
-		"price": "free",
-		"dgpu": "deactivate"
+    {
+        "name": "NetBeans IDE",
+        "nickname": "netbeans",
+        "executable": [
+            "netbeans"
+        ],
+        "package": [
+            "netbeans"
+        ],
+        "extra_packages": [
+            "netbeans-javaparser",
+            "netbeans-resolver",
+            "netbeans-svnclientadapter",
+            "timezone-java",
+            "bash-completion-devel",
+            "libsvn_auth_kwallet-1-0",
+            "subversion-bash-completion"
+        ],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://2.bp.blogspot.com/-eli6IaV8bes/WWTf7U-BhnI/AAAAAAAASQw/R4pzlVjyE_Yao9TJh-sh4cU9SzmRrAd8gCLcBGAs/s1600/netbeans-backg.png",
+        "price": "free",
+        "dgpu": "deactivate"
     }
 ]

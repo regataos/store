@@ -1,17 +1,21 @@
 [
-	{
-		"name": "Deezer",
-		"nickname": "deezer",
-		"executable": "deezer",
-		"package": "deezer",
-		"extra_packages": "",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://1.bp.blogspot.com/-lVm1Y3fAOqI/X68_EE__DNI/AAAAAAAAY_0/0KuvFwGXzHozhsGlECHZCUt5Ypfy8ZUNgCLcBGAsYHQ/s0/deezer-backg.png",
-		"price": "free",
-		"dgpu": "deactivate"
+    {
+        "name": "Deezer",
+        "nickname": "deezer",
+        "executable": [
+            "deezer"
+        ],
+        "package": [
+            "deezer"
+        ],
+        "extra_packages": [],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://1.bp.blogspot.com/-lVm1Y3fAOqI/X68_EE__DNI/AAAAAAAAY_0/0KuvFwGXzHozhsGlECHZCUt5Ypfy8ZUNgCLcBGAsYHQ/s0/deezer-backg.png",
+        "price": "free",
+        "dgpu": "deactivate"
     }
 ]

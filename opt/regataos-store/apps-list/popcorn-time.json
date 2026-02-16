@@ -1,17 +1,21 @@
 [
-	{
-		"name": "Popcorn Time",
-		"nickname": "popcorn-time",
-		"executable": "/opt/popcorn-time/Popcorn-Time",
-		"package": "popcorn-time",
-		"extra_packages": "",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://3.bp.blogspot.com/-R-Nq3zbkCDo/XUshx0dL8aI/AAAAAAAAXaY/6ftdRk5fhO84OH_0MDcCcBdczdc5N7QkACLcBGAs/s1600/popcorn-time-backg%2B%25281%2529.png",
-		"price": "free",
-		"dgpu": "deactivate"
+    {
+        "name": "Popcorn Time",
+        "nickname": "popcorn-time",
+        "executable": [
+            "/opt/popcorn-time/Popcorn-Time"
+        ],
+        "package": [
+            "popcorn-time"
+        ],
+        "extra_packages": [],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://3.bp.blogspot.com/-R-Nq3zbkCDo/XUshx0dL8aI/AAAAAAAAXaY/6ftdRk5fhO84OH_0MDcCcBdczdc5N7QkACLcBGAs/s1600/popcorn-time-backg%2B%25281%2529.png",
+        "price": "free",
+        "dgpu": "deactivate"
     }
 ]

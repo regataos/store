@@ -1,17 +1,21 @@
 [
-	{
-		"name": "RetroArch",
-		"nickname": "retroarch",
-		"executable": "retroarch",
-		"package": "retroarch",
-		"extra_packages": "",
-		"architecture": "x86_64",
-		"package_manager": "zypper",
-		"repository_name": "",
-		"repository_cache": "[mainRepositoryName]",
-		"repository_url": "[mainRepositoryUrl]",
-		"icon_backg": "https://1.bp.blogspot.com/-TLqMuMmF7mY/Wkf4ZXXbt_I/AAAAAAAATkg/Q2CVwwQ3MJ0BdV56ztvzKfSfUhQU2LYnwCLcBGAs/s1600/retroarch.png",
-		"price": "free",
-		"dgpu": "activate"
+    {
+        "name": "RetroArch",
+        "nickname": "retroarch",
+        "executable": [
+            "retroarch"
+        ],
+        "package": [
+            "retroarch"
+        ],
+        "extra_packages": [],
+        "architecture": "x86_64",
+        "package_manager": "zypper",
+        "repository_name": "",
+        "repository_cache": "[mainRepositoryName]",
+        "repository_url": "[mainRepositoryUrl]",
+        "icon_backg": "https://1.bp.blogspot.com/-TLqMuMmF7mY/Wkf4ZXXbt_I/AAAAAAAATkg/Q2CVwwQ3MJ0BdV56ztvzKfSfUhQU2LYnwCLcBGAs/s1600/retroarch.png",
+        "price": "free",
+        "dgpu": "activate"
     }
 ]
