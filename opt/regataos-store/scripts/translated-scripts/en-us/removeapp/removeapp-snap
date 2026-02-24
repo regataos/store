@@ -1,55 +1,10 @@
-#!/usr/bin/env bash
+#! /bin/sh
 
 # Settings and variables
-# ---- JSON array support (PACKAGE_JSON / EXTRA_PACKAGES_JSON) ----
-# Expected:
-#   PACKAGE_JSON='["pkg","--flag"]'
-#   EXTRA_PACKAGES_JSON='["extra1","extra2"]'
-# Fallback:
-#   package="pkg --flag"
-#   extra_packages="extra1 extra2"
-_json_array_to_lines() {
-  python3 - "$1" <<'PY' 2>/dev/null
-import json, sys
-s = sys.argv[1] if len(sys.argv)>1 else "[]"
-try:
-    v = json.loads(s) if s else []
-    if not isinstance(v, list):
-        v = [str(v)]
-    for item in v:
-        if item is None:
-            continue
-        t = str(item).strip()
-        if t:
-            print(t)
-except Exception:
-    pass
-PY
-}
-
-PKG=()
-EXTRA=()
-
-if [[ -n "${PACKAGE_JSON:-}" ]]; then
-  mapfile -t PKG < <(_json_array_to_lines "${PACKAGE_JSON}")
-fi
-if [[ ${#PKG[@]} -eq 0 && -n "${package:-}" ]]; then
-  read -r -a PKG <<< "${package}"
-fi
-
-if [[ -n "${EXTRA_PACKAGES_JSON:-}" ]]; then
-  mapfile -t EXTRA < <(_json_array_to_lines "${EXTRA_PACKAGES_JSON}")
-fi
-if [[ ${#EXTRA[@]} -eq 0 && -n "${extra_packages:-}" ]]; then
-  read -r -a EXTRA <<< "${extra_packages}"
-fi
-
-PKG0="${PKG[0]:-}"
-# --------------------------------------------------------------
 #App name and more information
 app_name="$name"
 app_nickname="$nickname"
-appname="${PKG0}"
+appname=$(echo $package | sed 's/ --classic\| --beta//')
 command_uninstall="sudo snap remove $appname"
 
 #Variables for notifications

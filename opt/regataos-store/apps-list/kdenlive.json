@@ -1,23 +1,17 @@
 [
-    {
-        "name": "Kdenlive",
-        "nickname": "kdenlive",
-        "executable": [
-            "flatpak",
-            "run",
-            "org.kde.kdenlive"
-        ],
-        "package": [
-            "org.kde.kdenlive"
-        ],
-        "extra_packages": [],
-        "architecture": "",
-        "package_manager": "flatpak",
-        "repository_name": "flathub",
-        "repository_cache": "",
-        "repository_url": "",
-        "icon_backg": "https://1.bp.blogspot.com/-TUqQrOp23rM/WWPlottjbSI/AAAAAAAASMU/YvcOSiwTR_ce9172Uqj45HC1qhgd_pVgACLcBGAs/s1600/kdenlive-backg.png",
-        "price": "free",
-        "dgpu": "activate"
-    }
-]
+	{
+		"name": "Kdenlive",
+		"nickname": "kdenlive",
+		"executable": "flatpak run org.kde.kdenlive",
+		"package": "org.kde.kdenlive",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-TUqQrOp23rM/WWPlottjbSI/AAAAAAAASMU/YvcOSiwTR_ce9172Uqj45HC1qhgd_pVgACLcBGAs/s1600/kdenlive-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+	}
+] 

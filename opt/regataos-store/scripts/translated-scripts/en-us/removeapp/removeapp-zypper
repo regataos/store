@@ -1,58 +1,14 @@
-#!/usr/bin/env bash
+#! /bin/sh
 
 # Settings and variables
-# ---- JSON array support (PACKAGE_JSON / EXTRA_PACKAGES_JSON) ----
-# Expected:
-#   PACKAGE_JSON='["pkg","--flag"]'
-#   EXTRA_PACKAGES_JSON='["extra1","extra2"]'
-# Fallback:
-#   package="pkg --flag"
-#   extra_packages="extra1 extra2"
-_json_array_to_lines() {
-  python3 - "$1" <<'PY' 2>/dev/null
-import json, sys
-s = sys.argv[1] if len(sys.argv)>1 else "[]"
-try:
-    v = json.loads(s) if s else []
-    if not isinstance(v, list):
-        v = [str(v)]
-    for item in v:
-        if item is None:
-            continue
-        t = str(item).strip()
-        if t:
-            print(t)
-except Exception:
-    pass
-PY
-}
-
-PKG=()
-EXTRA=()
-
-if [[ -n "${PACKAGE_JSON:-}" ]]; then
-  mapfile -t PKG < <(_json_array_to_lines "${PACKAGE_JSON}")
-fi
-if [[ ${#PKG[@]} -eq 0 && -n "${package:-}" ]]; then
-  read -r -a PKG <<< "${package}"
-fi
-
-if [[ -n "${EXTRA_PACKAGES_JSON:-}" ]]; then
-  mapfile -t EXTRA < <(_json_array_to_lines "${EXTRA_PACKAGES_JSON}")
-fi
-if [[ ${#EXTRA[@]} -eq 0 && -n "${extra_packages:-}" ]]; then
-  read -r -a EXTRA <<< "${extra_packages}"
-fi
-
-PKG0="${PKG[0]:-}"
-# --------------------------------------------------------------
 #App name and more information
 app_name="$name"
 app_nickname="$nickname"
 repo_name="$repository_name"
-command_uninstall=(sudo zypper --non-interactive remove "${PKG[@]}" "${EXTRA[@]}")
+command_uninstall="sudo zypper --non-interactive remove $package $extra_packages"
 architecture="$architecture"
-check_uninstall="rpm -q ${PKG0}"
+check_uninstall="rpm -q $package"
+
 #Variables for notifications
 success_notify_title="$app_name"
 success_notify_text="$app_name successfully uninstalled!"
@@ -142,7 +98,9 @@ function remove_app() {
     echo "uninstall" > $progressbar_dir/progress-movement
     echo "show progress bar" > $progressbar_dir/progressbar
     echo "uninstalling" > "/tmp/regataos-store/config/status.txt"
-    "${command_uninstall[@]}"
+
+    $command_uninstall
+
     if [ ! -z $repo_name ];then
         sudo rm -f "/etc/zypp/repos.d/$repo_name.repo"
     fi

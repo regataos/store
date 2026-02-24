@@ -1,21 +1,17 @@
 [
-    {
-        "name": "Pixeluvo",
-        "nickname": "pixeluvo",
-        "executable": [
-            "pixeluvo"
-        ],
-        "package": [
-            "pixeluvo-updater"
-        ],
-        "extra_packages": [],
-        "architecture": "x86_64",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "[mainRepositoryName]",
-        "repository_url": "[mainRepositoryUrl]",
-        "icon_backg": "https://4.bp.blogspot.com/-dAiqV5mLzqk/WWKziFTve-I/AAAAAAAASHc/JUOS0WYH8VkweWjH5wwjJzVql7_4TgqmQCLcBGAs/s1600/pixeluvo-backg.png",
-        "price": "free",
-        "dgpu": "activate"
+	{
+		"name": "Pixeluvo",
+		"nickname": "pixeluvo",
+		"executable": "pixeluvo",
+		"package": "pixeluvo-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://4.bp.blogspot.com/-dAiqV5mLzqk/WWKziFTve-I/AAAAAAAASHc/JUOS0WYH8VkweWjH5wwjJzVql7_4TgqmQCLcBGAs/s1600/pixeluvo-backg.png",
+		"price": "free",
+		"dgpu": "activate"
     }
 ]

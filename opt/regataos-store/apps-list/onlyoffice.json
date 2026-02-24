@@ -1,21 +1,17 @@
 [
-    {
-        "name": "ONLYOFFICE",
-        "nickname": "onlyoffice",
-        "executable": [
-            "onlyoffice-desktopeditors"
-        ],
-        "package": [
-            "onlyoffice-desktopeditors"
-        ],
-        "extra_packages": [],
-        "architecture": "x86_64",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "[mainRepositoryName]",
-        "repository_url": "[mainRepositoryUrl]",
-        "icon_backg": "https://4.bp.blogspot.com/-5x2c9SEtTes/WuvH8hwu7_I/AAAAAAAAUbk/8pcluqkqV149vMXn4I0q0lWZIDRQG1H2QCLcBGAs/s1600/onlyoffice-back.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "ONLYOFFICE",
+		"nickname": "onlyoffice",
+		"executable": "onlyoffice-desktopeditors",
+		"package": "onlyoffice-desktopeditors",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://4.bp.blogspot.com/-5x2c9SEtTes/WuvH8hwu7_I/AAAAAAAAUbk/8pcluqkqV149vMXn4I0q0lWZIDRQG1H2QCLcBGAs/s1600/onlyoffice-back.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]

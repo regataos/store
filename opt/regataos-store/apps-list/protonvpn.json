@@ -1,21 +1,17 @@
 [
-    {
-        "name": "Proton VPN",
-        "nickname": "protonvpn",
-        "executable": [
-            "protonvpn-app"
-        ],
-        "package": [
-            "proton-vpn"
-        ],
-        "extra_packages": [],
-        "architecture": "noarch",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "[mainRepositoryName]",
-        "repository_url": "[mainRepositoryUrl]",
-        "icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhggipY_0NTpHl4jn8EAMIFLsjcWf_TtYZKR_cuNehC9NoCLiYbfUrPtyecx4CsK8JY6xbZoCATq2JmQ0wZRapWRnIae5Ha0frtK2aJQ62bliyDF-0vwmN8GOLnoqCWDQBAA3AuIAQUc1aYiGmAwAvhVzT5ZZsCOPqmpvbRI1qM4oCHfX1fgY-Wpp9rrA/s1600/protonvpn-backg.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "Proton VPN",
+		"nickname": "protonvpn",
+		"executable": "protonvpn-app",
+		"package": "proton-vpn",
+		"extra_packages": "",
+		"architecture": "noarch",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhggipY_0NTpHl4jn8EAMIFLsjcWf_TtYZKR_cuNehC9NoCLiYbfUrPtyecx4CsK8JY6xbZoCATq2JmQ0wZRapWRnIae5Ha0frtK2aJQ62bliyDF-0vwmN8GOLnoqCWDQBAA3AuIAQUc1aYiGmAwAvhVzT5ZZsCOPqmpvbRI1qM4oCHfX1fgY-Wpp9rrA/s1600/protonvpn-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]

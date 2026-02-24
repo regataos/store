@@ -1,21 +1,17 @@
 [
-    {
-        "name": "LinuxToys",
-        "nickname": "linuxtoys",
-        "executable": [
-            "linuxtoys"
-        ],
-        "package": [
-            "linuxtoys"
-        ],
-        "extra_packages": [],
-        "architecture": "x86_64",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "[mainRepositoryName]",
-        "repository_url": "[mainRepositoryUrl]",
-        "icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8IXHBL84kys7-TnoDgWQZjt6PUlKisMuPgqVEHDoGnVODg13SAildOj24QsMzdYbOVuAf7vSs6pKWPUx5fzU5Duk_etvTJpTDUi7JUmO-qpaH99brlyqXsoJBY_R-f3yXYFMOwPLRuYmHfCWBaQnmU-3uB8ARSw072qH6QTDMhYp8KKXTcNgLmY-xQLIi/s1600/linuxtoys-backg.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "LinuxToys",
+		"nickname": "linuxtoys",
+		"executable": "linuxtoys",
+		"package": "linuxtoys",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg8IXHBL84kys7-TnoDgWQZjt6PUlKisMuPgqVEHDoGnVODg13SAildOj24QsMzdYbOVuAf7vSs6pKWPUx5fzU5Duk_etvTJpTDUi7JUmO-qpaH99brlyqXsoJBY_R-f3yXYFMOwPLRuYmHfCWBaQnmU-3uB8ARSw072qH6QTDMhYp8KKXTcNgLmY-xQLIi/s1600/linuxtoys-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]

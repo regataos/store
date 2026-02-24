@@ -1,21 +1,17 @@
 [
-    {
-        "name": "Genymotion",
-        "nickname": "genymotion",
-        "executable": [
-            "/opt/genymobile/genymotion/genymotion"
-        ],
-        "package": [
-            "genymotion-updater"
-        ],
-        "extra_packages": [],
-        "architecture": "x86_64",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "[mainRepositoryName]",
-        "repository_url": "[mainRepositoryUrl]",
-        "icon_backg": "https://1.bp.blogspot.com/-lgSbMOz9Fxg/X69BMaSaqTI/AAAAAAAAZAA/oKZIeTSDrm4WbbeWW-CSY2YJO9PoOo34gCLcBGAsYHQ/s0/genymotion-backg.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "Genymotion",
+		"nickname": "genymotion",
+		"executable": "/opt/genymobile/genymotion/genymotion",
+		"package": "genymotion-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://1.bp.blogspot.com/-lgSbMOz9Fxg/X69BMaSaqTI/AAAAAAAAZAA/oKZIeTSDrm4WbbeWW-CSY2YJO9PoOo34gCLcBGAsYHQ/s0/genymotion-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]

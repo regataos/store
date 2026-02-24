@@ -1,24 +1,17 @@
 [
-    {
-        "name": "VSCodium",
-        "nickname": "vscodium",
-        "executable": [
-            "snap",
-            "run",
-            "codium"
-        ],
-        "package": [
-            "codium",
-            "--classic"
-        ],
-        "extra_packages": [],
-        "architecture": "",
-        "package_manager": "snap",
-        "repository_name": "",
-        "repository_cache": "",
-        "repository_url": "",
-        "icon_backg": "https://1.bp.blogspot.com/-FmT7spXQHTQ/YLBMqBNsPMI/AAAAAAAAZ3o/_aUFvl6zem0Klrlvhh-Sz9F_fkm-zjADgCLcBGAsYHQ/s0/vscodium-backg.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "VSCodium",
+		"nickname": "vscodium",
+		"executable": "snap run codium",
+		"package": "codium --classic",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "snap",
+		"repository_name": "",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-FmT7spXQHTQ/YLBMqBNsPMI/AAAAAAAAZ3o/_aUFvl6zem0Klrlvhh-Sz9F_fkm-zjADgCLcBGAsYHQ/s0/vscodium-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]

@@ -1,209 +1,160 @@
 #!/bin/bash
-# regataos-store launcher (patched)
-# Goals:
-# - Reduce unnecessary I/O (avoid chmod/rm loops over wildcards)
-# - Reduce expensive repeated commands (glxinfo/groups)
-# - Improve safety of /tmp operations (no rm -rf "$dir"/*, atomic writes)
-# - Keep behavior compatible with current scripts
 
-set -euo pipefail
-
-umask 022
-
-STORE_ROOT="/opt/regataos-store"
-TMP_STORE="/tmp/regataos-store"
-TMP_CFG="/tmp/regataos-configs/config"
-TMP_PB="/tmp/progressbar-store"
-APPS_SCRIPTS="/tmp/apps-scripts"
-INSTALLED_FILE="${STORE_ROOT}/installed-apps/installed-apps.txt"
-
-HOME_CFG="${HOME}/.config/regataos-store"
-PLASMA_LOCALERC="${HOME}/.config/plasma-localerc"
-
-# ----------------------------
-# Helpers
-# ----------------------------
-mkdir_ensure() {
-  local dir="$1"
-  local mode="${2:-0777}"
-  if [[ ! -d "$dir" ]]; then
-    mkdir -p "$dir"
-  fi
-  # Only chmod when needed (stat is cheap; chmod causes FS writes)
-  local cur
-  cur="$(stat -c '%a' "$dir" 2>/dev/null || echo '')"
-  if [[ "$cur" != "${mode#0}" && "$cur" != "$mode" ]]; then
-    chmod "$mode" "$dir" || true
-  fi
-}
-
-touch_ensure() {
-  local file="$1"
-  if [[ ! -e "$file" ]]; then
-    mkdir -p "$(dirname "$file")"
-    : > "$file"
-  fi
-}
-
-write_atomic() {
-  local file="$1"
-  local content="$2"
-  local dir tmp
-  dir="$(dirname "$file")"
-  tmp="${dir}/.$(basename "$file").tmp.$$"
-  mkdir -p "$dir"
-  printf '%s' "$content" > "$tmp"
-  mv -f "$tmp" "$file"
-}
-
-# Safer cleanup of known files in progressbar dir
-clear_progressbar_cache() {
-  # do not delete the directory, only its direct children files
-  if [[ -d "$TMP_PB" ]]; then
-    find "$TMP_PB" -maxdepth 1 -type f -print0 2>/dev/null | xargs -0r rm -f --
-  fi
-}
-
-# ----------------------------
-# Create dirs / links
-# ----------------------------
-mkdir_ensure "$TMP_STORE" 0777
-mkdir_ensure "$TMP_CFG" 0777
-mkdir_ensure "$HOME_CFG" 0755
-
-# /tmp/regataos-store/config -> ~/.config/regataos-store
-if [[ ! -e "${TMP_STORE}/config" ]]; then
-  mkdir -p "$TMP_STORE"
-  ln -sf "$HOME_CFG" "${TMP_STORE}/config"
+# Create the settings directory
+if test -e "/tmp/regataos-store"; then
+	chmod 777 "/tmp/regataos-store"
+else
+	mkdir -p "/tmp/regataos-store"
+	chmod 777 "/tmp/regataos-store"
 fi
 
-# Optional Steam link
-if [[ -d "${HOME}/.local/share/Steam/steamapps" ]]; then
-  if [[ ! -e "${HOME_CFG}/steamapps" ]]; then
-    ln -sf "${HOME}/.local/share/Steam/steamapps" "${HOME_CFG}/steamapps" || true
-  fi
+if test -e "/tmp/regataos-configs/config"; then
+	chmod 777 "/tmp/regataos-configs/config"
+else
+	mkdir -p "/tmp/regataos-configs/config"
+	chmod 777 "/tmp/regataos-configs/config"
 fi
 
-# Installed apps file
-touch_ensure "$INSTALLED_FILE"
-
-# Progress bar directory
-mkdir_ensure "$TMP_PB" 0777
-
-# Status file in tmp config
-mkdir -p "${TMP_STORE}/config"
-write_atomic "${TMP_STORE}/config/status.txt" "inactive"
-
-# ----------------------------
-# Language files (only link once)
-# ----------------------------
-if [[ ! -e "${TMP_CFG}/plasma-localerc" ]]; then
-  if [[ ! -e "$PLASMA_LOCALERC" && -e "/etc/xdg/plasma-localerc" ]]; then
-    cp -f "/etc/xdg/plasma-localerc" "$PLASMA_LOCALERC" || true
-  fi
-  if [[ -e "$PLASMA_LOCALERC" ]]; then
-    ln -sf "$PLASMA_LOCALERC" "${TMP_CFG}/plasma-localerc"
-  fi
+# Create the application settings directory
+if test ! -e "$HOME/.config/regataos-store"; then
+	mkdir -p "$HOME/.config/regataos-store"
 fi
 
-if [[ ! -e "${TMP_CFG}/user-dirs.locale" && -e "${HOME}/.config/user-dirs.locale" ]]; then
-  ln -sf "${HOME}/.config/user-dirs.locale" "${TMP_CFG}/user-dirs.locale" || true
+if test ! -e "/tmp/regataos-store/config"; then
+	mkdir -p "/tmp/regataos-store"
+	ln -sf "$HOME/.config/regataos-store" "/tmp/regataos-store/config"
 fi
 
-# Fix for zenity (kept as-is; consider restricting in the future)
-xhost +si:localuser:root >/dev/null 2>&1 || true
-
-# ----------------------------
-# Clear cache (only when no downloads are active)
-# ----------------------------
-if ! pgrep -x wget >/dev/null 2>&1; then
-  clear_progressbar_cache
+if test -e "$HOME/.local/share/Steam/steamapps"; then
+	if test ! -e "$HOME/.config/regataos-store/steamapps"; then
+		ln -sf "$HOME/.local/share/Steam/steamapps" "$HOME/.config/regataos-store/"
+	fi
 fi
 
-rm -f "${TMP_STORE}/go-installed" || true
-
-# Clear GPUCache files (avoid expanding globs when dir empty)
-GPUCACHE_DIR="${HOME}/.config/Regata OS Store/Default/GPUCache"
-if [[ -d "$GPUCACHE_DIR" ]]; then
-  find "$GPUCACHE_DIR" -maxdepth 1 -type f -print0 2>/dev/null | xargs -0r rm -f --
+if test ! -e "/opt/regataos-store/installed-apps/installed-apps.txt"; then
+	echo "" >"/opt/regataos-store/installed-apps/installed-apps.txt"
 fi
 
-# Check installed apps trigger + queue file (avoid repeated appends)
-mkdir_ensure "$APPS_SCRIPTS" 0777
-write_atomic "${APPS_SCRIPTS}/checkapp.txt" "installed"
-touch_ensure "${TMP_PB}/queued-process"
+# Create progress bar directory
+if test -e "/tmp/progressbar-store/"; then
+	chmod 777 "/tmp/progressbar-store/"
+else
+	mkdir -p "/tmp/progressbar-store/"
+	chmod 777 "/tmp/progressbar-store/"
+fi
+
+echo "inactive" >/tmp/regataos-store/config/status.txt
+
+# Check language
+if test ! -e "/tmp/regataos-configs/config/plasma-localerc"; then
+	if test ! -e "$HOME/.config/plasma-localerc"; then
+		if test -e "/etc/xdg/plasma-localerc"; then
+			cp -f "/etc/xdg/plasma-localerc" "$HOME/.config/plasma-localerc"
+		fi
+	fi
+
+	mkdir -p "/tmp/regataos-configs/config"
+	chmod 777 "/tmp/regataos-configs/config"
+	if test -e "$HOME/.config/plasma-localerc"; then
+		ln -sf "$HOME/.config/plasma-localerc" "/tmp/regataos-configs/config/"
+	fi
+fi
+
+if test ! -e "/tmp/regataos-configs/config/user-dirs.locale"; then
+	if test -e "$HOME/.config/user-dirs.locale"; then
+		mkdir -p "/tmp/regataos-configs/config"
+		chmod 777 "/tmp/regataos-configs/config"
+		ln -sf "$HOME/.config/user-dirs.locale" "/tmp/regataos-configs/config/"
+	fi
+fi
+
+# Fix for zenity
+xhost +si:localuser:root
+
+# Clear cache
+ps -C wget >/dev/null
+if [ $? = 1 ]; then
+	chmod 777 /tmp/progressbar-store/*
+	rm -rf /tmp/progressbar-store/*
+fi
+
+rm -f "/tmp/regataos-store/go-installed"
+
+# Clear GPUCache files
+if test -e "$HOME/.config/Regata OS Store/Default/GPUCache/index"; then
+	rm -f "$HOME/.config/Regata OS Store/Default/GPUCache/"*
+fi
+
+# Check installed apps
+mkdir -p /tmp/apps-scripts/
+echo "installed" >"/tmp/apps-scripts/checkapp.txt"
+echo "" >>"/tmp/progressbar-store/queued-process"
 
 # Create status file
-touch_ensure "${HOME_CFG}/status.txt"
-if [[ ! -s "${HOME_CFG}/status.txt" ]]; then
-  write_atomic "${HOME_CFG}/status.txt" "stopped"
+if test ! -e "$HOME/.config/regataos-store/status.txt"; then
+	echo "stopped" >"$HOME/.config/regataos-store/status.txt"
 fi
 
-# ----------------------------
-# Permissions / policy checks
-# ----------------------------
-permission_store="user"
-if [[ -e "/usr/share/regataos/enterprise-iso.txt" ]]; then
-  permission_store="superuser"
-fi
-if id -nG | tr ' ' '\n' | grep -qx "guest-session"; then
-  permission_store="superuser"
+# Check if the store needs a password to open
+if test -e "/usr/share/regataos/enterprise-iso.txt"; then
+	permission_store="superuser"
 fi
 
-# Reduce memory usage (kept)
+if [[ $(groups | grep guest-session) == *"guest-session"* ]]; then
+	permission_store="superuser"
+fi
+
+function runStore() {
+	/opt/regataos-store/scripts/progress-bar/capture-progress-download &
+	/opt/regataos-store/scripts/progress-bar/create-process-queues &
+	/opt/regataos-store/scripts/checkapp &
+	/opt/regataos-store/scripts/progress-bar/run-process-queues &
+	sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-snap &
+	sudo /opt/regataos-store/scripts/progress-bar/capture-progress-download-flatpak
+}
+
+# -----------------------------
+# Reduce memory usage
+# -----------------------------
 export MALLOC_ARENA_MAX=2
 export NODE_OPTIONS="--max-old-space-size=160"
 
-# Detect GPU vendor once (glxinfo is expensive)
-GPU_VENDOR="unknown"
-if command -v glxinfo >/dev/null 2>&1; then
-  GPU_VENDOR="$(glxinfo 2>/dev/null | grep -m1 -i 'vendor' || true)"
-fi
-USE_DISABLE_GPU="0"
-if echo "$GPU_VENDOR" | grep -qi "Intel"; then
-  USE_DISABLE_GPU="1"
-fi
+if [[ $(echo $permission_store) == *"superuser"* ]]; then
+	rm -f "/tmp/apps-scripts/store-superuser.txt"
+	xdg-su -c "regataos_store"
 
-runStore_bg() {
-  # Run helper scripts in background, detached from terminal.
-  # (Keeps same behavior; avoids extra subshells.)
-  "${STORE_ROOT}/scripts/progress-bar/capture-progress-download" >/dev/null 2>&1 &
-  "${STORE_ROOT}/scripts/progress-bar/create-process-queues" >/dev/null 2>&1 &
-  "${STORE_ROOT}/scripts/checkapp" >/dev/null 2>&1 &
-  "${STORE_ROOT}/scripts/progress-bar/run-process-queues" >/dev/null 2>&1 &
-  sudo "${STORE_ROOT}/scripts/progress-bar/capture-progress-download-snap" >/dev/null 2>&1 &
-  sudo "${STORE_ROOT}/scripts/progress-bar/capture-progress-download-flatpak" >/dev/null 2>&1 &
-}
+	if test -e "/tmp/apps-scripts/store-superuser.txt"; then
+		if [[ $(ls -l /tmp/apps-scripts/store-superuser.txt) == *"root"* ]]; then
+			if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
+				regataosstore /opt/regataos-store &
+				sleep 1
+				runStore
+			else
+				regataosstore /opt/regataos-store &
+				sleep 1
+				runStore
+			fi
+		else
+			exit 0
+		fi
 
-cleanup() {
-  rm -f "${APPS_SCRIPTS}/store-superuser.txt" || true
-}
-trap cleanup EXIT
+	elif test ! -e "/tmp/apps-scripts/store-superuser.txt"; then
+		exit 0
+	else
+		exit 0
+	fi
 
-if [[ "$permission_store" == "superuser" ]]; then
-  rm -f "${APPS_SCRIPTS}/store-superuser.txt"
-  xdg-su -c "regataos_store" || true
-
-  if [[ -e "${APPS_SCRIPTS}/store-superuser.txt" ]]; then
-    # Must be created by root to proceed (same logic)
-    if ls -l "${APPS_SCRIPTS}/store-superuser.txt" 2>/dev/null | grep -q " root "; then
-      if [[ "$USE_DISABLE_GPU" == "1" ]]; then
-        regataosstore --disable-gpu /opt/regataos-store >/dev/null 2>&1 &
-      else
-        regataosstore /opt/regataos-store >/dev/null 2>&1 &
-      fi
-      sleep 1
-      runStore_bg
-      exit 0
-    fi
-  fi
-  exit 0
 else
-  if [[ "$USE_DISABLE_GPU" == "1" ]]; then
-    regataosstore --disable-gpu /opt/regataos-store >/dev/null 2>&1 &
-  else
-    regataosstore /opt/regataos-store >/dev/null 2>&1 &
-  fi
-  sleep 1
-  runStore_bg
+	if [[ $(glxinfo | grep vendor) == *"Intel"* ]]; then
+		regataosstore /opt/regataos-store &
+		sleep 1
+		runStore
+	else
+		regataosstore /opt/regataos-store &
+		sleep 1
+		runStore
+	fi
 fi
+
+# Clear cache
+rm -f "/tmp/apps-scripts/store-superuser.txt"

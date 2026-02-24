@@ -1,21 +1,17 @@
 [
-    {
-        "name": "Franz",
-        "nickname": "franz",
-        "executable": [
-            "franz"
-        ],
-        "package": [
-            "franz"
-        ],
-        "extra_packages": [],
-        "architecture": "x86_64",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "[mainRepositoryName]",
-        "repository_url": "[mainRepositoryUrl]",
-        "icon_backg": "https://1.bp.blogspot.com/-zyVo1RspAjA/WWQI1jUVTgI/AAAAAAAASOA/uMYzyaIGcEUnD7yR5mITfKT1DPotDyULQCLcBGAs/s1600/franz.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "Franz",
+		"nickname": "franz",
+		"executable": "franz",
+		"package": "franz",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://1.bp.blogspot.com/-zyVo1RspAjA/WWQI1jUVTgI/AAAAAAAASOA/uMYzyaIGcEUnD7yR5mITfKT1DPotDyULQCLcBGAs/s1600/franz.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]

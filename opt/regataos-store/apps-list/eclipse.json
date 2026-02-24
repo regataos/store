@@ -1,21 +1,17 @@
 [
-    {
-        "name": "Eclipse",
-        "nickname": "eclipse",
-        "executable": [
-            "eclipse"
-        ],
-        "package": [
-            "eclipse"
-        ],
-        "extra_packages": [],
-        "architecture": "x86_64",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "[mainRepositoryName]",
-        "repository_url": "[mainRepositoryUrl]",
-        "icon_backg": "https://4.bp.blogspot.com/-MvCwfzRFzDk/WWThIhZIszI/AAAAAAAASQ0/474APB0AoTooeupqf2ENGCpJFBmN0MxoACLcBGAs/s1600/eclipse-backg.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "Eclipse",
+		"nickname": "eclipse",
+		"executable": "eclipse",
+		"package": "eclipse",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://4.bp.blogspot.com/-MvCwfzRFzDk/WWThIhZIszI/AAAAAAAASQ0/474APB0AoTooeupqf2ENGCpJFBmN0MxoACLcBGAs/s1600/eclipse-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]

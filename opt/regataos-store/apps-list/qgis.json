@@ -1,23 +1,17 @@
 [
-    {
-        "name": "QGIS",
-        "nickname": "qgis",
-        "executable": [
-            "flatpak",
-            "run",
-            "org.qgis.qgis"
-        ],
-        "package": [
-            "org.qgis.qgis/x86_64/stable"
-        ],
-        "extra_packages": [],
-        "architecture": "",
-        "package_manager": "flatpak",
-        "repository_name": "flathub",
-        "repository_cache": "",
-        "repository_url": "",
-        "icon_backg": "https://1.bp.blogspot.com/-f3Crl6RoMBY/X7Ew6IIjb3I/AAAAAAAAZA8/i1GdfYXCpwYWeYWwve1v-aVVvZoHm7kMgCLcBGAsYHQ/s0/qgis-backg.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "QGIS",
+		"nickname": "qgis",
+		"executable": "flatpak run org.qgis.qgis",
+		"package": "org.qgis.qgis/x86_64/stable",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://1.bp.blogspot.com/-f3Crl6RoMBY/X7Ew6IIjb3I/AAAAAAAAZA8/i1GdfYXCpwYWeYWwve1v-aVVvZoHm7kMgCLcBGAsYHQ/s0/qgis-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]

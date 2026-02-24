@@ -1,23 +1,17 @@
 [
-    {
-        "name": "GreenWithEnvy",
-        "nickname": "gwe",
-        "executable": [
-            "env",
-            "GTK_THEME=Breeze-Dark",
-            "gwe"
-        ],
-        "package": [
-            "gwe"
-        ],
-        "extra_packages": [],
-        "architecture": "noarch",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "[mainRepositoryName]",
-        "repository_url": "[mainRepositoryUrl]",
-        "icon_backg": "https://4.bp.blogspot.com/-aVGl6y38mnQ/XujbJqglYpI/AAAAAAAAYgM/hNzJB6koOYQ0ZhyJ-XV6mpHNgpfqtXVEQCLcBGAsYHQ/s1600/gwe-backg.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "GreenWithEnvy",
+		"nickname": "gwe",
+		"executable": "env GTK_THEME=Breeze-Dark gwe",
+		"package": "gwe",
+		"extra_packages": "",
+		"architecture": "noarch",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://4.bp.blogspot.com/-aVGl6y38mnQ/XujbJqglYpI/AAAAAAAAYgM/hNzJB6koOYQ0ZhyJ-XV6mpHNgpfqtXVEQCLcBGAsYHQ/s1600/gwe-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]

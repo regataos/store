@@ -1,22 +1,18 @@
 [
-    {
-        "name": "Regata OS Game Access",
-        "nickname": "regataos-gcs",
-        "executable": [
-            "regataos-gcs"
-        ],
-        "package": [
-            "regataos-gcs"
-        ],
-        "extra_packages": [],
-        "architecture": "x86_64",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "[mainRepositoryName]",
-        "repository_url": "[mainRepositoryUrl]",
-        "icon_backg": "",
-        "show_store": "none",
-        "price": "free",
-        "dgpu": "none"
+	{
+		"name": "Regata OS Game Access",
+		"nickname": "regataos-gcs",
+		"executable": "regataos-gcs",
+		"package": "regataos-gcs",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "",
+		"show_store": "none",
+		"price": "free",
+		"dgpu": "none"
     }
 ]

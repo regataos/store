@@ -1,21 +1,17 @@
 [
-    {
-        "name": "DaVinci Resolve",
-        "nickname": "davinci-resolve",
-        "executable": [
-            "/opt/resolve/bin/resolve"
-        ],
-        "package": [
-            "davinci-resolve-updater"
-        ],
-        "extra_packages": [],
-        "architecture": "noarch",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "[mainRepositoryName]",
-        "repository_url": "[mainRepositoryUrl]",
-        "icon_backg": "https://1.bp.blogspot.com/-dMcgqQCmUUc/Wu0O5Vx88wI/AAAAAAAAUdI/yHTDz9p_TGQpgCvSKQe1ovOLtBzlJrU0QCLcBGAs/s1600/davinci-backg.png",
-        "price": "free",
-        "dgpu": "activate"
-    }
+	{
+		"name": "DaVinci Resolve",
+		"nickname": "davinci-resolve",
+		"executable": "/opt/resolve/bin/resolve",
+		"package": "davinci-resolve-updater",
+		"extra_packages": "",
+		"architecture": "noarch",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://1.bp.blogspot.com/-dMcgqQCmUUc/Wu0O5Vx88wI/AAAAAAAAUdI/yHTDz9p_TGQpgCvSKQe1ovOLtBzlJrU0QCLcBGAs/s1600/davinci-backg.png",
+		"price": "free",
+		"dgpu": "activate"
+	}
 ]

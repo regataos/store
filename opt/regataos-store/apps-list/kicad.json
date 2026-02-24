@@ -1,23 +1,17 @@
 [
-    {
-        "name": "KiCad",
-        "nickname": "kicad",
-        "executable": [
-            "flatpak",
-            "run",
-            "org.kicad.KiCad"
-        ],
-        "package": [
-            "org.kicad.KiCad"
-        ],
-        "extra_packages": [],
-        "architecture": "",
-        "package_manager": "flatpak",
-        "repository_name": "flathub",
-        "repository_cache": "",
-        "repository_url": "",
-        "icon_backg": "https://2.bp.blogspot.com/-J58K9WWQ3eE/XGB7ErMuxAI/AAAAAAAAWc4/ed5zskPynL4j1QkqHgbbtetY5-vJfn1ogCLcBGAs/s1600/kicad-backg.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "KiCad",
+		"nickname": "kicad",
+		"executable": "flatpak run org.kicad.KiCad",
+		"package": "org.kicad.KiCad",
+		"extra_packages": "",
+		"architecture": "",
+		"package_manager": "flatpak",
+		"repository_name": "flathub",
+		"repository_cache": "",
+		"repository_url": "",
+		"icon_backg": "https://2.bp.blogspot.com/-J58K9WWQ3eE/XGB7ErMuxAI/AAAAAAAAWc4/ed5zskPynL4j1QkqHgbbtetY5-vJfn1ogCLcBGAs/s1600/kicad-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]

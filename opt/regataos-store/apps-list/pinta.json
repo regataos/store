@@ -1,23 +1,17 @@
 [
-    {
-        "name": "Pinta",
-        "nickname": "pinta",
-        "executable": [
-            "pinta"
-        ],
-        "package": [
-            "pinta"
-        ],
-        "extra_packages": [
-            "pinta-lang"
-        ],
-        "architecture": "noarch",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "/var/cache/zypp/solv/leap_[basedOnVersion]",
-        "repository_url": "https://download.opensuse.org/distribution/leap/[basedOnVersion]/repo/oss/noarch",
-        "icon_backg": "https://3.bp.blogspot.com/-PQxtY6ygw6g/WWLUXrytKlI/AAAAAAAASJ8/nqwZEpvDnrMrxVWbpLdJkowB1BZqRhxbACLcBGAs/s1600/pinta-backg.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "Pinta",
+		"nickname": "pinta",
+		"executable": "pinta",
+		"package": "pinta",
+		"extra_packages": "pinta-lang",
+		"architecture": "noarch",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "/var/cache/zypp/solv/leap_[basedOnVersion]",
+		"repository_url": "https://download.opensuse.org/distribution/leap/[basedOnVersion]/repo/oss/noarch",
+		"icon_backg": "https://3.bp.blogspot.com/-PQxtY6ygw6g/WWLUXrytKlI/AAAAAAAASJ8/nqwZEpvDnrMrxVWbpLdJkowB1BZqRhxbACLcBGAs/s1600/pinta-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]

@@ -1,21 +1,17 @@
 [
-    {
-        "name": "Navicat for MySQL",
-        "nickname": "navicat-mysql",
-        "executable": [
-            "navicat"
-        ],
-        "package": [
-            "navicat-mysql-updater"
-        ],
-        "extra_packages": [],
-        "architecture": "x86_64",
-        "package_manager": "zypper",
-        "repository_name": "",
-        "repository_cache": "[mainRepositoryName]",
-        "repository_url": "[mainRepositoryUrl]",
-        "icon_backg": "https://2.bp.blogspot.com/-60mn6DEG0Nc/Xks0XKj2FBI/AAAAAAAAYOA/iRCGomvvuU86340ZzlFpf_cM_yJc3wkRgCLcBGAsYHQ/s1600/navicate-mysql-backg.png",
-        "price": "free",
-        "dgpu": "deactivate"
+	{
+		"name": "Navicat for MySQL",
+		"nickname": "navicat-mysql",
+		"executable": "navicat",
+		"package": "navicat-mysql-updater",
+		"extra_packages": "",
+		"architecture": "x86_64",
+		"package_manager": "zypper",
+		"repository_name": "",
+		"repository_cache": "[mainRepositoryName]",
+		"repository_url": "[mainRepositoryUrl]",
+		"icon_backg": "https://2.bp.blogspot.com/-60mn6DEG0Nc/Xks0XKj2FBI/AAAAAAAAYOA/iRCGomvvuU86340ZzlFpf_cM_yJc3wkRgCLcBGAsYHQ/s1600/navicate-mysql-backg.png",
+		"price": "free",
+		"dgpu": "deactivate"
     }
 ]
