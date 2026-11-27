@@ -168,6 +168,8 @@
                 </div>
             </div>
 
+            <!-- Use nwfaketop so nested iframes (e.g. comments widget) validate CSP frame-ancestors
+                 against the store blog origin rather than the NW.js chrome-extension:// root frame. -->
             <iframe onload="showHideElements(this); appButtonsFunction(this); installedPage(this); appVersion(this);"
                 src="" allowfullscreen frameborder="0" name="iframe-regataos-store" id="iframe-regataos-store"
                 class="iframe-pages" nwfaketop></iframe>
